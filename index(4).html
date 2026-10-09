@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sociedad Chilena de Neurociencia</title>
+<meta name="description" content="La Sociedad Chilena de Neurociencia promueve el desarrollo, investigación y difusión de la neurociencia en Chile y Latinoamérica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ──────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ── Tokens ─────────────────────────────────────────── */
+:root{
+  --navy:    #0c1e3f;
+  --navymd:  #162e58;
+  --teal:    #0d9fa0;
+  --teallt:  #e0f5f5;
+  --sky:     #f0f7ff;
+  --offwhite:#f4f7fb;
+  --white:   #ffffff;
+  --body:    #2d3748;
+  --muted:   #627286;
+  --pale:    #94a3b8;
+  --border:  #e2e8f0;
+  --f-serif: 'DM Serif Display',Georgia,serif;
+  --f-sans:  'Inter',system-ui,sans-serif;
+  --max-w:   1100px;
+  --pad:     clamp(1rem,4vw,1.5rem);
+}
+
+/* ── Layout helpers ─────────────────────────────────── */
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+.section{padding:4.5rem 0}
+.section-alt{background:var(--offwhite)}
+.section-dark{background:var(--navy);color:#fff}
+
+/* ── Section header ─────────────────────────────────── */
+.sh{margin-bottom:2.5rem}
+.sh-label{
+  font-size:.72rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--teal);
+  display:block;margin-bottom:.45rem;
+}
+.section-dark .sh-label{color:rgba(13,159,160,.9)}
+.sh-title{
+  font-family:var(--f-serif);font-weight:400;
+  font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;color:var(--navy);
+}
+.section-dark .sh-title{color:#fff}
+.sh-body{
+  margin-top:.65rem;font-size:1rem;line-height:1.7;
+  color:var(--muted);max-width:580px;
+}
+.section-dark .sh-body{color:rgba(255,255,255,.65)}
+
+/* ── NAV ────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--navy);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.nav-inner{
+  display:flex;align-items:center;gap:2rem;
+  height:62px;max-width:var(--max-w);
+  margin:0 auto;padding:0 var(--pad);
+}
+.nav-logo{
+  font-family:var(--f-serif);font-size:1.1rem;
+  color:#fff;text-decoration:none;white-space:nowrap;
+}
+.nav-logo b{color:var(--teal);font-weight:400}
+.nav-links{
+  display:flex;gap:1.75rem;list-style:none;margin-left:auto;align-items:center;
+}
+.nav-links a{
+  color:rgba(255,255,255,.75);text-decoration:none;
+  font-size:.87rem;font-weight:500;letter-spacing:.01em;
+  transition:color .15s;
+}
+.nav-links a:hover{color:#fff}
+.nav-cta{
+  padding:.4rem 1rem;
+  background:var(--teal);color:#fff!important;
+  border-radius:4px;font-weight:600!important;
+}
+.nav-burger{
+  display:none;background:none;border:none;
+  cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;
+  line-height:1;
+}
+
+/* ── HERO ───────────────────────────────────────────── */
+.hero{
+  background:var(--navy);color:#fff;
+  padding:5.5rem 0 4.5rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;right:-80px;top:-40px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(13,159,160,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-tag{
+  display:inline-block;
+  font-size:.75rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--teal);
+  border:1px solid rgba(13,159,160,.4);
+  padding:.25rem .75rem;border-radius:50px;
+  margin-bottom:1.5rem;
+}
+.hero h1{
+  font-family:var(--f-serif);
+  font-size:clamp(2.4rem,5.5vw,4rem);
+  line-height:1.08;font-weight:400;
+  color:#fff;max-width:680px;
+}
+.hero-sub{
+  margin-top:.6rem;
+  font-family:var(--f-serif);font-style:italic;
+  font-size:clamp(1rem,2vw,1.45rem);
+  color:rgba(255,255,255,.55);
+}
+.hero-desc{
+  margin-top:1.75rem;
+  max-width:520px;font-size:1rem;line-height:1.7;
+  color:rgba(255,255,255,.68);
+}
+.hero-actions{
+  margin-top:2.25rem;
+  display:flex;gap:1rem;flex-wrap:wrap;align-items:center;
+}
+.btn{
+  display:inline-block;padding:.65rem 1.5rem;border-radius:4px;
+  font-size:.9rem;font-weight:600;text-decoration:none;
+  cursor:pointer;transition:opacity .15s,transform .12s;
+  white-space:nowrap;
+}
+.btn:hover{opacity:.88;transform:translateY(-1px)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-ghost{
+  border:1.5px solid rgba(255,255,255,.3);
+  color:rgba(255,255,255,.85);
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.7)}
+
+/* ── TICKER ─────────────────────────────────────────── */
+.ticker{
+  background:var(--navymd);
+  border-top:1px solid rgba(255,255,255,.06);
+  padding:.55rem 0;
+}
+.ticker-inner{display:flex;align-items:center;gap:1rem;overflow:hidden}
+.ticker-badge{
+  flex-shrink:0;
+  background:var(--teal);color:#fff;
+  font-size:.68rem;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;padding:.2rem .55rem;border-radius:2px;
+}
+.ticker-text{
+  font-size:.82rem;color:rgba(255,255,255,.65);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.ticker-sep{color:var(--teal);margin:0 .75rem}
+
+/* ── NOTICIAS ───────────────────────────────────────── */
+.news-list{list-style:none}
+.news-item{
+  display:grid;grid-template-columns:84px 1fr;
+  gap:.75rem 1.5rem;padding:1.25rem 0;
+  border-bottom:1px solid var(--border);align-items:start;
+}
+.news-item:first-child{border-top:1px solid var(--border)}
+.news-date{font-size:.78rem;color:var(--muted);line-height:1.3;padding-top:.1rem}
+.news-date strong{
+  display:block;font-size:1.6rem;font-weight:600;
+  color:var(--navy);line-height:1;
+}
+.news-cat{
+  display:inline-block;font-size:.68rem;font-weight:600;
+  letter-spacing:.04em;padding:.15rem .5rem;
+  border-radius:3px;margin-bottom:.35rem;
+}
+.cat-oport{background:#dbeafe;color:#1d4ed8}
+.cat-divul{background:#d1fae5;color:#065f46}
+.cat-congr{background:#ede9fe;color:#5b21b6}
+.cat-insti{background:#fef3c7;color:#92400e}
+.news-title{
+  font-size:1rem;font-weight:500;color:var(--body);
+  line-height:1.4;text-decoration:none;display:block;
+  transition:color .15s;
+}
+.news-title:hover{color:var(--teal)}
+.news-excpt{
+  margin-top:.3rem;font-size:.875rem;color:var(--muted);line-height:1.55;
+}
+.news-more{
+  margin-top:2rem;display:flex;align-items:center;gap:.5rem;
+  font-size:.9rem;font-weight:500;color:var(--teal);
+  text-decoration:none;
+}
+.news-more::after{content:'›';font-size:1.2rem}
+
+/* ── MISIÓN ─────────────────────────────────────────── */
+.pillars{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:1.5rem;
+}
+.pillar{
+  padding:1.5rem 1.25rem;
+  background:var(--white);
+  border-left:3px solid var(--teal);
+  border-radius:0 6px 6px 0;
+}
+.pillar-n{
+  font-family:var(--f-serif);font-size:2rem;
+  color:var(--teal);line-height:1;margin-bottom:.5rem;
+}
+.pillar-t{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:.4rem}
+.pillar-b{font-size:.875rem;color:var(--muted);line-height:1.6}
+.estatutos-link{
+  margin-top:2.5rem;padding:1rem 1.25rem;
+  background:var(--white);border:1px solid var(--border);border-radius:6px;
+  display:flex;align-items:center;gap:.75rem;
+  text-decoration:none;color:var(--body);
+  font-size:.9rem;font-weight:500;
+  transition:border-color .15s;max-width:380px;
+}
+.estatutos-link:hover{border-color:var(--teal)}
+.estatutos-link svg{flex-shrink:0;color:var(--teal)}
+.estatutos-link small{display:block;font-size:.78rem;color:var(--muted);font-weight:400}
+
+/* ── DIRECTORIO ─────────────────────────────────────── */
+.dir-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:1rem;
+}
+.dir-card{
+  padding:1.2rem 1.1rem;
+  background:var(--white);
+  border:1px solid var(--border);border-radius:6px;
+}
+.dir-role{
+  display:inline-block;font-size:.68rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;
+  padding:.2rem .5rem;border-radius:3px;margin-bottom:.55rem;
+}
+.r-pres{background:#dbeafe;color:#1e40af}
+.r-vp  {background:#ede9fe;color:#5b21b6}
+.r-sec {background:#d1fae5;color:#065f46}
+.r-tes {background:#fef3c7;color:#92400e}
+.r-dir {background:#f1f5f9;color:#475569}
+.r-past{background:#fee2e2;color:#9f1239}
+.dir-name{font-size:.93rem;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:.2rem}
+.dir-inst{font-size:.78rem;color:var(--muted)}
+
+/* ── MEMBRESÍA ──────────────────────────────────────── */
+.mem-cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem;
+}
+.mem-card{
+  padding:1.75rem 1.5rem;
+  border:1.5px solid rgba(255,255,255,.14);
+  border-radius:8px;background:rgba(255,255,255,.045);
+}
+.mem-type{
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;
+}
+.mem-price{
+  font-family:var(--f-serif);font-size:2.4rem;
+  color:#fff;line-height:1;
+}
+.mem-price span{font-size:.88rem;font-family:var(--f-sans);color:rgba(255,255,255,.5);font-weight:400}
+.mem-desc{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65}
+.req-box{
+  padding:1.5rem;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);border-radius:6px;
+  margin-bottom:2rem;
+}
+.req-box h3{
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:1.1rem;
+}
+.req-steps{display:flex;flex-direction:column;gap:.9rem}
+.req-step{display:flex;gap:1rem;align-items:flex-start}
+.req-n{
+  flex-shrink:0;width:24px;height:24px;border-radius:50%;
+  background:var(--teal);color:#fff;
+  font-size:.75rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.req-t{font-size:.875rem;color:rgba(255,255,255,.73);line-height:1.6}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+.footer{
+  background:#08121f;color:rgba(255,255,255,.42);
+  padding:2.5rem 0;font-size:.82rem;
+}
+.footer-inner{
+  max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.38);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.8)}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:680px){
+  .nav-links{
+    display:none;
+    position:absolute;top:62px;left:0;right:0;
+    background:var(--navy);border-top:1px solid rgba(255,255,255,.1);
+    flex-direction:column;padding:1rem;gap:.65rem;
+  }
+  .nav-links.open{display:flex}
+  .nav-burger{display:block}
+  .hero{padding:3.5rem 0 3rem}
+  .hero h1{font-size:2.2rem}
+  .news-item{grid-template-columns:72px 1fr;gap:.5rem 1rem}
+  .mem-cards{grid-template-columns:1fr}
+  .dir-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+  .footer-inner{flex-direction:column;gap:1rem;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">SCN <b>·</b> Neurociencia</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#sociedad">La Sociedad</a></li>
+      <li><a href="#noticias">Noticias</a></li>
+      <li><a href="#directorio">Directorio</a></li>
+      <li><a href="#asociarse" class="nav-cta">Asociarse</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Santiago, Chile · Fundada en 2005</span>
+    <h1>Sociedad Chilena<br>de Neurociencia</h1>
+    <p class="hero-sub">Chilean Society for Neuroscience</p>
+    <p class="hero-desc">
+      Corporación científica sin fines de lucro dedicada al desarrollo, la investigación y la difusión de la neurociencia en Chile y Latinoamérica.
+    </p>
+    <div class="hero-actions">
+      <a href="#asociarse" class="btn btn-primary">Asociarse a la SCN</a>
+      <a href="#noticias" class="btn btn-ghost">Noticias y eventos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── TICKER ────────────────────────────────────────── -->
+<div class="ticker">
+  <div class="wrap">
+    <div class="ticker-inner">
+      <span class="ticker-badge">Destacado</span>
+      <p class="ticker-text">
+        LACONEU 2027: convocatoria abierta
+        <span class="ticker-sep">·</span>
+        IBRO 2027 World Congress: propuestas de simposios
+        <span class="ticker-sep">·</span>
+        Curioseando: música para entender el cerebro
+        <span class="ticker-sep">·</span>
+        Citación Asamblea General Ordinaria
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ── NOTICIAS ──────────────────────────────────────── -->
+<section class="section" id="noticias">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-label">Publicaciones recientes</span>
+      <h2 class="sh-title">Noticias y convocatorias</h2>
+    </div>
+
+    <ul class="news-list">
+      <li class="news-item">
+        <div class="news-date"><strong>09</strong>Sep 2026</div>
+        <div>
+          <span class="news-cat cat-oport">Oportunidades</span>
+          <a class="news-title" href="https://socneurociencia.cl/2026/09/09/laconeu-2027-convocatoria-de-postulacion-abierta" target="_blank">
+            LACONEU 2027 — Convocatoria de postulación abierta
+          </a>
+          <p class="news-excpt">Abiertas las postulaciones para LACONEU 2027, VII Latin-American Summer School in Neuroscience. Una escuela de excelencia para jóvenes neurocientíficos de la región.</p>
+        </div>
+      </li>
+      <li class="news-item">
+        <div class="news-date"><strong>09</strong>Sep 2026</div>
+        <div>
+          <span class="news-cat cat-divul">Divulgación</span>
+          <a class="news-title" href="https://socneurociencia.cl/2026/09/09/curioseando-musica-para-entender-el-cerebro" target="_blank">
+            Curioseando: música para entender el cerebro
+          </a>
+          <p class="news-excpt">Nueva entrega de la serie de divulgación científica de la SCN, explorando la neurociencia de la percepción musical y la emoción.</p>
+        </div>
+      </li>
+      <li class="news-item">
+        <div class="news-date"><strong>12</strong>Ago 2026</div>
+        <div>
+          <span class="news-cat cat-insti">Institucional</span>
+          <a class="news-title" href="https://socneurociencia.cl/2026/08/12/citacion-a-asamblea-general-ordinaria-de-socios-3" target="_blank">
+            Citación a Asamblea General Ordinaria de Socios
+          </a>
+          <p class="news-excpt">Convocatoria oficial a la Asamblea General Ordinaria de la Sociedad Chilena de Neurociencia. Se informa a todos los socios activos.</p>
+        </div>
+      </li>
+      <li class="news-item">
+        <div class="news-date"><strong>27</strong>Jul 2026</div>
+        <div>
+          <span class="news-cat cat-congr">Congresos</span>
+          <a class="news-title" href="https://socneurociencia.cl/2026/07/27/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027" target="_blank">
+            Convocatoria Abierta: propuestas de simposios para IBRO 2027
+          </a>
+          <p class="news-excpt">El Congreso Mundial de Neurociencia IBRO 2027 invita a la comunidad a presentar propuestas de simposios. Plazo abierto.</p>
+        </div>
+      </li>
+      <li class="news-item">
+        <div class="news-date"><strong>15</strong>Jul 2026</div>
+        <div>
+          <span class="news-cat cat-divul">Divulgación</span>
+          <a class="news-title" href="https://socneurociencia.cl/2026/07/15/ano-del-cerebro-parte-ii-una-koinonia-cientifica" target="_blank">
+            Año del Cerebro. Parte II. Una koinonía científica
+          </a>
+          <p class="news-excpt">Reflexión sobre la comunidad neurocientífica chilena en el contexto del Año Internacional del Cerebro y su proyección regional.</p>
+        </div>
+      </li>
+      <li class="news-item">
+        <div class="news-date"><strong>22</strong>Abr 2026</div>
+        <div>
+          <span class="news-cat cat-congr">Eventos</span>
+          <a class="news-title" href="https://socneurociencia.cl/2026/04/22/neurofest-la-feria-del-cerebro" target="_blank">
+            NeuroFest: La Feria del Cerebro
+          </a>
+          <p class="news-excpt">Segunda versión de NeuroFest, la feria de divulgación sobre neurociencia abierta a estudiantes y público general.</p>
+        </div>
+      </li>
+    </ul>
+
+    <a href="https://socneurociencia.cl" class="news-more" target="_blank">Ver todas las noticias en el sitio actual</a>
+  </div>
+</section>
+
+<!-- ── LA SOCIEDAD ───────────────────────────────────── -->
+<section class="section section-alt" id="sociedad">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-label">Quiénes somos</span>
+      <h2 class="sh-title">Misión y objetivos</h2>
+      <p class="sh-body">
+        La SCN es una corporación de derecho privado sin fines de lucro, constituida en Santiago de Chile el 20 de julio de 2005. Su propósito es el desarrollo, la investigación y la difusión de la neurociencia.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-n">01</div>
+        <div class="pillar-t">Investigación</div>
+        <p class="pillar-b">Fomentar estudios e investigaciones —teóricos y experimentales— orientados al desarrollo y la difusión de la neurociencia.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">02</div>
+        <div class="pillar-t">Encuentro científico</div>
+        <p class="pillar-b">Organizar reuniones, simposios, conferencias y congresos nacionales e internacionales para el intercambio de experiencias científicas.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">03</div>
+        <div class="pillar-t">Alianzas</div>
+        <p class="pillar-b">Establecer contactos y alianzas con asociaciones científicas nacionales, extranjeras e internacionales vinculadas a la neurociencia.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-n">04</div>
+        <div class="pillar-t">Difusión</div>
+        <p class="pillar-b">Promover la difusión de los descubrimientos y avances de la neurociencia para el beneficio de toda la comunidad.</p>
+      </div>
+    </div>
+
+    <a href="estatutos-scn-2005.pdf" class="estatutos-link" download>
+      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+      <div>Estatutos de la Sociedad Chilena de Neurociencia <small>Escritura pública · Repertorio Nº 1.924-2005</small></div>
+    </a>
+  </div>
+</section>
+
+<!-- ── DIRECTORIO ────────────────────────────────────── -->
+<section class="section" id="directorio">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-label">Directorio 2026 – 2028</span>
+      <h2 class="sh-title">Consejo directivo</h2>
+      <p class="sh-body">
+        El Directorio de la SCN está compuesto por siete miembros elegidos en Asamblea Ordinaria por un período de tres años, renovable.
+      </p>
+    </div>
+
+    <div class="dir-grid">
+      <div class="dir-card">
+        <span class="dir-role r-pres">Presidenta</span>
+        <div class="dir-name">Dra. Alexia Núñez Parra</div>
+        <div class="dir-inst">Universidad de Chile</div>
+      </div>
+      <div class="dir-card">
+        <span class="dir-role r-vp">Vicepresidente</span>
+        <div class="dir-name">Dr. Patricio Rojas Montecino</div>
+        <div class="dir-inst">Universidad de Santiago de Chile</div>
+      </div>
+      <div class="dir-card">
+        <span class="dir-role r-sec">Secretaria</span>
+        <div class="dir-name">Dra. Angelina Palacios Muñoz</div>
+        <div class="dir-inst">Universidad de Valparaíso</div>
+      </div>
+      <div class="dir-card">
+        <span class="dir-role r-tes">Tesorero</span>
+        <div class="dir-name">Dr. Paulo Barraza Rodríguez</div>
+        <div class="dir-inst">Universidad de Chile</div>
+      </div>
+      <div class="dir-card">
+        <span class="dir-role r-dir">Directora</span>
+        <div class="dir-name">Dra. Evelyn Cordero Roldán</div>
+        <div class="dir-inst">Fundación Arrebol</div>
+      </div>
+      <div class="dir-card">
+        <span class="dir-role r-dir">Director</span>
+        <div class="dir-name">Dr. Marcos Domic Siede</div>
+        <div class="dir-inst">Universidad Católica del Norte</div>
+      </div>
+      <div class="dir-card">
+        <span class="dir-role r-dir">Director</span>
+        <div class="dir-name">Dr. Sebastián Loyola Arroyo</div>
+        <div class="dir-inst">Univ. Católica Silva Henríquez</div>
+      </div>
+      <div class="dir-card">
+        <span class="dir-role r-past">Past-president</span>
+        <div class="dir-name">Dra. María Pertusa Pastor</div>
+        <div class="dir-inst">Universidad de Santiago de Chile</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MEMBRESÍA ─────────────────────────────────────── -->
+<section class="section section-dark" id="asociarse">
+  <div class="wrap">
+    <div class="sh">
+      <span class="sh-label">Únete a la SCN</span>
+      <h2 class="sh-title">Membresía</h2>
+      <p class="sh-body">
+        La Sociedad Chilena de Neurociencia está abierta a investigadores, académicos y estudiantes de postgrado vinculados a las neurociencias.
+      </p>
+    </div>
+
+    <div class="mem-cards">
+      <div class="mem-card">
+        <div class="mem-type">Socio regular</div>
+        <div class="mem-price">$80.000 <span>CLP / año</span></div>
+        <p class="mem-desc">Para profesionales con título o grado académico relacionado con la neurociencia que hayan realizado investigación científica en el área.</p>
+      </div>
+      <div class="mem-card">
+        <div class="mem-type">Socio estudiante</div>
+        <div class="mem-price">$20.000 <span>CLP / año</span></div>
+        <p class="mem-desc">Para alumnos regulares de programas de postgrado (magíster o doctorado) con al menos grado de licenciado.</p>
+      </div>
+    </div>
+
+    <div class="req-box">
+      <h3>Proceso de postulación</h3>
+      <div class="req-steps">
+        <div class="req-step">
+          <span class="req-n">1</span>
+          <p class="req-t">Redactar una carta manifestando el interés en participar en la Sociedad Chilena de Neurociencia.</p>
+        </div>
+        <div class="req-step">
+          <span class="req-n">2</span>
+          <p class="req-t">Completar las fichas de postulación e indicar los nombres de dos socios regulares activos que patrocinen la solicitud.</p>
+        </div>
+        <div class="req-step">
+          <span class="req-n">3</span>
+          <p class="req-t">Los estudiantes deben adjuntar constancia de alumno regular en el programa de postgrado correspondiente.</p>
+        </div>
+        <div class="req-step">
+          <span class="req-n">4</span>
+          <p class="req-t">El Directorio resolverá la solicitud en la primera sesión celebrada después de su presentación (máximo 60 días hábiles).</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="mailto:secretaria@socneurociencia.cl" class="btn btn-primary">Enviar postulación</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+      <div style="margin-top:.35rem">Corporación de derecho privado · Fundada en 2005 · Santiago, Chile</div>
+    </div>
+    <nav class="footer-links" aria-label="Pie de página">
+      <a href="#sociedad">La Sociedad</a>
+      <a href="#directorio">Directorio</a>
+      <a href="#asociarse">Membresía</a>
+      <a href="mailto:secretaria@socneurociencia.cl">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btn = document.getElementById('burger');
+  const nav = document.getElementById('nav-links');
+  btn.addEventListener('click', function(){
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? '✕' : '☰';
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent='☰';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

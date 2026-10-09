@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Año del Cerebro. Parte II. Una koinonía científica — Sociedad Chilena de Neurociencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../logo_scn.png" alt="SCN"></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+      <ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+    <li><a href="../index.html#directorio">Directorio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#asociarse">Asociarse</a></li>
+        <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+        <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+      </ul></li>
+    <li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+        <li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+      </ul></li>
+    <li><a href="../noticias.html" class="active">Noticias</a></li>
+    <li><a href="../index.html#contacto">Contacto</a></li>
+    <li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+    <li class="nav-cta"><a href="#">Donaciones</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">☰</button>
+</div></nav>
+
+<div class="art-header">
+  <div class="wrap">
+    <span class="label">Destacado · Noticias</span>
+    <h1>Año del Cerebro. Parte II. Una koinonía científica</h1>
+    <div class="meta"><span>Julio 15, 2026</span><span class="cat-pill">Destacado</span><span class="cat-pill">Noticias</span></div>
+  </div>
+</div>
+<img class="feat-img" src="../img/captura-de-pantalla-2026-07-15-a-las-12.26.27-p.m.png" alt="Año del Cerebro. Parte II. Una koinonía científica">
+<div class="art-body">
+  <a href="../noticias.html" class="back-btn">Volver a Noticias</a>
+  
+
+<p><a href="javascript:void(0);"></a></p>
+<p><span style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Cada otoño del Hemisferio Norte, decenas de miles de investigadores provenientes de todos los rincones del mundo convergen en ciudades rotativas (un año Washinton D.C., San Diego, Chicago), para participar en la reunión anual de la Society for Neuroscience (</span><em style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal; box-sizing: border-box;'>“¿vas a la SfN este año?”</em><span style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>, es la pregunta que solemos escuchar cada semestre en nuestro medio local). Durante algunos días, enormes centros de convenciones se transforman en una suerte de ciudad cerebral. Miles de pósteres, conferencias simultáneas, discusiones metodológicas, nuevas tecnologías y preguntas que, pese a los avances, siguen siendo tan antiguas como la humanidad misma:</span><span style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'> </span><em style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal; box-sizing: border-box;'>“¿Qué es la conciencia?”</em><span style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>,</span><em style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal; box-sizing: border-box;'> “¿Cómo se forma un recuerdo?”</em><span style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>,</span><em style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal; box-sizing: border-box;'> “¿Por qué enfermamos?”</em><span style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>,</span><em style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal; box-sizing: border-box;'> “¿Qué nos hace ser quiénes somos?”</em><span style='color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>.</span></p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Entre esa multitud de investigadores suelen encontrarse también científicos chilenos. Algunos son académicos consolidados. Otros son estudiantes de doctorado que presentan por primera vez sus resultados. Todos participan de una misma conversación global que trasciende idiomas, fronteras y generaciones. <strong style="box-sizing: border-box;">Esa imagen resume bien lo que son las neurociencias contemporáneas</strong>. No es una disciplina. Somos una <em style="box-sizing: border-box;">koinonía</em> (del griego <em style="box-sizing: border-box;">κοινωνία</em>), es decir, una comunidad de saberes que estudian el funcionamiento cerebral.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Desde sus orígenes, las neurociencias han sido una de las expresiones más sofisticadas de la colaboración intelectual moderna. Ninguna persona puede estudiar por sí sola el cerebro. Comprenderlo exige la convergencia de kinesiólogos, profesores, fonoaudiólogos, biólogos, psicólogos, artistas, matemáticos, físicos, bioquímicos, informáticos, filósofos, genetistas, ingenieros, entre otros. El estudio del cerebro obligó a la academia a reconocer algo que durante siglos intentó ignorar: que los grandes problemas rara vez respetan las fronteras de nuestras disciplinas.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Chile no ha sido ajeno a esta historia. Lo que comenzó durante el siglo XX con pequeños grupos de investigación dispersos, fue transformándose progresivamente en una comunidad científica de creciente complejidad. Los trabajos pioneros de Joaquín Luco sobre plasticidad cerebral, y los aportes de numerosos investigadores posteriores, <strong style="box-sizing: border-box;">permitieron construir una tradición científica que hoy posee reconocimiento internacional</strong>.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Sobre esos cimientos surgieron centros especializados, programas de formación avanzada, redes de colaboración internacional y una nueva generación de investigadores distribuidos en universidades desde Antofagasta hasta Magallanes. Instituciones como el Instituto de Neurociencia Biomédica (BNI, UChile), NeuroUC, BrainLat (UAI), CECS (Valdivia), CINV (Valparaíso), entre otros, conforman hoy un corpus científico impensable hace apenas algunas décadas. Pero quizás el indicador más relevante de madurez (y que, por desgracia, no integra la métrica canónica actual), no sea el número de laboratorios ni la cantidad de publicaciones, sino, la capacidad de construir comunidad.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>En ese proceso, la Sociedad Chilena de Neurociencia <strong style="box-sizing: border-box;">ha desempeñado un papel decisivo</strong>. Desde su creación, ha funcionado como un espacio de encuentro para investigadores de distintas generaciones, disciplinas y regiones. Sus congresos anuales, escuelas de formación, sus redes internacionales y actividades de divulgación, han contribuido a articular una comunidad que, por definición, sólo puede prosperar mediante la cooperación.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Después de todo, el conocimiento científico no avanza únicamente gracias al talento individual. Avanza porque existe una comunidad capaz de discutir, corregir, cuestionar y perfeccionar las ideas de sus miembros.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Las neurociencias chilenas también han comprendido rápidamente, por fortuna, algo igualmente importante: que el conocimiento pierde parte de su sentido cuando permanece encerrado en los laboratorios.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Por ello, durante las últimas décadas han proliferado iniciativas orientadas a acercar la investigación a la ciudadanía; semanas del cerebro, festivales científicos, jornadas de neurociencias e inteligencia artificial, charlas abiertas, actividades escolares, programas de divulgación y proyectos de vinculación con el medio, han permitido que conceptos antes reservados para especialistas ingresen progresivamente a la conversación pública. NEUROFEST<sup style="box-sizing: border-box;">®</sup> es su mejor ejemplo.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>No se trata únicamente de comunicar resultados. Sino más bien de vivir el conocimiento, presentarlo, contrastarlo y matizarlo en una conversación lúdica y fluida hacia los colegios, a las poblaciones, a las juntas de vecinos, a las empresas, al municipio, en fin, a<strong style="box-sizing: border-box;"> quienes deseen conocer qué hacen las neurociencias chilenas</strong>.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Y esa tarea, adquiere especial relevancia en una época donde las neurociencias comienzan a influir en ámbitos tan diversos como la educación, el derecho, la economía, la salud pública, la inteligencia artificial, la rehabilitación, el envejecimiento y las políticas públicas. En consecuencia, y sin arrojo intelectual vacuo, podemos sostener que las neurociencias en Chile corresponden a un saber maduro.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Sin embargo, los desafíos de una disciplina madura son distintos a los desafíos de una disciplina emergente. Durante décadas el problema central fue construir capacidades. Formar investigadores. Financiar laboratorios. Establecer colaboraciones internacionales. Hoy el desafío es más complejo.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'><span style="box-sizing: border-box; text-decoration: underline;"><strong style="box-sizing: border-box;">¿Cómo proteger lo construido?</strong></span></p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>La ciencia contemporánea opera bajo crecientes exigencias de productividad, evaluación e impacto. <strong style="box-sizing: border-box;">Los indicadores son necesarios</strong>. Las métricas cumplen una función indispensable. Pero, existe siempre el riesgo de olvidar que las mismas constituyen medios y no fines. Medir por medir resulta falaz y peligrosamente endogámico.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Ningún científico comenzó su carrera para mejorar indicadores. Lo hizo porque, alguna pregunta le parecía irresistiblemente atractiva de contestar desde su campo disciplinar.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Y quizás, uno de los desafíos más importantes para las neurociencias chilenas durante las próximas décadas, consista precisamente en preservar espacios para esa curiosidad. Espacios, donde las preguntas difíciles puedan desarrollarse durante años, sin la presión permanente de producir resultados inmediatos. Espacios donde las nuevas generaciones (incluyendo, por cierto, hijos de neurocientíficos), encuentren condiciones para permanecer en el país y contribuir al <strong style="box-sizing: border-box;">fortalecimiento de una comunidad científica que ha costado décadas construir</strong>. Por ello, nos hemos articulado con los poderes del Estado (no del gobierno de turno). Se ha hecho por convicción, no por ocasión.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>La historia de las neurociencias chilenas (y del orbe), demuestra que el conocimiento nunca surge de manera aislada. Surge cuando una comunidad decide invertir tiempo, recursos y confianza en comprender algo que todavía desconoce.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Quizás por eso la palabra griega <em style="box-sizing: border-box;">koinonía</em> describe tan bien esta aventura intelectual. Porque el estudio del cerebro ha sido, desde sus inicios, una empresa colectiva. Una conversación que atraviesa laboratorios, universidades, hospitales y generaciones de investigadores.</p><p style='box-sizing: border-box; margin: 0px; padding: 0px 0px 10px; color: rgb(51, 51, 51); font-family: "Titillium Web", sans-serif; font-size: 20px; white-space: normal;'>Y, en tiempos donde el individualismo suele presentarse como virtud suprema, las neurociencias nos recuerdan una verdad mucho más antigua y majaderamente dura: que algunos de los logros más importantes de la inteligencia humana sólo son posibles cuando pensamos juntos.</p>
+<p>Noticia original: <a href="https://opinion.cooperativa.cl/opinion/ciencia-y-tecnologia/ano-del-cerebro-parte-ii-una-koinonia-cientifica/2026-07-06/083333.html">https://opinion.cooperativa.cl/opinion/ciencia-y-tecnologia/ano-del-cerebro-parte-ii-una-koinonia-cientifica/2026-07-06/083333.html</a></p>
+
+</div>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+  <div class="footer-links">
+    <a href="../index.html">Inicio</a>
+    <a href="../noticias.html">Noticias</a>
+    <a href="../congresos-anteriores.html">Congresos</a>
+    <a href="../index.html#asociarse">Membresía</a>
+    <a href="../index.html#contacto">Contacto</a>
+  </div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Congreso SCN 2019 — Sociedad Chilena de Neurociencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../logo_scn.png" alt="SCN"></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+      <ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+    <li><a href="../index.html#directorio">Directorio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#asociarse">Asociarse</a></li>
+        <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+        <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+      </ul></li>
+    <li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+        <li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+      </ul></li>
+    <li><a href="../noticias.html" class="active">Noticias</a></li>
+    <li><a href="../index.html#contacto">Contacto</a></li>
+    <li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+    <li class="nav-cta"><a href="#">Donaciones</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">☰</button>
+</div></nav>
+
+<div class="art-header">
+  <div class="wrap">
+    <span class="label">Reunión Anual · 2019</span>
+    <h1>Congreso 2019</h1>
+    <div class="meta"><span></span></div>
+  </div>
+</div>
+
+<div class="art-body">
+  <a href="../congresos-anteriores.html" class="back-btn">Volver a Congresos</a>
+  
+<div class="row wpb_row row-fluid"><div class="wpb_column vc_column_container col-lg-12"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_center wpb_content_element">
+<figure class="wpb_wrapper vc_figure">
+<a class="vc_single_image-wrapper vc_box_border_grey" href="https://4id.cl/congress/registro?c=neuroc4&amp;lang=en" target="_blank"><img alt="" class="vc_single_image-img attachment-full" decoding="async" fetchpriority="high" height="190" loading="lazy" src="../img/banner-inscripcion-scn-1.jpg" title="banner-inscripcion-scn" width="1134"/></a>
+</figure>
+</div>
+</div></div></div></div><div class="row wpb_row row-fluid"><div class="wpb_column vc_column_container col-lg-8"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<p style="text-align: justify;">Estimados:</p>
+<p style="text-align: justify;">Tenemos el agrado de enviar el segundo comunicado acerca de la XV Reunión Anual de nuestra sociedad. Esta reunión se realizará en el Hotel Club de La Serena entre el 5 y el 7 de noviembre  de 2019. Junto con enviarles un programa preliminar y calendario, los invitamos a participar activamente en nuestra próxima reunión.</p>
+<p style="text-align: justify;">Este año contaremos nuevamente con la plataforma web especializada para inscripción y envío de resúmenes, la que se abrirá el 3 de Junio. Encontrarán un link a este sitio en nuestra página web.</p>
+<p style="text-align: justify;">Esperamos contar con su participación y la de vuestros estudiantes, la que sin duda contribuirá a dar realce a nuestra XV Reunión Anual.</p>
+</div>
+</div>
+</div></div></div><div class="wpb_column vc_column_container col-lg-4"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_btn3-container vc_btn3-inline vc_do_btn"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-icon-left vc_btn3-color-warning" href="https://socneurociencia.cl/wp-content/uploads/2019/11/Libro-Resumenes-NEUROCIENCIA2019-vf-2.pdf" rel="noopener noreferrer" target="_blank" title=""><i class="vc_btn3-icon fa fa-file-text-o"></i> REVISA EL LIBRO DE RESÚMENES</a></div><div class="vc_btn3-container vc_btn3-inline vc_do_btn"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-icon-left vc_btn3-color-danger" href="https://socneurociencia.cl/wp-content/uploads/2019/10/Librillo-RANeurociencia-2019.pdf" rel="noopener noreferrer" target="_blank" title=""><i class="vc_btn3-icon fa fa-file-text-o"></i> REVISA EL LIBRILLO CON EL PROGRAMA DEL CONGRESO</a></div><div class="vc_btn3-container vc_btn3-inline vc_do_btn"><a class="vc_general vc_btn3 vc_btn3-size-lg vc_btn3-shape-rounded vc_btn3-style-modern vc_btn3-icon-left vc_btn3-color-blue" href="https://socneurociencia.cl/wp-content/uploads/2019/10/Programa-NEURO-2019-vf.pdf" rel="noopener noreferrer" target="_blank" title=""><i class="vc_btn3-icon fa fa-file-text-o"></i> REVISA EL PROGRAMA FINAL</a></div><div class="row wpb_row vc_inner row-fluid"><div class="wpb_column vc_column_container col-lg-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_message_box vc_message_box-standard vc_message_box-rounded vc_color-white vc_do_message"><div class="vc_message_box-icon"><i class="fa fa-sun-o"></i></div><h4>Descarga la APP</h4>
+</div></div></div></div></div><div class="row wpb_row vc_inner row-fluid"><div class="wpb_column vc_column_container col-lg-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left wpb_content_element">
+<figure class="wpb_wrapper vc_figure">
+<a class="vc_single_image-wrapper vc_box_border_grey" href="https://play.google.com/store/apps/details?id=com.forid.scn&amp;hl=es" target="_blank"><img alt="" class="vc_single_image-img attachment-medium" decoding="async" height="58" loading="lazy" src="../img/b9f84400-0196-4386-a791-49d9bc7dccde-1.png" title="b9f84400-0196-4386-a791-49d9bc7dccde" width="174"/></a>
+</figure>
+</div>
+</div></div></div><div class="wpb_column vc_column_container col-lg-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_single_image wpb_content_element vc_align_left wpb_content_element">
+<figure class="wpb_wrapper vc_figure">
+<a class="vc_single_image-wrapper vc_box_border_grey" href="https://apps.apple.com/us/app/neurociencia-2019/id1484969527?l=es&amp;ls=1" target="_blank"><img alt="" class="vc_single_image-img attachment-medium" decoding="async" height="58" loading="lazy" src="../img/4b429904-2775-40dc-9571-6fe970604e48-1.png" title="4b429904-2775-40dc-9571-6fe970604e48" width="174"/></a>
+</figure>
+</div>
+</div></div></div></div></div></div></div></div><div class="row wpb_row row-fluid vc_custom_1559241945856"><div class="wpb_column vc_column_container col-lg-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h3><strong>1. SIMPOSIOS CONFIRMADOS</strong></h3>
+<p><strong>Insights into cognitive coding in the auditory system</strong><br/>
+Coordinators: Paul Delano and Diego Elgueda</p>
+<p><strong>Neuroscience of bistable stimuli: a window to brain function”</strong><br/>
+Coordinator: Pedro Maldonado</p>
+<p><strong>The Design, Distribution, and Use of Open Source and Low Cost Tools for Science</strong><br/>
+Coordinator: Timothy Marzullo</p>
+<p><strong>The Dynamics of Brain States: Theory, Simulations and Behavior</strong><br/>
+Coordinator:  Patricio Orio</p>
+<p><strong>From local to large-scale human neurodynamics: new insights from fMRI and intracranial recordings</strong><br/>
+Coordinator:  Tomas Ossandon</p>
+<p><strong>Brain mechanisms associated to memory and Psychiatric disorders</strong><br/>
+Coordinator: Jimmy Stehberg</p>
+<p><strong>Young neuroscientists symposium</strong><br/>
+Coordinator: Patricio Orio</p>
+<p style="font-weight: 400;"><strong>TRP channels in cell physiology and physiopathology<br/>
+</strong>Coordinator: Maria Pertusa</p>
+<p style="font-weight: 400;"><strong>Small Brains in Neuroscience<br/>
+</strong>Coordinator: Jimena Sierralta</p>
+<hr/>
+<h3><strong>2. CONFERENCIAS CONFIRMADAS</strong></h3>
+<p><strong>Dr. Andrew Holmes</strong><br/>
+“The neural circuits of emotion”</p>
+<p><strong>Dr. Félix Viana de la Iglesia</strong><br/>
+<strong><em>“</em></strong><em>Pathophysiology of cold-activated TRP channels”</em></p>
+<p> </p>
+<p><img decoding="async" height="529" loading="lazy" src="../img/banner_spanol.jpg" usemap="#Map" width="556"/></p>
+<map name="Map">
+<area coords="162,453,353,536" href="https://4id.cl/congress/registro?c=neuroc4&amp;lang=en" shape="rect" target="_blank"/>
+<area coords="358,454,550,531" href="https://4id.cl/congress/?c=neuroc4&amp;lang=en" shape="rect" target="_blank"/>
+</map>
+<p><!-- fin 4ID Congress sumar16 --></p>
+<h3>Para inscripción, haz click en <span style="color: #ff6600;"><a href="https://4id.cl/congress/registro?c=neuroc4&amp;lang=en" rel="noopener noreferrer" style="color: #ff6600;" target="_blank">Crear nueva cuenta</a></span> en la imagen. Si ya posee una cuenta <span style="color: #ff6600;"><a href="https://4id.cl/congress/?c=neuroc4&amp;lang=en" rel="noopener noreferrer" style="color: #ff6600;" target="_blank">inicie sesión</a></span> para acceder a la plataforma.</h3>
+<h4>Si posee alguna consulta no dude en contactarnos al e-mail <span style="color: #ff6600;"><a href="mailto:support@4id.cl" rel="noopener noreferrer" style="color: #ff6600;" target="_blank">support@4id.cl</a></span></h4>
+</div>
+</div>
+</div></div></div><div class="wpb_column vc_column_container col-lg-6"><div class="vc_column-inner"><div class="wpb_wrapper">
+<div class="wpb_text_column wpb_content_element">
+<div class="wpb_wrapper">
+<h3><strong>3. INSCRIPCIONES </strong></h3>
+<p>Los costos de inscripción son los siguientes:      </p>
+<table border="0" width="100%">
+<tbody>
+<tr>
+<td bgcolor="#30447b" width="50%"> </td>
+<td bgcolor="#30447b" width="25%">
+<p align="center"><strong><span style="color: #ffffff;">Antes del 6 de septiembre</span></strong></p>
+</td>
+<td bgcolor="#30447b" width="25%">
+<p align="center"><strong><span style="color: #ffffff;">Después del 6 de septiembre</span></strong></p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#a6a6a6"> <span style="color: #000000;">Socios</span></td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$200.000</span></div>
+</td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$260.000</span></div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#dadada"><span style="color: #000000;"> No Socios</span></td>
+<td bgcolor="#dadada">
+<div align="center"><span style="color: #000000;">$300.000</span></div>
+</td>
+<td bgcolor="#dadada">
+<div align="center"><span style="color: #000000;">$390.000 </span></div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#a6a6a6"><span style="color: #000000;"> Post.docs</span></td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$150.000</span></div>
+</td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$190.000 </span></div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#dadada"><span style="color: #000000;"> Asistentes investigación </span></td>
+<td bgcolor="#dadada">
+<div align="center"><span style="color: #000000;">$130.000</span></div>
+</td>
+<td bgcolor="#dadada">
+<div align="center"><span style="color: #000000;">$170.000 </span></div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#a6a6a6"><span style="color: #000000;"> Estudiantes pregrado</span></td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$80.000</span></div>
+</td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$120.000 </span></div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#dadada"><span style="color: #000000;"> Estudiantes socios post-grado</span></td>
+<td bgcolor="#dadada">
+<div align="center"><span style="color: #000000;">$110.000</span></div>
+</td>
+<td bgcolor="#dadada">
+<div align="center"><span style="color: #000000;">$145.000 </span></div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#a6a6a6"><span style="color: #000000;"> Estudiantes no socios post-grado</span></td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$150.000</span></div>
+</td>
+<td bgcolor="#a6a6a6">
+<div align="center"><span style="color: #000000;">$200.000 </span></div>
+</td>
+</tr>
+<tr>
+<td bgcolor="#dadada"><span style="color: #000000;"> Resúmenes</span></td>
+<td bgcolor="#dadada" colspan="2">
+<div align="center"><span style="color: #000000;">$30.000</span></div>
+</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p>La inscripción da derecho a participar de todas las sesiones de la reunión, acceso a <strong>coffee breaks, cocktail de apertura y cena de clausura</strong> y todo el material del congreso.</p>
+<p>La cuota de membresía anual asciende a $72.000 para investigadores independientes y a $16.000 para Estudiantes socios.</p>
+<p>La inscripción estará abierta a partir del 3 de junio en  www.socneurociencia.cl</p>
+<h3><strong>4. ENVÍO DE RESÚMENES</strong></h3>
+<p>La información para el envío de resúmenes será publicada en la página web de la sociedad.<br/>
+El plazo para el envio de resúmenes para comunicaciones libres, simposios y conferencias vence el <strong>6 de septiembre,</strong></p>
+<p>Se invita a estudiantes interesados en participar de nuestra reunión anual, a postular a becas de apoyo para participación en eventos científicos de Conicyt</p>
+<p>Para ello deben enviar su resumen a más tardar el día 10 de Junio.</p>
+<h3><strong>5. HOTEL</strong></h3>
+<p>Hotel Club de La Serena nos ofrece la tarifa plana por noche para habitaciones singles/dobles de $ 68.OOO IVA incluído. Esta tarifa preferencial incluye desayuno buffet en el hotel</p>
+<p>Reservas con: <a href="mailto:reservas@clublaserena.com"><u>reservas@clublaserena.com</u></a> y <a href="mailto:reservas2@clublaserena.com"><u>reservas2@clublaserena.com</u></a></p>
+</div>
+</div>
+</div></div></div></div>
+
+</div>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+  <div class="footer-links">
+    <a href="../index.html">Inicio</a>
+    <a href="../noticias.html">Noticias</a>
+    <a href="../congresos-anteriores.html">Congresos</a>
+    <a href="../index.html#asociarse">Membresía</a>
+    <a href="../index.html#contacto">Contacto</a>
+  </div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

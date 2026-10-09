@@ -2,368 +2,383 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Noticias — Sociedad Chilena de Neurociencia</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:root{
-  --navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;
-  --body:#2d3748;--muted:#627286;--border:#e2e8f0;
-  --f-serif:'DM Serif Display',Georgia,serif;
-  --max-w:1100px;--pad:clamp(1rem,4vw,1.5rem);
-}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
 .wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
-
-/* ── NAV ─────────── */
+/* Nav */
 .nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
 .nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
-.nav-logo{flex-shrink:0}
-.nav-logo img{height:36px;display:block;filter:brightness(0) invert(1)}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
 .nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
 .nav-links>li{position:relative}
-.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);text-decoration:none;font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
-.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.08)}
-.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.25rem;opacity:.6}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
 .nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .nav-has-drop:hover .nav-drop{display:block}
-.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;white-space:nowrap}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
 .nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
 .nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
-.nav-cta-btn>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
 .nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
-
-/* ── PAGE HERO ────── */
+/* Page hero */
 .page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
-.page-hero .sh-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
 .page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
-
-/* ── ARTICLE GRID ─── */
-.articles-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.article-card{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:box-shadow .2s}
-.article-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1)}
-.article-img-wrap{width:100%;height:220px;overflow:hidden;background:var(--offwhite);position:relative}
-.article-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
-.article-card:hover .article-img-wrap img{transform:scale(1.03)}
-.article-img-wrap.no-img{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navymd),var(--navy))}
-.article-img-wrap.no-img span{font-family:var(--f-serif);font-size:1.1rem;color:rgba(255,255,255,.5);text-align:center;padding:1rem}
-.article-body{padding:1.1rem 1.25rem 1.25rem}
-.article-badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
-.cat-oport{background:#dbeafe;color:#1d4ed8}
-.cat-divul{background:#d1fae5;color:#065f46}
-.cat-congr{background:#ede9fe;color:#5b21b6}
-.cat-insti{background:#fef3c7;color:#92400e}
-.cat-dest {background:#fce7f3;color:#9d174d}
-.cat-becas{background:#dcfce7;color:#14532d}
-.cat-even {background:#fff7ed;color:#9a3412}
-.article-title{display:block;font-size:1.05rem;font-weight:600;color:var(--navy);line-height:1.4;text-decoration:none;margin-bottom:.4rem;transition:color .15s}
-.article-title:hover{color:var(--teal)}
-.article-date{font-size:.78rem;color:var(--muted);margin-bottom:.5rem}
-.article-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;margin-bottom:.75rem}
-.article-more{font-size:.82rem;font-weight:600;color:var(--teal);text-decoration:none}
-.article-more::after{content:' →'}
-
-/* ── FOOTER ─────────────── */
-.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2.5rem 0;font-size:.82rem;margin-top:4rem}
-.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
 .footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
-.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
-.footer-links a{color:rgba(255,255,255,.38);text-decoration:none;transition:color .15s}
-.footer-links a:hover{color:rgba(255,255,255,.8)}
-
-@media(max-width:720px){
-  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);flex-direction:column;padding:1rem;gap:.5rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
   .nav-links.open{display:flex}
-  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;padding-left:1rem;background:transparent}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
   .nav-burger{display:block}
-  .articles-grid{grid-template-columns:1fr}
+  .card-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="logo_scn.png" alt="Sociedad Chilena de Neurociencia">
-    </a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li class="nav-has-drop"><a href="index.html#sociedad">Quiénes somos</a>
-        <ul class="nav-drop"><li><a href="index.html#sociedad">Premio a la Trayectoria en Neurociencia</a></li></ul>
-      </li>
-      <li><a href="index.html#directorio">Directorio</a></li>
-      <li class="nav-has-drop"><a href="index.html#asociarse">Socios</a>
-        <ul class="nav-drop">
-          <li><a href="index.html#asociarse">Asociarse</a></li>
-          <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
-          <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
-        </ul>
-      </li>
-      <li class="nav-has-drop"><a href="index.html#congresos">Congresos</a>
-        <ul class="nav-drop">
-          <li><a href="index.html#congreso-2025">Congreso 2025</a></li>
-          <li><a href="congresos-anteriores.html">Congresos Anteriores</a></li>
-        </ul>
-      </li>
-      <li><a href="noticias.html" style="color:#fff">Noticias</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-      <li class="nav-hl"><a href="index.html">Año del Cerebro</a></li>
-      <li class="nav-cta-btn"><a href="#">Donaciones</a></li>
-    </ul>
-    <button class="nav-burger" id="burger" aria-label="Menú" aria-expanded="false">☰</button>
-  </div>
-</nav>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="logo_scn.png" alt="SCN"></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="nav-has-drop"><a href="index.html#sociedad">Quiénes somos</a>
+      <ul class="nav-drop"><li><a href="index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+    <li><a href="index.html#directorio">Directorio</a></li>
+    <li class="nav-has-drop"><a href="index.html#asociarse">Socios</a>
+      <ul class="nav-drop">
+        <li><a href="index.html#asociarse">Asociarse</a></li>
+        <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+        <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+      </ul></li>
+    <li class="nav-has-drop"><a href="index.html#congresos">Congresos</a>
+      <ul class="nav-drop">
+        <li><a href="index.html#congreso-2025">Congreso 2025</a></li>
+        <li><a href="congresos-anteriores.html">Congresos Anteriores</a></li>
+      </ul></li>
+    <li><a href="noticias.html" class="active">Noticias</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+    <li class="nav-hl"><a href="index.html">Año del Cerebro</a></li>
+    <li class="nav-cta"><a href="#">Donaciones</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">☰</button>
+</div></nav>
 
 <div class="page-hero">
   <div class="wrap">
-    <span class="sh-label">SCN · Actualidad</span>
+    <span class="label">SCN · Actualidad</span>
     <h1>Noticias y convocatorias</h1>
+    <p>24 publicaciones</p>
   </div>
 </div>
-
-<section style="padding:3rem 0 4rem">
-  <div class="wrap">
-    <div class="articles-grid">
-
-      <!-- 1 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/09/image-13.png" alt="LACONEU 2027" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-oport">Oportunidades</span>
-          <a href="noticias/laconeu-2027-convocatoria-de-postulacion-abierta.html" class="article-title">LACONEU 2027 | Convocatoria de postulación abierta</a>
-          <p class="article-date">Septiembre 9, 2026</p>
-          <p class="article-excerpt">Ya están abiertas las postulaciones para LACONEU 2027 — VII Latin-American Summer School in Computational Neuroscience. Se realizará del 11 al 29 de enero de 2027, en Valparaíso.</p>
-          <a href="noticias/laconeu-2027-convocatoria-de-postulacion-abierta.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 2 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/09/Neurobanda_Curioseando_afiche_difusion_1.jpg" alt="Curioseando" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-divul">Divulgación</span>
-          <a href="noticias/curioseando-musica-para-entender-el-cerebro.html" class="article-title">Curioseando: música para entender el cerebro</a>
-          <p class="article-date">Septiembre 9, 2026</p>
-          <p class="article-excerpt">El primer disco de Neurobanda: seis canciones sobre el cerebro, un cancionero ilustrado y seis afiches que descubren la neurociencia de cada tema.</p>
-          <a href="noticias/curioseando-musica-para-entender-el-cerebro.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 3 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/08/CertificadosNeuro2025.png" alt="Asamblea General" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-insti">Institucional</span>
-          <a href="noticias/citacion-a-asamblea-general-ordinaria-de-socios-3.html" class="article-title">Citación a Asamblea General Ordinaria de Socios</a>
-          <p class="article-date">Agosto 12, 2026</p>
-          <p class="article-excerpt">Convocatoria oficial a la Asamblea General Ordinaria de la Sociedad Chilena de Neurociencia. Se informa a todos los socios activos.</p>
-          <a href="noticias/citacion-a-asamblea-general-ordinaria-de-socios-3.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 4 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/06/Call-for-symposia-1080-%C3%97-1080-px.png" alt="IBRO 2027" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-congr">Congresos</span>
-          <a href="noticias/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027.html" class="article-title">Convocatoria Abierta: Propuestas de Simposios para IBRO 2027</a>
-          <p class="article-date">Julio 27, 2026</p>
-          <p class="article-excerpt">El Congreso Mundial de Neurociencia IBRO 2027 abre su convocatoria para propuestas de simposios. Postulaciones abiertas para la comunidad neurocientífica internacional.</p>
-          <a href="noticias/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 5 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/07/Flyer-Doctorado-en-Ciencias.png" alt="Doctorado BMCN" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-becas">Becas</span>
-          <a href="noticias/postulaciones-abiertas-doctorado-en-ciencias-bmcn.html" class="article-title" target="_blank">Postulaciones Abiertas Doctorado en Ciencias BMCN</a>
-          <p class="article-date">Julio 15, 2026</p>
-          <p class="article-excerpt">Abiertas las postulaciones al Doctorado en Biología Molecular y Celular de la Neurociencia (BMCN). Oportunidad para investigadores en formación.</p>
-          <a href="noticias/postulaciones-abiertas-doctorado-en-ciencias-bmcn.html" class="article-more" target="_blank">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 6 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/01/Diseno-sin-titulo-31.png" alt="Año del Cerebro" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-divul">Divulgación</span>
-          <a href="noticias/ano-del-cerebro-parte-ii-una-koinonia-cientifica.html" class="article-title">Año del Cerebro. Parte II. Una koinonía científica</a>
-          <p class="article-date">Julio 15, 2026</p>
-          <p class="article-excerpt">Reflexión sobre la comunidad neurocientífica chilena en el contexto del Año Internacional del Cerebro y su proyección regional.</p>
-          <a href="noticias/ano-del-cerebro-parte-ii-una-koinonia-cientifica.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 7 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/04/Neurofest-4.png" alt="NeuroFest" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-even">Eventos</span>
-          <a href="noticias/neurofest-la-feria-del-cerebro.html" class="article-title">NeuroFest: La Feria del Cerebro</a>
-          <p class="article-date">Abril 22, 2026</p>
-          <p class="article-excerpt">Segunda versión de NeuroFest, la feria de divulgación científica sobre neurociencia, abierta a estudiantes y público general.</p>
-          <a href="noticias/neurofest-la-feria-del-cerebro.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 8 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/03/Flyer_virtual.png" alt="Mujeres en Neurociencias" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-even">Eventos</span>
-          <a href="noticias/encuentro-de-mujeres-en-neurociencias-de-latinoamerica.html" class="article-title">Encuentro de Mujeres en Neurociencias de Latinoamérica</a>
-          <p class="article-date">Marzo 10, 2026</p>
-          <p class="article-excerpt">Encuentro regional que reúne a mujeres investigadoras en neurociencias de Latinoamérica, promoviendo la equidad de género en la ciencia.</p>
-          <a href="noticias/encuentro-de-mujeres-en-neurociencias-de-latinoamerica.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 9 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/03/banner-02.png" alt="Manual AMTI" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-insti">Institucional</span>
-          <a href="noticias/lanzamiento-manual-de-recomendaciones-de-la-agenda-mejor-trabajo-en-investigacion.html" class="article-title">Lanzamiento: Manual de Recomendaciones de la Agenda Mejor Trabajo en Investigación</a>
-          <p class="article-date">Marzo 3, 2026</p>
-          <p class="article-excerpt">Presentación del Manual de Recomendaciones de la Agenda Mejor Trabajo en Investigación (AMTI), una iniciativa para mejorar las condiciones laborales en ciencia.</p>
-          <a href="noticias/lanzamiento-manual-de-recomendaciones-de-la-agenda-mejor-trabajo-en-investigacion.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 10 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/01/LTPN-English-1.webp" alt="FALAN Training" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-oport">Oportunidades</span>
-          <a href="noticias/1st-falan-latin-american-training-program-in-neuroscience.html" class="article-title">1st FALAN Latin American Training Program in Neuroscience</a>
-          <p class="article-date">Enero 22, 2026</p>
-          <p class="article-excerpt">The FALAN Latin American Training Program in Neuroscience is a regional initiative designed to enhance neuroscience training across Latin America.</p>
-          <a href="noticias/1st-falan-latin-american-training-program-in-neuroscience.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 11 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/01/Seminario_CENIA-1.png" alt="Digital Twins AI" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-even">Seminario</span>
-          <a href="noticias/digital-twins-of-large-scale-cortical-networks-as-research-platforms-for-future-ai.html" class="article-title">Digital twins of large-scale cortical networks as research platforms for future AI</a>
-          <p class="article-date">Enero 12, 2026</p>
-          <p class="article-excerpt">Seminario CENIA sobre redes corticales a gran escala como gemelos digitales y su rol como plataformas de investigación para la IA del futuro.</p>
-          <a href="noticias/digital-twins-of-large-scale-cortical-networks-as-research-platforms-for-future-ai.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 12 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2026/01/image-6.png" alt="Conversatorio Año del Cerebro" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-divul">Divulgación</span>
-          <a href="noticias/conversatorio-sobre-el-ano-del-cerebro.html" class="article-title">Conversatorio sobre el año del cerebro</a>
-          <p class="article-date">Enero 7, 2026</p>
-          <p class="article-excerpt">El Año del Cerebro Chile 2026 es una iniciativa país para responder a los profundos cambios sociales, culturales y tecnológicos de nuestro tiempo.</p>
-          <a href="noticias/conversatorio-sobre-el-ano-del-cerebro.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 13 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2025/08/flyer-neurociencia-portada.png" alt="XXI Reunión Anual" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-dest">Destacado</span>
-          <a href="noticias/xxi-reunion-anual-sociedad-chilena-de-neurociencia.html" class="article-title">XXI Reunión Anual Sociedad Chilena de Neurociencia</a>
-          <p class="article-date">Agosto 4, 2025</p>
-          <p class="article-excerpt">La XXI Reunión Anual de la SCN se realizó en el Campus Isla Teja, Universidad Austral de Chile, Valdivia. Un hito de encuentro para la comunidad neurocientífica chilena.</p>
-          <a href="noticias/xxi-reunion-anual-sociedad-chilena-de-neurociencia.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-      <!-- 14 -->
-      <article class="article-card">
-        <div class="article-img-wrap">
-          <img src="https://socneurociencia.cl/wp-content/uploads/2025/04/Imagen3.jpg" alt="Semblanza Katia Gysling" loading="lazy" onerror="this.parentNode.classList.add('no-img');this.remove()">
-        </div>
-        <div class="article-body">
-          <span class="article-badge cat-dest">Destacado</span>
-          <a href="noticias/semblanza-dra-katia-gysling-caselli.html" class="article-title">Semblanza Dra. Katia Gysling Caselli</a>
-          <p class="article-date">Abril 10, 2025</p>
-          <p class="article-excerpt">Katia Gysling Caselli fue una destacada investigadora en neurociencias chilena. Esta semblanza recoge su trayectoria y legado para la comunidad científica.</p>
-          <a href="noticias/semblanza-dra-katia-gysling-caselli.html" class="article-more">Leer más</a>
-        </div>
-      </article>
-
-    </div>
-
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="noticias.html" style="display:inline-block;padding:.65rem 1.5rem;border:1.5px solid var(--border);border-radius:4px;font-size:.88rem;font-weight:500;color:var(--navy);text-decoration:none;transition:border-color .15s">
-        Ver más noticias en el sitio actual ↗
-      </a>
-    </div>
+<section><div class="wrap"><div class="card-grid">
+    <a href="noticias/laconeu-2027-convocatoria-de-postulacion-abierta.html" class="card">
+      <div class="card-img"><img src="img/image-13.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">LACONEU 2027 | Convocatoria de postulación abierta</span>
+        <p class="card-date">Septiembre 9, 2026</p>
+        <p class="card-excerpt">Ya están abiertas las postulaciones para LACONEU 2027 — VII Latin-American Summer School in Computational Neuroscience, que se realizará en Valparaíso, Chile, del 11 al 29 de enero de 2027. LACONEU reúne a estudiantes, j…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/curioseando-musica-para-entender-el-cerebro.html" class="card">
+      <div class="card-img"><img src="img/neurobanda_curioseando_afiche_difusion_1.jpg" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">Curioseando: música para entender el cerebro</span>
+        <p class="card-date">Septiembre 9, 2026</p>
+        <p class="card-excerpt">Presentamos Curioseando: música para entender el cerebro , el primer disco de Neurobanda, un proyecto de Fundación Arrebol financiado por el programa Ciencia Pública del Ministerio de Ciencia, Tecnología, Conocimiento e …</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/citacion-a-asamblea-general-ordinaria-de-socios-3.html" class="card">
+      <div class="card-img"><img src="img/certificadosneuro2025.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">Citación a Asamblea General Ordinaria de Socios</span>
+        <p class="card-date">Agosto 12, 2026</p>
+        <p class="card-excerpt">Citación a Asamblea General Ordinaria de Socios Por acuerdo del Directorio y de conformidad con lo establecido en el Art. 15° de los Estatutos, se cita a Asamblea General Ordinaria de Socios de la Sociedad Chilena de Neu…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027.html" class="card">
+      <div class="card-img"><img src="img/captura-de-pantalla-2026-07-27-a-las-10.56.39-a.m.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">Convocatoria Abierta: Propuestas de Simposios para el Congreso Mundial de Neurociencia IBRO 2027</span>
+        <p class="card-date">Julio 27, 2026</p>
+        <p class="card-excerpt">Se invita a la comunidad científica a participar activamente en el programa del próximo IBRO 2027 World Congress of Neuroscience , que se llevará a cabo en Ciudad del Cabo, Sudáfrica, en septiembre de 2027. Actualmente s…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/postulaciones-abiertas-doctorado-en-ciencias-bmcn.html" class="card">
+      <div class="card-img"><img src="img/flyer-doctorado-en-ciencias.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">Postulaciones Abiertas Doctorado en Ciencias BMCN</span>
+        <p class="card-date">Julio 15, 2026</p>
+        <p class="card-excerpt">…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/ano-del-cerebro-parte-ii-una-koinonia-cientifica.html" class="card">
+      <div class="card-img"><img src="img/captura-de-pantalla-2026-07-15-a-las-12.26.27-p.m.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">Año del Cerebro. Parte II. Una koinonía científica</span>
+        <p class="card-date">Julio 15, 2026</p>
+        <p class="card-excerpt">Cada otoño del Hemisferio Norte, decenas de miles de investigadores provenientes de todos los rincones del mundo convergen en ciudades rotativas (un año Washinton D.C., San Diego, Chicago), para participar en la reunión …</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/llamado-a-proponer-simposios-para-la-reunion-de-la-ibro-en-cape-town-sudafrica-del-13-al-16-de-septiembre-de-2027.html" class="card">
+      <div class="card-img"><img src="img/call-for-symposia-1080-1080-px.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Llamado a proponer simposios para la reunión de la IBRO en Cape Town, Sudáfrica, del 13 al 16 de septiembre de 2027.</span>
+        <p class="card-date">Junio 4, 2026</p>
+        <p class="card-excerpt">Researchers are now invited to propose scientific symposia that will help shape the scientific program of the IBRO 2027 World Congress of Neuroscience. The Scientific Program Committee welcomes proposals addressing timel…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/encuesta-mapeo-del-campo-neurocientifico-en-chile.html" class="card">
+      <div class="card-img"><img src="img/unnamed.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Encuesta mapeo del campo neurocientífico en Chile</span>
+        <p class="card-date">Abril 24, 2026</p>
+        <p class="card-excerpt">Los invitamos a participar en una encuesta breve cuyo objetivo es realizar un mapeo descriptivo del campo neurocientífico en Chile, identificando líneas de investigación, metodologías, escalas de análisis, trayectorias f…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/neurofest-la-feria-del-cerebro.html" class="card">
+      <div class="card-img"><img src="img/neurofest-4.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">NeuroFest: La Feria del Cerebro</span>
+        <p class="card-date">Abril 22, 2026</p>
+        <p class="card-excerpt">Estimado/as colegas, Tenemos el agrado de invitarlos a participar en la segunda versión de NeuroFest: La Feria del Cerebro. NeuroFest es un espacio de encuentro entre la comunidad neurocientífica y la ciudadanía, creado …</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/convocatoria-catedras-de-profesores-juniors-cpj.html" class="card">
+      <div class="card-img"><img src="img/captura-de-pantalla-2026-04-16-a-las-4.25.49-p.m.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-gen">Noticias</span>
+        <span class="card-title">Convocatoria – Cátedras de profesores juniors (CPJ)</span>
+        <p class="card-date">Abril 16, 2026</p>
+        <p class="card-excerpt">Estimadas, Estimados, Nos complace compartir con ustedes una oportunidad dirigida a investigadores en el marco de la convocatoria actualmente abierta para las C átedras de profesores juniors ( Chaires de professeurs juni…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/postdoc-research-associate-phd-positions-in-behavioural-neuroscience.html" class="card">
+      <div class="card-img"><img src="img/captura-de-pantalla-2026-04-09-a-las-3.47.43-p.m.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Postdoc, Research Associate/PhD positions in behavioural neuroscience</span>
+        <p class="card-date">Abril 9, 2026</p>
+        <p class="card-excerpt">We are recruiting three postdoctoral fellows and one research assistant/PhD student to join a Wellcome Trust-funded programme, ‘Decoding competition in the brain’, in the lab of Prof. Carolina Rezaval at the University o…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/extension-plazo-de-inscripcion-temprana.html" class="card">
+      <div class="card-img"><img src="img/green-and-black-brush-strokes-creative-youtube-thumbnail.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">¡Extensión plazo de inscripción temprana!</span>
+        <p class="card-date">Marzo 12, 2026</p>
+        <p class="card-excerpt">Estimados/as socios/as: Tenemos buenas noticias. Con el objetivo de facilitar la inscripción al IV Congreso FALAN aprovechando la tarifa inicial reducida, la organización ha decidido extender el plazo hasta el 2 de abril…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/neurotrauma-2026.html" class="card">
+      <div class="card-img"><img src="img/captura-de-pantalla-2026-03-11-a-las-3.49.53-p.m.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">NeuroTrauma 2026</span>
+        <p class="card-date">Marzo 11, 2026</p>
+        <p class="card-excerpt">NeuroTrauma 2026: La cita global de la neurociencia llega a Cartagena Extendemos la invitación al próximo 2026 Meeting of the International Neurotrauma Society (INTS) , que tendrá lugar del 25 al 29 de octubre de 2026 en…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/encuentro-de-mujeres-en-neurociencias-de-latinoamerica.html" class="card">
+      <div class="card-img"><img src="img/flyer_virtual.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Encuentro de Mujeres en Neurociencias de Latinoamérica</span>
+        <p class="card-date">Marzo 10, 2026</p>
+        <p class="card-excerpt">¡Abrimos las inscripciones para el Encuentro de Mujeres en Neurociencias de Latinoamérica! Te invitamos a participar de este encuentro orientado a visibilizar las barreras que enfrentan las mujeres en el campo de las neu…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/lanzamiento-manual-de-recomendaciones-de-la-agenda-mejor-trabajo-en-investigacion.html" class="card">
+      <div class="card-img"><img src="img/banner-02.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Lanzamiento: Manual de Recomendaciones de la Agenda Mejor Trabajo en Investigación</span>
+        <p class="card-date">Marzo 3, 2026</p>
+        <p class="card-excerpt">Estimadas y estimados Tenemos el agrado de invitarles al lanzamiento del Manual de Recomendaciones de la Agenda Mejor Trabajo en Investigación , documento impulsado por el Ministerio de Ciencia, Tecnología, Conocimiento …</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/participa-en-la-29th-annual-meeting-assc-2026.html" class="card">
+      <div class="card-img"><img src="img/c65d3dd2-8a8f-4f3a-81b5-9bed1497ef0a.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Participa en la 29th Annual Meeting (ASSC 2026)</span>
+        <p class="card-date">Febrero 10, 2026</p>
+        <p class="card-excerpt">La Association for the Scientific Study of Consciousness (ASSC) invita a la comunidad científica a participar en su 29th Annual Meeting (ASSC 2026) , que se realizará en Santiago de Chile entre el 30 de junio y el 3 de j…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/apoya-a-lorena-mercado-lopez.html" class="card">
+      <div class="card-img"><img src="img/captura-de-pantalla-2026-01-26-a-las-4.52.36-p.m-1.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-gen">Home</span>
+        <span class="card-title">Apoya a Lorena Mercado-López</span>
+        <p class="card-date">Enero 26, 2026</p>
+        <p class="card-excerpt">Ya se puede ver la propuesta de Lorena Mercado-López para el prestigioso concurso de la Asociación Estadounidense para el Avance de la Ciencia (AAAS). En esta pieza, Lorena logra traducir años de compleja investigación d…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/1st-falan-latin-american-training-program-in-neuroscience.html" class="card">
+      <div class="card-img"><img src="img/ltpn-english-1.webp" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">1st FALAN Latin American Training Program in Neuroscience</span>
+        <p class="card-date">Enero 22, 2026</p>
+        <p class="card-excerpt">The FALAN Latin American Training Program in Neuroscience is a regional initiative designed to enhance neuroscience education by providing high-quality, continuous training for graduate students across Latin America. Sel…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/tiempo-atencion-y-aprendizaje-neurociencia-para-la-educacion-del-futuro.html" class="card">
+      <div class="card-img"><img src="img/image001-1.jpg" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Tiempo, atención y aprendizaje: neurociencia para la educación del futuro</span>
+        <p class="card-date">Enero 13, 2026</p>
+        <p class="card-excerpt">Estimados y estimadas: Les invitamos a ser parte del Conversatorio “ Tiempo, atención y aprendizaje: neurociencia para la educación del futuro” , organizado por ANID y Congreso Futuro 202 6 . La actividad se realizará el…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/digital-twins-of-large-scale-cortical-networks-as-research-platforms-for-future-ai.html" class="card">
+      <div class="card-img"><img src="img/seminario_cenia-1.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Digital twins of large-scale cortical networks as research platforms for future AI</span>
+        <p class="card-date">Enero 12, 2026</p>
+        <p class="card-excerpt">Cenials: Junto con saludar, tenemos el agrado de invitarles a participar de nuestro próximo seminario CENIA, que se realizará el Lunes 19 de enero a las 10:00 AM. El seminario será abierto y es una instancia presencial. …</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/jornada-cientifica-desafio-neurocognitivo-del-vih-en-chile-asociacion-entre-retina-y-alteracion-cognitiva.html" class="card">
+      <div class="card-img"><img src="img/captura-de-pantalla-2026-01-09-115525.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-gen">Home</span>
+        <span class="card-title">Jornada Científica “Desafío neurocognitivo del VIH en Chile: asociación entre retina y alteración cognitiva”</span>
+        <p class="card-date">Enero 9, 2026</p>
+        <p class="card-excerpt">Jornada Científica “Desafío neurocognitivo del VIH en Chile: asociación entre retina y alteración cognitiva” , dirigida por el académico del Dpto. de Tecnología Médica U. de Chile, Prof. Iván Plaza Rosales, PhD. El Trast…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/conversatorio-sobre-el-ano-del-cerebro.html" class="card">
+      <div class="card-img"><img src="img/image-6.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-congr">Cursos Simposios Congresos</span>
+        <span class="card-title">Conversatorio sobre el año del cerebro</span>
+        <p class="card-date">Enero 7, 2026</p>
+        <p class="card-excerpt">Año del Cerebro El Año del Cerebro Chile 2026 se impulsa como una iniciativa país para responder a los profundos cambios sociales, culturales y tecnológicos que están impactando la salud mental, el aprendizaje, la creati…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/xxi-reunion-anual-sociedad-chilena-de-neurociencia.html" class="card">
+      <div class="card-img"><img src="img/flyer-neurociencia-portada.png" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">XXI Reunión Anual Sociedad Chilena de Neurociencia</span>
+        <p class="card-date">Agosto 4, 2025</p>
+        <p class="card-excerpt">Más información: https://socneurociencia.cl/congreso-2025/…</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+    <a href="noticias/semblanza-dra-katia-gysling-caselli.html" class="card">
+      <div class="card-img"><img src="img/imagen3.jpg" alt="" loading="lazy"></div>
+      <div class="card-body">
+        <span class="badge b-dest">Destacado</span>
+        <span class="card-title">Semblanza Dra. Katia Gysling Caselli</span>
+        <p class="card-date">Abril 10, 2025</p>
+        <p class="card-excerpt">Katia Gysling Caselli fue una destacada investigadora que dedicó su vida a entender el funcionamiento del cerebro. En particular se dedicó a estudiar las bases neurobiológicas de la adicción y los mecanismos celulares y …</p>
+        <span class="card-more">Leer artículo completo</span>
+      </div>
+    </a>
+</div></div></section>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+  <div class="footer-links">
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="congresos-anteriores.html">Congresos</a>
+    <a href="index.html#asociarse">Membresía</a>
+    <a href="index.html#contacto">Contacto</a>
   </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
-      <div style="margin-top:.35rem">Corporación de derecho privado · Fundada en 2005 · Santiago, Chile</div>
-    </div>
-    <nav class="footer-links">
-      <a href="index.html#sociedad">Quiénes somos</a>
-      <a href="index.html#directorio">Directorio</a>
-      <a href="index.html#congresos">Congresos</a>
-      <a href="index.html#asociarse">Membresía</a>
-      <a href="index.html#contacto">Contacto</a>
-    </nav>
-  </div>
-</footer>
-
+</div></footer>
 <script>
 (function(){
-  const btn=document.getElementById('burger');
-  const nav=document.getElementById('nav-links');
-  btn.addEventListener('click',function(){
-    const open=nav.classList.toggle('open');
-    btn.setAttribute('aria-expanded',open);
-    btn.textContent=open?'✕':'☰';
-  });
-  nav.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){nav.classList.remove('open');btn.textContent='☰';});
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
   });
 })();
 </script>

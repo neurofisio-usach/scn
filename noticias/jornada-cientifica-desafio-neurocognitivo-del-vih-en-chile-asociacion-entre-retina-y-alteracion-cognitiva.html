@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jornada Científica “Desafío neurocognitivo del VIH en Chile: asociación entre retina y alteración cognitiva” — Sociedad Chilena de Neurociencia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../logo_scn.png" alt="SCN"></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+      <ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+    <li><a href="../index.html#directorio">Directorio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#asociarse">Asociarse</a></li>
+        <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+        <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+      </ul></li>
+    <li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+        <li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+      </ul></li>
+    <li><a href="../noticias.html" class="active">Noticias</a></li>
+    <li><a href="../index.html#contacto">Contacto</a></li>
+    <li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+    <li class="nav-cta"><a href="#">Donaciones</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">☰</button>
+</div></nav>
+
+<div class="art-header">
+  <div class="wrap">
+    <span class="label">Home · Noticias</span>
+    <h1>Jornada Científica “Desafío neurocognitivo del VIH en Chile: asociación entre retina y alteración cognitiva”</h1>
+    <div class="meta"><span>Enero 9, 2026</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+  </div>
+</div>
+<img class="feat-img" src="../img/captura-de-pantalla-2026-01-09-115525.png" alt="Jornada Científica “Desafío neurocognitivo del VIH en Chile: asociación entre retina y alteración cognitiva”">
+<div class="art-body">
+  <a href="../noticias.html" class="back-btn">Volver a Noticias</a>
+  
+
+<p><strong>Jornada Científica “Desafío neurocognitivo del VIH en Chile: asociación entre retina y alteración cognitiva”</strong>, dirigida por el académico del Dpto. de Tecnología Médica U. de Chile, Prof. Iván Plaza Rosales, PhD.</p>
+<p> <br/>El <strong>Trastorno Neurocognitivo Asociado al VIH (HAND),</strong> cuya prevalencia en Chile es subdiagnosticada debido a la falta de herramientas de tamizaje accesibles, representa un desafío para los equipos de salud y para las personas que lo viven. En esta instancia, discutiremos la asociación entre cambios estructurales retinales y el deterioro de funciones cognitivas en pacientes con VIH, donde herramientas tecnológicas como la tomografía de coherencia óptica (OCT) pueden jugar un rol clave en la búsqueda de biomarcadores de enfermedad.</p>
+<p><br/>Le esperamos el miércoles <strong>14 de enero, desde las 9:00 hrs. en el Auditorio Dr. Julio Cabello Ruz, de la Facultad de Medicina Universidad de Chile.</strong> Dirección: Av. Independencia 1027, comuna de Independencia, Santiago (metro estación “Hospitales, línea 3).</p>
+<p><br/>Esta actividad es <strong>sin costo</strong> y abierta a toda persona interesada en el tema. Si desea asistir, debe inscribirse haciendo clic y completando el siguiente <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYioWzsf1eXeQf-Hqg2zR1h53VUvJlw_b0NGSImi4HZBZS4w/viewform?usp=sharing&amp;ouid=100312679633116841611" rel="noreferrer noopener" target="_blank">formulario</a>. Los cupos son limitados y no se permitirá el ingreso de personas no inscritas.</p>
+
+</div>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+  <div class="footer-links">
+    <a href="../index.html">Inicio</a>
+    <a href="../noticias.html">Noticias</a>
+    <a href="../congresos-anteriores.html">Congresos</a>
+    <a href="../index.html#asociarse">Membresía</a>
+    <a href="../index.html#contacto">Contacto</a>
+  </div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

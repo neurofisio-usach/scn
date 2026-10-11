@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asociarse — Sociedad Chilena de Neurociencia</title>
+<meta name="description" content="Únete a la Sociedad Chilena de Neurociencia. Información sobre categorías de membresía, requisitos y formulario de incorporación.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:root{
+  --navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;
+  --body:#2d3748;--muted:#627286;--border:#e2e8f0;
+  --f-serif:'DM Serif Display',Georgia,serif;
+  --max-w:1100px;--pad:clamp(1rem,4vw,1.5rem);
+}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+
+/* ── NAV ─────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo{flex-shrink:0}
+.nav-logo img{height:36px;display:block;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);text-decoration:none;font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.25rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;white-space:nowrap}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-hl>a:hover{background:rgba(120,0,210,.8)!important}
+.nav-cta-btn>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-cta-btn>a:hover{opacity:.88}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+
+/* ── PAGE HEADER ──────────────────────────────────────── */
+.page-header{background:var(--navy);color:#fff;padding:3.5rem 0 3rem}
+.page-header .lbl{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.page-header h1{font-family:var(--f-serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;line-height:1.12;margin-bottom:.75rem}
+.page-header .desc{font-size:1rem;color:rgba(255,255,255,.6);max-width:560px;line-height:1.7}
+
+/* ── BACK LINK ────────────────────────────────────────── */
+.back-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);text-decoration:none;margin-bottom:2.5rem}
+.back-link::before{content:'←'}
+
+/* ── MEMBRESÍA ───────────────────────────────────────── */
+.section-dark{background:var(--navy);color:#fff}
+.mem-section{padding:4rem 0}
+.sh{margin-bottom:2rem}
+.sh-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.sh-title{font-family:var(--f-serif);font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;color:#fff}
+.sh-body{margin-top:.6rem;font-size:1rem;line-height:1.7;color:rgba(255,255,255,.65);max-width:580px}
+.mem-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:2rem}
+.mem-card{padding:1.75rem 1.5rem;border:1.5px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.045)}
+.mem-type{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.mem-price{font-family:var(--f-serif);font-size:2.4rem;color:#fff;line-height:1}
+.mem-price span{font-size:.88rem;font-family:'Inter',sans-serif;color:rgba(255,255,255,.5);font-weight:400}
+.mem-desc{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65}
+.req-box{padding:1.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;margin-bottom:2rem}
+.req-box h3{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.req-steps{display:flex;flex-direction:column;gap:.9rem}
+.req-step{display:flex;gap:1rem;align-items:flex-start}
+.req-n{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--teal);color:#fff;font-size:.75rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.req-t{font-size:.875rem;color:rgba(255,255,255,.73);line-height:1.6}
+.btn{display:inline-block;padding:.65rem 1.4rem;border-radius:4px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;transition:opacity .15s,transform .12s;white-space:nowrap}
+.btn:hover{opacity:.88;transform:translateY(-1px)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.85)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.65)}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2.5rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:.4rem}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.38);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.8)}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media(max-width:780px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);flex-direction:column;padding:1rem;gap:.5rem}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;padding-left:1rem;background:transparent}
+  .nav-burger{display:block}
+  .mem-cards{grid-template-columns:1fr}
+  .req-box [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo_scn.png" alt="Sociedad Chilena de Neurociencia">
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li class="nav-has-drop">
+        <a href="index.html#sociedad">Quiénes somos</a>
+        <ul class="nav-drop">
+          <li><a href="index.html#premio">Premio a la Trayectoria en Neurociencia</a></li>
+        </ul>
+      </li>
+      <li><a href="index.html#directorio">Directorio</a></li>
+      <li class="nav-has-drop">
+        <a href="asociarse.html">Socios</a>
+        <ul class="nav-drop">
+          <li><a href="asociarse.html">Asociarse</a></li>
+          <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+          <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+        </ul>
+      </li>
+      <li class="nav-has-drop">
+        <a href="index.html#congresos">Congresos</a>
+        <ul class="nav-drop">
+          <li><a href="index.html#congreso-2025">Congreso 2025</a></li>
+          <li><a href="https://congress2026.neurocienciasfalan.org/" target="_blank">FALAN Congress 2026 ↗</a></li>
+          <li><a href="congresos-anteriores.html">Congresos Anteriores</a></li>
+        </ul>
+      </li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+      <li class="nav-hl"><a href="index.html#cerebro">Año del Cerebro</a></li>
+      <li class="nav-cta-btn"><a href="#">Donaciones</a></li>
+    </ul>
+    <button class="nav-burger" id="burger" aria-label="Menú" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<!-- ── PAGE HEADER ────────────────────────────────────── -->
+<header class="page-header">
+  <div class="wrap">
+    <span class="lbl">Únete a la SCN</span>
+    <h1>Asociarse</h1>
+    <p class="desc">La SCN está abierta a investigadores, académicos y estudiantes de postgrado vinculados a las neurociencias.</p>
+  </div>
+</header>
+
+<!-- ── MEMBRESÍA ──────────────────────────────────────── -->
+<section class="section-dark mem-section">
+  <div class="wrap">
+    <a href="index.html" class="back-link">Volver al inicio</a>
+
+    <div class="mem-cards">
+      <div class="mem-card">
+        <div class="mem-type">Socio regular</div>
+        <div class="mem-price">$80.000 <span>CLP / año</span></div>
+        <p class="mem-desc">Profesionales con título o grado académico relacionado con la neurociencia que hayan realizado investigación científica en el área.</p>
+      </div>
+      <div class="mem-card">
+        <div class="mem-type">Socio estudiante</div>
+        <div class="mem-price">$20.000 <span>CLP / año</span></div>
+        <p class="mem-desc">Alumnos regulares de programas de postgrado (magíster o doctorado) con al menos grado de licenciado, hasta obtener el diploma.</p>
+      </div>
+    </div>
+
+    <div class="req-box">
+      <h3>Formulario de incorporación</h3>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:1.25rem;line-height:1.6">Envía los siguientes antecedentes a <strong style="color:rgba(255,255,255,.9)">sociedadchilenaneurociencia@gmail.com</strong> o usa el formulario en línea. Todos los archivos deben ser PDF (máximo 10 MB).</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem 1.5rem">
+        <div>
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem">Datos personales</p>
+          <div class="req-steps">
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Nombre completo y afiliación institucional</p></div>
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Dirección postal y teléfono de contacto</p></div>
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Correo electrónico</p></div>
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Calidad solicitada: Regular o Estudiante</p></div>
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Estudiantes: programa de magíster o doctorado y año de ingreso</p></div>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem">Documentos requeridos</p>
+          <div class="req-steps">
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Curriculum Vitae formato libre (español o inglés)</p></div>
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Carta de intención dirigida al Directorio SCN</p></div>
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Certificado de alumno regular (solo estudiantes)</p></div>
+            <div class="req-step"><span class="req-n">·</span><p class="req-t">Nombres y correos de dos socios titulares activos que avalen la postulación</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+      <a href="https://www.socneurociencia.cl/formulario-solicitud-de-incorporacion/" class="btn btn-primary" target="_blank">Formulario en línea</a>
+      <a href="mailto:sociedadchilenaneurociencia@gmail.com" class="btn btn-ghost">sociedadchilenaneurociencia@gmail.com</a>
+    </div>
+    <p style="margin-top:1rem;font-size:.78rem;color:rgba(255,255,255,.45)">El Directorio resolverá la solicitud en la primera sesión celebrada después de su presentación (máximo 60 días hábiles). El pago de la cuota anual se realiza vía electrónica desde el sitio web de la Sociedad.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+      <div style="margin-top:.35rem">Corporación de derecho privado · Fundada en 2005 · Santiago, Chile</div>
+    </div>
+    <nav class="footer-links" aria-label="Pie de página">
+      <a href="index.html#sociedad">Quiénes somos</a>
+      <a href="index.html#directorio">Directorio</a>
+      <a href="index.html#congresos">Congresos</a>
+      <a href="asociarse.html">Membresía</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btn=document.getElementById('burger');
+  const nav=document.getElementById('nav-links');
+  btn.addEventListener('click',function(){
+    const open=nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    btn.textContent=open?'✕':'☰';
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent='☰';
+    });
+  });
+})();
+</script>
+</body>
+</html>

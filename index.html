@@ -579,13 +579,20 @@ a{color:inherit}
       <h2 class="sh-title">Contacto</h2>
       <p class="sh-body">¿Tienes preguntas sobre membresía, eventos o actividades de la SCN? Envíanos un mensaje.</p>
     </div>
-    <form class="contact-form" onsubmit="handleForm(event)">
+    <form class="contact-form"
+          action="https://formsubmit.co/sociedadchilenaneurociencia@gmail.com"
+          method="POST">
+      <!-- FormSubmit.co config -->
+      <input type="hidden" name="_subject" value="[SCN] Mensaje de contacto">
+      <input type="hidden" name="_next" value="https://neurofisio-usach.cl/scn/gracias.html">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
       <div class="form-row">
-        <input type="text" placeholder="Tu nombre (requerido)" required>
-        <input type="email" placeholder="Tu correo (requerido)" required>
+        <input type="text"  name="nombre"  placeholder="Tu nombre (requerido)" required>
+        <input type="email" name="correo"  placeholder="Tu correo (requerido)" required>
       </div>
-      <input type="text" placeholder="Asunto">
-      <textarea placeholder="Tu mensaje" rows="6"></textarea>
+      <input type="text" name="asunto" placeholder="Asunto">
+      <textarea name="mensaje" placeholder="Tu mensaje" rows="6"></textarea>
       <div><button type="submit" class="btn btn-primary">Enviar mensaje</button></div>
     </form>
   </div>
@@ -637,10 +644,6 @@ function togglePrev(){
   const t=document.getElementById('prev-toggle');
   b.classList.toggle('open');
   t.classList.toggle('open');
-}
-function handleForm(e){
-  e.preventDefault();
-  alert('Mensaje enviado. Esta funcionalidad se activará en la versión final del sitio.');
 }
 </script>
 </body>

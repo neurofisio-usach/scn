@@ -36,7 +36,7 @@ a{color:inherit}
 .nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
 .nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
 .nav-logo{flex-shrink:0}
-.nav-logo img{height:52px;display:block;filter:brightness(0) invert(1)}
+.nav-logo img{height:36px;display:block;filter:brightness(0) invert(1)}
 .nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
 .nav-links>li{position:relative}
 .nav-links>li>a{
@@ -78,6 +78,16 @@ a{color:inherit}
 .ibro-btn{margin-top:1.5rem;display:inline-flex;align-items:center;gap:.5rem;padding:.55rem 1.1rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:4px;color:rgba(255,255,255,.85);font-size:.85rem;font-weight:500;text-decoration:none;transition:background .15s}
 .ibro-btn:hover{background:rgba(255,255,255,.18)}
 .ibro-btn::before{content:'→';color:var(--teal)}
+
+/* ── HERO SPLIT (logo · text) ────────────────────────── */
+.hero-split{display:flex;align-items:center;gap:3rem}
+.hero-logo-col{flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.hero-logo-img{width:200px;max-width:200px;filter:brightness(0) invert(1);display:block}
+.hero-text-col{flex:1;min-width:0}
+@media(max-width:780px){
+  .hero-split{flex-direction:column;gap:1.75rem}
+  .hero-logo-img{width:130px}
+}
 
 /* ── TICKER ──────────────────────────────────────────── */
 .ticker{background:var(--navymd);border-top:1px solid rgba(255,255,255,.06);padding:.55rem 0}
@@ -208,24 +218,6 @@ a{color:inherit}
   .congreso-card{flex-direction:column;gap:1rem}
   .quien-objectives{grid-template-columns:1fr}
 }
-
-/* ── MODAL DONACIONES ──────────────────────────────────── */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;align-items:center;justify-content:center;padding:1rem}
-.modal-overlay.open{display:flex}
-.modal-box{background:#fff;color:#2d3748;border-radius:8px;max-width:580px;width:100%;padding:2.5rem 2rem 2rem;position:relative;box-shadow:0 20px 60px rgba(0,0,0,.4);max-height:90vh;overflow-y:auto}
-.modal-close{position:absolute;top:.75rem;right:.75rem;background:var(--navy);color:#fff;border:none;border-radius:4px;width:28px;height:28px;font-size:.9rem;font-weight:700;cursor:pointer;line-height:1;display:flex;align-items:center;justify-content:center}
-.modal-close:hover{background:var(--teal)}
-.modal-title{font-family:var(--f-serif);font-size:clamp(1.3rem,3vw,1.75rem);font-weight:400;color:var(--navy);text-align:center;line-height:1.25;margin-bottom:1.25rem}
-.modal-body{font-size:.9rem;line-height:1.75;color:#4a5568;text-align:center}
-.modal-divider{border:none;border-top:1px solid #e2e8f0;margin:1.5rem 0}
-.modal-account{text-align:center;font-size:.92rem;line-height:2;color:#2d3748}
-.modal-account strong{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
-.modal-account a{color:var(--teal);text-decoration:none}
-.modal-account a:hover{text-decoration:underline}
-.modal-note{margin-top:1.25rem;font-size:.85rem;color:#718096;text-align:center;line-height:1.75}
-.modal-note a{color:var(--teal);text-decoration:none}
-.modal-note a:hover{text-decoration:underline}
-.modal-thanks{margin-top:1.25rem;font-size:.9rem;font-weight:600;color:var(--navy);text-align:center}
 </style>
 </head>
 <body>
@@ -250,7 +242,6 @@ a{color:inherit}
         <ul class="nav-drop">
           <li><a href="asociarse.html">Asociarse</a></li>
           <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
-          <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
         </ul>
       </li>
       <li class="nav-has-drop">
@@ -263,8 +254,8 @@ a{color:inherit}
       </li>
       <li><a href="noticias.html">Noticias</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li class="nav-hl"><a href="https://añodelcerebro.minciencia.gob.cl/" target="_blank" rel="noopener">Año del Cerebro</a></li>
-      <li class="nav-cta-btn"><a href="#" onclick="openDonaciones(event)">Donaciones</a></li>
+      <li class="nav-hl"><a href="#cerebro">Año del Cerebro</a></li>
+      <li class="nav-cta-btn"><a href="#">Donaciones</a></li>
     </ul>
     <button class="nav-burger" id="burger" aria-label="Menú" aria-expanded="false">☰</button>
   </div>
@@ -273,15 +264,24 @@ a{color:inherit}
 <!-- ── HERO ──────────────────────────────────────────── -->
 <section class="hero">
   <div class="wrap">
-    <span class="hero-tag">Santiago, Chile · Fundada en 2005</span>
-    <h1>Sociedad Chilena<br>de Neurociencia</h1>
-    <p class="hero-sub">Chilean Society for Neuroscience</p>
-    <p class="hero-desc">Nuestro objetivo es el desarrollo, la investigación y la difusión de la neurociencia en Chile.</p>
-    <div class="hero-actions">
-      <a href="asociarse.html" class="btn btn-primary">Asociarse a la SCN</a>
-      <a href="#noticias" class="btn btn-ghost">Noticias y eventos</a>
+    <div class="hero-split">
+      <!-- Logo column -->
+      <div class="hero-logo-col">
+        <img src="logo_scn.png" alt="Sociedad Chilena de Neurociencia" class="hero-logo-img">
+      </div>
+      <!-- Text column -->
+      <div class="hero-text-col">
+        <span class="hero-tag">Santiago, Chile · Fundada en 2005</span>
+        <h1>Sociedad Chilena<br>de Neurociencia</h1>
+        <p class="hero-sub">Chilean Society for Neuroscience</p>
+        <p class="hero-desc">Nuestro objetivo es el desarrollo, la investigación y la difusión de la neurociencia en Chile.</p>
+        <div class="hero-actions">
+          <a href="asociarse.html" class="btn btn-primary">Asociarse a la SCN</a>
+          <a href="#noticias" class="btn btn-ghost">Noticias y eventos</a>
+        </div>
+        <a href="https://ibro.org/ibro-grant-programs/" target="_blank" class="ibro-btn">INGRESA a Portal de IBRO Grants</a>
+      </div>
     </div>
-    <a href="https://ibro.org/ibro-grant-programs/" target="_blank" class="ibro-btn">INGRESA a Portal de IBRO Grants</a>
   </div>
 </section>
 
@@ -491,12 +491,12 @@ a{color:inherit}
   <div class="wrap">
     <div class="sh">
       <span class="sh-label">Directorio 2026 – 2028</span>
-      <h2 class="sh-title">Directiva</h2>
+      <h2 class="sh-title">Directorio</h2>
       <p class="sh-body">El Directorio está compuesto por siete miembros elegidos en Asamblea Ordinaria por un período de tres años, renovable.</p>
     </div>
     <div class="dir-grid">
       <div class="dir-card"><span class="dir-role r-pres">Presidenta</span><div class="dir-name">Dra. Alexia Núñez Parra</div><div class="dir-inst">Universidad de Chile</div></div>
-      <div class="dir-card"><span class="dir-role r-vp">Vicepresidente</span><div class="dir-name">Dr. Patricio Rojas Montecinos</div><div class="dir-inst">Universidad de Santiago de Chile</div></div>
+      <div class="dir-card"><span class="dir-role r-vp">Vicepresidente</span><div class="dir-name">Dr. Patricio Rojas Montecino</div><div class="dir-inst">Universidad de Santiago de Chile</div></div>
       <div class="dir-card"><span class="dir-role r-sec">Secretaria</span><div class="dir-name">Dra. Angelina Palacios Muñoz</div><div class="dir-inst">Universidad de Valparaíso</div></div>
       <div class="dir-card"><span class="dir-role r-tes">Tesorero</span><div class="dir-name">Dr. Paulo Barraza Rodríguez</div><div class="dir-inst">Universidad de Chile</div></div>
       <div class="dir-card"><span class="dir-role r-dir">Directora</span><div class="dir-name">Dra. Evelyn Cordero Roldán</div><div class="dir-inst">Fundación Arrebol</div></div>
@@ -597,20 +597,13 @@ a{color:inherit}
       <h2 class="sh-title">Contacto</h2>
       <p class="sh-body">¿Tienes preguntas sobre membresía, eventos o actividades de la SCN? Envíanos un mensaje.</p>
     </div>
-    <form class="contact-form"
-          action="https://formsubmit.co/sociedadchilenaneurociencia@gmail.com"
-          method="POST">
-      <!-- FormSubmit.co config -->
-      <input type="hidden" name="_subject" value="[SCN] Mensaje de contacto">
-      <input type="hidden" name="_next" value="https://neurofisio-usach.cl/scn/gracias.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+    <form class="contact-form" onsubmit="handleForm(event)">
       <div class="form-row">
-        <input type="text"  name="nombre"  placeholder="Tu nombre (requerido)" required>
-        <input type="email" name="correo"  placeholder="Tu correo (requerido)" required>
+        <input type="text" placeholder="Tu nombre (requerido)" required>
+        <input type="email" placeholder="Tu correo (requerido)" required>
       </div>
-      <input type="text" name="asunto" placeholder="Asunto">
-      <textarea name="mensaje" placeholder="Tu mensaje" rows="6"></textarea>
+      <input type="text" placeholder="Asunto">
+      <textarea placeholder="Tu mensaje" rows="6"></textarea>
       <div><button type="submit" class="btn btn-primary">Enviar mensaje</button></div>
     </form>
   </div>
@@ -663,45 +656,10 @@ function togglePrev(){
   b.classList.toggle('open');
   t.classList.toggle('open');
 }
-
-function openDonaciones(e){
+function handleForm(e){
   e.preventDefault();
-  document.getElementById('modal-donaciones').classList.add('open');
-  document.body.style.overflow='hidden';
+  alert('Mensaje enviado. Esta funcionalidad se activará en la versión final del sitio.');
 }
-function closeDonaciones(){
-  document.getElementById('modal-donaciones').classList.remove('open');
-  document.body.style.overflow='';
-}
-function closeDonacionesOutside(e){
-  if(e.target===document.getElementById('modal-donaciones')) closeDonaciones();
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape') closeDonaciones();
-});
 </script>
-
-<!-- ── MODAL DONACIONES ──────────────────────────────── -->
-<div class="modal-overlay" id="modal-donaciones" onclick="closeDonacionesOutside(event)">
-  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
-    <button class="modal-close" onclick="closeDonaciones()" aria-label="Cerrar">✕</button>
-    <h2 class="modal-title" id="modal-titulo">Apoya a la Sociedad<br>Chilena de Neurociencia</h2>
-    <p class="modal-body">La SCN es una comunidad que crece gracias al compromiso de quienes creen en la ciencia como bien público. Si deseas contribuir a nuestros proyectos, este año tus donaciones se destinarán a financiar actividades de extensión en el marco del Año del Cerebro en todas las regiones de Chile.</p>
-    <hr class="modal-divider">
-    <div class="modal-account">
-      <strong>Para donar, haz una transferencia a</strong>
-      Nombre: Sociedad Chilena de Neurociencia<br>
-      RUT: 65.020.367-4<br>
-      Banco: Santander<br>
-      Cuenta corriente Nº: 64981706<br>
-      Email: <a href="mailto:sociedadchilenaneurociencia@gmail.com">sociedadchilenaneurociencia@gmail.com</a>
-    </div>
-    <p class="modal-note">Una vez realizada la transferencia, envía el comprobante a
-      <a href="mailto:sociedadchilenaneurociencia@gmail.com">sociedadchilenaneurociencia@gmail.com</a>
-      indicando tu nombre y apellido para recibir el certificado de donación.
-    </p>
-    <p class="modal-thanks">¡Gracias por ser parte de este esfuerzo!</p>
-  </div>
-</div>
 </body>
 </html>

@@ -80,9 +80,9 @@ a{color:inherit}
 .ibro-btn::before{content:'→';color:var(--teal)}
 
 /* ── HERO SPLIT (logo · text) ────────────────────────── */
-.hero-split{display:flex;align-items:center;gap:3rem}
+.hero-split{display:flex;align-items:center;gap:3rem;margin-top:1.75rem}
 .hero-logo-col{flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.hero-logo-img{width:200px;max-width:200px;filter:brightness(0) invert(1);display:block}
+.hero-logo-img{width:220px;max-width:220px;display:block;border-radius:12px}
 .hero-text-col{flex:1;min-width:0}
 @media(max-width:780px){
   .hero-split{flex-direction:column;gap:1.75rem}
@@ -264,24 +264,29 @@ a{color:inherit}
 <!-- ── HERO ──────────────────────────────────────────── -->
 <section class="hero">
   <div class="wrap">
+    <!-- Title full-width -->
+    <span class="hero-tag">Santiago, Chile · Fundada en 2005</span>
+    <h1>Sociedad Chilena<br>de Neurociencia</h1>
+
+    <!-- Two-column split below title -->
     <div class="hero-split">
-      <!-- Logo column -->
+      <!-- Left: logo -->
       <div class="hero-logo-col">
-        <img src="logo_scn.png" alt="Sociedad Chilena de Neurociencia" class="hero-logo-img">
+        <img src="img/scn_logo_full.jpeg" alt="Sociedad Chilena de Neurociencia" class="hero-logo-img">
       </div>
-      <!-- Text column -->
+      <!-- Right: subtitle + description -->
       <div class="hero-text-col">
-        <span class="hero-tag">Santiago, Chile · Fundada en 2005</span>
-        <h1>Sociedad Chilena<br>de Neurociencia</h1>
         <p class="hero-sub">Chilean Society for Neuroscience</p>
         <p class="hero-desc">Nuestro objetivo es el desarrollo, la investigación y la difusión de la neurociencia en Chile.</p>
-        <div class="hero-actions">
-          <a href="asociarse.html" class="btn btn-primary">Asociarse a la SCN</a>
-          <a href="#noticias" class="btn btn-ghost">Noticias y eventos</a>
-        </div>
-        <a href="https://ibro.org/ibro-grant-programs/" target="_blank" class="ibro-btn">INGRESA a Portal de IBRO Grants</a>
       </div>
     </div>
+
+    <!-- Buttons below the split -->
+    <div class="hero-actions">
+      <a href="asociarse.html" class="btn btn-primary">Asociarse a la SCN</a>
+      <a href="#noticias" class="btn btn-ghost">Noticias y eventos</a>
+    </div>
+    <a href="https://ibro.org/ibro-grant-programs/" target="_blank" class="ibro-btn">INGRESA a Portal de IBRO Grants</a>
   </div>
 </section>
 
@@ -378,7 +383,7 @@ a{color:inherit}
       <h2 class="sh-title">Quiénes somos</h2>
     </div>
     <p class="quien-text">
-      La Sociedad Chilena de Neurociencia es una sociedad científica sin fines de lucro que agrupa a científicos básicos e investigadores clínicos en el área de las Neurociencias. Nuestros objetivos son: 
+      Desde hace algunos años, diferentes investigadores en el área de las Neurociencias hemos querido impulsar la idea de la constitución de una sociedad científica que agrupe a científicos básicos e investigadores clínicos en el área de las Neurociencias. Hemos constituido la <strong>Sociedad Chilena de Neurociencia (SCN)</strong>, sociedad científica sin fines de lucro cuyos principales objetivos son:
     </p>
     <ul class="quien-objectives">
       <li class="quien-obj">
@@ -496,7 +501,7 @@ a{color:inherit}
     </div>
     <div class="dir-grid">
       <div class="dir-card"><span class="dir-role r-pres">Presidenta</span><div class="dir-name">Dra. Alexia Núñez Parra</div><div class="dir-inst">Universidad de Chile</div></div>
-      <div class="dir-card"><span class="dir-role r-vp">Vicepresidente</span><div class="dir-name">Dr. Patricio Rojas Montecinos</div><div class="dir-inst">Universidad de Santiago de Chile</div></div>
+      <div class="dir-card"><span class="dir-role r-vp">Vicepresidente</span><div class="dir-name">Dr. Patricio Rojas Montecino</div><div class="dir-inst">Universidad de Santiago de Chile</div></div>
       <div class="dir-card"><span class="dir-role r-sec">Secretaria</span><div class="dir-name">Dra. Angelina Palacios Muñoz</div><div class="dir-inst">Universidad de Valparaíso</div></div>
       <div class="dir-card"><span class="dir-role r-tes">Tesorero</span><div class="dir-name">Dr. Paulo Barraza Rodríguez</div><div class="dir-inst">Universidad de Chile</div></div>
       <div class="dir-card"><span class="dir-role r-dir">Directora</span><div class="dir-name">Dra. Evelyn Cordero Roldán</div><div class="dir-inst">Fundación Arrebol</div></div>

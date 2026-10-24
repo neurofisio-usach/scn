@@ -7,17 +7,17 @@
 <meta name="description" content="La Sociedad Chilena de Neurociencia promueve el desarrollo, investigación y difusión de la neurociencia en Chile y Latinoamérica.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Source Sans 3',system-ui,sans-serif;font-size:18px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 
 :root{
   --navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;
   --body:#2d3748;--muted:#627286;--border:#e2e8f0;
-  --f-serif:'Source Serif 4',Georgia,serif;
+  --f-serif:'DM Serif Display',Georgia,serif;
   --max-w:1100px;--pad:clamp(1rem,4vw,1.5rem);
 }
 .wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
@@ -27,9 +27,9 @@ a{color:inherit}
 .sh{margin-bottom:2rem}
 .sh-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
 .section-dark .sh-label{color:rgba(13,159,160,.9)}
-.sh-title{font-family:var(--f-serif);font-weight:400;font-size:clamp(2rem,3.5vw,2.8rem);line-height:1.2;color:var(--navy)}
+.sh-title{font-family:var(--f-serif);font-weight:400;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;color:var(--navy)}
 .section-dark .sh-title{color:#fff}
-.sh-body{margin-top:.6rem;font-size:1.1rem;line-height:1.7;color:var(--muted);max-width:580px}
+.sh-body{margin-top:.6rem;font-size:1rem;line-height:1.7;color:var(--muted);max-width:580px}
 .section-dark .sh-body{color:rgba(255,255,255,.65)}
 
 /* ── NAV ─────────────────────────────────────────────── */
@@ -42,7 +42,7 @@ a{color:inherit}
 .nav-links>li>a{
   display:block;padding:.3rem .7rem;
   color:rgba(255,255,255,.78);text-decoration:none;
-  font-size:.95rem;font-weight:500;white-space:nowrap;
+  font-size:.82rem;font-weight:500;white-space:nowrap;
   border-radius:3px;transition:background .15s,color .15s;
 }
 .nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.08)}
@@ -54,7 +54,7 @@ a{color:inherit}
   box-shadow:0 8px 24px rgba(0,0,0,.3);
 }
 .nav-has-drop:hover .nav-drop{display:block}
-.nav-drop a{display:block;padding:.5rem 1rem;font-size:.9rem;color:rgba(255,255,255,.78);text-decoration:none;white-space:nowrap}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;white-space:nowrap}
 .nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
 .nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
 .nav-hl>a:hover{background:rgba(120,0,210,.8)!important}
@@ -66,9 +66,9 @@ a{color:inherit}
 .hero{background:var(--navy);color:#fff;padding:4.5rem 0 4rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;right:-60px;top:-60px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(13,159,160,.12) 0%,transparent 70%);pointer-events:none}
 .hero-tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(13,159,160,.4);padding:.25rem .75rem;border-radius:50px;margin-bottom:1.25rem}
-.hero h1{font-family:var(--f-serif);font-size:clamp(2.6rem,5.5vw,4.4rem);line-height:1.08;font-weight:400;color:#fff;max-width:660px}
-.hero-sub{margin-top:.5rem;font-family:var(--f-serif);font-style:italic;font-size:clamp(1.6rem,3vw,2.3rem);color:rgba(255,255,255,.5)}
-.hero-desc{margin-top:1.5rem;max-width:500px;font-size:1.3rem;line-height:1.7;color:rgba(255,255,255,.65)}
+.hero h1{font-family:var(--f-serif);font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.08;font-weight:400;color:#fff;max-width:660px}
+.hero-sub{margin-top:.5rem;font-family:var(--f-serif);font-style:italic;font-size:clamp(.95rem,2vw,1.4rem);color:rgba(255,255,255,.5)}
+.hero-desc{margin-top:1.5rem;max-width:500px;font-size:1rem;line-height:1.7;color:rgba(255,255,255,.65)}
 .hero-actions{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
 .btn{display:inline-block;padding:.65rem 1.4rem;border-radius:4px;font-size:.9rem;font-weight:600;text-decoration:none;cursor:pointer;transition:opacity .15s,transform .12s;white-space:nowrap}
 .btn:hover{opacity:.88;transform:translateY(-1px)}
@@ -109,14 +109,14 @@ a{color:inherit}
 .cat-divul{background:#d1fae5;color:#065f46}
 .cat-congr{background:#ede9fe;color:#5b21b6}
 .cat-insti{background:#fef3c7;color:#92400e}
-.news-title{font-size:1.15rem;font-weight:500;color:var(--body);line-height:1.4;text-decoration:none;display:block;transition:color .15s}
+.news-title{font-size:1rem;font-weight:500;color:var(--body);line-height:1.4;text-decoration:none;display:block;transition:color .15s}
 .news-title:hover{color:var(--teal)}
-.news-excpt{margin-top:.3rem;font-size:1.05rem;color:var(--muted);line-height:1.55}
+.news-excpt{margin-top:.3rem;font-size:.875rem;color:var(--muted);line-height:1.55}
 .news-more{margin-top:2rem;display:inline-flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:500;color:var(--teal);text-decoration:none}
 .news-more::after{content:'›';font-size:1.2rem}
 
 /* ── QUIÉNES SOMOS ───────────────────────────────────── */
-.quien-text{font-size:1.15rem;line-height:1.8;color:var(--body);max-width:760px;margin-bottom:1.75rem}
+.quien-text{font-size:1rem;line-height:1.8;color:var(--body);max-width:760px;margin-bottom:1.75rem}
 .quien-objectives{list-style:none;display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:2rem}
 .quien-obj{padding:1.1rem 1.2rem;background:#fff;border-left:3px solid var(--teal);border-radius:0 5px 5px 0}
 .quien-obj-n{font-family:var(--f-serif);font-size:1.6rem;color:var(--teal);line-height:1;margin-bottom:.3rem}
@@ -131,7 +131,7 @@ a{color:inherit}
 .congreso-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:1.75rem 2rem;margin-bottom:1.5rem;display:flex;gap:2rem;align-items:flex-start}
 .congreso-badge{flex-shrink:0;background:var(--navy);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .75rem;border-radius:4px;white-space:nowrap}
 .congreso-info h3{font-family:var(--f-serif);font-size:1.3rem;font-weight:400;color:var(--navy);margin-bottom:.4rem}
-.congreso-meta{font-size:1rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
+.congreso-meta{font-size:.88rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
 .congreso-links{display:flex;gap:.65rem;flex-wrap:wrap}
 .congreso-link{display:inline-block;padding:.35rem .85rem;background:var(--offwhite);border:1px solid var(--border);border-radius:4px;font-size:.82rem;font-weight:500;color:var(--navy);text-decoration:none;transition:border-color .15s,color .15s}
 .congreso-link:hover{border-color:var(--teal);color:var(--teal)}
@@ -153,7 +153,7 @@ a{color:inherit}
 .r-pres{background:#dbeafe;color:#1e40af}.r-vp{background:#ede9fe;color:#5b21b6}
 .r-sec{background:#d1fae5;color:#065f46}.r-tes{background:#fef3c7;color:#92400e}
 .r-dir{background:#f1f5f9;color:#475569}.r-past{background:#fee2e2;color:#9f1239}
-.dir-name{font-size:1.05rem;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:.2rem}
+.dir-name{font-size:.92rem;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:.2rem}
 .dir-inst{font-size:.78rem;color:var(--muted)}
 
 .prev-dir-section{margin-top:2.5rem}
@@ -174,7 +174,7 @@ a{color:inherit}
 .mem-card{padding:1.75rem 1.5rem;border:1.5px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.045)}
 .mem-type{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
 .mem-price{font-family:var(--f-serif);font-size:2.4rem;color:#fff;line-height:1}
-.mem-price span{font-size:.88rem;font-family:'Source Sans 3',sans-serif;color:rgba(255,255,255,.5);font-weight:400}
+.mem-price span{font-size:.88rem;font-family:'Inter',sans-serif;color:rgba(255,255,255,.5);font-weight:400}
 .mem-desc{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65}
 .req-box{padding:1.5rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;margin-bottom:2rem}
 .req-box h3{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}

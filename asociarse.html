@@ -7,7 +7,7 @@
 <meta name="description" content="Únete a la Sociedad Chilena de Neurociencia. Información sobre categorías de membresía, requisitos y formulario de incorporación.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -35,8 +35,8 @@ a{color:inherit}
 .nav-has-drop:hover .nav-drop{display:block}
 .nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none;white-space:nowrap}
 .nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
-.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
-.nav-hl>a:hover{background:rgba(120,0,210,.8)!important}
+.nav-hl>a{background:rgba(224,92,42,.9)!important;color:#fff!important;border-radius:4px}
+.nav-hl>a:hover{background:rgba(224,92,42,1)!important}
 .nav-cta-btn>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
 .nav-cta-btn>a:hover{opacity:.88}
 .nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
@@ -374,6 +374,67 @@ a{color:inherit}
     <p style="margin-top:1.25rem;font-size:.75rem;color:rgba(255,255,255,.35)">El Directorio resolverá la solicitud en la primera sesión celebrada después de su presentación (máximo 60 días hábiles). El pago de la cuota anual se realiza vía electrónica desde el sitio web de la Sociedad.</p>
   </div>
 </section>
+
+<!-- ── SIDEBAR SECTION ─────────────────────────────────── -->
+<style>
+:root{--border:#e2e8f0}
+.sb-section{max-width:var(--max-w);margin:0 auto;padding:2.5rem var(--pad)}
+.sb-section-inner{display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:start}
+@media(max-width:860px){.sb-section-inner{grid-template-columns:1fr}}
+aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
+.sb-banner{border-radius:6px;overflow:hidden;border:1px solid var(--border)}
+.sb-widget{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.sb-widget-head{background:var(--navy);color:#fff;padding:.65rem 1rem;font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
+.sb-widget-body{padding:1rem}
+.sb-news-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.sb-news-list li{border-bottom:1px solid var(--border);padding:.55rem 0}
+.sb-news-list li:last-child{border-bottom:none}
+.sb-news-list a{font-size:.83rem;color:#2d3748;line-height:1.45;text-decoration:none;font-weight:500;transition:color .15s;display:block}
+.sb-news-list a:hover{color:var(--teal)}
+.sb-more{display:block;margin-top:.85rem;font-size:.8rem;font-weight:600;color:var(--teal);text-decoration:none}
+.sb-logos{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.sb-logos a{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:4px;padding:.4rem;height:54px;opacity:.9;transition:opacity .15s}
+.sb-logos a:hover{opacity:1}
+.sb-logos a.logo-dark{background:var(--navy)}
+.sb-logos img{max-height:42px;max-width:100%;width:auto;object-fit:contain}
+</style>
+<div class="sb-section">
+  <div class="sb-section-inner">
+    <div></div><!-- left column intentionally empty — form is above -->
+    <aside class="sidebar">
+      <div class="sb-banner">
+        <a href="https://congress2026.neurocienciasfalan.org/" target="_blank" rel="noopener">
+          <img src="img/SAVETHEDATEFALAN2026-300x300.webp" alt="FALAN Congress 2026" style="width:100%;display:block;border-radius:6px">
+        </a>
+      </div>
+      <div class="sb-widget">
+        <div class="sb-widget-head">Entradas recientes</div>
+        <div class="sb-widget-body">
+          <ul class="sb-news-list">
+            <li><a href="noticias/laconeu-2027-convocatoria-de-postulacion-abierta.html">LACONEU 2027 | Convocatoria de postulación abierta</a></li>
+            <li><a href="noticias/curioseando-musica-para-entender-el-cerebro.html">Curioseando: música para entender el cerebro</a></li>
+            <li><a href="noticias/citacion-a-asamblea-general-ordinaria-de-socios-3.html">Citación a Asamblea General Ordinaria de Socios</a></li>
+            <li><a href="noticias/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027.html">Convocatoria Abierta: Propuestas de Simposios IBRO 2027</a></li>
+            <li><a href="noticias/postulaciones-abiertas-doctorado-en-ciencias-bmcn.html">Postulaciones Abiertas Doctorado en Ciencias BMCN</a></li>
+          </ul>
+          <a class="sb-more" href="noticias.html">Ver todas las noticias →</a>
+        </div>
+      </div>
+      <div class="sb-widget">
+        <div class="sb-widget-head">Páginas Recomendadas</div>
+        <div class="sb-widget-body">
+          <div class="sb-logos">
+            <a href="http://www.biologiachile.cl/" target="_blank" rel="noopener" title="Sociedad de Biología de Chile"><img src="img/logos/logo-ubio.jpg" alt="Sociedad de Biología de Chile"></a>
+            <a href="https://www.anid.cl/" target="_blank" rel="noopener" title="ANID"><img src="img/logos/conicyt.jpg" alt="ANID"></a>
+            <a href="http://www.sfn.org/" target="_blank" rel="noopener" title="Society for Neuroscience"><img src="img/logos/sfn.jpg" alt="Society for Neuroscience"></a>
+            <a href="https://neurocienciasfalan.org/" target="_blank" rel="noopener" title="FALAN" class="logo-dark"><img src="img/logos/falan-logo.png" alt="FALAN"></a>
+            <a href="https://latbrain.com/" target="_blank" rel="noopener" title="LatBrain"><img src="img/logos/latbrain-logo.webp" alt="LatBrain"></a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
 
 <!-- ── FOOTER ─────────────────────────────────────────── -->
 <footer class="footer">

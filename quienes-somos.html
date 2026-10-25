@@ -102,10 +102,11 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
 .sb-more:hover{text-decoration:underline}
 
 /* Páginas Recomendadas — logo grid */
-.sb-logos{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:flex-start}
-.sb-logos a{display:inline-flex;align-items:center;opacity:.85;transition:opacity .15s}
+.sb-logos{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.sb-logos a{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border);border-radius:4px;padding:.4rem;height:54px;opacity:.9;transition:opacity .15s}
 .sb-logos a:hover{opacity:1}
-.sb-logos img{height:44px;width:auto;max-width:110px;object-fit:contain;display:block}
+.sb-logos a.logo-dark{background:var(--navy)}
+.sb-logos img{max-height:42px;max-width:100%;width:auto;object-fit:contain}
 
 /* ── FOOTER ──────────────────────────────────────────── */
 .footer{background:var(--navy);color:rgba(255,255,255,.55);font-size:.82rem;padding:2rem 0}
@@ -270,7 +271,7 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
           <a href="http://www.sfn.org/" target="_blank" rel="noopener" title="Society for Neuroscience">
             <img src="img/logos/sfn.jpg" alt="Society for Neuroscience">
           </a>
-          <a href="https://neurocienciasfalan.org/" target="_blank" rel="noopener" title="FALAN">
+          <a href="https://neurocienciasfalan.org/" target="_blank" rel="noopener" title="FALAN" class="logo-dark">
             <img src="img/logos/falan-logo.png" alt="FALAN">
           </a>
           <a href="https://latbrain.com/" target="_blank" rel="noopener" title="LatBrain">

@@ -36,7 +36,7 @@ a{color:inherit}
 .nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
 .nav-links>li{position:relative}
 .nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);text-decoration:none;font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
-.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.08)}
 .nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.25rem;opacity:.6}
 .nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
 .nav-has-drop:hover .nav-drop{display:block}
@@ -53,29 +53,61 @@ a{color:inherit}
 .page-hero h1{font-family:var(--f-display);font-weight:500;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:.5rem}
 .page-hero p{font-size:1rem;color:rgba(255,255,255,.6);max-width:560px}
 
-/* ── QUIÉNES SOMOS ───────────────────────────────────── */
-.quien-text{font-size:1rem;line-height:1.8;color:var(--body);max-width:760px;margin-bottom:1.75rem}
+/* ── TWO-COLUMN LAYOUT ───────────────────────────────── */
+.content-wrap{max-width:var(--max-w);margin:0 auto;padding:3rem var(--pad);display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:start}
+@media(max-width:860px){.content-wrap{grid-template-columns:1fr;padding:2rem var(--pad)}}
+
+/* ── MAIN CONTENT ────────────────────────────────────── */
+.main-content{}
+.section-block{margin-bottom:3rem}
+.section-block:last-child{margin-bottom:0}
+.block-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.block-title{font-family:var(--f-display);font-weight:600;font-size:clamp(1.3rem,2.5vw,1.8rem);line-height:1.2;color:var(--navy);margin-bottom:1.25rem}
+
+/* Quiénes somos */
+.quien-text{font-size:1rem;line-height:1.8;color:var(--body);margin-bottom:1.5rem}
 .quien-objectives{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
-@media(max-width:640px){.quien-objectives{grid-template-columns:1fr}}
-.quien-obj{padding:1.25rem 1.4rem;background:#fff;border-left:3px solid var(--teal);border-radius:0 6px 6px 0;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+@media(max-width:560px){.quien-objectives{grid-template-columns:1fr}}
+.quien-obj{padding:1.1rem 1.25rem;background:var(--offwhite);border-left:3px solid var(--teal);border-radius:0 6px 6px 0}
 .quien-obj-n{display:none}
-.quien-obj-t{font-size:.99rem;font-weight:600;color:var(--navy);margin-bottom:.4rem}
+.quien-obj-t{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.35rem}
 .quien-obj-b{font-size:.83rem;color:var(--body);line-height:1.8}
-.estatutos-link{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.2rem;background:#fff;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--body);font-size:.9rem;font-weight:500;transition:border-color .15s;max-width:420px}
+.estatutos-link{display:inline-flex;align-items:center;gap:.75rem;padding:.85rem 1.2rem;background:var(--offwhite);border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--body);font-size:.88rem;font-weight:500;transition:border-color .15s}
 .estatutos-link:hover{border-color:var(--teal)}
 .estatutos-link svg{flex-shrink:0;color:var(--teal)}
 
-/* ── PREMIO ──────────────────────────────────────────── */
-.premio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
-.premio-card{background:#fff;border-radius:8px;padding:1.1rem 1.25rem;border:1px solid var(--border);display:flex;flex-direction:column;gap:.3rem;transition:box-shadow .15s}
-.premio-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.premio-year{font-family:var(--f-display);font-weight:700;font-size:1.4rem;color:var(--teal);line-height:1}
-.premio-name{font-size:.9rem;font-weight:600;color:var(--navy);line-height:1.3}
+/* Premio */
+.premio-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
+.premio-card{background:#fff;border-radius:6px;padding:1rem 1.1rem;border:1px solid var(--border);display:flex;flex-direction:column;gap:.25rem;transition:box-shadow .15s,border-color .15s}
+.premio-card:hover{box-shadow:0 3px 12px rgba(0,0,0,.07);border-color:var(--teal)}
+.premio-year{font-family:var(--f-display);font-weight:700;font-size:1.2rem;color:var(--teal);line-height:1}
+.premio-name{font-size:.84rem;font-weight:600;color:var(--navy);line-height:1.3}
+
+/* ── SIDEBAR ──────────────────────────────────────────── */
+aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
+.sb-widget{background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.sb-widget-head{background:var(--navy);color:#fff;padding:.65rem 1rem;font-family:var(--f-display);font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
+.sb-widget-body{padding:1rem}
+
+/* Recent news */
+.sb-news-list{list-style:none;display:flex;flex-direction:column;gap:.85rem}
+.sb-news-item{display:flex;gap:.65rem;align-items:flex-start}
+.sb-news-date{flex-shrink:0;font-size:.68rem;font-weight:700;color:#fff;background:var(--teal);border-radius:3px;padding:.2rem .4rem;line-height:1.3;margin-top:.15rem;white-space:nowrap}
+.sb-news-title{font-size:.82rem;color:var(--body);line-height:1.45;text-decoration:none;font-weight:500;transition:color .15s}
+.sb-news-title:hover{color:var(--teal)}
+
+/* Links */
+.sb-links-list{list-style:none;display:flex;flex-direction:column}
+.sb-links-list li{border-bottom:1px solid var(--border)}
+.sb-links-list li:last-child{border-bottom:none}
+.sb-links-list a{display:flex;align-items:center;gap:.5rem;padding:.55rem .25rem;font-size:.84rem;color:var(--body);text-decoration:none;font-weight:500;transition:color .15s}
+.sb-links-list a:hover{color:var(--teal)}
+.sb-links-list a::before{content:'↗';font-size:.72rem;color:var(--teal);flex-shrink:0}
 
 /* ── FOOTER ──────────────────────────────────────────── */
 .footer{background:var(--navy);color:rgba(255,255,255,.55);font-size:.82rem;padding:2rem 0}
 .footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-brand{font-family:var(--f-display);font-weight:600;color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:.4rem}
+.footer-brand{font-family:var(--f-display);font-weight:600;color:rgba(255,255,255,.7);font-size:.95rem;margin-bottom:.35rem}
 .footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
 .footer-links a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .15s}
 .footer-links a:hover{color:#fff}
@@ -100,7 +132,7 @@ a{color:inherit}
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Inicio</a></li>
       <li class="nav-has-drop">
-        <a href="quienes-somos.html">Quiénes somos</a>
+        <a href="quienes-somos.html" class="active">Quiénes somos</a>
         <ul class="nav-drop">
           <li><a href="quienes-somos.html#premio">Premio a la Trayectoria en Neurociencia</a></li>
         </ul>
@@ -138,65 +170,124 @@ a{color:inherit}
   </div>
 </section>
 
-<!-- ── OBJETIVOS ──────────────────────────────────────── -->
-<section class="section">
-  <div class="wrap">
-    <div class="sh">
-      <span class="sh-label">Historia y misión</span>
-      <h2 class="sh-title">Objetivos de la SCN</h2>
-    </div>
-    <p class="quien-text">
-      Los objetivos de la Sociedad Chilena de Neurociencia (SCN) son:
-    </p>
-    <ul class="quien-objectives">
-      <li class="quien-obj">
-        <div class="quien-obj-t">Comprensión del sistema nervioso</div>
-        <p class="quien-obj-b">Contribuir a la comprensión de la estructura y función del sistema nervioso reuniendo a científicos de las disciplinas básicas y clínicas, facilitando la colaboración multidisciplinaria para desarrollar nuevos conocimientos y tratamientos.</p>
-      </li>
-      <li class="quien-obj">
-        <div class="quien-obj-t">Desarrollo profesional</div>
-        <p class="quien-obj-b">Organizar actividades profesionales de desarrollo, de información, y obtener recursos educativos para los neurocientistas en todas las etapas de sus carreras, incluyendo estudiantes de pre y posgrado, posdoctorados y becarios clínicos.</p>
-      </li>
-      <li class="quien-obj">
-        <div class="quien-obj-t">Difusión y ética</div>
-        <p class="quien-obj-b">Promover la información pública y la educación general sobre la naturaleza del descubrimiento científico y los resultados de las investigaciones en Neurociencias. Apoyar discusiones activas sobre las implicaciones éticas.</p>
-      </li>
-      <li class="quien-obj">
-        <div class="quien-obj-t">Política científica</div>
-        <p class="quien-obj-b">Informar a los legisladores y autoridades sobre la importancia del desarrollo científico en Chile, los nuevos conocimientos en Neurociencias y sus implicaciones para la política nacional de salud pública y el bien común.</p>
-      </li>
-    </ul>
-    <a href="EstatutoSCN1-17VersiónfinalOFICIAL.pdf" class="estatutos-link" download>
-      <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
-      <div>Estatutos de la Sociedad Chilena de Neurociencia <small>Escritura pública · Repertorio Nº 1.924-2005</small></div>
-    </a>
-  </div>
-</section>
+<!-- ── MAIN TWO-COLUMN AREA ───────────────────────────── -->
+<div class="content-wrap">
 
-<!-- ── PREMIO A LA TRAYECTORIA ────────────────────────── -->
-<section class="section section-alt" id="premio">
-  <div class="wrap">
-    <div class="sh">
-      <span class="sh-label">Reconocimiento a la excelencia</span>
-      <h2 class="sh-title">Premio a la Trayectoria en Neurociencia</h2>
+  <!-- ── LEFT: MAIN CONTENT ─────────────────────────── -->
+  <main class="main-content">
+
+    <!-- Objetivos -->
+    <div class="section-block">
+      <span class="block-label">Historia y misión</span>
+      <h2 class="block-title">Objetivos de la SCN</h2>
+      <p class="quien-text">Los objetivos de la Sociedad Chilena de Neurociencia (SCN) son:</p>
+      <ul class="quien-objectives">
+        <li class="quien-obj">
+          <div class="quien-obj-t">Comprensión del sistema nervioso</div>
+          <p class="quien-obj-b">Contribuir a la comprensión de la estructura y función del sistema nervioso reuniendo a científicos de las disciplinas básicas y clínicas, facilitando la colaboración multidisciplinaria para desarrollar nuevos conocimientos y tratamientos.</p>
+        </li>
+        <li class="quien-obj">
+          <div class="quien-obj-t">Desarrollo profesional</div>
+          <p class="quien-obj-b">Organizar actividades profesionales de desarrollo, de información, y obtener recursos educativos para los neurocientistas en todas las etapas de sus carreras, incluyendo estudiantes de pre y posgrado, posdoctorados y becarios clínicos.</p>
+        </li>
+        <li class="quien-obj">
+          <div class="quien-obj-t">Difusión y ética</div>
+          <p class="quien-obj-b">Promover la información pública y la educación general sobre la naturaleza del descubrimiento científico y los resultados de las investigaciones en Neurociencias. Apoyar discusiones activas sobre las implicaciones éticas.</p>
+        </li>
+        <li class="quien-obj">
+          <div class="quien-obj-t">Política científica</div>
+          <p class="quien-obj-b">Informar a los legisladores y autoridades sobre la importancia del desarrollo científico en Chile, los nuevos conocimientos en Neurociencias y sus implicaciones para la política nacional de salud pública y el bien común.</p>
+        </li>
+      </ul>
+      <a href="EstatutoSCN1-17VersiónfinalOFICIAL.pdf" class="estatutos-link" download>
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+        <div>Estatutos de la Sociedad Chilena de Neurociencia <small>Escritura pública · Repertorio Nº 1.924-2005</small></div>
+      </a>
     </div>
-    <p class="quien-text">
-      La SCN distingue cada año a un investigador o investigadora cuya trayectoria ha contribuido de manera excepcional al desarrollo de las neurociencias en Chile y América Latina.
-    </p>
-    <div class="premio-grid">
-      <div class="premio-card"><div class="premio-year">2025</div><div class="premio-name">Dra. Úrzula Wyneken</div></div>
-      <div class="premio-card"><div class="premio-year">2024</div><div class="premio-name">Dr. Pedro Maldonado</div></div>
-      <div class="premio-card"><div class="premio-year">2022</div><div class="premio-name">Dra. Maria Cecilia Hidalgo</div></div>
-      <div class="premio-card"><div class="premio-year">2019</div><div class="premio-name">Dr. Juan Bacigalupo</div></div>
-      <div class="premio-card"><div class="premio-year">2018</div><div class="premio-name">Dra. Katia Gysling</div></div>
-      <div class="premio-card"><div class="premio-year">2017</div><div class="premio-name">Dr. Humberto Maturana</div></div>
-      <div class="premio-card"><div class="premio-year">2016</div><div class="premio-name">Dr. Nibaldo Inestrosa</div></div>
-      <div class="premio-card"><div class="premio-year">2015</div><div class="premio-name">Dr. Francisco Bezanilla</div></div>
-      <div class="premio-card"><div class="premio-year">2014</div><div class="premio-name">Dr. Luis Robles</div></div>
-      <div class="premio-card"><div class="premio-year">2013</div><div class="premio-name">Dr. Fernando Torrealba</div></div>
+
+    <!-- Premio a la Trayectoria -->
+    <div class="section-block" id="premio">
+      <span class="block-label">Reconocimiento a la excelencia</span>
+      <h2 class="block-title">Premio a la Trayectoria en Neurociencia</h2>
+      <p class="quien-text">La SCN distingue cada año a un investigador o investigadora cuya trayectoria ha contribuido de manera excepcional al desarrollo de las neurociencias en Chile y América Latina.</p>
+      <div class="premio-grid">
+        <div class="premio-card"><div class="premio-year">2025</div><div class="premio-name">Dra. Úrzula Wyneken</div></div>
+        <div class="premio-card"><div class="premio-year">2024</div><div class="premio-name">Dr. Pedro Maldonado</div></div>
+        <div class="premio-card"><div class="premio-year">2022</div><div class="premio-name">Dra. Maria Cecilia Hidalgo</div></div>
+        <div class="premio-card"><div class="premio-year">2019</div><div class="premio-name">Dr. Juan Bacigalupo</div></div>
+        <div class="premio-card"><div class="premio-year">2018</div><div class="premio-name">Dra. Katia Gysling</div></div>
+        <div class="premio-card"><div class="premio-year">2017</div><div class="premio-name">Dr. Humberto Maturana</div></div>
+        <div class="premio-card"><div class="premio-year">2016</div><div class="premio-name">Dr. Nibaldo Inestrosa</div></div>
+        <div class="premio-card"><div class="premio-year">2015</div><div class="premio-name">Dr. Francisco Bezanilla</div></div>
+        <div class="premio-card"><div class="premio-year">2014</div><div class="premio-name">Dr. Luis Robles</div></div>
+        <div class="premio-card"><div class="premio-year">2013</div><div class="premio-name">Dr. Fernando Torrealba</div></div>
+      </div>
     </div>
-  </div>
-</section>
+
+  </main>
+
+  <!-- ── RIGHT: SIDEBAR ─────────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- Noticias recientes -->
+    <div class="sb-widget">
+      <div class="sb-widget-head">Noticias recientes</div>
+      <div class="sb-widget-body">
+        <ul class="sb-news-list">
+          <li class="sb-news-item">
+            <span class="sb-news-date">Sep 26</span>
+            <a class="sb-news-title" href="noticias/laconeu-2027-convocatoria-de-postulacion-abierta.html">LACONEU 2027 — Convocatoria de postulación abierta</a>
+          </li>
+          <li class="sb-news-item">
+            <span class="sb-news-date">Sep 26</span>
+            <a class="sb-news-title" href="noticias/curioseando-musica-para-entender-el-cerebro.html">Curioseando: música para entender el cerebro</a>
+          </li>
+          <li class="sb-news-item">
+            <span class="sb-news-date">Ago 26</span>
+            <a class="sb-news-title" href="noticias/citacion-a-asamblea-general-ordinaria-de-socios-3.html">Citación a Asamblea General Ordinaria de Socios</a>
+          </li>
+          <li class="sb-news-item">
+            <span class="sb-news-date">Jul 26</span>
+            <a class="sb-news-title" href="noticias/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027.html">Convocatoria IBRO 2027 — Simposios</a>
+          </li>
+          <li class="sb-news-item">
+            <span class="sb-news-date">Jul 26</span>
+            <a class="sb-news-title" href="noticias/postulaciones-abiertas-doctorado-en-ciencias-bmcn.html">Postulaciones Doctorado en Ciencias BMCN</a>
+          </li>
+          <li class="sb-news-item">
+            <span class="sb-news-date">Abr 26</span>
+            <a class="sb-news-title" href="noticias/neurofest-la-feria-del-cerebro.html">NeuroFest: La Feria del Cerebro</a>
+          </li>
+        </ul>
+        <a href="noticias.html" style="display:block;margin-top:1rem;font-size:.8rem;font-weight:600;color:var(--teal);text-decoration:none">Ver todas las noticias →</a>
+      </div>
+    </div>
+
+    <!-- Vínculos -->
+    <div class="sb-widget">
+      <div class="sb-widget-head">Vínculos</div>
+      <div class="sb-widget-body" style="padding:.25rem .75rem">
+        <ul class="sb-links-list">
+          <li><a href="https://www.sfn.org" target="_blank" rel="noopener">Society for Neuroscience (SfN)</a></li>
+          <li><a href="https://ibro.org" target="_blank" rel="noopener">IBRO — Int'l Brain Research Org.</a></li>
+          <li><a href="https://neurocienciasfalan.org" target="_blank" rel="noopener">FALAN</a></li>
+          <li><a href="https://laconeu.org" target="_blank" rel="noopener">LACONEU</a></li>
+          <li><a href="https://www.anid.cl" target="_blank" rel="noopener">ANID — Fondecyt</a></li>
+          <li><a href="https://congress2026.neurocienciasfalan.org" target="_blank" rel="noopener">Congreso FALAN 2026</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Asociarse CTA -->
+    <div class="sb-widget" style="background:var(--navy);border-color:var(--navy)">
+      <div class="sb-widget-body" style="padding:1.25rem 1rem;text-align:center">
+        <p style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:.9rem;line-height:1.55">¿Eres investigador o estudiante de neurociencias? Únete a la SCN.</p>
+        <a href="asociarse.html" style="display:inline-block;background:var(--teal);color:#fff;font-weight:600;font-size:.84rem;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none">Asociarse →</a>
+      </div>
+    </div>
+
+  </aside>
+</div>
 
 <!-- ── FOOTER ─────────────────────────────────────────── -->
 <footer class="footer">

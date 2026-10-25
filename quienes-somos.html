@@ -89,20 +89,23 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
 .sb-widget-head{background:var(--navy);color:#fff;padding:.65rem 1rem;font-family:var(--f-display);font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
 .sb-widget-body{padding:1rem}
 
-/* Recent news */
-.sb-news-list{list-style:none;display:flex;flex-direction:column;gap:.85rem}
-.sb-news-item{display:flex;gap:.65rem;align-items:flex-start}
-.sb-news-date{flex-shrink:0;font-size:.68rem;font-weight:700;color:#fff;background:var(--teal);border-radius:3px;padding:.2rem .4rem;line-height:1.3;margin-top:.15rem;white-space:nowrap}
-.sb-news-title{font-size:.82rem;color:var(--body);line-height:1.45;text-decoration:none;font-weight:500;transition:color .15s}
-.sb-news-title:hover{color:var(--teal)}
+/* FALAN banner */
+.sb-banner{border-radius:6px;overflow:hidden;border:1px solid var(--border)}
 
-/* Links */
-.sb-links-list{list-style:none;display:flex;flex-direction:column}
-.sb-links-list li{border-bottom:1px solid var(--border)}
-.sb-links-list li:last-child{border-bottom:none}
-.sb-links-list a{display:flex;align-items:center;gap:.5rem;padding:.55rem .25rem;font-size:.84rem;color:var(--body);text-decoration:none;font-weight:500;transition:color .15s}
-.sb-links-list a:hover{color:var(--teal)}
-.sb-links-list a::before{content:'↗';font-size:.72rem;color:var(--teal);flex-shrink:0}
+/* Entradas recientes — plain list matching WordPress widget */
+.sb-news-list{list-style:none;display:flex;flex-direction:column;gap:0}
+.sb-news-list li{border-bottom:1px solid var(--border);padding:.55rem 0}
+.sb-news-list li:last-child{border-bottom:none}
+.sb-news-list a{font-size:.83rem;color:var(--body);line-height:1.45;text-decoration:none;font-weight:500;transition:color .15s;display:block}
+.sb-news-list a:hover{color:var(--teal)}
+.sb-more{display:block;margin-top:.85rem;font-size:.8rem;font-weight:600;color:var(--teal);text-decoration:none}
+.sb-more:hover{text-decoration:underline}
+
+/* Páginas Recomendadas — logo grid */
+.sb-logos{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center;justify-content:flex-start}
+.sb-logos a{display:inline-flex;align-items:center;opacity:.85;transition:opacity .15s}
+.sb-logos a:hover{opacity:1}
+.sb-logos img{height:44px;width:auto;max-width:110px;object-fit:contain;display:block}
 
 /* ── FOOTER ──────────────────────────────────────────── */
 .footer{background:var(--navy);color:rgba(255,255,255,.55);font-size:.82rem;padding:2rem 0}
@@ -184,19 +187,19 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
       <ul class="quien-objectives">
         <li class="quien-obj">
           <div class="quien-obj-t">Comprensión del sistema nervioso</div>
-          <p class="quien-obj-b">Contribuir a la comprensión de la estructura y función del sistema nervioso reuniendo a científicos de las disciplinas básicas y clínicas, facilitando la colaboración multidisciplinaria para desarrollar nuevos conocimientos y tratamientos.</p>
+          <p class="quien-obj-b">Contribuir a la comprensión de la estructura y función del sistema nervioso reuniendo a científicos de las disciplinas básicas y clínicas, facilitando la integración de la investigación en todos los niveles de la organización biológica, a través de la colaboración multidisciplinaria con el fin de obtener nuevo conocimiento científico que permita desarrollar tratamientos para mejorar la salud del hombre y de los animales.</p>
         </li>
         <li class="quien-obj">
           <div class="quien-obj-t">Desarrollo profesional</div>
-          <p class="quien-obj-b">Organizar actividades profesionales de desarrollo, de información, y obtener recursos educativos para los neurocientistas en todas las etapas de sus carreras, incluyendo estudiantes de pre y posgrado, posdoctorados y becarios clínicos.</p>
+          <p class="quien-obj-b">Organizar actividades profesionales de desarrollo, de información, y obtener recursos educativos para los neurocientistas en todas las etapas de sus carreras, incluyendo estudiantes de pre y posgrado, así como posdoctorados y becarios clínicos.</p>
         </li>
         <li class="quien-obj">
           <div class="quien-obj-t">Difusión y ética</div>
-          <p class="quien-obj-b">Promover la información pública y la educación general sobre la naturaleza del descubrimiento científico y los resultados de las investigaciones en Neurociencias. Apoyar discusiones activas sobre las implicaciones éticas.</p>
+          <p class="quien-obj-b">Promover la información pública y la educación general sobre la naturaleza del descubrimiento científico y los resultados y las implicaciones de las investigaciones en las Neurociencias. Apoyar discusiones activas sobre las implicaciones éticas de la investigación en Neurociencias.</p>
         </li>
         <li class="quien-obj">
           <div class="quien-obj-t">Política científica</div>
-          <p class="quien-obj-b">Informar a los legisladores y autoridades sobre la importancia del desarrollo científico en Chile, los nuevos conocimientos en Neurociencias y sus implicaciones para la política nacional de salud pública y el bien común.</p>
+          <p class="quien-obj-b">Informar a los legisladores y autoridades sobre la importancia del desarrollo científico en Chile, los nuevos conocimientos en las Neurociencias y sus implicaciones para la política nacional tanto de salud pública como del bien común.</p>
         </li>
       </ul>
       <a href="EstatutoSCN1-17VersiónfinalOFICIAL.pdf" class="estatutos-link" download>
@@ -229,60 +232,51 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
   <!-- ── RIGHT: SIDEBAR ─────────────────────────────── -->
   <aside class="sidebar">
 
-    <!-- Noticias recientes -->
+    <!-- FALAN 2026 banner (from WordPress sidebar) -->
+    <div class="sb-banner">
+      <a href="https://congress2026.neurocienciasfalan.org/" target="_blank" rel="noopener">
+        <img src="img/SAVETHEDATEFALAN2026-300x300.webp"
+             alt="FALAN Congress 2026"
+             style="width:100%;display:block;border-radius:6px">
+      </a>
+    </div>
+
+    <!-- Entradas recientes (exact WordPress widget) -->
     <div class="sb-widget">
-      <div class="sb-widget-head">Noticias recientes</div>
+      <div class="sb-widget-head">Entradas recientes</div>
       <div class="sb-widget-body">
         <ul class="sb-news-list">
-          <li class="sb-news-item">
-            <span class="sb-news-date">Sep 26</span>
-            <a class="sb-news-title" href="noticias/laconeu-2027-convocatoria-de-postulacion-abierta.html">LACONEU 2027 — Convocatoria de postulación abierta</a>
-          </li>
-          <li class="sb-news-item">
-            <span class="sb-news-date">Sep 26</span>
-            <a class="sb-news-title" href="noticias/curioseando-musica-para-entender-el-cerebro.html">Curioseando: música para entender el cerebro</a>
-          </li>
-          <li class="sb-news-item">
-            <span class="sb-news-date">Ago 26</span>
-            <a class="sb-news-title" href="noticias/citacion-a-asamblea-general-ordinaria-de-socios-3.html">Citación a Asamblea General Ordinaria de Socios</a>
-          </li>
-          <li class="sb-news-item">
-            <span class="sb-news-date">Jul 26</span>
-            <a class="sb-news-title" href="noticias/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027.html">Convocatoria IBRO 2027 — Simposios</a>
-          </li>
-          <li class="sb-news-item">
-            <span class="sb-news-date">Jul 26</span>
-            <a class="sb-news-title" href="noticias/postulaciones-abiertas-doctorado-en-ciencias-bmcn.html">Postulaciones Doctorado en Ciencias BMCN</a>
-          </li>
-          <li class="sb-news-item">
-            <span class="sb-news-date">Abr 26</span>
-            <a class="sb-news-title" href="noticias/neurofest-la-feria-del-cerebro.html">NeuroFest: La Feria del Cerebro</a>
-          </li>
+          <li><a href="noticias/laconeu-2027-convocatoria-de-postulacion-abierta.html">LACONEU 2027 | Convocatoria de postulación abierta</a></li>
+          <li><a href="noticias/curioseando-musica-para-entender-el-cerebro.html">Curioseando: música para entender el cerebro</a></li>
+          <li><a href="noticias/citacion-a-asamblea-general-ordinaria-de-socios-3.html">Citación a Asamblea General Ordinaria de Socios</a></li>
+          <li><a href="noticias/convocatoria-abierta-propuestas-de-simposios-para-el-congreso-mundial-de-neurociencia-ibro-2027.html">Convocatoria Abierta: Propuestas de Simposios para el Congreso Mundial de Neurociencia IBRO 2027</a></li>
+          <li><a href="noticias/postulaciones-abiertas-doctorado-en-ciencias-bmcn.html">Postulaciones Abiertas Doctorado en Ciencias BMCN</a></li>
         </ul>
-        <a href="noticias.html" style="display:block;margin-top:1rem;font-size:.8rem;font-weight:600;color:var(--teal);text-decoration:none">Ver todas las noticias →</a>
+        <a class="sb-more" href="noticias.html">Ver todas las noticias →</a>
       </div>
     </div>
 
-    <!-- Vínculos -->
+    <!-- Páginas Recomendadas (exact WordPress widget — logos) -->
     <div class="sb-widget">
-      <div class="sb-widget-head">Vínculos</div>
-      <div class="sb-widget-body" style="padding:.25rem .75rem">
-        <ul class="sb-links-list">
-          <li><a href="https://www.sfn.org" target="_blank" rel="noopener">Society for Neuroscience (SfN)</a></li>
-          <li><a href="https://ibro.org" target="_blank" rel="noopener">IBRO — Int'l Brain Research Org.</a></li>
-          <li><a href="https://neurocienciasfalan.org" target="_blank" rel="noopener">FALAN</a></li>
-          <li><a href="https://laconeu.org" target="_blank" rel="noopener">LACONEU</a></li>
-          <li><a href="https://www.anid.cl" target="_blank" rel="noopener">ANID — Fondecyt</a></li>
-          <li><a href="https://congress2026.neurocienciasfalan.org" target="_blank" rel="noopener">Congreso FALAN 2026</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Asociarse CTA -->
-    <div class="sb-widget" style="background:var(--navy);border-color:var(--navy)">
-      <div class="sb-widget-body" style="padding:1.25rem 1rem;text-align:center">
-        <p style="font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:.9rem;line-height:1.55">¿Eres investigador o estudiante de neurociencias? Únete a la SCN.</p>
-        <a href="asociarse.html" style="display:inline-block;background:var(--teal);color:#fff;font-weight:600;font-size:.84rem;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none">Asociarse →</a>
+      <div class="sb-widget-head">Páginas Recomendadas</div>
+      <div class="sb-widget-body">
+        <div class="sb-logos">
+          <a href="http://www.biologiachile.cl/" target="_blank" rel="noopener" title="Sociedad de Biología de Chile">
+            <img src="img/logos/logo-ubio.jpg" alt="Sociedad de Biología de Chile">
+          </a>
+          <a href="https://www.anid.cl/" target="_blank" rel="noopener" title="ANID">
+            <img src="img/logos/conicyt.jpg" alt="ANID">
+          </a>
+          <a href="http://www.sfn.org/" target="_blank" rel="noopener" title="Society for Neuroscience">
+            <img src="img/logos/sfn.jpg" alt="Society for Neuroscience">
+          </a>
+          <a href="https://neurocienciasfalan.org/" target="_blank" rel="noopener" title="FALAN">
+            <img src="img/logos/falan-logo.png" alt="FALAN">
+          </a>
+          <a href="https://latbrain.com/" target="_blank" rel="noopener" title="LatBrain">
+            <img src="img/logos/latbrain-logo.webp" alt="LatBrain">
+          </a>
+        </div>
       </div>
     </div>
 

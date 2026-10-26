@@ -88,6 +88,27 @@ img{max-width:100%;height:auto;display:block}
   .card-grid{grid-template-columns:1fr}
 }
 </style>
+<style id="archivo-css">/* archivo-css-patch */
+/* img-reemplazo-logo — logo SCN usado como imagen de reemplazo */
+img.img-reemplazo-logo{max-width:160px;height:auto;opacity:.28;display:block;
+  margin:1.25rem auto;filter:grayscale(1)}
+/* nota-archivo — pie de página con enlace al original */
+.nota-archivo{margin-top:2.5rem;padding:.65rem 1rem;background:#f4f7fb;
+  border-left:3px solid #0d9fa0;border-radius:0 4px 4px 0;
+  font-size:.78rem;color:#627286;line-height:1.6}
+.nota-archivo a{color:#0d9fa0;text-decoration:underline;text-underline-offset:2px}
+/* lista-archivo — listado de noticias por año (noticias/archivo.html) */
+.lista-archivo{list-style:none;margin:.25rem 0 1rem;padding:0}
+.lista-archivo li{display:flex;gap:.75rem;align-items:baseline;
+  padding:.38rem 0;border-bottom:1px solid #e2e8f0;
+  font-size:.88rem;line-height:1.45}
+.lista-archivo li:last-child{border-bottom:none}
+.lista-archivo time{color:#627286;font-size:.76rem;white-space:nowrap;flex-shrink:0}
+.lista-archivo a{color:#0c1e3f;font-weight:500;text-decoration:none}
+.lista-archivo a:hover{color:#0d9fa0;text-decoration:underline}
+/* btn-archivo — botón teal de WPBakery vc_btn (el resto es inline) */
+a.btn-archivo:hover{opacity:.82}
+</style>
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">

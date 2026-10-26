@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Circular 2 – Reunión anual Sociedad Chilena de Neurociencia — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Circular 2 – Reunión anual Sociedad Chilena de Neurociencia</h1>
+<div class="meta"><span>1 de octubre de 2021</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Circular 2 – Reunión anual Sociedad Chilena de Neurociencia" class="feat-img" src="../img/archivo/2021/banner-destacado-socneurociencia-congreso.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;">Estimado(a) Socio(a):</p>
+<p style="text-align: justify;">Tenemos el agrado de enviar el segundo comunicado acerca de la XVII Reunión Anual de nuestra Sociedad, que tendrá lugar en formato remoto.</p>
+<p style="text-align: justify;">Esperamos contar con su participación y la de sus estudiantes, la que sin duda contribuirá a dar realce a nuestra XVII Reunión Anual.</p>
+<p style="text-align: justify;">El idioma oficial de este congreso será el inglés, por lo que los resúmenes y paneles deben ser escritos y presentados en ese idioma.</p>
+<p style="text-align: justify;">En relación a las comunicaciones libres se sugiere indicar el modo de presentación (oral o poster). Sin embargo, <strong>el Comité Organizador definirá finalmente la modalidad de presentación.</strong></p>
+<p style="text-align: justify;"><strong>PLAZO PARA RECEPCIÓN DE LOS RESÚMENES</strong></p>
+<p style="text-align: justify;">Comunicaciones Libres, Poster, Conferencias y Simposios: <strong>14 de octubre</strong></p>
+<p style="text-align: justify;">El resumen se debe enviar a la plataforma que se habilitará a partir del <strong>27 de  septiembre</strong> en  <a href="https://play.4id.science/neuroc6" rel="noopener" target="_blank"><strong>https://play.4id.science/neuroc6</strong></a></p>
+<p style="text-align: justify;"><strong>COSTOS DE INSCRIPCIÓN Y ENVÍO DE RESÚMENES</strong></p>
+<p style="text-align: justify;">Simposiantes y conferencistas<strong> internacionales</strong>: <strong>Liberados  de pago</strong></p>
+<p style="text-align: justify;">Estudiantes de pre y postgrado: <strong>Liberados de pago</strong></p>
+<p style="text-align: justify;">Socios e Investigadores postdoctorales: <strong>$20.000 |  US$28</strong></p>
+<p style="text-align: justify;">No socios: <strong>$30.000 | US$40                     </strong></p>
+<p style="text-align: justify;">Resúmenes<strong>:  $15.000 US$20</strong></p>
+<p style="text-align: justify;">Existirá una modalidad de registro “LABORATORIO” que permitirán incluir número ilimitado de participantes y resúmenes (del mismo laboratorio) por un costo de <strong>$120.000</strong> <strong>(US$ 160)</strong></p>
+<p style="text-align: justify;"><strong>PROGRAMA</strong></p>
+<p style="text-align: justify;"><strong>Symposia</strong></p>
+<p style="text-align: justify;"><strong>1.- Rare genetic diseases and their impact on neurodevelopment and CNS function.</strong></p>
+<p style="text-align: justify;">Coordinator: Maria Paz Marzolo</p>
+<ol style="text-align: justify;">
+<li>Victor Faundez, “Systems Biology of rare neurological disorders”. Department of Cell Biology, Emory University, Atlanta, USA.</li>
+<li>Bredford Kerr, “Environmental enrichment as a bypass to attenuate the progression of Rett syndrome-like phenotype in a mouse model of the disease”. Centro de Biología Celular y Biomedicina. Facultad de Medicina y Ciencia. Universidad San Sebastián, Chile.</li>
+<li>María-Paz Marzolo, “The AP-4 adaptor complex, mutated in Hereditary Spastic Paraplegia, has ApoER2 as a new cargo with relevant neuronal functionsDepartment of Cell and Molecular Biology. Faculty of Biological Sciences. Pontificia Universidad Católica de Chile, Chile.</li>
+<li>Hugo J Bellen, “Fly tools and approaches to study neurological rare and common human diseases”. Departments of Molecular and Human Genetics and Neuroscience. Texas Children Hospital. Baylor College of Medicine, USA.</li>
+</ol>
+<p style="text-align: justify;"><strong>2.- Ecological Cognitive Neuroscience: moving towards real-life Science.</strong></p>
+<p style="text-align: justify;">Coordinator: Rodrigo Montefusco; María de los Ángeles Juricic</p>
+<ol style="text-align: justify;">
+<li>Rodrigo Montefusco, “How valid are our experimental conclusions in real life?”. Faculty of Medicine, Center for Interdisciplinary Studies on Nervous System (CISNe). Universidad Austral de Chile. Chile.</li>
+<li>Paul Matusz, “Bridging past and future in education: Integrating multisensory models of brain and cognition with naturalistic laboratory research”. Hearing &amp; Speech Sciences, Vanderbilt University, Nashville, TN, USA</li>
+<li>Jacqueline Snow, “Why realism is important for understanding human brain and behavior”. Department of Psychology at the University of Nevada, Reno. USA.</li>
+<li>Francisco J. Parada, “MoBI meets 4E cognition: getting ready for real-world neuroscience”. Facultad de Psicología, Universidad Diego Portales. Chile.</li>
+</ol>
+<p style="text-align: justify;"><strong>3.- Microexons and Central Nervous System Development.</strong></p>
+<p style="text-align: justify;">Coordinator: Maria Estela Andres / Paola Haeger</p>
+<ol style="text-align: justify;">
+<li>Manuel Irimia., “Parallel evolution of neural microexons in insects and vertebrates”. Centre for Genomic Regulation, Barcelona Institute of Science and Technology, Barcelona. España.</li>
+<li>Paola Haeger, “Cognitive impairment induced by prenatal ethanol exposition: New</li>
+</ol>
+<p style="text-align: justify;">insights into gene expression dysregulation”. Departamento de Ciencias Biomédicas, Facultad De Medicina, Universidad Católica Del Norte, Coquimbo, Chile.</p>
+<ol style="text-align: justify;">
+<li>Elena Battaglioli, “Microexon contribution to environmental-stress adaptation: the</li>
+</ol>
+<p style="text-align: justify;">interesting case of LSD1”. Department of Medical Biotechnology and Translational</p>
+<p style="text-align: justify;">Medicine, Università degli Studi di Milano-Via Fratelli Milano. Italy.</p>
+<p style="text-align: justify;"><strong>4.- Mente, Cerebro y Educación.</strong></p>
+<p style="text-align: justify;">Coordinator: Paulo Barraza</p>
+<ol style="text-align: justify;">
+<li>Elena Salillas, “Redes cerebrales tras la aritmética simple: evidencia de magnetoencefalografía”. Universidad de Zaragoza, España.</li>
+<li>Marcela Peña, “Tecnologías interactivas para apoyar el desarrollo del lenguaje en pre-escolares”. Pontificia Universidad Católica de Chile, Chile.</li>
+<li>Cecilia Calero, “Enseñar… ¿Cómo y para qué?”. Universidad Torcuato Di Tella, Argentina.</li>
+<li>Paulo Barraza, “El Cerebro del Profesor: bases neurocognitivas de la docencia experta”. Universidad de Chile, Chile.</li>
+</ol>
+<p style="text-align: justify;">5.- <strong>Young Neuroscientist Symposium.</strong></p>
+<p style="text-align: justify;">Coordinator: Patricio Orio</p>
+<p style="text-align: justify;"><strong>6.- Brain aging and glial cells – When neuroinflammation shapes brain function.</strong></p>
+<p style="text-align: justify;">Coordinator: Maite Castro / Francisco J. Rivera</p>
+<ol style="text-align: justify;">
+<li>Flavia E. Saravia, “Microglia in the context of aging and Alzheimer’s disease”. Faculty of Exact &amp; Natural Sciences, University of Buenos Aires. Argentina.</li>
+<li>Ludwig Aigner, “Targeting Brain Rejuvenation for the Treatment of Dementia”. Spinal Cord Injury and Tissue Regeneration Center Salzburg (SCI-TReCS), Institute of Molecular Regenerative Medicine, Paracelsus Medical University Salzburg, Austria.</li>
+<li>Saul Villeda, “Systemic mechanisms of brain rejuvenation” Endowed Chair in Biomedical Sciences, School of Medicine, University of California, San Francisco. USA.</li>
+</ol>
+<p style="text-align: justify;"><strong>7.- Molecular basis of memory and depression.</strong></p>
+<p style="text-align: justify;">Coordinator: Jimmy Stehberg</p>
+<ol style="text-align: justify;">
+<li>Irit Akirav, “Targeting the endocannabinoid system in stress-related disorder”. Department of Psychology, Haifa University, Haifa. Israel</li>
+<li>Aline Desmedt, “A molecular switch in the transition from normal to PTSD-like fear memory”. Neurocentre Magendie, INSERM U1215. Bordeaux University. France.</li>
+<li>Jimmy Stehberg., “Role of astrocytes in memory and depression”. Instituto de Ciencias Biomédicas, Universidad Andrés Bello, Santiago. Chile.</li>
+<li>Kobi Rosemblum. “New inhibitors for QR2 to fight neurodegeneration and AD”. Sagol Dept Neurobiology, University of Haifa. Israel.</li>
+</ol>
+<p style="text-align: justify;"><strong>Conference 1</strong></p>
+<p style="text-align: justify;"><strong>Benno Roozendaal,</strong> Donders Institute. Radboud University Medical Center. Nijmegen. The Netherlands.</p>
+<p style="text-align: justify;">Title: Stress hormone effects on different aspects of memory quality.</p>
+<p style="text-align: justify;">Coordinator: Jimmy Stehberg</p>
+<p style="text-align: justify;"><strong>Conference 2</strong></p>
+<p style="text-align: justify;"><strong>Casper Hoogenraad, </strong>Genetech, USA.</p>
+<p style="text-align: justify;">Title: Building a neuron: cytoskeleton organization and transport mechanisms’</p>
+<p style="text-align: justify;">Coordinator: Christian Gonzalez</p>
+<p style="text-align: justify;"><strong>Roundtable</strong></p>
+<p style="text-align: justify;">Coordinator: Christian Gonzalez</p>
+<p style="text-align: justify;"><strong>“Humberto Maturana (1928-2021): Una visión sistémica de los seres vivos”</strong></p>
+<p style="text-align: justify;">Jorge Mpodozis, “Evolución a través de la deriva del Nicho Ontológico”. Departamento de Biología, Facultad de Ciencias, Universidad de Chile.</p>
+<p style="text-align: justify;">Juan-Carlos Letelier, “Algo Necesario para entender la génesis del concepto de Autopoiesis: Las interacciones entre Humberto Maturana y Heinz von-Foerster (1963-2002)”. Departamento de Biología, Facultad de Ciencias, Universidad de Chile.</p>
+<p style="text-align: justify;">Maria de la Luz Cardenas: “Autopoiesis y Metabolismo”. Bioénergétique et Ingénierie des Protéines, Centre National de la Recherche Scientifique (CNRS), Marseilles, France.</p>
+<p style="text-align: justify;">Para mayores informaciones en:   <a href="../index.html">https://socneurociencia.cl/</a></p>
+<p style="text-align: justify;">Atentos saludos,<br/>
+COMITÉ ORGANIZADOR</p>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 1 de octubre de 2021 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2021/10/01/circular-2-reunion-anual-sociedad-chilena-de-neurociencia/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

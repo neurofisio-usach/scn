@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Ese misterioso órgano llamado cerebro — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Ese misterioso órgano llamado cerebro</h1>
+<div class="meta"><span>2 de septiembre de 2019</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Ese misterioso órgano llamado cerebro" class="feat-img" src="../img/archivo/2019/neuro-imag-28-08-19.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;"><strong>El neurocientífico Pedro Maldonado acaba de publicar su primer libro de divulgación, <em>¿Por qué tenemos el cerebro en nuestra cabeza?</em> A lo largo de sus páginas podemos descubrir los mayores secretos del órgano más extraordinario del cuerpo humano.</strong></p>
+<p style="text-align: justify;">Nuestro cerebro es uno de los misterios más impenetrables del universo. Incluso los neurocientíficos más reconocidos del mundo suelen admitir que sabemos poco y nada de él: apenas unos cuantos detalles de su extraordinario funcionamiento. Por ejemplo, que es el resultado de 2,5 millones de años de evolución, que representa el 2% de nuestro peso —pero usa el 20% de su energía—, que tiene más de diez mil tipos de neuronas diferentes o que la electricidad que produce podría encender una lámpara pequeña.</p>
+<p style="text-align: justify;">Pedro Maldonado, doctor en Fisiología de la Universidad de Pensilvania, académico de la Universidad de Chile e investigador del <a href="https://www.bni.cl/" rel="noopener" target="_blank">Instituto Milenio de Neurociencia Biomédica</a>, lo ha estudiado durante casi toda su vida, en particular las cortezas involucradas en el funcionamiento de la vista. En los últimos años, cuenta el neurocientífico, de 59 años, ha dado numerosas charlas para alumnos y público general, donde ha escuchado una y otra vez las mismas preguntas: ¿Qué es el cerebro y de qué está hecho? ¿Qué pasa con él a medida que crecemos? ¿Cómo funciona la memoria? ¿Qué diferencia un cerebro de un computador?</p>
+<p style="text-align: justify;">Eso lo llevó a recopilar ésas y otras respuestas en su primer libro <em>¿Por qué tenemos el cerebro en nuestra cabeza?</em> (Debate, 2019), que fue lanzado este mes, en el que se atreve a abordar algunos de los secretos que se ocultan en el órgano más complejo del cuerpo.</p>
+<div class="wp-caption alignleft" id="attachment_43935" style="text-align: justify;"><img alt="" aria-describedby="caption-attachment-43935" class="wp-image-43935" loading="lazy" src="../img/archivo/2019/pedromaldonado3-300x300.jpg"/>
+<p class="wp-caption-text" id="caption-attachment-43935">Portada del libro publicado por el sello Debate.<br/>
+(Fotos: Editorial Penguin Random House).</p>
+</div>
+<p style="text-align: justify;"><strong>—¿Qué tanto sabemos realmente sobre el cerebro?</strong></p>
+<p style="text-align: justify;">—Sabemos bastante poco. Es un sistema que muchos pensamos que es el más complejo del universo. Se estima que conocemos el 15% de la corteza visual primaria, una de las tantas que usamos para ver, y eso que es una de las que más conocemos. Hemos estudiado el cerebro durante décadas y hemos aprendido bastante, pero no lo suficiente para resolver algunos de sus problemas, particularmente aquellos de la medicina, como la depresión o la adicción al alcohol, que en nuestro país es uno de los desafíos de salud pública más terribles.</p>
+<p style="text-align: justify;"><strong>—¿Cuál dirías que es el mito más común sobre el cerebro?</strong></p>
+<p style="text-align: justify;">—Que usamos solo el 10% de su capacidad. Siempre lo usamos todo, aunque de manera distinta. Un cerebro que no se usa tiende a perder sus conexiones. Otro mito es que el cerebro de hombres y mujeres tiene distintas capacidades cognitivas. Son diferentes, pero la gente piensa que las mujeres son mejores para una cosa y los hombres para otra, como esa idea falsa de que los hombres serían más inteligentes en matemáticas. Se suele atribuir habilidades cognitivas distintas a hombres y mujeres, y la evidencia muestra que no es así.</p>
+<p style="text-align: justify;"><strong>—¿Qué sabemos sobre cómo funciona la memoria?</strong></p>
+<p style="text-align: justify;">—La memoria nos enseña varias cosas, por ejemplo, que aprendemos de distintas maneras: frente a una pizarra con un profesor, pero también mirando, haciendo, imitando, lo que implica que la estrategia pedagógica debe ser múltiple. También nos enseña que las memorias más antiguas son más fuertes que las nuevas, por eso los viejitos recuerdan más su juventud que el último mes. Además, nuestra memoria es bastante frágil, no es fiel al mundo.</p>
+<p style="text-align: justify;"><strong>—Eso podría tener implicancias en distintos ámbitos. Por ejemplo, a nivel judicial, respecto a los testimonios de los testigos.</strong></p>
+<p style="text-align: justify;">—Los testigos no son muy confiables. Las personas están seguras, no mienten, pero en nuestra experiencia diaria, cuando nos juntamos a conversar con alguien de lo que pasó hace un tiempo, no siempre estamos de acuerdo. Las memorias no son iguales y la experiencia que van a constituir esas memorias tampoco. Dos personas que están juntas y son testigos de un accidente de tránsito van a tener distintas memorias de lo que ocurrió.</p>
+<div class="wp-caption aligncenter" id="attachment_43934" style="text-align: justify;"><img alt="" aria-describedby="caption-attachment-43934" class="wp-image-43934" loading="lazy" src="../img/archivo/2019/pedromaldonado2-300x216.png"/>
+<p class="wp-caption-text" id="caption-attachment-43934">Ilustración de un cerebro humano, resultado de 2,5 millones de años de evolución.</p>
+</div>
+<p style="text-align: justify;"><strong>—¿Por qué la memoria es tan maleable?</strong></p>
+<p style="text-align: justify;">—A diferencia de un computador, donde las cosas se guardan en un lugar y quedan iguales para siempre, la memoria se enciende reactivando redes neuronales. Por lo tanto, se robustece mientras uno más la llama de vuelta. Pero al mismo tiempo, cada vez que uno la llama es susceptible de ir cambiando. Además, en el circuito donde se retiene la memoria hay otras cosas guardadas y todo se va mezclando. Uno ni siquiera está seguro de si un recuerdo es necesariamente una memoria o algo que escuchó o leyó. Hubo un tiempo en Estados Unidos donde los hijos demandaban a sus padres por abusos cometidos cuando tenían meses de vida. Esas son memorias falsas, porque el cerebro no forma memoria tan temprano. Lo hace, en promedio, a los tres años y medio.</p>
+<p style="text-align: justify;"><strong>—¿Por qué a veces uno confunde lo que vivió con lo que soñó?</strong></p>
+<p style="text-align: justify;">—Cuando uno sueña, el cerebro tiene una actividad indistinguible de cuando está despierto. Por lo tanto, durante el sueño el cerebro hace las mismas cosas que en la vigilia. Si hay un sueño con componente emocional, quizás uno lo recuerda al despertar. Años después, no se acuerda de que era un sueño y lo incorpora a las memorias que sí vivió y ahí se empiezan a confundir las cosas. La memoria puede ser fiable, pero también no lo es. Al final, hay cierta incertidumbre acerca de si el relato de una persona es fiel o no a la realidad, por eso en lo que solemos confiar es en los relatos de un conjunto de personas.</p>
+<p style="text-align: justify;"><strong>—Si pudieras entender uno de los misterios del cerebro, ¿cuál sería?</strong></p>
+<p style="text-align: justify;">—El que he estado trabajando casi toda mi vida: la experiencia de la percepción. Quiero saber cómo funciona el cerebro, pero en específico cómo vemos. Las neuronas tienen actividad eléctrica y química, pero ¿cómo eso se transforma en colores y formas? Es un misterio. También me interesa descubrir qué es tocar, qué es una emoción, qué es la conciencia. La experiencia de lo que uno vive, eso es lo que más me gustaría entender.</p>
+<p style="text-align: justify;">Texto: Rafaela Lahore</p>
+<h3>Fuente: <a href="https://www.explora.cl/blog/ese-misterioso-organo-llamado-cerebro/" rel="noopener" target="_blank">www.explora.cl</a></h3>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 2 de septiembre de 2019 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2019/09/02/ese-misterioso-organo-llamado-cerebro/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

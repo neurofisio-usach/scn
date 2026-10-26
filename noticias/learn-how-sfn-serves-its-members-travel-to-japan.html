@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Learn How SfN Serves its Members, Travel to Japan — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Learn How SfN Serves its Members, Travel to Japan</h1>
+<div class="meta"><span>13 de enero de 2017</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><h3 style="text-align: justify;"><a href="http://eneuro.org/information-for-authors?_hsenc=p2ANqtz--V8SZraf9YU03khjXn6VZ7e9zlKsv_f1CObjNV-LB-7To_0kV2idU7rgc1DErEreKbt0dofXqZdnskLSTJz8qx3zkNQg&amp;_hsmi=40578237" rel="noopener" target="_blank"><img alt="unnamed" class="aligncenter wp-image-2454 size-full img-reemplazo-logo" data-original-src="https://www.socneurociencia.cl/wp-content/uploads/2017/01/unnamed1.jpg" loading="lazy" src="../logo_scn.png"/></a></h3>
+<h3 style="text-align: justify;"><img alt="unnamed (1)" class="aligncenter size-full wp-image-2455 img-reemplazo-logo" data-original-src="https://www.socneurociencia.cl/wp-content/uploads/2017/01/unnamed-1.jpg" loading="lazy" src="../logo_scn.png"/></h3>
+<h3 style="text-align: justify;">SFN Spotlight</h3>
+<p style="text-align: justify;"><strong>Annual Report: Learn What SfN Is Doing For You</strong><strong><br/>
+</strong>Check out SfN’s <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W5Kp7-r6kttN_W1XDcxn13K94z0/5/f18dQhb0Smj18Z9b1vW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx583DJdW5r8vy28yym7NW5yMlsB8pFs_9W63n2PY8p0cbWW4Z8J3j8vPQ7nN6RMWvBXwWB7W28cPwZ1qMTGRW61LHxL5tN-PZVRzbL-63m-7JW3PwLSG67jYvFVLMhpQ4J4s8lVKDFT04KMhtfN834DM0JsK0HN3CC8Yh4cNXyW75WRL394GbkkW66BymD8Z7cBlV5kZVl4qfp3gVH_yVP1zGsG0W6r658T5ykMKxN5RdD22SYxHMVKB_N_3xyS1DN2FP3pSj4S9bW3ZFFzL2tXQhTW5xHvG92d2xwPVTpbBp39WvDXW705S357C3LhKW1ZQJSV5DhpQzVz4KFp1Q68w6W1MMh8v3gvwbfW1mjbN81sLgQMW5qjSDv8r4j9VW8rSDkK7mtWScW6kktdS7McZ47W6GrX1F6MMpf1W9c97xL4wmvsvW11YyrW8M8nZZMcYWZCcSyhnf980dcB02&amp;source=gmail&amp;ust=1484402049269000&amp;usg=AFQjCNGrS6ZjItCF2KgwgsemrnOFMqJgng" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W5Kp7-r6kttN_W1XDcxn13K94z0/5/f18dQhb0Smj18Z9b1vW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx583DJdW5r8vy28yym7NW5yMlsB8pFs_9W63n2PY8p0cbWW4Z8J3j8vPQ7nN6RMWvBXwWB7W28cPwZ1qMTGRW61LHxL5tN-PZVRzbL-63m-7JW3PwLSG67jYvFVLMhpQ4J4s8lVKDFT04KMhtfN834DM0JsK0HN3CC8Yh4cNXyW75WRL394GbkkW66BymD8Z7cBlV5kZVl4qfp3gVH_yVP1zGsG0W6r658T5ykMKxN5RdD22SYxHMVKB_N_3xyS1DN2FP3pSj4S9bW3ZFFzL2tXQhTW5xHvG92d2xwPVTpbBp39WvDXW705S357C3LhKW1ZQJSV5DhpQzVz4KFp1Q68w6W1MMh8v3gvwbfW1mjbN81sLgQMW5qjSDv8r4j9VW8rSDkK7mtWScW6kktdS7McZ47W6GrX1F6MMpf1W9c97xL4wmvsvW11YyrW8M8nZZMcYWZCcSyhnf980dcB02" rel="noopener" target="_blank">new digital annual report</a> to get an inside look into the Society’s FY2016 activities. The report describes how SfN is serving a dynamic, global field by expanding its reach and impact on science worldwide and increasing value to members through its publications, programs, and events.</p>
+<p style="text-align: justify;"><strong>Last Chance: Travel to Japan in 2017</strong><strong><br/>
+</strong>The <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W6wh3GR7JkFLsW7-gn2T2VvYC10/5/f18dQhb0S1Wg2N3bP8VWnMdf3JtbG8VSNHvy3nB8L2W1Cznvw5kBQ3gW1q72Kq4Z4m2cW1qn5VB5_XGnXW1T4wgY6c8L56W85tmV63bGRdxVt9GSW5Nwh_3W8RvMZg4xg3rSW4MpV256N-HfDW6KPt-X8S5lwJVzkDTP972_chW5Dcl5n5RQZ4VN4mLk7CB7p0PW5Kdr4l1lRbjcW85Z-yV8jPwd2W60fcJz1nLRZ9V6JFjF5m-v98W6xX2jG1VRNlnW6Lmstg98rm4zVR9X5t5rKsptW3-ymC68rHvJTW7TYskz3LpG9KW3JNJvV6MpCBvMc9pzLxMGbqW2NDxhN7tgmPMW4tlP-C1HqtN2F3jN-VRQ__LW7MZ9Bl8Ws2sNW4WLpVw3W2N2jW7lrkNt6ll8brW5CcGfx2C0wbNVx6G7F6qGkkzW7ry0d65qjQ-tW1H9-gd2vLLDtN7-Yxsm4gCc3W4PgnnG2w6CL9W2g_Pyg7syv9xW4yKv-L5Zb3Q0TzCkM3gWD6-W56grLm1w4qfQW6s3Gn149k0T_W7fQrSn6H0yVBW2vq04Y1lgxX7Vx0t675JQXlQW7Yk_ym23cMb4W5kM3N11W4bzwW9l80mw30JN4XN27_0NxtRRmxW42PBqc7yGqjnW8ZZd994K8xzMVx0FGh3fGLlwW6yntxH93D8sRW46BtJD5BwfYMW4zY7Rp81J54wW18McKr1cmqH7W4qShQH2T-tzPW2rzjL66k1XvnW5wWBH02lGRbRVDjvQz28XGf7W1qfVS891z5-zW7ZxmQw3SDS3VW95zm388v4bKvN2l-gQqDXRVQW2_Q9wx2d4HdKN4DdKK-sKXfTN18bfPFjy6vQW155dk-8C9kHVW8M8fD21Vf8H3VTPRWN59Q0hFN1LwfczNg8-vW2kHmRl19sldfW4hJGBj1mKDQDW7BTzX4111_FTW6M0bSw5RxJS9W6GXFT980HDXpW20lX7G1_dsKDW4H8W0G1hN2mjW6jdP3y4xBmXLW3MkNF32gVzCNW1sNPwY2L-xl5W6DRTJ45QKqDkW4457dL7gXt-jW6WmhlY9k5zJ7W6Ry-YG6K9HNJW6-zWGP67bLC_W4YD18Z8cHX67W9m00nS3w96-4W9gMggZ1LKk6_W93hKB59g6zFRW6JkgP24Czl23W5_ckxD8vd_Rlf4w0pH702&amp;source=gmail&amp;ust=1484402049269000&amp;usg=AFQjCNF_glOBGrP4BFLCGR00oNguUzt26g" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W6wh3GR7JkFLsW7-gn2T2VvYC10/5/f18dQhb0S1Wg2N3bP8VWnMdf3JtbG8VSNHvy3nB8L2W1Cznvw5kBQ3gW1q72Kq4Z4m2cW1qn5VB5_XGnXW1T4wgY6c8L56W85tmV63bGRdxVt9GSW5Nwh_3W8RvMZg4xg3rSW4MpV256N-HfDW6KPt-X8S5lwJVzkDTP972_chW5Dcl5n5RQZ4VN4mLk7CB7p0PW5Kdr4l1lRbjcW85Z-yV8jPwd2W60fcJz1nLRZ9V6JFjF5m-v98W6xX2jG1VRNlnW6Lmstg98rm4zVR9X5t5rKsptW3-ymC68rHvJTW7TYskz3LpG9KW3JNJvV6MpCBvMc9pzLxMGbqW2NDxhN7tgmPMW4tlP-C1HqtN2F3jN-VRQ__LW7MZ9Bl8Ws2sNW4WLpVw3W2N2jW7lrkNt6ll8brW5CcGfx2C0wbNVx6G7F6qGkkzW7ry0d65qjQ-tW1H9-gd2vLLDtN7-Yxsm4gCc3W4PgnnG2w6CL9W2g_Pyg7syv9xW4yKv-L5Zb3Q0TzCkM3gWD6-W56grLm1w4qfQW6s3Gn149k0T_W7fQrSn6H0yVBW2vq04Y1lgxX7Vx0t675JQXlQW7Yk_ym23cMb4W5kM3N11W4bzwW9l80mw30JN4XN27_0NxtRRmxW42PBqc7yGqjnW8ZZd994K8xzMVx0FGh3fGLlwW6yntxH93D8sRW46BtJD5BwfYMW4zY7Rp81J54wW18McKr1cmqH7W4qShQH2T-tzPW2rzjL66k1XvnW5wWBH02lGRbRVDjvQz28XGf7W1qfVS891z5-zW7ZxmQw3SDS3VW95zm388v4bKvN2l-gQqDXRVQW2_Q9wx2d4HdKN4DdKK-sKXfTN18bfPFjy6vQW155dk-8C9kHVW8M8fD21Vf8H3VTPRWN59Q0hFN1LwfczNg8-vW2kHmRl19sldfW4hJGBj1mKDQDW7BTzX4111_FTW6M0bSw5RxJS9W6GXFT980HDXpW20lX7G1_dsKDW4H8W0G1hN2mjW6jdP3y4xBmXLW3MkNF32gVzCNW1sNPwY2L-xl5W6DRTJ45QKqDkW4457dL7gXt-jW6WmhlY9k5zJ7W6Ry-YG6K9HNJW6-zWGP67bLC_W4YD18Z8cHX67W9m00nS3w96-4W9gMggZ1LKk6_W93hKB59g6zFRW6JkgP24Czl23W5_ckxD8vd_Rlf4w0pH702" rel="noopener" target="_blank">40th Annual Meeting of the Japan Neuroscience Society</a> will take place July 20-23 in Makuhari, Japan. SfN is offering five trainees a $2,000 travel award to help cover the cost of attendance. <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W2_z8Cs4cyh6zW8w-7zn8Dlfhw0/5/f18dQhb0S1Wd7BMcfbW12hr_g7MX_30W1K1J9B6R5JfBW5DFWkJ34QKDqW5Lm7p73Cf9x4W447Mfb1L9G9lW1pynKf27_wsmVrjQJD1gwb3FW8k96S74TDYhYN37QYkb_WrFbW12qcZX8gVJHPW4sHYKk3mkYFFW997JwW7rchDfN41bfTPPbfYWW4Tq7nX6GZbWWW2cdFD464l7MCVF0Mm4214Z26W7dPqTw5F6GP0W6VXf5t8KgMk5W69ySfh8m_7m7W6-MNLq4lrPC2W5N2C9S4htH_4W2McQz95YYKVNVppXnf652QJdW3g5zlw80bB8tW3D61gG3-0lX4W2vC3VH4Gf9mdW73T6PM7qSqBgW2SzQ207v_9VfW77V3qN5Hpz0jW3gpGMD6kz_PCM1Vq9YRm_MvW6x4kBj3dZJNcW625sbh4skCRwVwsdXs6BSCR9N7VkFVfNMxGFW5nnSz43MmGNfW3-Nd5Y5HfWT_VDrCDm5Q30cvW30hP277Pl8nJW3QcHrK5j3klQW1lPFrV3MxJKBW66229b14RK9gW3Vlrlz3Kjd6YVvL42T2bz4yQW68CX7v5T2GpzW2f5Dtw1C3SjVVPGGcQ2HFtxjW106T7w3SLrGQW2cYdKh9knKZvW8fgmjC4JSKHPW6jqNpQ8DThgwVSqG5X4h7dtYW1YsyM02Wl1rWW95wj_W5mwwr4W2glCXS11F6gBW5N2lQM3p-4q-W4sggFv5K-lq3W6LQ1086vq3RjN6lNHfrsX86DW2xlnCy5CRnnCVn4g0g5ps_QKM7bztx-Dc74W3Sg-hB7x828XV5KB0c825Y0wMWtMnN2mqwvW36T2p07gZjb3W4fvdRg6jBsq6W42kbtH3_0PsBW3HnWD-1fCKJDVtjXWc4qYTGbW6bvhhT6p80S6N1FjCdTFFyWQW3dhQJD2Y-XTFW595BkQ10wGBMW3mP-PQ8b090QW5sCbxc41BdTnW7l_D048FkXlJN7n16wHc2QpRW3KgQwK8q6k8KVNlBB27zfbNLW62k4QX5S3FdzW64D0HJ8vQY2wW4QM17J6Hj3YpW4VYkKB6y0_pZN7fm5XhFl6GGW2T9Qv-6HDgRFW85nv676kRCBcW7jgCNl3FWZFvW1q6hKw6ZcYvLW48lXk37dtdSKW7wLz6w2331WVW4dQWwt3c1pQKW66vrxP5bqjkKW5k-vgd7mQmcVW7L6V2k5FlzGYW2bZVtV7w0Z__W5fTYRj7yq2bwW9562bZ6rg8kWW7hwg5W9l3GzcW8C5CcZ9gKDBNW4mPhtR7x4dChW9j1BfS34R_wyW7K43K276NPC00&amp;source=gmail&amp;ust=1484402049269000&amp;usg=AFQjCNExJSbfnLGeKmZcxvo-eG9csLXkow" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W2_z8Cs4cyh6zW8w-7zn8Dlfhw0/5/f18dQhb0S1Wd7BMcfbW12hr_g7MX_30W1K1J9B6R5JfBW5DFWkJ34QKDqW5Lm7p73Cf9x4W447Mfb1L9G9lW1pynKf27_wsmVrjQJD1gwb3FW8k96S74TDYhYN37QYkb_WrFbW12qcZX8gVJHPW4sHYKk3mkYFFW997JwW7rchDfN41bfTPPbfYWW4Tq7nX6GZbWWW2cdFD464l7MCVF0Mm4214Z26W7dPqTw5F6GP0W6VXf5t8KgMk5W69ySfh8m_7m7W6-MNLq4lrPC2W5N2C9S4htH_4W2McQz95YYKVNVppXnf652QJdW3g5zlw80bB8tW3D61gG3-0lX4W2vC3VH4Gf9mdW73T6PM7qSqBgW2SzQ207v_9VfW77V3qN5Hpz0jW3gpGMD6kz_PCM1Vq9YRm_MvW6x4kBj3dZJNcW625sbh4skCRwVwsdXs6BSCR9N7VkFVfNMxGFW5nnSz43MmGNfW3-Nd5Y5HfWT_VDrCDm5Q30cvW30hP277Pl8nJW3QcHrK5j3klQW1lPFrV3MxJKBW66229b14RK9gW3Vlrlz3Kjd6YVvL42T2bz4yQW68CX7v5T2GpzW2f5Dtw1C3SjVVPGGcQ2HFtxjW106T7w3SLrGQW2cYdKh9knKZvW8fgmjC4JSKHPW6jqNpQ8DThgwVSqG5X4h7dtYW1YsyM02Wl1rWW95wj_W5mwwr4W2glCXS11F6gBW5N2lQM3p-4q-W4sggFv5K-lq3W6LQ1086vq3RjN6lNHfrsX86DW2xlnCy5CRnnCVn4g0g5ps_QKM7bztx-Dc74W3Sg-hB7x828XV5KB0c825Y0wMWtMnN2mqwvW36T2p07gZjb3W4fvdRg6jBsq6W42kbtH3_0PsBW3HnWD-1fCKJDVtjXWc4qYTGbW6bvhhT6p80S6N1FjCdTFFyWQW3dhQJD2Y-XTFW595BkQ10wGBMW3mP-PQ8b090QW5sCbxc41BdTnW7l_D048FkXlJN7n16wHc2QpRW3KgQwK8q6k8KVNlBB27zfbNLW62k4QX5S3FdzW64D0HJ8vQY2wW4QM17J6Hj3YpW4VYkKB6y0_pZN7fm5XhFl6GGW2T9Qv-6HDgRFW85nv676kRCBcW7jgCNl3FWZFvW1q6hKw6ZcYvLW48lXk37dtdSKW7wLz6w2331WVW4dQWwt3c1pQKW66vrxP5bqjkKW5k-vgd7mQmcVW7L6V2k5FlzGYW2bZVtV7w0Z__W5fTYRj7yq2bwW9562bZ6rg8kWW7hwg5W9l3GzcW8C5CcZ9gKDBNW4mPhtR7x4dChW9j1BfS34R_wyW7K43K276NPC00" rel="noopener" target="_blank">Submit an application</a> by Monday, January 16. Contact <a href="mailto:globalaffairs@sfn.org">globalaffairs@sfn.org</a> with questions.</p>
+<p style="text-align: justify;"><strong>The Latest &gt;From Neuronline</strong></p>
+<ul>
+<li style="text-align: justify;"><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W3bW0Cz60f3LwW34wWmh5Zcw0t0/5/f18dQhb0S5fr8Z9bb-W8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx56ZJrjW5r8vwP3mm45XW62KDgy8tyHSjW63mB1y8pFs_9W63n2PF5sN4V_W5_N7Fr1rMs9jW5sNj4p1qPBfwVRJBHP1mQsW3VXwWB76SM3dDW61LjHp4Kj0bNW25_nGQ69Z62qW3VG4G-2_b5tgW3CgYjq2HBhYzW45M8D46n4sDmW3Mdr3B4yc3CKW3sSDqD5kmcLGW2Jb4963SXxbqW4LF_l13lDkBZW41Pm714LFf53W34XmfF53k2nmW5CDmDB3h2gkSW6nfG0r6mTMrrW3jx7Tn6ZJR25W3Tbrt-3jr4qqW32sxWt4rfrG5W551gvg3zHfJ4W4R_-KF6q6mD1W70bYFj52-L-6W7DMqFs3lPwdpW88-Vry3Cdk0dW3wv7Sm6x_0nvW2KCprz2Xs7dDW1txdSb7t4b3XW7xBPfF5mSYQ1W3fzYGs65mtNJW3_MX8H46qnbcW91fTHV92Jxq8W23V4VP87ckx6MrVprBrHX0yf1LfJ7c02&amp;source=gmail&amp;ust=1484402049269000&amp;usg=AFQjCNGDK8W_qDl1LNqD1TtjOxpang1NCg" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W3bW0Cz60f3LwW34wWmh5Zcw0t0/5/f18dQhb0S5fr8Z9bb-W8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx56ZJrjW5r8vwP3mm45XW62KDgy8tyHSjW63mB1y8pFs_9W63n2PF5sN4V_W5_N7Fr1rMs9jW5sNj4p1qPBfwVRJBHP1mQsW3VXwWB76SM3dDW61LjHp4Kj0bNW25_nGQ69Z62qW3VG4G-2_b5tgW3CgYjq2HBhYzW45M8D46n4sDmW3Mdr3B4yc3CKW3sSDqD5kmcLGW2Jb4963SXxbqW4LF_l13lDkBZW41Pm714LFf53W34XmfF53k2nmW5CDmDB3h2gkSW6nfG0r6mTMrrW3jx7Tn6ZJR25W3Tbrt-3jr4qqW32sxWt4rfrG5W551gvg3zHfJ4W4R_-KF6q6mD1W70bYFj52-L-6W7DMqFs3lPwdpW88-Vry3Cdk0dW3wv7Sm6x_0nvW2KCprz2Xs7dDW1txdSb7t4b3XW7xBPfF5mSYQ1W3fzYGs65mtNJW3_MX8H46qnbcW91fTHV92Jxq8W23V4VP87ckx6MrVprBrHX0yf1LfJ7c02" rel="noopener" target="_blank">Different Repulsive Receptors Take the Same Action</a></li>
+<li style="text-align: justify;"><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W4c_gN08K7FqzW1WKTSz4yWbsW0/5/f18dQhb0Smj18Z9b1vW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx583DJdW5r8vy28yyv9hW5v7v7y8nD5_QW8yTTww8yvG3rW8C6_hL3GCRKCVSddJN5v6ywjN1pP0pfXwWB7W2bbllq1phggCW8qC9Dk8p_D8PW5qk2F-3gsF5ZW5CRk-z7ywHSGN69_mdJYt-HzW95BMgF95BvbvW8QKpyr4sj3hVW2BcyM91mGWjzW6PMXB74r-6TlW3rRSjJ2-6hFXW267JP67ZZPMtW5tgm9m1JjpT6W51QhNR9hmwnJVQNnZB1n8MC5W2pfjqv2j9jhRW42kwRf8dF19RW6Q_mPD3yyPs9W2HzVpV2SZrtBW51rkX46bzMxyVPWN622mK-__W3_GP-74DtMlgN45Ly2MkwRPgW8pZgRP6QlTSwW677LSF24LPQ5W36456V4J35SnW2N3p-N7gLz3-N3vGyrVm13RNW7fVVvB18pty1W4N75Qb8Vmy_SW3VtW1b1MTDV2LPdxqz396j103&amp;source=gmail&amp;ust=1484402049269000&amp;usg=AFQjCNHREo2S00iD-KbqA2FtkEx1qad8RA" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W4c_gN08K7FqzW1WKTSz4yWbsW0/5/f18dQhb0Smj18Z9b1vW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx583DJdW5r8vy28yyv9hW5v7v7y8nD5_QW8yTTww8yvG3rW8C6_hL3GCRKCVSddJN5v6ywjN1pP0pfXwWB7W2bbllq1phggCW8qC9Dk8p_D8PW5qk2F-3gsF5ZW5CRk-z7ywHSGN69_mdJYt-HzW95BMgF95BvbvW8QKpyr4sj3hVW2BcyM91mGWjzW6PMXB74r-6TlW3rRSjJ2-6hFXW267JP67ZZPMtW5tgm9m1JjpT6W51QhNR9hmwnJVQNnZB1n8MC5W2pfjqv2j9jhRW42kwRf8dF19RW6Q_mPD3yyPs9W2HzVpV2SZrtBW51rkX46bzMxyVPWN622mK-__W3_GP-74DtMlgN45Ly2MkwRPgW8pZgRP6QlTSwW677LSF24LPQ5W36456V4J35SnW2N3p-N7gLz3-N3vGyrVm13RNW7fVVvB18pty1W4N75Qb8Vmy_SW3VtW1b1MTDV2LPdxqz396j103" rel="noopener" target="_blank">An Academic or Public-Facing Career: Why Not Both?</a></li>
+<li style="text-align: justify;"><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W12v5cR1LpF2PW7_FWTM3L1pGG0/5/f18dQhb0Sjvb8YHr5qW47SdNJ7bj6jnW2Kd7VC65jsJ8W7gs2Mn2BS5hSW2KBfjW8ZkHt-W2N3d3949kvv6W8-tFs28Zjf-qW8ZF8k-1SPJ3xW567XzP8V6g9-W4cQHDn7r9dhWVqBC0Q2LWcs0VtggQZ2KpSBxN1TxP-_KphDDW4Kf0sQ558FgnVd04s765jv23W8zK7K23jyB2PN7sV51Ct_yb_W1Kk6y11CvMz8W1BbNrh2KCNnZW7zLMP66yxCL8W8XNh8_7JrRn9W7n-ZX_6zwsHbW6s73yz4jqkXHMph572jpdzgW1YW54N8X3fLLW7kvp5h7qqrV1W45jlzC7zNJnMW5fL2J67zSd32W8VTtF24cPmvGW49S3jB7w4TGFW67z1jZ8SnKW5W56lMYh1Tc5qRW1LpWhM5tb4RZW76KS6w5G_Fw1W4PxC8j448kRQW2Yt_S83MbGVMW69-p7n2zWRz6W3sm1Wn4QDgwJMWWhKVSQcSyW27jcKl2B6gl9W29RGy52hNWqtW5_6TWf8tJlHRW38rh8d1tGQJTW3Pwgfg39GZgM0&amp;source=gmail&amp;ust=1484402049269000&amp;usg=AFQjCNGDPviduzS5d1b2l0aGJAgesxrkTg" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W12v5cR1LpF2PW7_FWTM3L1pGG0/5/f18dQhb0Sjvb8YHr5qW47SdNJ7bj6jnW2Kd7VC65jsJ8W7gs2Mn2BS5hSW2KBfjW8ZkHt-W2N3d3949kvv6W8-tFs28Zjf-qW8ZF8k-1SPJ3xW567XzP8V6g9-W4cQHDn7r9dhWVqBC0Q2LWcs0VtggQZ2KpSBxN1TxP-_KphDDW4Kf0sQ558FgnVd04s765jv23W8zK7K23jyB2PN7sV51Ct_yb_W1Kk6y11CvMz8W1BbNrh2KCNnZW7zLMP66yxCL8W8XNh8_7JrRn9W7n-ZX_6zwsHbW6s73yz4jqkXHMph572jpdzgW1YW54N8X3fLLW7kvp5h7qqrV1W45jlzC7zNJnMW5fL2J67zSd32W8VTtF24cPmvGW49S3jB7w4TGFW67z1jZ8SnKW5W56lMYh1Tc5qRW1LpWhM5tb4RZW76KS6w5G_Fw1W4PxC8j448kRQW2Yt_S83MbGVMW69-p7n2zWRz6W3sm1Wn4QDgwJMWWhKVSQcSyW27jcKl2B6gl9W29RGy52hNWqtW5_6TWf8tJlHRW38rh8d1tGQJTW3Pwgfg39GZgM0" rel="noopener" target="_blank">Building a Stronger Neuroscience Program: Your Questions Answered</a></li>
+</ul>
+<hr/>
+<h3>Membership &amp; Chapters</h3>
+<p style="text-align: justify;"><strong>Call for Nominations</strong><b><br/>
+</b>Nominations for incoming president-elect, incoming treasurer-elect, two councilors, and committee member positions, will be accepted until noon EST on Friday, February 17<strong>. </strong><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W79rX0q6YWN8DW1tJZ0s8DDkzT0/5/f18dQhb0J563PNn_V5Qj6-4LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1T1pP04fNSkDW26QkHm4mKDt9W3M5BFh49LdrBW3CcYkT1LF-sdW4hJWkL3K8JYRW3K1KJL49Rk7wW45lXC83K2B2XW43TxGf3R4SSxW3DQGFF2nT8K0W4t3sMK3BLGH_W2MTc1X2WPS4XW3g0qTs3GXh7LW1ZnnQl34DV_TW3X-PNN253lVbW4cvdJH3LCFFRW307JsP25ljnXW2RCR3z2YNk8DW3H3BnX3QzZZwW2FY1RG2xZ5DXW2YtxKw34HQ3pW3g1GS141ZJdcW3R4Tym2dN2DBVchhtd26rPR8W2F3tgS3j1MbzW3C645w3N-RqkW2m9RtP3T0v06N3F93wbZy6J8Vk6NmP6xDNcWW6CqCyF7LkgMLW7B-9k367vfd8W675J-51B4QSTTTD9729twJl111&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNFJ_lfz7il_rl13UK_5YQlnuuHeBQ" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W79rX0q6YWN8DW1tJZ0s8DDkzT0/5/f18dQhb0J563PNn_V5Qj6-4LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1T1pP04fNSkDW26QkHm4mKDt9W3M5BFh49LdrBW3CcYkT1LF-sdW4hJWkL3K8JYRW3K1KJL49Rk7wW45lXC83K2B2XW43TxGf3R4SSxW3DQGFF2nT8K0W4t3sMK3BLGH_W2MTc1X2WPS4XW3g0qTs3GXh7LW1ZnnQl34DV_TW3X-PNN253lVbW4cvdJH3LCFFRW307JsP25ljnXW2RCR3z2YNk8DW3H3BnX3QzZZwW2FY1RG2xZ5DXW2YtxKw34HQ3pW3g1GS141ZJdcW3R4Tym2dN2DBVchhtd26rPR8W2F3tgS3j1MbzW3C645w3N-RqkW2m9RtP3T0v06N3F93wbZy6J8Vk6NmP6xDNcWW6CqCyF7LkgMLW7B-9k367vfd8W675J-51B4QSTTTD9729twJl111" rel="noopener" target="_blank">Learn more</a>.</p>
+<hr/>
+<h3 style="text-align: justify;">Professional Development</h3>
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<div>
+<div>
+<div id="m_6336563779139999965hs_cos_wrapper_module_14745533376216244">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td>
+<p style="text-align: justify;"><strong>Do You Have an Idea for a Professional Development Workshop? </strong><b><br/>
+</b>More than a dozen professional development workshops are offered at the annual meeting on topics related to funding, career paths, career skills, responsible conduct of research, diversity, and more. <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W2SyjFD7K1LWMW11tRYm2B3rlL0/5/f18dQhb0J5F3B65XV5QlBK4LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1TfW0W4fNSjzW1L5rsG4m8lV4W41pq_H3NB_KzW41YZsW1GF6hGW4fJfX_1LBDNZW49PHc13SZBvmW3JD_C-1Q5LYGW3K9dzf43TDbSW3zdYS73KbsMTW4fNk7P3HddQTW49PGZ14cGnswW2k26-G3K76NrW45n5SR47TcH9W24VK5G2HQfWsW233-Ht32pFf7W3j86-p4tpP4LW3b96S13d2FQbW3R1Wqm38C9QrW2WtN6b257X2yW43JRQ54mzM_GW47T_zP32h07gW45DYly3XQg2KW2TG3FX3M7KQJW41FJ-M1V0r-lW1NCchk1pKtp1N3_Vm4swj7LCW26rPR82F3tgSW3j1Mbz3C645wW3N-Rqk2m9RtPW3T0v063F93wbMZy6J8k6NmPW6xDNcW6CqCyFW7LkgML7B-9k3W67vfd8675J-5F1B4QSTTDcgf8834ld11&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNGP7WIktsgiQoOxXDViyzuSy0Zc8g" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W2SyjFD7K1LWMW11tRYm2B3rlL0/5/f18dQhb0J5F3B65XV5QlBK4LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1TfW0W4fNSjzW1L5rsG4m8lV4W41pq_H3NB_KzW41YZsW1GF6hGW4fJfX_1LBDNZW49PHc13SZBvmW3JD_C-1Q5LYGW3K9dzf43TDbSW3zdYS73KbsMTW4fNk7P3HddQTW49PGZ14cGnswW2k26-G3K76NrW45n5SR47TcH9W24VK5G2HQfWsW233-Ht32pFf7W3j86-p4tpP4LW3b96S13d2FQbW3R1Wqm38C9QrW2WtN6b257X2yW43JRQ54mzM_GW47T_zP32h07gW45DYly3XQg2KW2TG3FX3M7KQJW41FJ-M1V0r-lW1NCchk1pKtp1N3_Vm4swj7LCW26rPR82F3tgSW3j1Mbz3C645wW3N-Rqk2m9RtPW3T0v063F93wbMZy6J8k6NmPW6xDNcW6CqCyFW7LkgML7B-9k3W67vfd8675J-5F1B4QSTTDcgf8834ld11" rel="noopener" target="_blank">Submit a proposal to organize a professional development workshop</a> at Neuroscience 2017 in Washington, DC. Proposals will be accepted until 2 p.m.  EST on Friday, February 17.<u></u><u></u></p>
+<p style="text-align: justify;"><strong>Meet-the-Expert Collection</strong><br/>
+Get a glimpse into the careers and mindsets of leading scientists who participate in the <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W6SJn3R1jh0mhW6lC-KX5BhzCw0/5/f18dQhb0J523RrhvV5QhP04LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1T0_jn4fNSjzW1L5qGG4hLyPKW3ZWVWt1JG8LxW1JDwVN1LfMf6W3ZVc243T1MdZW1LkW5V4fdf8-W3JF1jn45NqmYW4cpc9g4cJ2xcW2fd1h32TNS6PW1Gdr7H1XrXMHW1X64813SQFxMW4kM8ZS1V1cwkW1Vq17x3zjcGDW1VgBpR3ZPFrmW4kdhdz3brk8WW2t6ddN3bcFLrW3LRFp73dc49kW1_5Cqz2xH_Y-W2zDtZG3NDg0WW3Zx1wX4ph9kJW2KXgK22nyv7gN4cMmTSFZr1RW26rPR82F3tgSW3j1Mbz3C645wW3N-Rqk2m9RtPW3T0v063F93wbMZy6J8k6NmPW6xDNcW6CqCyFW7LkgML7B-9k3W67vfd8675J-5F1B4QSTTDd6f228-W011&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNHrgilecc_ig6kyf5YI9aCsSDcinA" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W6SJn3R1jh0mhW6lC-KX5BhzCw0/5/f18dQhb0J523RrhvV5QhP04LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1T0_jn4fNSjzW1L5qGG4hLyPKW3ZWVWt1JG8LxW1JDwVN1LfMf6W3ZVc243T1MdZW1LkW5V4fdf8-W3JF1jn45NqmYW4cpc9g4cJ2xcW2fd1h32TNS6PW1Gdr7H1XrXMHW1X64813SQFxMW4kM8ZS1V1cwkW1Vq17x3zjcGDW1VgBpR3ZPFrmW4kdhdz3brk8WW2t6ddN3bcFLrW3LRFp73dc49kW1_5Cqz2xH_Y-W2zDtZG3NDg0WW3Zx1wX4ph9kJW2KXgK22nyv7gN4cMmTSFZr1RW26rPR82F3tgSW3j1Mbz3C645wW3N-Rqk2m9RtPW3T0v063F93wbMZy6J8k6NmPW6xDNcW6CqCyFW7LkgML7B-9k3W67vfd8675J-5F1B4QSTTDd6f228-W011" rel="noopener" target="_blank">Meet-the-Expert sessions</a> at the annual meeting. <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W1BxJ-S7GRypSW7_qc6k4hyvVd0/5/f18dQhb0J523RrhvV5QhP04LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1T0_jn4fNSjzW1L5qGG4hLyPKW3ZWVWt1JG8LxW1JDwVN1LfMf6W3ZVc243T1MdZW1LkW5V4fdf8-W3JF1jn45NqmYW4cpc9g4cJ2xcW2fd1h32TNS6PW1Gd1nv2nXsnBW4tCDRk36mYMTW2w5c0B3GWVFzW2KZpsN3JXTt0W32hNq22nTWnhW2Kpkq62FshbpW2Mzm4J3R64jcW2C-QJB2PK1PVW3b9bTs49mglpW2y4Cl724TywDW49SVTj1VyZjhW253PHn3NxfgjN4cMmTSFZr1RW26rPR82F3tgSW3j1Mbz3C645wW3N-Rqk2m9RtPW3T0v063F93wbMZy6J8k6NmPW6xDNcW6CqCyFW7LkgML7B-9k3W67vfd8675J-5N1B4QST2S8G_f1YyDlM11&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNG8i9CvAV-H0LdPYOxBDGXWR84avA" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W1BxJ-S7GRypSW7_qc6k4hyvVd0/5/f18dQhb0J523RrhvV5QhP04LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1T0_jn4fNSjzW1L5qGG4hLyPKW3ZWVWt1JG8LxW1JDwVN1LfMf6W3ZVc243T1MdZW1LkW5V4fdf8-W3JF1jn45NqmYW4cpc9g4cJ2xcW2fd1h32TNS6PW1Gd1nv2nXsnBW4tCDRk36mYMTW2w5c0B3GWVFzW2KZpsN3JXTt0W32hNq22nTWnhW2Kpkq62FshbpW2Mzm4J3R64jcW2C-QJB2PK1PVW3b9bTs49mglpW2y4Cl724TywDW49SVTj1VyZjhW253PHn3NxfgjN4cMmTSFZr1RW26rPR82F3tgSW3j1Mbz3C645wW3N-Rqk2m9RtPW3T0v063F93wbMZy6J8k6NmPW6xDNcW6CqCyFW7LkgML7B-9k3W67vfd8675J-5N1B4QST2S8G_f1YyDlM11" rel="noopener" target="_blank">More resources from experts are available in SfN’s Meet-the-Expert Collection</a> on Neuronline.<u></u><u></u></p>
+<p style="text-align: justify;"><strong>SfN Podcast: The Perils of Publishing</strong><b><br/>
+</b>Beginning January 11, this podcast will explore the ins and outs of publishing, sharing the stories of a PI and grad student, and expert commentary from <em>JNeurosci</em>, <em>Cell</em>, and <em>Neuron</em> editors. <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W3XYsTW7R582tW3TP3mR1rlwvY0/5/f18dQhb0Sjv58YHrDTW47SdNJ7bj6jnW2Kd7VC65jsJ8W7gs2Mn2zCwm5W2KBfjW8ZkHt-W2N3d3949kvv6W8-tFs28Zjf-qW8ZvRS55lcWMmW8Fdh1C8j-gCZW55nSC91VbWMvVrzT2W2lPNdSW6N3nBL8xGZK9W69_jh77d0w0vW965SRg5T56StW6yD8Ph1LsDccW7vLqdS1nnQd3W1-ZGb11V9FP5W8P37fj4Dl4vzN3sxyZn2C6KJW3jxWlJ3VVkFJW4LG55J3yZDDxW4VqvwT41QWb4W3gvh_L55btHyW6gNmP56vh3CXW4b64jb4LF_HvW3SXxn24wKLLTW5PCfmd62L5wbW4LFgV74rd_8XW2CSptf4yRqnVW5YB7BG2J7_V0W6ZMgNw2HSm9cW41Q5bm3lNHDGW62S07L7k-2C-W3lH1s59l5xCcW3Cdk0d3wv7SmW6x_0nv2KCprzW2Xs7dD1txdSbW7t4b3X7xBPfFW5mSYQ13fzYGsW65mtNJ3_MX8HW46qnbc91fTHVW92Jxq823V4VPN87ckx6rVprBMrHMRHYzpwQ102&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNFB3a27drOfqgKlTL6ATRGuWuJMhg" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W3XYsTW7R582tW3TP3mR1rlwvY0/5/f18dQhb0Sjv58YHrDTW47SdNJ7bj6jnW2Kd7VC65jsJ8W7gs2Mn2zCwm5W2KBfjW8ZkHt-W2N3d3949kvv6W8-tFs28Zjf-qW8ZvRS55lcWMmW8Fdh1C8j-gCZW55nSC91VbWMvVrzT2W2lPNdSW6N3nBL8xGZK9W69_jh77d0w0vW965SRg5T56StW6yD8Ph1LsDccW7vLqdS1nnQd3W1-ZGb11V9FP5W8P37fj4Dl4vzN3sxyZn2C6KJW3jxWlJ3VVkFJW4LG55J3yZDDxW4VqvwT41QWb4W3gvh_L55btHyW6gNmP56vh3CXW4b64jb4LF_HvW3SXxn24wKLLTW5PCfmd62L5wbW4LFgV74rd_8XW2CSptf4yRqnVW5YB7BG2J7_V0W6ZMgNw2HSm9cW41Q5bm3lNHDGW62S07L7k-2C-W3lH1s59l5xCcW3Cdk0d3wv7SmW6x_0nv2KCprzW2Xs7dD1txdSbW7t4b3X7xBPfFW5mSYQ13fzYGsW65mtNJ3_MX8HW46qnbc91fTHVW92Jxq823V4VPN87ckx6rVprBMrHMRHYzpwQ102" rel="noopener" target="_blank">Sign up for updates about future episodes</a>.<u></u><u></u></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<div id="m_6336563779139999965hs_cos_wrapper_module_14745533832847772">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>Education &amp; Advocacy</h3>
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<div>
+<div>
+<div id="m_6336563779139999965hs_cos_wrapper_module_14745533832847772">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td>
+<p style="text-align: justify;"><strong>Join the Dana Foundation Lending Library Program</strong><b><br/>
+</b><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W9dThJf8GHc7fW1H3t8R4q7Zdk0/5/f18dQhb0J4_3SHKkV5QhwP4LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1S_LVv4fNSjzW1L5rsG4m8kyVW41PyvB49Ldq_W3CcYkT1Lm8HBW3P5VwL4cgwX3W41QW583NZYG7W3Cf7_W4r5NPrW3R4SSx3DQGFFW2nT8K04t3sMkW2PKWMG4kK698W4cJVtJ3LMXT9W2sZVJ_1Xcr3_W1Sz9w-1QhmcBW34h_Cd38xYjwW3LY2Lk41HNzKW3XZzMS45D5zGW3_s3vB1SrVkTW1VsWZC2vSW4_W1-ZMWY2Yrw49W2MpDyn45psbzW49SVdZ3R4TymW2dvJB22zznPHLy-bRvlGr-VHgP6L3S-pj8W4hlMBt3R0JKfF1JxwF8bV3xVQtF7L7DP1l5N5Q7wn5DbNBQW6KHsWw59vZR4W7b0Y9h5Ccyf6W1sY1-n8Wbr6DdtGx1204&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNFp8fxL2NQX9rUPg0Y_hcPTYwGQnQ" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W9dThJf8GHc7fW1H3t8R4q7Zdk0/5/f18dQhb0J4_3SHKkV5QhwP4LGW9GVWy4kG1f7_vMW1Y_YKT1V2RtbW1S_LVv4fNSjzW1L5rsG4m8kyVW41PyvB49Ldq_W3CcYkT1Lm8HBW3P5VwL4cgwX3W41QW583NZYG7W3Cf7_W4r5NPrW3R4SSx3DQGFFW2nT8K04t3sMkW2PKWMG4kK698W4cJVtJ3LMXT9W2sZVJ_1Xcr3_W1Sz9w-1QhmcBW34h_Cd38xYjwW3LY2Lk41HNzKW3XZzMS45D5zGW3_s3vB1SrVkTW1VsWZC2vSW4_W1-ZMWY2Yrw49W2MpDyn45psbzW49SVdZ3R4TymW2dvJB22zznPHLy-bRvlGr-VHgP6L3S-pj8W4hlMBt3R0JKfF1JxwF8bV3xVQtF7L7DP1l5N5Q7wn5DbNBQW6KHsWw59vZR4W7b0Y9h5Ccyf6W1sY1-n8Wbr6DdtGx1204" rel="noopener" target="_blank">Collaborate with the Dana Alliance</a> and neuroscience departments around the U.S. to share educational materials that can be used for outreach activities at local schools, community centers, and more.<u></u><u></u></p>
+<p style="text-align: justify;"><strong>Join the Advocacy Network to Stay Informed on the New Congress</strong><b><br/>
+</b>With the opening of the 115th U.S. Congress, now is the perfect time to advocate for neuroscience and <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W6HxG8n3WnyByN1ZCkVpNTfBf0/5/f18dQhb0S9r998D_C-W47SdNJ7bj6jnW2Kd7VC65jsJ8W7gs2Mn2zs9NNW2KBfjg6mdttXW7s5Q5s7MbpBHW55VM8Q33kQZyMKDFb5tnSwzW5mYWy43_1VklW8hz0Ys806yj3W70ml3s85-jF4W6xKjXd8MDqBqW72hynd8bbgGCW8g-dqZ5yHWZgW1fZbf47Dv3ZNW78mlMs5-CmhXW2K6XH66pS_1FW3yhWCv7C_yxxW4blzC72D0q6cV54BKx8YB61fW4K7f5s7HQ_DYW5mHFN243Lwg5W4fhJF56Pc2NRW3XC-Zr1Q68w6W1MMh8v3gvwbfW1mjbN81sLgQMW5qjSDv8r4j9VW8rSDkK7mtWScW6kktdS7McZ47W6GrX1F6MMpf1W9c97xL4wmvsvW11YyrW8M8nZZMcYWZCcSk5xdrbNdp02&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNEbn1BDKW9YH_2X1vME-oC371MmHw" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W6HxG8n3WnyByN1ZCkVpNTfBf0/5/f18dQhb0S9r998D_C-W47SdNJ7bj6jnW2Kd7VC65jsJ8W7gs2Mn2zs9NNW2KBfjg6mdttXW7s5Q5s7MbpBHW55VM8Q33kQZyMKDFb5tnSwzW5mYWy43_1VklW8hz0Ys806yj3W70ml3s85-jF4W6xKjXd8MDqBqW72hynd8bbgGCW8g-dqZ5yHWZgW1fZbf47Dv3ZNW78mlMs5-CmhXW2K6XH66pS_1FW3yhWCv7C_yxxW4blzC72D0q6cV54BKx8YB61fW4K7f5s7HQ_DYW5mHFN243Lwg5W4fhJF56Pc2NRW3XC-Zr1Q68w6W1MMh8v3gvwbfW1mjbN81sLgQMW5qjSDv8r4j9VW8rSDkK7mtWScW6kktdS7McZ47W6GrX1F6MMpf1W9c97xL4wmvsvW11YyrW8M8nZZMcYWZCcSk5xdrbNdp02" rel="noopener" target="_blank">join SfN’s Advocacy Network</a>. Members will receive emails to keep them up to date on the latest neuroscience issues in science policy, as well as alerts when direct action is needed.<u></u><u></u></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<div>
+<div>
+<div id="m_6336563779139999965hs_cos_wrapper_module_14745533866018435">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3>Annual Meeting</h3>
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<div>
+<div>
+<div id="m_6336563779139999965hs_cos_wrapper_module_14745533866018435">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td>
+<p style="text-align: justify;"><strong>Scientific Content for Neuroscience 2017</strong><b><br/>
+</b>Thank you to all members who submitted a proposal for a symposium, minisymposium, or Social Issues Roundtable for Neuroscience 2017. Decisions will be sent via email in March.  <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W1_kpTX51y8dZW5HLRdk2hn95g0/5/f18dQhb0SfHF8Z99dRW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx577HLHW5r8vy28yym7NW5yMlsB8pFs_9W63n15H8n_bqFW8wxMBR5vLZd9N8DsQt-S9mQ1W3PwLSG67jHq_VWyBRc1p7MmvW1mjgY081FFMxV6Z9cf56sy_8W2NhXFJ1VN2ggW7HzXss3p58SrW76K-yV49bwn7W5MmDDX1C8k1mW1FbNm-1SmDL_V5bx4w2fYVn9W8XpLqc2dJGKwW76dp1C9dSRR3W6ywmz56hgz9VW53TSn652Fd8GW6h5pG_5KgL_lW5p6XdB5L0XF_W4JtqBx7_kB_xW9gXDK58csGDVVD2JBL7vNFQFW5B6d2F5zy-vdW5G3jl_5pmk00W1jy4zN7zKRcBW9175hr81sRtpW6xdksd4bJ5j1W8sW3qz3q_b-tW3JdHsf1W1drqN1WPqsC1ZL8ff7jQg8W03&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNFl3LAyz2OtpWTVPQt5lO0GNBvinQ" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W1_kpTX51y8dZW5HLRdk2hn95g0/5/f18dQhb0SfHF8Z99dRW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx577HLHW5r8vy28yym7NW5yMlsB8pFs_9W63n15H8n_bqFW8wxMBR5vLZd9N8DsQt-S9mQ1W3PwLSG67jHq_VWyBRc1p7MmvW1mjgY081FFMxV6Z9cf56sy_8W2NhXFJ1VN2ggW7HzXss3p58SrW76K-yV49bwn7W5MmDDX1C8k1mW1FbNm-1SmDL_V5bx4w2fYVn9W8XpLqc2dJGKwW76dp1C9dSRR3W6ywmz56hgz9VW53TSn652Fd8GW6h5pG_5KgL_lW5p6XdB5L0XF_W4JtqBx7_kB_xW9gXDK58csGDVVD2JBL7vNFQFW5B6d2F5zy-vdW5G3jl_5pmk00W1jy4zN7zKRcBW9175hr81sRtpW6xdksd4bJ5j1W8sW3qz3q_b-tW3JdHsf1W1drqN1WPqsC1ZL8ff7jQg8W03" rel="noopener" target="_blank">Abstracts for Neuroscience 2017</a> will be accepted from active SfN members from April 13 through 5 p.m. EDT May 4. <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W1szVWQ4Hz7V3W25VGjg9gNcmM0/5/f18dQhb0SnGT98NH1PW7CSfBt2-BqvPN2zpH1_6zn0cN1hRwKSf5mwKVXD6pr39Dr-NW8pCDMD3T5Y4DW2yZ4l56bVsl_W2yBrKX4r1Pl9W97-20D4s9Y4fW6QxDgk6cd2s9VYSX-57m_B1RW5c8d-S378fj2W8x1ktB4KR5dtW2yTw1d7m1QqqW50mwSr4s2K-TW2_3kRy9h9BfxN2xrggvXNJ2qW2VDdrL7np9g_W6mZ0Ss8r51vtVRMwMp5Xp-GLW6n9dKt2HtXRSW2yHvXL3L6wLsW5WXkzJ3Kt0_GW42SfhP6SSJNcW3zLKlq45Ly2MVkwRPg8pZgT6W2QynLy7sRKs0W2Sx78W2JHGw0VFhtQ-8rY3PWW9c5MS08Hj3XQW3h5rrl6NWv74W8W_MX96n3g9lW6y8yqq5DzlndMZpcdj1xKn9f8b3Q1q03&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNF_AQYEW0VZ91LEtprz2Ho3kTnszg" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W1szVWQ4Hz7V3W25VGjg9gNcmM0/5/f18dQhb0SnGT98NH1PW7CSfBt2-BqvPN2zpH1_6zn0cN1hRwKSf5mwKVXD6pr39Dr-NW8pCDMD3T5Y4DW2yZ4l56bVsl_W2yBrKX4r1Pl9W97-20D4s9Y4fW6QxDgk6cd2s9VYSX-57m_B1RW5c8d-S378fj2W8x1ktB4KR5dtW2yTw1d7m1QqqW50mwSr4s2K-TW2_3kRy9h9BfxN2xrggvXNJ2qW2VDdrL7np9g_W6mZ0Ss8r51vtVRMwMp5Xp-GLW6n9dKt2HtXRSW2yHvXL3L6wLsW5WXkzJ3Kt0_GW42SfhP6SSJNcW3zLKlq45Ly2MVkwRPg8pZgT6W2QynLy7sRKs0W2Sx78W2JHGw0VFhtQ-8rY3PWW9c5MS08Hj3XQW3h5rrl6NWv74W8W_MX96n3g9lW6y8yqq5DzlndMZpcdj1xKn9f8b3Q1q03" rel="noopener" target="_blank">Get ready now by updating your membership</a>.<u></u><u></u></p>
+<p style="text-align: justify;"><strong>Satellite Database Opens Late February </strong><b><br/>
+</b>Don’t miss the opportunity to schedule your satellite event in Washington, DC!  Direct all questions to <a href="mailto:amsatellites@sfn.org" target="_blank">amsatellites@sfn.org</a>.<u></u><u></u></p>
+<p style="text-align: justify;"><strong>Neuroscience Marketplace</strong><b><br/>
+</b>Revisit the Exhibit Floor in <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W9489Tg1C4nZwW4Kpwf83Myf5X0/5/f18dQhb0S83b8Z99NgW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx57kH6PW5r8vy28yym7NW5yMlsB8pFs_9W63n15H8n_bqFW8wxMBR5vLZd9N8DsQt-S9mQ1W3PwLSG67jHq_VWyBJ538sNyHN3KrFTBWPzCDN24Xgr7YSMKNW6G7Fbl4DFfS3W6Q8ZNx2pHV2TW4WBS4k96NvGdW16lQKp7mTNTDW3TptZW5d1_F6W7fS-3L2hRtH2W25M37V2VvHNMW2Jk5r34F6Zq5W3MQH254Mf30SW5vMk9V7mKx3GW8fhzD04228M1W1KxshV7bM4kCW2zjN_n4LlJYwW49kJbp4pnG0nW6yYNvC8Ph58-W59BvGW2KBm6qW2PzLHJ4h8JKKW7lbh_w2NzM2-W5hfR428jB38SW763thD8sDKWYW1tPNB38tH_smW3Q7mpg5qssQbN9dYkLRmRw0WV9ZLgh70kNT-111&amp;source=gmail&amp;ust=1484402049270000&amp;usg=AFQjCNHF4B1dn44MBkyi1Ez5cBacKVCjuQ" href="http://t.hsms03.com/e1t/c/*W7Bj0D_5bg86DW6L9L6K7J_0jT0/*W9489Tg1C4nZwW4Kpwf83Myf5X0/5/f18dQhb0S83b8Z99NgW8kG0ZR51vPb-W5sqSgn2QxXz4W57R5Hx57kH6PW5r8vy28yym7NW5yMlsB8pFs_9W63n15H8n_bqFW8wxMBR5vLZd9N8DsQt-S9mQ1W3PwLSG67jHq_VWyBJ538sNyHN3KrFTBWPzCDN24Xgr7YSMKNW6G7Fbl4DFfS3W6Q8ZNx2pHV2TW4WBS4k96NvGdW16lQKp7mTNTDW3TptZW5d1_F6W7fS-3L2hRtH2W25M37V2VvHNMW2Jk5r34F6Zq5W3MQH254Mf30SW5vMk9V7mKx3GW8fhzD04228M1W1KxshV7bM4kCW2zjN_n4LlJYwW49kJbp4pnG0nW6yYNvC8Ph58-W59BvGW2KBm6qW2PzLHJ4h8JKKW7lbh_w2NzM2-W5hfR428jB38SW763thD8sDKWYW1tPNB38tH_smW3Q7mpg5qssQbN9dYkLRmRw0WV9ZLgh70kNT-111" rel="noopener" target="_blank">My Neuroscience Marketplace</a>, the virtual directory of Neuroscience 2016 vendors.<u></u><u></u></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="top" width="100%">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td valign="top" width="100%">
+<div>
+<div>
+<div id="m_6336563779139999965hs_cos_wrapper_module_14745534066789652">
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" class="m_6336563779139999965MsoNormalTable" width="100%">
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Across The Field</h3>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 13 de enero de 2017 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2017/01/13/learn-how-sfn-serves-its-members-travel-to-japan/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

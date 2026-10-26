@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Applications Open for the 8th Canadian IBRO School of Neuroscience — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Applications Open for the 8th Canadian IBRO School of Neuroscience</h1>
+<div class="meta"><span>23 de enero de 2014</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a>
+<h2><b>Applications</b> Open for the 8th Canadian IBRO School of Neuroscience</h2>
+<p><img alt="Sociedad Chilena de Neurociencia" class="img-reemplazo-logo" data-original-src="http://ibro.info/wp-content/uploads/2013/12/Montr%C3%A9al-709x267.jpg" loading="lazy" src="../logo_scn.png"/></p>
+<div>
+<p><strong>USCRC: 8th Canadian IBRO School of Neuroscience on Development and Plasticity</strong></p>
+<p><strong>Montreal, Canada<br/>
+</strong><strong>May 13 – 30, 2014</strong></p>
+<p><strong>Deadline: January 31, 2014 (23:59 CET)</strong></p>
+<p><strong>Aims and scope:</strong></p>
+<p>IBRO-USCRC is pleased to offer an advanced neuroscience course for 12 to 14 IBRO Alumni and other young investigators <strong>residing in Africa and Latin America</strong>. The students will participate in interactive sessions on current topics of neuroscience.  These interactive sessions, coordinated by Dr. Ellis Cooper, will include lectures, discussions and visits to laboratories related to the theme of the School.<strong></strong></p>
+<p>The material will cover the basic science of development and plasticity of the nervous system. There will be demonstrations of relevant experimental approaches, including functional imaging. In addition, there will be group discussions with experts on specific issues related to developing countries such as relevant diseases and practical issues related to conducting research in low resource settings, as well as sessions on career advancement, preparing manuscripts and grant applications.</p>
+<p>A special feature of this School will be its integration with the 8th Annual Canadian Neuroscience Meeting (May 25-28, 2014). All students enrolled in this School will be full participants at these meetings, presenting their own work on a poster, attending scientific sessions, and participating in interactive sessions with selected speakers.</p>
+<p><strong>Who should apply?</strong></p>
+<p>Priority will be given to doctoral, postdoctoral students, young physicians doing fellowship and/or clinical research and young faculty members <strong>residing in Africa and Latin America</strong> who are likely to transfer the knowledge gained in the school to their research, particularly in the area of pain. IBRO Alumni are encouraged to apply.</p>
+<p>The applicants should be fluent in English (written/spoken), have a degree in basic or clinical sciences, and be involved in neuroscience research. Students will be chosen based on their academic record and their potential for leadership in the scientific community of their home country. The criteria include academic achievements, publications, letters of reference, and in particular, the statement of how this School will benefit the applicant’s own research career.</p>
+<p>Students selected to attend the School will have their travel and living expenses (housing and meals) covered by the School. Visas and other immigration arrangements are the responsibility of the student.</p>
+<p><strong>Educational Objectives:</strong></p>
+<ul>
+<li>To help understand basic mechanisms related to development and plasticity of the nervous system, implications of understanding of basic mechanisms on disorders and their implications for therapy.</li>
+<li>To present and discuss the students’ own research.</li>
+<li>To foster long-lasting links with some of Canada’s top neuroscientists and institutions.</li>
+<li>To forge new contacts between investigators in Canada, Africa, and Latin America.</li>
+</ul>
+<p><strong>Organizing Committee of Canadian IBRO Schools of Neuroscience</strong></p>
+<p>Albert J. Aguayo (Past President of IBRO), Chair<br/>
+Ellis Cooper (McGill University)<br/>
+Jonathan Dostrovsky (University of Toronto)<br/>
+Ante L. Padjen (McGill University)<br/>
+Jane Roskams (University of British Columbia)<br/>
+Guy Drolet (Université Laval)<br/>
+Brian McVicar (University of British Columbia)<br/>
+Cathy Ranking (University of British Columbia)<strong> </strong></p>
+<p><strong>Support:</strong></p>
+<p>IBRO<br/>
+Society for Neuroscience<br/>
+Canadian Association for Neuroscience<br/>
+McGill University<br/>
+Montreal Neurological Institute<br/>
+INMHA, CIHR</p>
+<p><strong>How to apply:</strong></p>
+<p>Applications are available only on-line. There are no hard copies of application forms.</p>
+<p><strong>Apply <a href="http://form.jotformpro.com/form/33393422298964" rel="noopener" target="_blank" title="Montreal School application">here</a></strong></p>
+<p><img alt="safe_image.php-2" class="aligncenter size-medium wp-image-446 img-reemplazo-logo" data-original-src="https://www.socneurociencia.cl/wp-content/uploads/2014/01/safe_image.php-2-300x156.jpeg" loading="lazy" src="../logo_scn.png"/></p>
+</div>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 23 de enero de 2014 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2014/01/23/444/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

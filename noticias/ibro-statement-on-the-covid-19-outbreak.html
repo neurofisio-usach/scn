@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>IBRO Statement on the COVID-19 Outbreak — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>IBRO Statement on the COVID-19 Outbreak</h1>
+<div class="meta"><span>10 de marzo de 2020</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="IBRO Statement on the COVID-19 Outbreak" class="feat-img" src="../img/archivo/2020/neuro-imag-09-03-20.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;">Dear IBRO Governing Council and Committee Members,</p>
+<p style="text-align: justify;">IBRO recognizes the global impact of the COVID-19 outbreak, and we are following its  progression closely. We respect the recommendations and assessments of the World Health Organization and adhere to regional, national and local government policies being developed and implemented in response to changing conditions. Because the situation is actively evolving, we encourage our global community to be guided by the same approach.</p>
+<p style="text-align: justify;">Our immediate priority is to anticipate challenges and help protect the health and safety of those participating in any of our supported activities. Several of our member societies, individual grantees, schools, and events have already been affected by travel, work, and general life restrictions resulting from the COVID-19 epidemics. To be as flexible and responsive as possible, we are currently working on a case-by-case basis to address issues of activity postponement, cancellation, or other modifications.</p>
+<p style="text-align: justify;">We hope that the COVID-19 outbreak will come to an end quickly, and we will circulate any IBRO-related updates as soon as they arise. In the meantime, please stay healthy, follow credible recommendations and remain vigilant about false information and scams associated with COVID-19. You can find relevant links listed below for further consideration. If you have any general questions or concerns, please feel free to contact us at <a href="mailto:secretariat@ibro.org" rel="noopener noreferrer" target="_blank">secretariat@ibro.org</a>.</p>
+<p style="text-align: justify;">Sincerely,<br/>
+Tracy L. Bale, Ph.D.<br/>
+IBRO President</p>
+<h3 style="text-align: justify;"><a href="../docs/archivo/2020/ibro-statement-on-covid-19-06032020.pdf" rel="noopener noreferrer" target="_blank">View PDF</a></h3>
+<h3 style="text-align: justify;"><strong>Information Links</strong></h3>
+<p style="text-align: justify;">Any future updates will be made on our website here:<br/>
+https://ibro.org/ibro-statement-on-the-covid-19-outbreak/</p>
+<h3 style="text-align: justify;"><strong>COVID-19 Maps &amp; Trackers</strong></h3>
+<ul style="text-align: justify;">
+<li><strong>Italy</strong><br/>
+<a href="https://lab.gedidigital.it/gedi-visual/2020/coronavirus-i-contagi-in-italia/?ref=RHPPTP-BHI250074707-C12-P3-S1.12-T2" rel="noopener" target="_blank">https://lab.gedidigital.it/gedi-visual/2020/coronavirus-i-contagi-in-italia/?ref=RHPPTP-BHI250074707-C12-P3-S1.12-T2</a></li>
+<li>J<strong>ohns Hopkins University CSSE</strong><br/>
+<a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" rel="noopener" target="_blank">https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6</a></li>
+<li><strong>World Health Organization (WHO)</strong><br/>
+<a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd" rel="noopener" target="_blank">https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd</a></li>
+<li><strong>Worldometer</strong><br/>
+<a href="https://www.worldometers.info/coronavirus/" rel="noopener" target="_blank">https://www.worldometers.info/coronavirus/</a></li>
+</ul>
+<h3 style="text-align: justify;"><strong>Global Authority</strong></h3>
+<ul style="text-align: justify;">
+<li><strong>World Health Organization (WHO)</strong><br/>
+<a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" rel="noopener" target="_blank">https://www.who.int/emergencies/diseases/novel-coronavirus-2019</a></li>
+</ul>
+<h3 style="text-align: justify;"><strong>Regional Authorities</strong></h3>
+<ul style="text-align: justify;">
+<li><strong>European Centre for Disease Prevention and Control (ECDC)</strong><br/>
+<a href="https://www.ecdc.europa.eu/en" rel="noopener" target="_blank">https://www.ecdc.europa.eu/en</a></li>
+<li><strong>WHO Regional Office in Africa (English, French, Portuguese)</strong><br/>
+<a href="https://www.afro.who.int/fr/node/12206" rel="noopener" target="_blank">https://www.afro.who.int/fr/node/12206</a></li>
+<li><strong>WHO Regional Office for the Americas (English, Spanish)</strong><br/>
+<a href="https://www.paho.org/hq/index.php?lang=en" rel="noopener" target="_blank">https://www.paho.org/hq/index.php?lang=en</a></li>
+<li><strong>WHO Regional Office for the Eastern Mediterranean (Arabic, English, French)</strong><br/>
+<a href="http://www.emro.who.int/index.html" rel="noopener" target="_blank">http://www.emro.who.int/index.html</a></li>
+<li><strong>WHO Regional Office for Europe (English, French, German, Russian)</strong><br/>
+<a href="http://www.euro.who.int/en/home" rel="noopener" target="_blank">http://www.euro.who.int/en/home</a></li>
+<li><strong>WHO Regional Office for South-East Asia (English)</strong><br/>
+<a href="https://www.who.int/southeastasia" rel="noopener" target="_blank">https://www.who.int/southeastasia</a></li>
+<li><strong>WHO Regional Office for Western Pacific (English)</strong><br/>
+<a href="https://www.who.int/westernpacific" rel="noopener" target="_blank">https://www.who.int/westernpacific</a></li>
+</ul>
+<h3 style="text-align: justify;"><strong>National Authorities</strong></h3>
+<ul>
+<li style="text-align: justify;"><strong>Algeria, Ministry of Health, Population and Hospital Reform (French)</strong><br/>
+<a href="http://www.sante.gov.dz/" rel="noopener" target="_blank">http://www.sante.gov.dz/</a></li>
+<li style="text-align: justify;"><strong>Argentina, Ministry of Health (Spanish)</strong><br/>
+<a href="https://www.argentina.gob.ar/salud" rel="noopener" target="_blank">https://www.argentina.gob.ar/salud</a></li>
+<li style="text-align: justify;"><strong>Australia, Department of Health (English)</strong><br/>
+<a href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert" rel="noopener" target="_blank">https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert</a></li>
+<li style="text-align: justify;"><strong>Austria, Federal Ministry of Social Affairs, Health, Care and Consumer Protection (English, </strong><strong>German)</strong><br/>
+<a href="https://www.sozialministerium.at/en.html" rel="noopener" target="_blank">https://www.sozialministerium.at/en.html</a></li>
+<li style="text-align: justify;"><strong>Azerbaijan, Ministry of Public Health</strong><br/>
+<a href="http://www.sehiyye.gov.az/" rel="noopener" target="_blank">http://www.sehiyye.gov.az/</a></li>
+<li style="text-align: justify;"><strong>Bahrain, Ministry of Health (Arabic, English)</strong><br/>
+<a href="https://www.moh.gov.bh/?lang=en" rel="noopener" target="_blank">https://www.moh.gov.bh/?lang=en</a></li>
+<li style="text-align: justify;"><strong>Belarus, Ministry of Health (Belarusian)</strong><br/>
+<a href="http://minzdrav.gov.by/" rel="noopener" target="_blank">http://minzdrav.gov.by/</a></li>
+<li style="text-align: justify;"><strong>Belgium, Ministry of Health (Dutch, English, French, German)</strong><br/>
+<a href="https://www.info-coronavirus.be/en/" rel="noopener" target="_blank">https://www.info-coronavirus.be/en/</a></li>
+<li style="text-align: justify;"><strong>Bosnia Herzegovina, Ministry of Health (Bosnian)</strong><br/>
+<a href="http://www.fmoh.gov.ba/" rel="noopener" target="_blank">http://www.fmoh.gov.ba/</a></li>
+<li style="text-align: justify;"><strong>Brazil, Ministry of Health (Portuguese)</strong><br/>
+<a href="https://www.saude.gov.br/" rel="noopener" target="_blank">https://www.saude.gov.br/</a></li>
+<li style="text-align: justify;"><strong>Canada, Health Canada (English, French)</strong><br/>
+<a href="https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirusinfection.html" rel="noopener" target="_blank">https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirusinfection.html</a></li>
+<li style="text-align: justify;"><strong>Chile, Ministry of Health (Spanish)</strong><br/>
+<a href="https://www.minsal.cl/" rel="noopener" target="_blank">https://www.minsal.cl/</a></li>
+<li style="text-align: justify;"><strong>China, Center for Disease Control and Prevention (Chinese)</strong><br/>
+<a href="http://www.chinacdc.cn/" rel="noopener" target="_blank">http://www.chinacdc.cn/</a></li>
+<li style="text-align: justify;"><strong>Croatia, Ministry of Health (Croatian)</strong><br/>
+<a href="https://zdravstvo.gov.hr/" rel="noopener" target="_blank">https://zdravstvo.gov.hr/</a></li>
+<li style="text-align: justify;"><strong>Czech Republic (Czech)</strong><br/>
+<a href="http://www.mzcr.cz/" rel="noopener" target="_blank">http://www.mzcr.cz/</a></li>
+<li style="text-align: justify;"><strong>Denmark, Ministry of Health (Danish, English)</strong><br/>
+<a href="http://www.sum.dk/" rel="noopener" target="_blank">http://www.sum.dk/</a></li>
+<li style="text-align: justify;"><strong>Ecuador, Ministry of Public Health (Spanish)</strong><br/>
+<a href="https://www.salud.gob.ec/" rel="noopener" target="_blank">https://www.salud.gob.ec/</a></li>
+<li style="text-align: justify;"><strong>Egypt, National Government (Arabic)</strong><br/>
+<a href="https://www.egypt.gov.eg/arabic/home.aspx" rel="noopener" target="_blank">https://www.egypt.gov.eg/arabic/home.aspx</a></li>
+<li style="text-align: justify;"><strong>Estonia, Health Board (English, Estonian, Russian)</strong><br/>
+<a href="https://www.terviseamet.ee/en" rel="noopener" target="_blank">https://www.terviseamet.ee/en</a></li>
+<li style="text-align: justify;"><strong>Finland, Ministry of Social Affairs and Health (English, Finnish, Russian, Swedish)</strong><br/>
+<a href="https://stm.fi/en/frontpage" rel="noopener" target="_blank">https://stm.fi/en/frontpage</a></li>
+<li style="text-align: justify;"><strong>France, Ministry of Solidarity and Health (French)</strong><br/>
+<a href="https://solidarites-sante.gouv.fr/soins-et-maladies/maladies/maladiesinfectieuses/coronavirus/coronavirus-questions-reponses" rel="noopener" target="_blank">https://solidarites-sante.gouv.fr/soins-et-maladies/maladies/maladiesinfectieuses/coronavirus/coronavirus-questions-reponses</a></li>
+<li style="text-align: justify;"><strong>Georgia, Ministry of Internally Displaced Persons from the Occupied Territories, Labour, Health </strong><strong>and Social Affairs (Georgian)</strong><br/>
+<a href="https://www.moh.gov.ge/ka/" rel="noopener" target="_blank">https://www.moh.gov.ge/ka/</a></li>
+<li style="text-align: justify;"><strong>Germany, Ministry of Health (German)</strong><br/>
+<a href="https://www.bundesgesundheitsministerium.de/" rel="noopener" target="_blank">https://www.bundesgesundheitsministerium.de/</a></li>
+<li style="text-align: justify;"><strong>Greece, Ministry of Health (Greek)</strong><br/>
+<a href="https://www.moh.gov.gr/" rel="noopener" target="_blank">https://www.moh.gov.gr/</a></li>
+<li style="text-align: justify;"><strong>Hong Kong, China, Centre for Health Protection, Department of Health (English)</strong><br/>
+<a href="https://www.chp.gov.hk/en/index.html" rel="noopener" target="_blank">https://www.chp.gov.hk/en/index.html</a></li>
+<li style="text-align: justify;"><strong>Iceland, Ministry of Health (English, Icelandic)</strong><br/>
+<a href="https://www.government.is/ministries/ministry-of-health/" rel="noopener" target="_blank">https://www.government.is/ministries/ministry-of-health/</a></li>
+<li style="text-align: justify;"><strong>India, Ministry of Health and Family Welfare (English, Hindi)</strong><br/>
+<a href="https://mohfw.nic.in/" rel="noopener" target="_blank">https://mohfw.nic.in/</a></li>
+<li style="text-align: justify;"><strong>Indonesia, Ministry of Health (English, Indonesian)</strong><br/>
+<a href="https://www.kemkes.go.id/index.php?lg=LN02" rel="noopener" target="_blank">https://www.kemkes.go.id/index.php?lg=LN02</a></li>
+<li style="text-align: justify;"><strong>Iran, Ministry of Health and Medical Education (Persian)</strong><br/>
+<a href="http://behdasht.gov.ir/" rel="noopener" target="_blank">http://behdasht.gov.ir/</a></li>
+<li style="text-align: justify;"><strong>Iraq, Ministry of Health (Arabic)</strong><br/>
+<a href="https://moh.gov.iq" rel="noopener" target="_blank">https://moh.gov.iq</a></li>
+<li style="text-align: justify;"><strong>Ireland, Department of Health (English, Irish)</strong><br/>
+<a href="https://www.gov.ie/en/organisation/department-of-health/?referrer=/" rel="noopener" target="_blank">https://www.gov.ie/en/organisation/department-of-health/?referrer=/</a></li>
+<li style="text-align: justify;"><strong>Israel, Ministry of Health (Arabic, English, French, Hebrew, Russian, Spanish)</strong><br/>
+<a href="https://www.health.gov.il/English/Pages/HomePage.aspx" rel="noopener" target="_blank">https://www.health.gov.il/English/Pages/HomePage.aspx</a></li>
+<li style="text-align: justify;"><strong>Italy, Department of Civil Protection (English, Italian)</strong><br/>
+<a href="http://www.protezionecivile.gov.it/it/web/guest/attivita-rischi/rischiosanitario/emergenze/coronavirus" rel="noopener" target="_blank">http://www.protezionecivile.gov.it/it/web/guest/attivita-rischi/rischiosanitario/emergenze/coronavirus</a></li>
+<li style="text-align: justify;"><strong>Japan, Ministry of Health, Labour and Welfare (English, Japanese)</strong><br/>
+<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00032.html" rel="noopener" target="_blank">https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/newpage_00032.html</a></li>
+<li style="text-align: justify;"><strong>Kuwait, Health Ministry (Arabic, English)</strong><br/>
+<a href="https://www.moh.gov.kw/en/Pages/Default.aspx" rel="noopener" target="_blank">https://www.moh.gov.kw/en/Pages/Default.aspx</a></li>
+<li style="text-align: justify;"><strong>Lebanon, Ministry of Public Health (Arabic, English)</strong><br/>
+<a href="https://www.moph.gov.lb/en/" rel="noopener" target="_blank">https://www.moph.gov.lb/en/</a></li>
+<li style="text-align: justify;"><strong>Lithuania, Ministry of Health (English, Lithuanian)</strong><br/>
+<a href="http://sam.lrv.lt/en/" rel="noopener" target="_blank">http://sam.lrv.lt/en/</a></li>
+<li style="text-align: justify;"><strong>Luxembourg, Ministry of Health (French)</strong><br/>
+<a href="https://sante.public.lu/fr/index.php" rel="noopener" target="_blank">https://sante.public.lu/fr/index.php</a></li>
+<li style="text-align: justify;"><strong>Macau, Health Bureau (Chinese, Portuguese)</strong><br/>
+<a href="https://www.ssm.gov.mo/portal/" rel="noopener" target="_blank">https://www.ssm.gov.mo/portal/</a></li>
+<li style="text-align: justify;"><strong>Malaysia, Ministry of Health (Bahasa Melayu, English, Lain-Lain Bahasa)</strong><br/>
+<a href="http://www.moh.gov.my/" rel="noopener" target="_blank">http://www.moh.gov.my/</a></li>
+<li style="text-align: justify;"><strong>Mexico, Secretary of Health (Spanish)</strong><br/>
+<a href="https://www.gob.mx/salud/documentos/nuevo-coronavirus" rel="noopener" target="_blank">https://www.gob.mx/salud/documentos/nuevo-coronavirus</a></li>
+<li style="text-align: justify;"><strong>Monaco, Government of the Principality (French)</strong><br/>
+<a href="https://www.gouv.mc/Action-Gouvernementale/Coronavirus-Covid-2019" rel="noopener" target="_blank">https://www.gouv.mc/Action-Gouvernementale/Coronavirus-Covid-2019</a></li>
+<li style="text-align: justify;"><strong>Morocco, Ministry of Health (French)</strong><br/>
+<a href="https://www.sante.gov.ma/Pages/Accueil.aspx" rel="noopener" target="_blank">https://www.sante.gov.ma/Pages/Accueil.aspx</a></li>
+<li style="text-align: justify;"><strong>The Netherlands, Ministry of Health, Welfare and Sport (Dutch, English, Papiamento,  Papiamentu)</strong><br/>
+<a href="https://www.government.nl/ministries/ministry-of-health-welfare-and-sport" rel="noopener" target="_blank">https://www.government.nl/ministries/ministry-of-health-welfare-and-sport</a></li>
+<li style="text-align: justify;"><strong>New Zealand, Ministry of Health (English)</strong><br/>
+<a href="https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus" rel="noopener" target="_blank">https://www.health.govt.nz/our-work/diseases-and-conditions/covid-19-novel-coronavirus</a></li>
+<li style="text-align: justify;"><strong>Nigeria, Federal Ministry of Health (English)</strong><br/>
+<a href="https://health.gov.ng/" rel="noopener" target="_blank">https://health.gov.ng/</a></li>
+<li style="text-align: justify;"><strong>Norway, Institute of Public Health (English, Norwegian)</strong><br/>
+<a href="https://www.fhi.no/en/" rel="noopener" target="_blank">https://www.fhi.no/en/</a></li>
+<li style="text-align: justify;"><strong>Oman, Ministry of Health (Arabic, English)</strong><br/>
+<a href="https://www.moh.gov.om/en/" rel="noopener" target="_blank">https://www.moh.gov.om/en/</a></li>
+<li style="text-align: justify;"><strong>Pakistan, Ministry of Health Services Regulations and Coordination (English)</strong><br/>
+<a href="http://nhsrc.gov.pk/" rel="noopener" target="_blank">http://nhsrc.gov.pk/</a></li>
+<li style="text-align: justify;"><strong>Palestinian Territories, Ministry of Health (Arabic, English)</strong><br/>
+<a href="https://www.moh.gov.ps/portal/en/" rel="noopener" target="_blank">https://www.moh.gov.ps/portal/en/</a></li>
+<li style="text-align: justify;"><strong>Philippines, Ministry of Health (English)</strong><br/>
+<a href="https://www.doh.gov.ph/" rel="noopener" target="_blank">https://www.doh.gov.ph/</a></li>
+<li style="text-align: justify;"><strong>Portugal, National Health Service (Portuguese)</strong><br/>
+<a href="https://s-1.sns.gov.pt/" rel="noopener" target="_blank">https://s-1.sns.gov.pt/</a></li>
+<li style="text-align: justify;"><strong>Qatar, Ministry of Health (Arabic, English)</strong><br/>
+<a href="https://www.moph.gov.qa/arabic/Pages/default.aspx#" rel="noopener" target="_blank">https://www.moph.gov.qa/arabic/Pages/default.aspx#</a></li>
+<li style="text-align: justify;"><strong>Romania, Ministry of Health (Romanian)</strong><br/>
+<a href="http://www.ms.ro/" rel="noopener" target="_blank">http://www.ms.ro/</a></li>
+<li style="text-align: justify;"><strong>Russian Federation, Ministry of Health (Russian)</strong><br/>
+<a href="https://www.rosminzdrav.ru/" rel="noopener" target="_blank">https://www.rosminzdrav.ru/</a></li>
+<li style="text-align: justify;"><strong>San Marino, Institute for Social Security (Italian)</strong><br/>
+<a href="http://www.iss.sm/on-line/home.html" rel="noopener" target="_blank">http://www.iss.sm/on-line/home.html</a></li>
+<li style="text-align: justify;"><strong>Saudi Arabia, Ministry of Health (Arabic, English)</strong><br/>
+<a href="https://www.moh.gov.sa/en/Pages/Default.aspx" rel="noopener" target="_blank">https://www.moh.gov.sa/en/Pages/Default.aspx</a></li>
+<li style="text-align: justify;"><strong>Senegal, Ministry of Health and Social Action (French)</strong><br/>
+<a href="http://www.sante.gouv.sn/" rel="noopener" target="_blank">http://www.sante.gouv.sn/</a></li>
+<li style="text-align: justify;"><strong>Singapore, Ministry of Health (English)</strong><br/>
+<a href="https://www.moh.gov.sg/covid-19" rel="noopener" target="_blank">https://www.moh.gov.sg/covid-19</a></li>
+<li style="text-align: justify;"><strong>Slovenia, Ministry of Health (English, Slovenian)</strong><br/>
+<a href="https://www.gov.si/teme/koronavirus/" rel="noopener" target="_blank">https://www.gov.si/teme/koronavirus/</a></li>
+<li style="text-align: justify;"><strong>South Africa, The National Institute for Communicable Diseases (English)</strong><br/>
+<a href="http://www.nicd.ac.za/" rel="noopener" target="_blank">http://www.nicd.ac.za/</a></li>
+<li style="text-align: justify;"><strong>South Korea, Ministry of Health and Welfare (Korean)</strong><br/>
+<a href="http://www.mohw.go.kr/react/index.jsp" rel="noopener" target="_blank">http://www.mohw.go.kr/react/index.jsp</a></li>
+<li style="text-align: justify;"><strong>Spain, Ministry of Health (Spanish)</strong><br/>
+<a href="https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCovChina/home.htm" rel="noopener" target="_blank">https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCovChina/home.htm</a></li>
+<li style="text-align: justify;"><strong>Sweden, Public Health Agency of Sweden (English, Swedish)</strong><br/>
+<a href="https://www.folkhalsomyndigheten.se/the-public-health-agency-of-sweden/" rel="noopener" target="_blank">https://www.folkhalsomyndigheten.se/the-public-health-agency-of-sweden/</a></li>
+<li style="text-align: justify;"><strong>Switzerland, Federal Office of Public Health (English, French, German, Italian)</strong><br/>
+<a href="https://www.bag.admin.ch/bag/en/home.html" rel="noopener" target="_blank">https://www.bag.admin.ch/bag/en/home.html</a></li>
+<li style="text-align: justify;"><strong>Taiwan, Ministry of Health and Welfare (English, Chinese)</strong><br/>
+<a href="https://www.mohw.gov.tw/mp-2.html" rel="noopener" target="_blank">https://www.mohw.gov.tw/mp-2.html</a></li>
+<li style="text-align: justify;"><strong>Thailand, Department of Disease Control (Chinese, English, Thai)</strong><br/>
+<a href="https://ddc.moph.go.th/viralpneumonia/eng/index.php" rel="noopener" target="_blank">https://ddc.moph.go.th/viralpneumonia/eng/index.php</a></li>
+<li style="text-align: justify;"><strong>United Arab Emirates, Ministry of Health and Prevention (Arabic, English)</strong><br/>
+<a href="https://www.mohap.gov.ae/en/Pages/default.aspx" rel="noopener" target="_blank">https://www.mohap.gov.ae/en/Pages/default.aspx</a></li>
+<li style="text-align: justify;"><strong>United Kingdom, Department of Health and Social Care (English)</strong><br/>
+<a href="https://www.gov.uk/government/organisations/department-of-health-and-social-care" rel="noopener" target="_blank">https://www.gov.uk/government/organisations/department-of-health-and-social-care</a></li>
+<li style="text-align: justify;"><strong>United States, Centers for Disease Control (English)</strong><br/>
+<a href="https://www.cdc.gov/coronavirus/2019-ncov/index.html" rel="noopener" target="_blank">https://www.cdc.gov/coronavirus/2019-ncov/index.html</a></li>
+<li style="text-align: justify;"><strong>Vietnam, Ministry of Health (English, Vietnamese)</strong><br/>
+<a href="https://moh.gov.vn/" rel="noopener" target="_blank">https://moh.gov.vn/</a></li>
+</ul>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 10 de marzo de 2020 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2020/03/10/ibro-statement-on-the-covid-19-outbreak/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

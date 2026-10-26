@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Noqueando al Parkinson: programa de Neuroboxing busca mitigar efectos de la enfermedad con deporte — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Noqueando al Parkinson: programa de Neuroboxing busca mitigar efectos de la enfermedad con deporte</h1>
+<div class="meta"><span>1 de agosto de 2019</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Noqueando al Parkinson: programa de Neuroboxing busca mitigar efectos de la enfermedad con deporte" class="feat-img" src="../img/archivo/2019/neuro-imag-31-07-19.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;"><em>En 2017 se implementó en Concepción Neuroboxing Parkinson, un programa pionero en el país que busca mitigar los efectos del Parkinson a través del boxeo. La idea es de tres kinesiólogos penquistas.</em></p>
+<p style="text-align: justify;">Teresa Nova <strong>jamás pensó dejar el salón de clases</strong>. No estaba en sus planes. Fueron 34 años educando a niños de enseñanza básica en la Escuela Lautaro de Nonguén.</p>
+<p style="text-align: justify;">En 2008, Teresa comenzó a sentir que <strong>sus dedos ya no tenían fuerza, sus manos temblaban, le costaba mucho coordinarse</strong> y perdía constantemente el equilibrio, pero los médicos le decían que no tenía nada.</p>
+<p style="text-align: justify;">Los malestares la tuvieron con licencia médica por varias semanas, hasta que el médico diagnosticó Parkinson, una enfermedad que afecta al sistema nervioso y que provoca dificultades motoras.</p>
+<p style="text-align: justify;">Teresa sabía que los síntomas no desaparecían con el tiempo, al contrario. Así que no tuvo más opción que dejar de hacer clases y jubilar anticipadamente, dejando atrás una vida al servicio de la educación.</p>
+<p style="text-align: justify;">Reconoce que su vida dio un giro drástico. De ser una mujer autovalente, pasó a necesitar de la ayuda de otros para actividades cotidianas, como <strong>ir de compras o salir a la calle</strong>. El miedo a perder el equilibrio y a caerse estaban siempre presentes.</p>
+<p style="text-align: justify;">Pero en 2017, a través de un grupo de Facebook, Teresa se enteró de Neuroboxing Parkinson, un programa que <strong>prometía rehabilitación y mejoras a los síntomas</strong> de la enfermedad a través del boxeo.</p>
+<p style="text-align: justify;">Con la ayuda de los kinesiólogos Lorena Bernales, Miguel Pino y Pablo Roa, Teresa logró que la enfermedad no tomara el control de su vida. “Puedo hacer tranquilamente <strong>una vida normal</strong>, autovalente, porque antes dependía mucho de otras personas”, dice.</p>
+<figure class="wp-caption alignnone" id="attachment_4238550" style="text-align: justify;"><img alt="Fotografía: María Luisa Ruiz" class="size-large wp-image-4238550" loading="lazy" src="../img/archivo/2019/img-9959-1-1152x768.jpg"/><figcaption class="wp-caption-text">Fotografía: María Luisa Ruiz</figcaption></figure>
+<h2 style="text-align: justify;">De Estados Unidos a Concepción</h2>
+<p style="text-align: justify;">Neuroboxing nació en 2006, en Los Ángeles, Estados Unidos. El programa usa el boxeo como <strong>entrenamiento neuro kinésico,</strong> para controlar los síntomas motores de las personas que padecen esta enfermedad, como temblores, lentitud de movimientos, rigidez en los brazos, piernas, torso y problemas de equilibrio.</p>
+<p style="text-align: justify;">En Latinoamérica no se conocía de este innovador método hasta antes de diciembre de 2016, cuando en Concepción un grupo de kinesiólogos quiso replicar la idea.</p>
+<p style="text-align: justify;">Durante 2017 pusieron a prueba el programa piloto. Al principio, la recepción no fue tan buena, especialmente porque <strong>se asocia al boxeo como un causante del Parkinson.</strong></p>
+<p style="text-align: justify;">En 1984, después de tres años de haberse retirado, el boxeador norteamericano Muhammad Ali, una especie de leyenda para este deporte, fue diagnosticado con la enfermedad.</p>
+<p style="text-align: justify;">“Nos costó un poco hacer que la gente nos creyera en primera instancia, pero después de los resultados de la investigación que hicimos, cuando los equipos de salud <strong>vieron que no era peligroso y los pacientes pudieron probarlo</strong>, practicar y ver que les hacía bien, ahí se empezó a dar más fácil la difusión y las convocatorias”, explica Miguel Pino, kinesiólogo y cofundador de Neuroboxing Parkinson.</p>
+<p style="text-align: justify;">El programa, pionero en Chile y también en Latinoamérica, se imparte en Concepción, en el gimnasio Zona Box Fit, avenida Los Carrera 1470. El</p>
+<p style="text-align: justify;">equipo de profesionales también cuenta con <strong>una sede en Linares y próximamente abrirán un centro en la ciudad de Los Ángeles.</strong></p>
+<figure class="wp-caption alignnone" id="attachment_4238552" style="text-align: justify;"><img alt="Fotografía: María Luisa Ruiz" class="size-large wp-image-4238552" loading="lazy" src="../img/archivo/2019/img-9962-512x768.jpg"/><figcaption class="wp-caption-text">Fotografía: María Luisa Ruiz</figcaption></figure>
+<h2 style="text-align: justify;">Noquear la enfermedad</h2>
+<p style="text-align: justify;">Juan Riffo, diagnosticado con Parkinson a los 59 años, fue de los primeros pacientes en recibir la innovadora terapia. Desde entonces, lleva tres años asistiendo al gimnasio y es parte del <strong>grupo de 15 pacientes</strong> de Neuroboxing Parkinson en Concepción.</p>
+<p style="text-align: justify;">“Ya no me tiemblan las manos. Es muy poco. Siento que no ha avanzado, que ha parado un poco el Parkinson, así que <strong>me siento cada vez mejor</strong>. Y yo me he dado cuenta de que el boxeo es lo que lo alivia a uno un poco”, comenta Juan.</p>
+<p style="text-align: justify;">Un síntoma que alertó a Juan fue el temblor de su mano izquierda. Le dificultaba abrocharse las camisas, por lo que decidió ir al médico, quien le diagnosticó Parkinson.</p>
+<p style="text-align: justify;">Luego de haber sido detectada la enfermedad, en 2015, Juan comenzó a realizar ejercicios motrices en su domicilio, junto al kinesiólogo Miguel Pino, quien de hecho, lo invitó a formar parte del programa Neuroboxing Parkinson.</p>
+<p style="text-align: justify;">Los resultados fueron positivos para Juan desde un comienzo. Hoy, lleva 3 años entrenando y ha evidenciado mejoras a nivel físico como psicológico.</p>
+<p style="text-align: justify;">“Todos los ejercicios que les pedimos acá son de hacer muchas cosas al mismo tiempo (…) Esa es <strong>una habilidad que al principio no tienen</strong>. Teníamos que hacer tareas muy sencillas y concretas…y ahí uno ve que van mejorando la fuerza, la velocidad y la flexibilidad de su cuerpo”, cuenta el kinesiólogo Miguel Pino.</p>
+<figure class="wp-caption alignnone" id="attachment_4238553" style="text-align: justify;"><img alt="Fotografía: María Luisa Ruiz" class="size-large wp-image-4238553" loading="lazy" src="../img/archivo/2019/img-9940-999x768.jpg"/><figcaption class="wp-caption-text">Fotografía: María Luisa Ruiz</figcaption></figure>
+<h2 style="text-align: justify;">Mente versus cuerpo</h2>
+<p style="text-align: justify;">El Parkinson –llamado así por James Parkinson, médico inglés que describió en 1817 por primera vez el trastorno– no solo afecta la musculatura del cuerpo, sino que, al ser un trastorno neurodegenerativo, también causa daño psicológico en quienes lo padecen.</p>
+<p style="text-align: justify;">La enfermedad se desarrolla cuando las neuronas que producen dopamina, localizadas en una región cerebral, conocida como sustancia negra, <strong>se deterioran o mueren</strong>. Cuando se produce el Parkinson los niveles de dopamina disminuyen, generando una anomalía en el cerebro y desencadenando problemas en los músculos y el movimiento del cuerpo.</p>
+<p style="text-align: justify;">“Cualquier enfermedad degenerativa es impactante emocionalmente para la persona que lo padece. En este caso, al no querer salir de su hogar, además de tener la enfermedad de Parkinson se le puede agregar un trastorno de personalidad”, explica Carolina Bertoglia, psicóloga de la Universidad del Desarrollo.</p>
+<p style="text-align: justify;">Hasta ahora, el programa Neuroboxing Parkinson ha dado buenos resultados, <strong>especialmente en el plano emocional</strong>. Los pacientes no solo ven mejoras físicas, sino también a nivel mental.</p>
+<p style="text-align: justify;">Durante varios meses, y después de ser diagnosticada de la enfermedad, Teresa Nova se sintió muy mal anímicamente. No quería salir de su casa por miedo a que le pasara algo; tampoco se atrevía a comer con su familia, porque ya no era capaz de cortar un trozo de comida.</p>
+<p style="text-align: justify;">“Hoy, el cambio es realmente notorio, para uno que vive con la enfermedad y para la familia que está alrededor de uno (…) Desde que empecé a venir me di cuenta de que de alguna forma llegaba a mi casa en mejores condiciones”, asegura la profesora Teresa Nova, quien lleva dos años entrenando este tipo de boxeo.</p>
+<figure class="wp-caption alignnone" id="attachment_4238555" style="text-align: justify;"><img alt="Fotografía: María Luisa Ruiz" class="size-large wp-image-4238555" loading="lazy" src="../img/archivo/2019/img-9899-954x768.jpg"/><figcaption class="wp-caption-text">Fotografía: María Luisa Ruiz</figcaption></figure>
+<h2 style="text-align: justify;">Campeones del ring</h2>
+<p style="text-align: justify;">Los beneficios de la terapia de Neuroboxing se comienzan a notar a partir de los tres meses de entrenamiento. En el caso de Teresa Nova y Juan Riffo los cambios son evidentes. Además, no dejaron que la enfermedad tomara el control de sus cuerpos y mentes. Hoy, ambos, son personas más fuertes.</p>
+<p style="text-align: justify;">“Llevan entrenando con nosotros harto tiempo. Podemos decir que ellos ya están en un nivel avanzado, tanto Juan como Teresa, y que nos permite a nosotros como grupo centrarnos en los detalles”, agrega Miguel Pino.</p>
+<p style="text-align: justify;">El Parkinson es una enfermedad que <strong>hasta el momento no tiene cura</strong>. Por tanto, el tratamiento con fármacos y las terapias paliativas, como el deporte, son fundamentales para sobrellevar el trastorno.</p>
+<p style="text-align: justify;">En el futuro, se espera que este innovador proyecto se replique en otras partes del país, como <strong>Santiago, Talca, Linares, Laja y Los Ángeles</strong>, además de capacitar a más personas interesadas en el tema, dada la alta convocatoria que tuvo el curso, realizado este año, y donde incluso personas de otras regiones asistieron.</p>
+<p style="text-align: justify;">El programa ya está dando que hablar. De hecho, el pasado mes de junio un grupo de entrenadores de Neuroboxing Parkinson asistió al World Parkinson Congress, en Japón. Una instancia que <strong>reunió a personas de todo el mundo</strong> que lideran programas para pacientes con Parkinson y donde los jóvenes profesionales también pudieron presentar su innovador método.</p>
+<h3>Fuente: <a href="https://www.biobiochile.cl/noticias/nacional/region-del-bio-bio/2019/07/28/noqueando-al-parkinson-programa-de-neuroboxing-busca-mitigar-efectos-de-la-enfermedad-con-deporte.shtml" rel="noopener" target="_blank">www.biobiochile.cl</a></h3>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 1 de agosto de 2019 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2019/08/01/noqueando-al-parkinson-programa-de-neuroboxing-busca-mitigar-efectos-de-la-enfermedad-con-deporte/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

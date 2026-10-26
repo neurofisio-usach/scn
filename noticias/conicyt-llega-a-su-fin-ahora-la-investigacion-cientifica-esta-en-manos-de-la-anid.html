@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Conicyt llega a su fin: ahora la investigación científica está en manos de la Anid — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Conicyt llega a su fin: ahora la investigación científica está en manos de la Anid</h1>
+<div class="meta"><span>9 de enero de 2020</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Conicyt llega a su fin: ahora la investigación científica está en manos de la Anid" class="feat-img" src="../img/archivo/2020/neuro-imag-09-01-20-1.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><h4 style="text-align: justify;"><strong>Tras 52 años de funcionamiento la institución encargada de fomentar y financiar la investigación científica en Chile fue reemplazada por una nueva agencia, como parte de la creación del Ministerio de Ciencia.</strong></h4>
+<p style="text-align: justify;">Tras 52 años de funcionamiento, el trabajo de la <strong>Comisión Nacional de Investigación Científica y Tecnológica (Conicyt)</strong> terminó. La institución, que hasta hace una semana era la encargada del desarrollo y la promoción de las ciencias en el país dejó de funcionar con fecha 31 de diciembre para dar paso, desde el 1 de enero a la <strong>Agencia Nacional de Investigación (<a href="https://www.anid.cl/" rel="noopener" target="_blank">Anid</a>)</strong>, el nuevo organismo que tendrá cinco ejes estratégicos: la formación de Capital Humano Avanzado; Investigación Asociativa; Investigación Individual; visibilización del Conocimiento y generación de Redes Estratégicas; e Investigación Aplicada.</p>
+<p style="text-align: justify;">Un verdadero hito histórico según las autoridades y un elemento clave dentro de la nueva institucionalidad científico-tecnológica de nuestro país junto con el Ministerio de Ciencia, reconocieron los asistentes.</p>
+<p style="text-align: justify;">La ceremonia de traspaso se realiza en la calle Moneda, justo en el frontis de esta institución y con todos los funcionarios presentes, además de algunos investigadores de distintas partes del país. ¿La razón? “Quisimos darle al acto una<strong> impronta ciudadana y abierta</strong> y esa es la razón por la que estamos en la calle y frente al edificio que esperamos siga siendo aún más la casa del conocimiento, explicó la directora de la Anid, Aisén Etcheberry.</p>
+<p style="text-align: justify;">El <strong>ministro de Ciencia, Andrés Couve,</strong> destacó que la nueva institucionalidad “coincide con un momento de profunda reflexión sobre el futuro del país en temas sociales y medioambientales, donde la ciencia debe ser un actor clave”. A su juicio, “es fundamental contar con una <strong>agencia independiente que ejecute una visión estratégica</strong>” y que además sea “un órgano inteligente, flexible y que simplifique procesos”.</p>
+<p style="text-align: justify;">“Es una continuación de Conicyt, que fue la agencia principal de financiamiento de la ciencia y la tecnología por muchos años”, dijo Etcheverry</p>
+<p style="text-align: justify;">La Anid <strong>reunirá a todos los centros de investigación</strong> que hasta fines de 2019 se encontraban dispersas en distintas instituciones y ministerios.</p>
+<p style="text-align: justify;">La <strong>subsecretaria de Ciencia Carolina Torrealba</strong> señaló que “esta nueva institucionalidad busca construir un camino más ancho y diverso, más comprometido y conectado con la sociedad, y más justo e igualitario. Para eso pondremos foco especial en tres grandes inequidades de nuestro sistema: uno es género, otro es regiones, y el tercero tiene que ver con construir condiciones laborales más justas”.</p>
+<p style="text-align: justify;">“Los desafíos que tenemos por delante son muchos: mayor <strong>participación</strong>, mayor <strong>coordinación</strong>, mayor<strong> integración</strong>, hacernos cargo de las desigualdades del sistema, pero también acercar a nuevos públicos. Hoy pasamos a ser la <strong>Agencia Nacional de Investigación y Desarrollo</strong> y, como tal, tenemos que involucrar a la industria, a la sociedad en general y a la ciudadanía. Debemos sacar el conocimiento que se genera aquí, para que contribuya, de verdad, al desarrollo social, político y económico de nuestro país”, dijo la nueva directora nacional.</p>
+<h3 style="text-align: justify;">Nuevo centro</h3>
+<p style="text-align: justify;">Esta es la primera vez que todos los centros dedicados a fomentar la investigación en ciencia están reunidos bajo un mismo techo. “Los centros han sido en Chile una política pública muy exitosa que ha contribuido a que el sistema de ciencia tecnología e innovación alcance un nivel de calidad reconocimiento internacional” pero al que también le faltan algunas cosas como por ejemplo, relacionarse mejor entre ellos y tener una gestión integrada de todos los instrumentos de centro.</p>
+<p style="text-align: justify;">Para mejorar estas falencias, Couve adelantó que durante los <strong>próximos meses</strong> se dará a conocer un nuevo plan de centros, una <strong>nueva política de investigación</strong> que crea una Unidad de Centros al interior de la Anid.</p>
+<p style="text-align: justify;">“<strong>Es un plan de acción</strong> que va a <strong>gestionar en un principio a los Institutos Milenio</strong>, a los centros basales, al Fondap y los regionales. En un futuro próximo, se incorporan aquellos centros que hoy dependen de la Gerencia de Capacidades Tecnológicas de la Corfo”, dijo Couve.</p>
+<p style="text-align: justify;">Además, se trabajará en la creación de <strong>“redes de centros”</strong> para mejorar la vinculación entre ellos. “Tenemos un instrumento nuevo, de vanguardia, que va a permitir que los centros se asocien para obtener financiamiento para un desarrollo estratégico particular. Vamos a tener algunas medidas regulatorias para que los centros puedan participar concursos Fondequip (de equipamiento tecnológico) como centro con personalidad jurídica propia y toda una serie de acciones cuyo objetivo es tener más y mejores centros”, señaló el ministro de Ciencia.</p>
+<p style="text-align: justify;">A cargo de esta Unidad de Centro, estará una persona que tendrá como función c<strong>oordinar la gestión de todos los instrumentos</strong> que permitan simplificar los accesos tanto a la información como a las postulaciones y que será nombrada durante el primer trimestre de este año.</p>
+<p style="text-align: justify;">Alexis Kalergis, profesor e investigador de la U. Católica y director del Instituto Milenio de Inmunología e Inmunoterapia (Imii) señaló que “es clave que la nueva Anid promueva la formación e inserción de jóvenes científicas y científicos, por medio de los instrumentos accesibles y eficientes que necesita una carrera en ciencia”.  Otros desafío importante que mencionó el investigador es conseguir una verdadera equidad de género en la ciencia y seguir acercándola a la sociedad.</p>
+<p style="text-align: justify;">Para el Premio Nacional de Ciencias, doctor Ramón Latorre, director del Centro Interdisciplinario de Neurociencia de la Universidad de Valparaíso (Cinv), “a través de esta nueva Agencia los científicos tenemos la institucionalidad adecuada, para que el conocimiento se desarrolle en Chile sin trabas”. Según él, la creación de la Anid es y será un gran paso adelante en la proyección científica nacional.</p>
+<p style="text-align: justify;">Claudio Hetz, director del Instituto Milenio de Neurociencia Biomédica (BNI), de la Facultad de Medicina de la Universidad de Chile, también tuvo palabras de elogio. “Este es un hito histórico que hemos estado esperando durante una década. La Anid fortalecerá la organización de la ciencia chilena”, dijo</p>
+<h3 style="text-align: justify;">Agenda de género</h3>
+<p style="text-align: justify;">Otra de las novedades que se dieron a conocer durante la ceremonia de traspaso de Conicyt a la Anid es la <strong>Agenda de Equidad de Género</strong> para el sistema científico que se lanzará a fin de mes. En palabras de la subsecretaria de Ciencia “debemos cautelar todas las medidas que estén a nuestro alcance para reconocer esta inequidad histórica, y que el sistema se haga cargo de que hombres y mujeres puedan desplegarse con todas sus virtudes y capacidades”.</p>
+<p style="text-align: justify;">Sin embargo, y mientras las autoridades subían al pequeño escenario para sus discursos, un grupo de historiadoras se instaló a un costado para manifestarse contra la discriminación de género, la poca participación que han tenido en la elaboración de esta política y la entrega de recursos que han hecho a personas que han sido acusadas e incluso desvinculadas de las universidades por acoso.</p>
+<p style="text-align: justify;"><strong>Adriana Bastías, presidenta de la Red de Investigadoras</strong> explicó dentro del proceso de evaluación que realiza Conicyt no se consideran aspectos éticos de las personas, ni siquiera cuando están siendo sumariados e incluso han sido desvinculados, como ocurrió recientemente. “A <strong>Coniciyt le da lo mismo la ética de las personas</strong> que postulan a los fondos y le dan recursos a investigadores que incluso están sumariados. La agencia de Estados Unidos, desde hace dos años que no financia a los acosadores. Ellos no solo se fijan en cuestiones académicas, también evalúan la ética”.</p>
+<p style="text-align: justify;">Respecto de la <strong>participación de la sociedad</strong> civil, Bastías reclama que el anuncio de la nueva agenda de equidad en ciencia se realizará en tres semanas más, pero no han sido invitadas todas las agrupaciones a participar y quienes han asistido, reclaman porque la preocupación de la autoridad es más bien aumentar el número de mujeres y de algunas medidas, pero no se han reunido con las agrupaciones que se preocupan de los temas de género.</p>
+<h3>Fuente: <a href="https://www.latercera.com/que-pasa/noticia/conicyt-fin-anid/963335/" rel="noopener" target="_blank">www.latercera.com</a></h3>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 9 de enero de 2020 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2020/01/09/conicyt-llega-a-su-fin-ahora-la-investigacion-cientifica-esta-en-manos-de-la-anid/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

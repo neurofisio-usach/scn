@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>IBRO needs your help! Share our open calls for nominations — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>IBRO needs your help! Share our open calls for nominations</h1>
+<div class="meta"><span>8 de junio de 2023</span><span class="cat-pill">Oportunidades laborales y Becas</span></div>
+</div>
+</div>
+<img alt="IBRO needs your help! Share our open calls for nominations" class="feat-img" src="../img/archivo/2023/ibro-web.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;"><b>Call for members of IBRO’s five Regional Committees</b></p>
+<p style="text-align: justify;">
+The Regional Committees are, as I’m sure that you know, centrally involved in delivering IBRO’s mission across the five IBRO world regions. Recruitment of engaged new members for these committees is therefore of high importance to IBRO in order to ensure the best possible reach and impact of our programs globally. There are open slots for members in all five IBRO Regional Committees. Proposals of new members are made on behalf of, and by each of IBRO’s close to 100 member organizations, and by the members of the IBRO Executive Committee. Motivated individuals who wish to be involved in delivering IBRO’s mission in their region are warmly encouraged to contact a member society of IBRO for their nomination or contact IBRO directly for support in this regard via <a href="mailto:secretariat@ibro.org" rel="noopener" target="_blank">secretariat@ibro.org</a>. Proposals for new members should be received on or before 23 June 2023.</p>
+<ul style="text-align: justify;">
+<li>Call for Regional Committee members: <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/6FHtqbvZJInEKkG1IoL8_orZADnlP5wPU8oVrPK17k_NowjbiMWwqBblcC15c7tMUvjDswwGconDddXdSn7kIRhVQetF2vCpNM6eO5hDerx2k-NwlWUUq6FVIdypczTGd3wN0hehNF6oySKPCIPHXLgYxJ50l6ozYazxoDW5oOcgZBTNyMajeAjVKBrIJrQGPPFm9fAbpfe6QJh2RqNMnli2rhr1LDhAgUZtnDgwG3-7p_lyV0--m8JZupWWhKi5DdyxXcgBu7e8gvGfm_KrZocOXtV1uOPtyyC3hUi2CVGhSVyIYeyvuHweaD0n9W1GgdWrfEOLHX8WqeO1ykgywFbzDTqXF7nBFeL7ITlgY_C9d3lHAl-WlZOq-4Moe6o-zA&amp;source=gmail&amp;ust=1686254944550000&amp;usg=AOvVaw39pCHFvHDb3XZ3r_FPtxbe" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/6FHtqbvZJInEKkG1IoL8_orZADnlP5wPU8oVrPK17k_NowjbiMWwqBblcC15c7tMUvjDswwGconDddXdSn7kIRhVQetF2vCpNM6eO5hDerx2k-NwlWUUq6FVIdypczTGd3wN0hehNF6oySKPCIPHXLgYxJ50l6ozYazxoDW5oOcgZBTNyMajeAjVKBrIJrQGPPFm9fAbpfe6QJh2RqNMnli2rhr1LDhAgUZtnDgwG3-7p_lyV0--m8JZupWWhKi5DdyxXcgBu7e8gvGfm_KrZocOXtV1uOPtyyC3hUi2CVGhSVyIYeyvuHweaD0n9W1GgdWrfEOLHX8WqeO1ykgywFbzDTqXF7nBFeL7ITlgY_C9d3lHAl-WlZOq-4Moe6o-zA" rel="noopener" target="_blank">https://ibro.org/call-new-<wbr/>members-regional-committees/</a></li>
+<li>Social media posts about the call: <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/UtQtOOj4Vl_5d5j5XxQtFQV6l_zHRa9GWOSzxUCSIU1NavghEYPZQEhqeYVRQOsV5k_CakindXBcgFg8O2CugPd8QQpwZzIiBi0bGTHtQAvWgzjhKgdfMzx9rDxTcBMANBzp2bm-x5w9jgqZ1XXpW9KxobhVGcv-60sKtoLSn7tZHn1Ihb8_jJWcAFJFK58Mz0GGGWMlpMFi3VEdeHjeP-HQVsPUKhRuFz7LjnRCxeytNkJYhUeZQ2aukOC1AkLaz8VMAOYnT17UU5FyLHvZ_najFHbulmvY4pd-w2nuV12dqJyBvl1z3JUvyKblU12BDvBwHkPpe6LCtgcmXnW6bwx6u9nXZ72wgF2UhpL5zbwHpZlQHthwqV6ih3HENauwBaKQ&amp;source=gmail&amp;ust=1686254944550000&amp;usg=AOvVaw1vjmBBb1O8NGonB5oHci56" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/UtQtOOj4Vl_5d5j5XxQtFQV6l_zHRa9GWOSzxUCSIU1NavghEYPZQEhqeYVRQOsV5k_CakindXBcgFg8O2CugPd8QQpwZzIiBi0bGTHtQAvWgzjhKgdfMzx9rDxTcBMANBzp2bm-x5w9jgqZ1XXpW9KxobhVGcv-60sKtoLSn7tZHn1Ihb8_jJWcAFJFK58Mz0GGGWMlpMFi3VEdeHjeP-HQVsPUKhRuFz7LjnRCxeytNkJYhUeZQ2aukOC1AkLaz8VMAOYnT17UU5FyLHvZ_najFHbulmvY4pd-w2nuV12dqJyBvl1z3JUvyKblU12BDvBwHkPpe6LCtgcmXnW6bwx6u9nXZ72wgF2UhpL5zbwHpZlQHthwqV6ih3HENauwBaKQ" rel="noopener" target="_blank">Twitter</a> | <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/puAeDUdK11lQRE9jxaEnizDgiCiTnx1y-mxX1ZSQ3mivVcf1GhSeDDUPwdIkfVXHeVfus9jbkxQ4rpfIOx3cn6iPUsDwydnKCLfwFlCyNe7fo-__JASImMd0xCmFAvScW4k_gq81GWPGdDFLP3rSTRmVKDVZZLMbhxCY1V7Q-svwt7KRNqpr4k0M4cV8RB-CmlemcmyWkOddNfTFlLnc73ylO-2SOMhSqEEoWlucG1l9sAvt3PczZPqj1Bj_g8pVjv_V-tibG_iVOTkpabVuWpQWvT2uLjkCM2y3qOaT_m0fj2VfQc_PXTTyHZ5f5NCMt9H-8FBZoLd5RC1RsK0T6xBPkHX_TVEA5rU7JvN37rBoWYZuYM9_yS30NBdUw-Z4wrCwkeivE3gOyY7vt0NV3mkmAD-JUobDb40w1ggw6GC2n8myqSOwlu6l96dAr8LIS2Yy6yf4tWDQaaTw4OZhlk9oUQ&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw3TTMwiOQVVbs3uMIxjZ7fX" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/puAeDUdK11lQRE9jxaEnizDgiCiTnx1y-mxX1ZSQ3mivVcf1GhSeDDUPwdIkfVXHeVfus9jbkxQ4rpfIOx3cn6iPUsDwydnKCLfwFlCyNe7fo-__JASImMd0xCmFAvScW4k_gq81GWPGdDFLP3rSTRmVKDVZZLMbhxCY1V7Q-svwt7KRNqpr4k0M4cV8RB-CmlemcmyWkOddNfTFlLnc73ylO-2SOMhSqEEoWlucG1l9sAvt3PczZPqj1Bj_g8pVjv_V-tibG_iVOTkpabVuWpQWvT2uLjkCM2y3qOaT_m0fj2VfQc_PXTTyHZ5f5NCMt9H-8FBZoLd5RC1RsK0T6xBPkHX_TVEA5rU7JvN37rBoWYZuYM9_yS30NBdUw-Z4wrCwkeivE3gOyY7vt0NV3mkmAD-JUobDb40w1ggw6GC2n8myqSOwlu6l96dAr8LIS2Yy6yf4tWDQaaTw4OZhlk9oUQ" rel="noopener" target="_blank">Facebook </a>| <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/k4vRsMFL0DrCjMLQcr3YvFcoouCMFkzvME_FuM90LTuH_HJb8YKh8eYlgEuh0XceYYJd7TjEZaR1I6dVgivvlgfAqGO9TY06WNi-IwMn4jJnAbfA5qwceqGwWnRliYYn9scQ14t7UvQdtNsad4TlE4UY8bnH1CcmTDQj6JBajxm4VVISJkfkYnhAOaGEGXL3RRDKxL7bZM6n5TPA8lrNPKWJ37RThyoiGfpYj_iwtUhi_WVx7YFetV0AP_aQeazQDYT5l_BFCaFw5WgxzEmvztJHP7-huTwPLOoPNefWlngh0JVBkvqdGlW7i_MC6hEsGlydiytyn_CpOhBSalbZLpy94irBa7iw3dJVcI6ikZ_FOs7TdA&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw2TZ13tnZZTEUE7t3IaOB1b" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/k4vRsMFL0DrCjMLQcr3YvFcoouCMFkzvME_FuM90LTuH_HJb8YKh8eYlgEuh0XceYYJd7TjEZaR1I6dVgivvlgfAqGO9TY06WNi-IwMn4jJnAbfA5qwceqGwWnRliYYn9scQ14t7UvQdtNsad4TlE4UY8bnH1CcmTDQj6JBajxm4VVISJkfkYnhAOaGEGXL3RRDKxL7bZM6n5TPA8lrNPKWJ37RThyoiGfpYj_iwtUhi_WVx7YFetV0AP_aQeazQDYT5l_BFCaFw5WgxzEmvztJHP7-huTwPLOoPNefWlngh0JVBkvqdGlW7i_MC6hEsGlydiytyn_CpOhBSalbZLpy94irBa7iw3dJVcI6ikZ_FOs7TdA" rel="noopener" target="_blank">Instagram</a> | <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/e-HG4kXd8RerfP0OAoOWJ596f-0fH6z5XevVW8alxLQXVDnRIaZcIFLmGIE7ABuhyQ5D6pHYg3dKh006OspzEwcDZnHNGgEiuG4kyIdSZPXKcNBgL7Q7A1S9frH00BEgkER4vgq5v8dg__RG6GE1vTfilK4rxdgJdA-6V40R2ggAK49GhNwuPPkjvPNlccmzRgEKsC31gHGGkBRyCuiw5HFQxOA_qg83yEOyfIliWjJn4yQZv8ChJnSUCa5cyB3ng8ZPGNN-UwBOBiHPOZUWy-8dm8-nkfXkkH3WWGACZRyeLadzOwd0jz1jf3i9P0piX9hX-xmpRGm7sVKi4w2Rc9PAhhM_XCwwLTNe8mlpFELePEX3OQckvfmIlcAM8p31NJvlW79DbkLyyqLBe3V7nkMPUoEMHt2nOBa1&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw3Niu_5prVGvLo3Kl73UDen" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/e-HG4kXd8RerfP0OAoOWJ596f-0fH6z5XevVW8alxLQXVDnRIaZcIFLmGIE7ABuhyQ5D6pHYg3dKh006OspzEwcDZnHNGgEiuG4kyIdSZPXKcNBgL7Q7A1S9frH00BEgkER4vgq5v8dg__RG6GE1vTfilK4rxdgJdA-6V40R2ggAK49GhNwuPPkjvPNlccmzRgEKsC31gHGGkBRyCuiw5HFQxOA_qg83yEOyfIliWjJn4yQZv8ChJnSUCa5cyB3ng8ZPGNN-UwBOBiHPOZUWy-8dm8-nkfXkkH3WWGACZRyeLadzOwd0jz1jf3i9P0piX9hX-xmpRGm7sVKi4w2Rc9PAhhM_XCwwLTNe8mlpFELePEX3OQckvfmIlcAM8p31NJvlW79DbkLyyqLBe3V7nkMPUoEMHt2nOBa1" rel="noopener" target="_blank">LinkedIn</a></li>
+</ul>
+<p style="text-align: justify;"><b>New members of IBRO’s Early Career Committee </b><br/>
+The IBRO Early Career Committee (ECC) is a global network of 15 self-organized early career scientists who have transitioned within the past years to manage their own independent research programs. It is well known that this transition to independence often represents a critical stage in a scientific career, where new skill sets and networks are particularly important. The ECC is critically important for IBRO as a means to respond to the specific needs of this group of scientists. Furthermore, the ECC functions as an important voice towards IBRO’s leadership and Regional Committees. As this group of excellent scientists are tomorrow’s global scientific leaders, IBRO clearly has a significant interest in recruiting highly motivated individuals who share our commitment to diversity, equity and inclusion. Self-nomination, or nomination, is open until 30 June 2023.</p>
+<ul style="text-align: justify;">
+<li>Call for ECC members: <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/JSiUVZYfy-CWu7eyTWVAxbpCQpmYoTiH_4tdyQ-CMLz4oHLcNJ834w26ek--xwVG7_ZQUPRZ9pZqGpcmwWPFBcTxOAxbU7PvuHu9uDGUjHEo2MR9ITF6dH5cFkkpOSFZs37j3NGkSWEoaDZBsYkrWqbR9eVBx6YQqxuXrSrZZNbnnjrtcQtoib0bPslTSmTlntXqZlhwGR4E4_XyswxwrJ537bLx7-6uSEK-XwSOJrRVemRBAXiAMuVPLyb7ZvGFh0aiWWjFW1vWDYfo36OZFrGh4vrCI8nLAbW-G1KKxW8qQjau7h79fr0qDfgkKdFFAmKK5bt9IbbnCGr7TWX8en5nEfkGghl0tNwlwiJNN429c_rwdraiWNN8D2EdzD75sjyxcIOzNEcZ-yoXlefJ_gaXAgrXnEAircuH0NBaMl8SKOag9ElIoQ&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw19CvPG0voGbDlQ_Q5MXhH2" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/JSiUVZYfy-CWu7eyTWVAxbpCQpmYoTiH_4tdyQ-CMLz4oHLcNJ834w26ek--xwVG7_ZQUPRZ9pZqGpcmwWPFBcTxOAxbU7PvuHu9uDGUjHEo2MR9ITF6dH5cFkkpOSFZs37j3NGkSWEoaDZBsYkrWqbR9eVBx6YQqxuXrSrZZNbnnjrtcQtoib0bPslTSmTlntXqZlhwGR4E4_XyswxwrJ537bLx7-6uSEK-XwSOJrRVemRBAXiAMuVPLyb7ZvGFh0aiWWjFW1vWDYfo36OZFrGh4vrCI8nLAbW-G1KKxW8qQjau7h79fr0qDfgkKdFFAmKK5bt9IbbnCGr7TWX8en5nEfkGghl0tNwlwiJNN429c_rwdraiWNN8D2EdzD75sjyxcIOzNEcZ-yoXlefJ_gaXAgrXnEAircuH0NBaMl8SKOag9ElIoQ" rel="noopener" target="_blank">https://ibro.org/get-involved-<wbr/>join-the-ibro-early-career-<wbr/>committee-of-independent-<wbr/>scientists/</a></li>
+<li>Social media posts about the call: <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/XE76a_2QzQp56E8lLJwnT1K_9LCIiiWvbSeYqocXdmgIXYetXasfCsZlnI3slOCYwTtVnZYAPUImvp86Yxw5W5pdMc7FznmZR3Pth4TVmxWTm3k2s2qZ3q4yidWtYQqB_pCWEyOr6to1zIgmAS_Qn6ddbJaywBa60HYSVUUscR4R93YyR2ZEkHs-1bHBSRDCpC_69ZKfp8DuX0N_i3v7VcLbAGVzFmC0YQYNkZQXl-OxrRslaIs_A32yJJYP2Ccd6uvywN6jq7HK_kYu93pGgrDXJQ4ZjMfM_ajMAFoAVb_eL7bMtf63Nj-E_QGuVe2FDvUetvc1JOmvpYo0kDV1cZxiYZCjTpZJttLR6sR0Xytht8nZoJtn72Ac8t6vQUFqcR9y&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw2cnuJR-JbEEQGf4-TEPNvh" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/XE76a_2QzQp56E8lLJwnT1K_9LCIiiWvbSeYqocXdmgIXYetXasfCsZlnI3slOCYwTtVnZYAPUImvp86Yxw5W5pdMc7FznmZR3Pth4TVmxWTm3k2s2qZ3q4yidWtYQqB_pCWEyOr6to1zIgmAS_Qn6ddbJaywBa60HYSVUUscR4R93YyR2ZEkHs-1bHBSRDCpC_69ZKfp8DuX0N_i3v7VcLbAGVzFmC0YQYNkZQXl-OxrRslaIs_A32yJJYP2Ccd6uvywN6jq7HK_kYu93pGgrDXJQ4ZjMfM_ajMAFoAVb_eL7bMtf63Nj-E_QGuVe2FDvUetvc1JOmvpYo0kDV1cZxiYZCjTpZJttLR6sR0Xytht8nZoJtn72Ac8t6vQUFqcR9y" rel="noopener" target="_blank">Twitter</a> | <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/1Wsu6CAC1Qacs2_aHngTBCQq7clmvUjROqntev1vZQZJr1-Y4dyAXRYaHo2M7uXqmapeRESFJYO21v2keAASDN4kL2Ck7c00vp_rw1tj2g2xZXtpSDMtscq_QKciic2TnVEkd0LOJwJzpwhO304VSE16v4YagSx0918omjLyhMFxGzcDSfQQX-CJdiVE-SOjR440cIH4q_7I4Bvx3a2gE2qsw8_7YI32txbUJ_cLU2Ze-4yVlmgFKlP_xxR3LXrLUyI3Bw_i2OecZ9FJqXp_rZe6HWAEhNFe98aH9IAD4xCMyEnwBIhMQBFxVbpOCc38ScbE3488K617vqODCbpOKC1P4sqvCJrRyjXbTaGjdYVC7AFDvDLk_kAsSAYBLcmWPxvv0kFj8naJih1RNFodx0jT4GHdAkEKzbWK5X2Tae02tpdadsmYCzRuy6g2MmJJmc0tIWWd184rwpy_Qfim3oC3VJM&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw1X8MlCqk4lcA32WqgUL7dQ" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/1Wsu6CAC1Qacs2_aHngTBCQq7clmvUjROqntev1vZQZJr1-Y4dyAXRYaHo2M7uXqmapeRESFJYO21v2keAASDN4kL2Ck7c00vp_rw1tj2g2xZXtpSDMtscq_QKciic2TnVEkd0LOJwJzpwhO304VSE16v4YagSx0918omjLyhMFxGzcDSfQQX-CJdiVE-SOjR440cIH4q_7I4Bvx3a2gE2qsw8_7YI32txbUJ_cLU2Ze-4yVlmgFKlP_xxR3LXrLUyI3Bw_i2OecZ9FJqXp_rZe6HWAEhNFe98aH9IAD4xCMyEnwBIhMQBFxVbpOCc38ScbE3488K617vqODCbpOKC1P4sqvCJrRyjXbTaGjdYVC7AFDvDLk_kAsSAYBLcmWPxvv0kFj8naJih1RNFodx0jT4GHdAkEKzbWK5X2Tae02tpdadsmYCzRuy6g2MmJJmc0tIWWd184rwpy_Qfim3oC3VJM" rel="noopener" target="_blank">Facebook</a> | <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/UpjmdaOZlRODXhvim5Jco4znN8plQA8nqv7Ywel2uE-01j8r_Eu08MRb23TZPOXYj0HE7TlwI_xQDAAdP6LynxAlGPb19XW0qzH0BKIIjCPZZSqCFXZhsmxCww2xj845WCtYTmwMO-IuNMAAkiZ9ArTM3QaCgU3GK7kG04JLFYU6-cCe5sFkp9-yHrQ1_mG3bNjFxcaBB7OUXqClGVwudA06ZIhKZK3bzLaLWhczw-6ZMcnAiH__SZZojeX4vPYIbdaFCtZ5VN35RuOyCnK-i0DlfhP0HM_NpK0NDsiwX2lvBoIiVjSe43YG6-Ycc0lT6z4r4Zi81tgemjtNxV3gVLXOgJqpYN7w-YudcQGVOi1TsLxVaA&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw2LTAVYXfm6lkM9AHv2_-IE" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/UpjmdaOZlRODXhvim5Jco4znN8plQA8nqv7Ywel2uE-01j8r_Eu08MRb23TZPOXYj0HE7TlwI_xQDAAdP6LynxAlGPb19XW0qzH0BKIIjCPZZSqCFXZhsmxCww2xj845WCtYTmwMO-IuNMAAkiZ9ArTM3QaCgU3GK7kG04JLFYU6-cCe5sFkp9-yHrQ1_mG3bNjFxcaBB7OUXqClGVwudA06ZIhKZK3bzLaLWhczw-6ZMcnAiH__SZZojeX4vPYIbdaFCtZ5VN35RuOyCnK-i0DlfhP0HM_NpK0NDsiwX2lvBoIiVjSe43YG6-Ycc0lT6z4r4Zi81tgemjtNxV3gVLXOgJqpYN7w-YudcQGVOi1TsLxVaA" rel="noopener" target="_blank">Instagram</a> | <a data-saferedirecturl="https://www.google.com/url?q=https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/QRSSJaNrreO5_d34y9RYsolwkE0shat_l7hEELTibOrEnkIkG5PbRrrPlvlzSQktrNXxsj17OaylDKSLIhOPN-D1FxzggIFhMxGGIdDMn6nqZ0GcwX4elN5XdKCVBWTcbDoXhno4YK8cKoxekemyIWkvy0lWCfqXI7_RbfT2irMHrjt1Hk85kPkjjVC7jrvTm8t9EaO2sPPugG5HQjgJS37-Ijg34kEnbLqWZ8Q5J0E_1gQpNnctO98p2HMpZLMQuotyE0rqrVKFDpk7oUQ5Zkzff8P32PJO2a7MLx7KNh-bfRprqTqXvNiZNZWWSL8lsIxF9TQ2H3qRrOxtayP4mQdTKA1nxc2ynWGRH-V8BKm1MFYwocKd0bGeIqJQ_373FwjGrhx0OUr72VqRbmIoNohnYiHAgfAFkxAn&amp;source=gmail&amp;ust=1686254944551000&amp;usg=AOvVaw1u5KLCpnFTiGBw0ff6jnqx" href="https://4ei8x.r.a.d.sendibm1.com/mk/cl/f/QRSSJaNrreO5_d34y9RYsolwkE0shat_l7hEELTibOrEnkIkG5PbRrrPlvlzSQktrNXxsj17OaylDKSLIhOPN-D1FxzggIFhMxGGIdDMn6nqZ0GcwX4elN5XdKCVBWTcbDoXhno4YK8cKoxekemyIWkvy0lWCfqXI7_RbfT2irMHrjt1Hk85kPkjjVC7jrvTm8t9EaO2sPPugG5HQjgJS37-Ijg34kEnbLqWZ8Q5J0E_1gQpNnctO98p2HMpZLMQuotyE0rqrVKFDpk7oUQ5Zkzff8P32PJO2a7MLx7KNh-bfRprqTqXvNiZNZWWSL8lsIxF9TQ2H3qRrOxtayP4mQdTKA1nxc2ynWGRH-V8BKm1MFYwocKd0bGeIqJQ_373FwjGrhx0OUr72VqRbmIoNohnYiHAgfAFkxAn" rel="noopener" target="_blank">LinkedIn</a></li>
+</ul>
+<p style="text-align: justify;">I thank you warmly on behalf of IBRO for your help in disseminating these opportunities!</p>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 8 de junio de 2023 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2023/06/08/ibro-needs-your-help-share-our-open-calls-for-nominations/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

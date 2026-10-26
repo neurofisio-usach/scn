@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Mario Luxoro, a dos años de su fallecimiento — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Mario Luxoro, a dos años de su fallecimiento</h1>
+<div class="meta"><span>7 de enero de 2019</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Mario Luxoro, a dos años de su fallecimiento" class="feat-img" src="../img/archivo/2019/neuro-imag-07-01-19.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;">Mario Luxoro murió pocos días antes de cumplir los 90 años. Fue uno de los científicos más relevantes y trascendentes que haya tenido nuestro país. Sus contribuciones a la Ciencia y a la Academia fueron invaluables y, ampliamente reconocidas internacionalmente. Fue un ser humano extraordinario que vivió intensamente la vida. Poseía una personalidad única, de ningún modo pasaba desapercibido. Se enorgullecía de sus orígenes italianos, era a la vez entretenido, alegre, bromista, divertido y enojón, aunque muchas veces fingía serlo para divertirse. Muy afectuoso y emotivo, pasaba repentinamente de la risa a las lágrimas. Infundía una gran admiración y respeto; los estudiantes le temían, las estudiantes no tanto. Perdía su escasa paciencia ante respuestas o argumentos confusos,  poco rigurosos o carentes de lógica. Poseía una amplia cultura, sabía de historia, lo fascinaban las artes plásticas y la música, en especial Vivaldi y otros músicos italianos de la época. Se mantenía bien informado del acontecer universitario y político, tenía amigos en los más variados círculos intelectuales. Sus clases eran memorables, muy entretenidas y formativas; explicaba con pasión los conceptos y entregaba los elementos esenciales de las materias, motivando a los estudiantes a estudiar para completarlas. Acostumbraba a decir que no es el profesor el que enseña sino  el alumno el que aprende.</p>
+<p style="text-align: justify;">Se tituló de ingeniero químico en la Universidad Santa María, donde adquirió una sólida formación básica que marcó su carrera científica. Su interés por la investigación en las ciencias biológicas lo impulsó a ingresar a la Universidad de Chile a estudiar medicina, pero pronto sintió que para cumplir su objetivo la medicina no era el camino, razón por la cual a los dos años partió a hacer un doctorado al Massachusetts Institute of Technology (MIT), en Boston. Allí destacó como un alumno brillante, publicando el trabajo de su tesis, que él mismo concibió, como único autor (PNAS, 1958). Tuvo ofrecimientos para ejercer en los Estados Unidos, pero optó por regresar a Chile, incorporándose a la Facultad de Química y Farmacia de la Universidad de Chile, donde montó su laboratorio. Reclutó a un grupo de jóvenes entusiastas, Guayo (Eduardo) Rojas, Mitzy Canessa, Sigmund Fischer y Fernando Vargas, a quienes formó imprimiéndoles su concepción de que los fenómenos biológicos debieran, en lo posible, abordarse desde una perspectiva reduccionista. Para entenderlos había que aproximarse a ellos de una manera cuantitativa, según los principios de la física y de la química, en lugar de limitarse a describirlos, como era lo que primaba en Chile en aquella época. Con Guayo, que fue su primer discípulo, partieron entusiastamente estudiando las propiedades electrofisiológicas del axón gigante de la jibia en la Estación de Biología Marina de la Universidad de Chile ubicada en Montemar, hoy perteneciente a la Universidad de Valparaíso. Por sus enormes dimensiones, este axón ofrecía ventajas incomparables para los propósitos de su investigación. Sin embargo, debieron enfrentar dificultades de todo tipo de parte de las autoridades locales, quienes no podrían comprender las razones del intenso ritmo de trabajo de estos dos científicos. Ante esta situación, el Rector de la Universidad de Chile accedió a comprarles una casa al frente de la Estación para que pudieran habilitarla como laboratorio. Allí se instaló Luxoro con su equipo de jóvenes, dando origen a lo que fue una fantástica fuente de destacados investigadores y de una abundante producción científica. El grupo fue creciendo y sus trabajos, publicados en las mejores revistas, fueron adquiriendo rápidamente notoriedad en el exterior. Prominentes científicos de diferentes partes del planeta acudieron a Montemar atraídos por las investigaciones que allí se estaban realizando y por el atractivo que ejercían los axones gigantes de la jibia chilena, y trabajaron mano a mano con los chilenos. Los fondos y los instrumentos eran escasos, pero ellos mismos fueron construyendo algunos y, además, los visitantes generosamente les dejaban los que ellos traían para poder trabajar, lo que permitió ir aumentando el equipamiento del laboratorio. Durante el verano, que era cuando las jibias estaban disponibles, la actividad científica en el laboratorio era muy intensa. Se trabajaban largas horas con los calamares que, de manera muy artesanal, les colectaba un pescador mar adentro durante la noche. El ambiente era extraordinariamente estimulante para los jóvenes, que compartían experimentos, espacio y tiempo con prominentes científicos, siendo partícipes en sus publicaciones. De allí salieron muchos exitosos científicos, como Francisco Bezanilla, Cecilia Hidalgo, Ramón Latorre y Julio Vergara, entre otros.</p>
+<p style="text-align: justify;">Tres de los trabajos científicos de Luxoro fueron aportes fundamentales a la biofísica de membranas. Uno de ellos, en coautoría con Guayo Rojas (Nature, 1963), presentó la primera demostración de que los canales de iones consistían en proteínas. Entonces se especulaba que los iones atravesaban la membrana a través de la bicapa lipídica, lo que ellos rechazaban por los serios problemas energéticos que esa propuesta implicaba. Perfundiendo el interior de un axón con proteasa, observaron que el potencial de acción rápida e irreversiblemente se desvanecía, como era de esperarse para una proteína. En los otros dos, realizados con Silvia Rissetti (BBA, 1967) y Eugenia Yáñez (J Gen  Physiol, 1068), determinó mediante mediciones de la salida de calcio radiactivo desde un axón al medio externo, que el calcio intracelular se encuentra muy mayoritariamente ligado y no libre, independientemente de la membrana plasmática, en contraste con los demás iones. El calcio era incluso retenido por el citoplasma axonal luego de ser este extraído del axón, pero podía ser liberado al exponerlo a proteasa. Posteriormente se estableció que el calcio es retenido por compartimientos intracelulares, comprobando el hallazgo pionero de Luxoro y sus colaboradoras. Interesantemente, Luxoro publicó poco más de veinte artículos, lo que no se condice con el número mucho mayor de publicaciones que los científicos establecidos actualmente suelen tener. Sin embargo, por la importancia de los trabajos mencionados, Luxoro ocupa un lugar prominente entre los grandes de la Biofísica. Mario Luxoro recibió el Premio Nacional de Ciencias en el año 2.000 por sus grandes contribuciones a la Ciencia y a la Academia.</p>
+<p style="text-align: justify;">A partir de 1968 Mario asumió por un período de cuatro años como Decano de la Facultad de Ciencias, de la cual fue uno de los fundadores. Esto le significó un enorme sacrificio, pues debió alejarse temporalmente de sus investigaciones en Montemar. Durante su decanatura la Facultad se constituyó en un poderoso centro de investigación y formación científica. Se construyeron nuevos laboratorios para permitir que un gran número de biólogos, físicos, químicos y matemáticos, se establecieran en un espacio común. Entre otras cosas, se crearon talleres especializados en trabajo mecánico y vidrio que podían cumplir de manera expedita las necesidades de los investigadores, aparte de reducir gastos de importación desde el extranjero.</p>
+<p style="text-align: justify;">El golpe militar de 1973 causó estragos tanto en la Facultad de Ciencias como en Montemar. Muchos científicos fueron perseguidos, obligándolos a huir del país. Otros, que aunque no se vieron amenazados directamente, se sintieron impedidos de seguir adelante con sus investigaciones por las pésimas condiciones económicas existentes. Las universidades fueron intervenidas, muchos profesores fueron exonerados y estudiantes expulsados o detenidos. Con gran valentía, Mario defendió a muchos de ellos ante los militares. Unos pocos científicos permanecieron en el país, a pesar de todo, dispuestos a defender la sobrevivencia de la Ciencia con la esperanza de que en un futuro distante pudiera esta renacer con nuevos bríos. Uno de ellos fue Mario Luxoro, que con enorme sacrificio personal rechazó ofertas del extranjero y continuó haciendo clases en la Facultad y experimentos en Montemar con algunos estudiantes, a quienes imprimió la tradición y el espíritu que había impuesto en ese laboratorio. Estos esfuerzos a la larga rindieron sus frutos, ya que un buen número de quienes fuimos formados por Mario durante esos duros años pudimos proseguir nuestras carreras científicas marcados por su ejemplo y sus enseñanzas.</p>
+<p style="text-align: justify;">Escribo estas líneas con la particular esperanza de que sean leídas por las nuevas generaciones y les sirvan para apreciar la estatura de uno los principales forjadores de la Ciencia en nuestro país. Y también para ilustrar cómo una persona, con talento, coraje, dedicación, creatividad y generosidad puede lograr la realización de grandes obras, superando todo tipo de dificultades.</p>
+<p style="text-align: justify;"><b>Escrito por Dr. Juan Bacigalupo.</b></p>
+<p>
+<div class="ngg-galleryoverview default-view" id="ngg-gallery-e82ae7dba9a55585b1480274de98f988-1">
+<div class="ngg-gallery-thumbnail-box" id="ngg-image-0">
+<div class="ngg-gallery-thumbnail">
+<a class="ngg-simplelightbox" data-description="" data-image-id="1" data-image-slug="mario" data-src="https://socneurociencia.cl/wp-content/gallery/recuerdo-mario-luxoro/Mario.jpg" data-thumbnail="https://socneurociencia.cl/wp-content/gallery/recuerdo-mario-luxoro/thumbs/thumbs_Mario.jpg" data-title="Mario" href="../img/archivo/2019/mario.jpg" rel="e82ae7dba9a55585b1480274de98f988" title="">
+<img alt="Mario" loading="lazy" src="../img/archivo/2019/mario.jpg" style="max-width:100%;" title="Mario"/>
+</a>
+</div>
+</div>
+<div class="ngg-gallery-thumbnail-box" id="ngg-image-1">
+<div class="ngg-gallery-thumbnail">
+<a class="ngg-simplelightbox" data-description="" data-image-id="2" data-image-slug="mario-luxoro" data-src="https://socneurociencia.cl/wp-content/gallery/recuerdo-mario-luxoro/mario-luxoro.jpg" data-thumbnail="https://socneurociencia.cl/wp-content/gallery/recuerdo-mario-luxoro/thumbs/thumbs_mario-luxoro.jpg" data-title="mario-luxoro" href="../img/archivo/2019/mario-luxoro.jpg" rel="e82ae7dba9a55585b1480274de98f988" title="">
+<img alt="mario-luxoro" loading="lazy" src="../img/archivo/2019/mario-luxoro.jpg" style="max-width:100%;" title="mario-luxoro"/>
+</a>
+</div>
+</div>
+<div class="ngg-gallery-thumbnail-box" id="ngg-image-2">
+<div class="ngg-gallery-thumbnail">
+<a class="ngg-simplelightbox" data-description="" data-image-id="3" data-image-slug="img_4077" data-src="https://socneurociencia.cl/wp-content/gallery/recuerdo-mario-luxoro/IMG_4077.jpg" data-thumbnail="https://socneurociencia.cl/wp-content/gallery/recuerdo-mario-luxoro/thumbs/thumbs_IMG_4077.jpg" data-title="IMG_4077" href="../img/archivo/2019/img-4077.jpg" rel="e82ae7dba9a55585b1480274de98f988" title="">
+<img alt="IMG_4077" loading="lazy" src="../img/archivo/2019/img-4077.jpg" style="max-width:100%;" title="IMG_4077"/>
+</a>
+</div>
+</div>
+<br style="clear: both"/>
+<div class="ngg-clear"></div> </div>
+</p>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 7 de enero de 2019 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2019/01/07/mario-luxoro-a-dos-anos-de-su-fallecimiento/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

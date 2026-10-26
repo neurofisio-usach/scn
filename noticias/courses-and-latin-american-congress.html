@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Courses and Latin American Congress — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Courses and Latin American Congress</h1>
+<div class="meta"><span>8 de junio de 2017</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a>
+<table align="center" border="0" cellpadding="0" cellspacing="0" id="m_-7761604943470649489m_7889466276257062225bodyTable" style="border-collapse: collapse; height: 100%; margin: 0; padding: 0; width: 100%;" width="100%">
+<tbody>
+<tr>
+<td align="center" id="m_-7761604943470649489m_7889466276257062225bodyCell" style="height: 100%; margin: 0; padding: 0; width: 100%;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td align="center" id="m_-7761604943470649489m_7889466276257062225templateHeader" style="background: #f7f7f7 none no-repeat center/cover; background-color: #f7f7f7; background-image: none; background-repeat: no-repeat; background-position: center; background-size: cover; border-top: 0; border-bottom: 0; padding-top: 15px; padding-bottom: 15px;" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225templateContainer" style="border-collapse: collapse; max-width: 600px!important;" width="100%">
+<tbody>
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225headerContainer" style="background: #transparent none no-repeat center/cover; background-color: #transparent; background-image: none; background-repeat: no-repeat; background-position: center; background-size: cover; border-top: 0; border-bottom: 0; padding-top: 0; padding-bottom: 0;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnImageBlock" style="min-width: 100%; border-collapse: collapse;" width="100%">
+<tbody class="m_-7761604943470649489m_7889466276257062225mcnImageBlockOuter">
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnImageBlockInner" style="padding: 0px;" valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnImageContentContainer" style="min-width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnImageContent" style="text-align: center; padding: 0 0px 0 0px;" valign="top"><img align="middle" alt="" class="m_-7761604943470649489m_7889466276257062225mcnImage CToWUd a6T" loading="lazy" src="../img/archivo/2017/ull2qmqhk74notwx7oxhb3dlckmjt3jv4v6sh8c-vjrn3a9mfss1m5zwj8c725ai8cnslz0xda1vg0jnn8wm47qav" style="max-width: 1276px; padding-bottom: 0; display: inline!important; vertical-align: bottom; border: 0; height: auto; outline: none; text-decoration: none;" tabindex="0"/>
+<div class="a6S" dir="ltr" style="opacity: 0.01;"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" id="m_-7761604943470649489m_7889466276257062225templateBody" style="background: #ffffff none no-repeat center/cover; background-color: #ffffff; background-image: none; background-repeat: no-repeat; background-position: center; background-size: cover; border-top: 0; border-bottom: 0; padding-top: 27px; padding-bottom: 63px;" valign="top">
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225templateContainer" style="border-collapse: collapse; max-width: 600px!important;" width="100%">
+<tbody>
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225bodyContainer" style="background: transparent none no-repeat center/cover; background-color: transparent; background-image: none; background-repeat: no-repeat; background-position: center; background-size: cover; border-top: 0; border-bottom: 0; padding-top: 0; padding-bottom: 0;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnImageBlock" style="min-width: 100%; border-collapse: collapse;" width="100%">
+<tbody class="m_-7761604943470649489m_7889466276257062225mcnImageBlockOuter">
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnImageBlockInner" style="padding: 0px;" valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnImageContentContainer" style="min-width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnImageContent" style="text-align: center; padding: 0 0px 0 0px;" valign="top"><img align="middle" alt="Sociedad Chilena de Neurociencia" class="m_-7761604943470649489m_7889466276257062225mcnImage CToWUd a6T img-reemplazo-logo" data-original-src="https://ci4.googleusercontent.com/proxy/cvLrZow9D4GdGzGcieMXe04j5Nb86xeZK_pCmZICxa64gvyjAE7A7K5Tu58VuvGljqq_hDNHsoo2iOryc40s01397LlmVq_4ggNZ2Cm7InZXQ1rvksuLW38F1iJ-Z3lU0hvORUpTOw9FlxK1Ke4YwdUgI5FXqhWShqytZJ8=s0-d-e1-ft#https://gallery.mailchimp.com/af84d3bbfdf35de8d64b1f2e2/images/4533d13a-5ed7-4349-b325-233461ef7686.jpg" loading="lazy" src="../logo_scn.png" style="max-width: 2836px; padding-bottom: 0; display: inline!important; vertical-align: bottom; border: 0; height: auto; outline: none; text-decoration: none;" tabindex="0"/>
+<div class="a6S" dir="ltr" style="opacity: 0.01; left: 659.5px; top: 638.797px;"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnTextBlock" style="min-width: 100%; border-collapse: collapse;" width="100%">
+<tbody class="m_-7761604943470649489m_7889466276257062225mcnTextBlockOuter">
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnTextBlockInner" style="padding-top: 9px;" valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnTextContentContainer" style="max-width: 100%; min-width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnTextContent" style="word-break: break-word; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding: 0 18px 9px 18px;" valign="top">
+<h2 style="display: block; margin: 0; padding: 0; color: #222222; font-family: Helvetica; font-size: 28px; font-style: normal; font-weight: bold; line-height: 150%; letter-spacing: normal; text-align: left;">Argentina: 31º edición Escuela de Ciencias Informáticas, ECI 2017</h2>
+<p style="font-size: 18px!important; margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; line-height: 150%; text-align: left;">se llevará a cabo desde el 24 al 29 de julio, en el Departamento de Computación de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires.</p>
+<p style="font-size: 18px!important; margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; line-height: 150%; text-align: left;">Becas: hasta el 9 de junio.</p>
+<p style="font-size: 18px!important; margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; line-height: 150%; text-align: left;">La inscripción a los cursos se realizará del 12 de junio al 21 de julio. Más información en: <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://falan-ibrolarc.us6.list-manage.com/track/click?u%3Daf84d3bbfdf35de8d64b1f2e2%26id%3D99692134ac%26e%3D661a2aaf7b&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNHc9MAbxQqOeTj4DBiu_ndyrjTo4Q" href="http://falan-ibrolarc.us6.list-manage.com/track/click?u=af84d3bbfdf35de8d64b1f2e2&amp;id=99692134ac&amp;e=661a2aaf7b" rel="noopener" style="color: #00add8; font-weight: normal; text-decoration: underline;" target="_blank">http://www.dc.uba.ar/eci/i<wbr/>nscripcion</a><br/>
+Más información: <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://falan-ibrolarc.us6.list-manage.com/track/click?u%3Daf84d3bbfdf35de8d64b1f2e2%26id%3D6946df65a6%26e%3D661a2aaf7b&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNGpdDtik3Hp_fnZBjwVvh77daCF2w" href="http://falan-ibrolarc.us6.list-manage.com/track/click?u=af84d3bbfdf35de8d64b1f2e2&amp;id=6946df65a6&amp;e=661a2aaf7b" rel="noopener" style="color: #00add8; font-weight: normal; text-decoration: underline;" target="_blank">https://falan-ibr<wbr/>olarc.org/drupal/es/node/609</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnCaptionBlock" style="border-collapse: collapse;" width="100%">
+<tbody class="m_-7761604943470649489m_7889466276257062225mcnCaptionBlockOuter">
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnCaptionBlockInner" style="padding: 9px;" valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnCaptionBottomContent" style="border-collapse: collapse;" width="false">
+<tbody>
+<tr>
+<td align="center" class="m_-7761604943470649489m_7889466276257062225mcnCaptionBottomImageContent" style="padding: 0 9px 9px 9px;" valign="top"><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://falan-ibrolarc.us6.list-manage1.com/track/click?u%3Daf84d3bbfdf35de8d64b1f2e2%26id%3D5de17bf313%26e%3D661a2aaf7b&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNGnm7SqsEyuXJky-nuJc7fLltrliQ" href="http://falan-ibrolarc.us6.list-manage1.com/track/click?u=af84d3bbfdf35de8d64b1f2e2&amp;id=5de17bf313&amp;e=661a2aaf7b" rel="noopener" target="_blank" title=""> <img alt="" class="m_-7761604943470649489m_7889466276257062225mcnImage CToWUd" loading="lazy" src="../img/archivo/2017/2tzb-mqfv2p6a5udt-5lm5w0jcposxlrxe8gu8ugnwmzsoqvq8gnhmohagpsnokpnxb-lwqthxqnuwrqvnv1o2oar" style="max-width: 2127px; border: 0; height: auto; outline: none; text-decoration: none; vertical-align: bottom;"/><br/>
+</a></td>
+</tr>
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnTextContent" style="padding: 0 9px 0 9px; word-break: break-word; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;" valign="top" width="564">
+<h3 style="display: block; margin: 0; padding: 0; color: #444444; font-family: Helvetica; font-size: 22px; font-style: normal; font-weight: bold; line-height: 150%; letter-spacing: normal; text-align: left;">Congresos Latinoamericanos 2017</h3>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>XVI Jornadas de la Sociedad de Neurociencias del Uruguay (SNU) ,12 al 14 de mayo 2017</strong><br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://sociedadneurocienciasuy.com/&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNGSmfbUa8V0C_mePdsEaVW7Jw2AVw" href="https://sociedadneurocienciasuy.com/" rel="noopener" target="_blank">https://sociedadneurocienciasu<wbr/>y.com/</a></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>XL Annual Congress of the Brazilian Society for Neuroscience and Behavior, which will take place in UNESP – Araraquara  São Paulo, Brazil, from July 26 to 29, 2017</strong><br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://sbnec.com.br/site/texto.php?id_texto%3D18&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNF7eavVLY9zAnfBUAEzvjZCeH6MLA" href="http://sbnec.com.br/site/texto.php?id_texto=18" rel="noopener" target="_blank">http://sbnec.com.br/site/texto<wbr/>.php?id_texto=18</a></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>60° Congreso de la Sociedad Mexicana de Ciencias Fisiológicas en Monterrey NL, del 13 al 17 de agosto</strong><br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://www.smcf.org.mx/&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNGdeTgjtPowdj98E2niHi89X1HZgg" href="http://www.smcf.org.mx/" rel="noopener" target="_blank">http://www.smcf.org.mx/</a></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>Simposio de Neurociencias de Cuba, 25 al 29 de septiembre 2017 en el Hotel Meliá Marina Varadero en el marco del evento XIV CIASEM 2017</strong><br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://www.cneuro.cu/&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNFaU0xUEc5CG-te6dCFyxvylOLMdA" href="http://www.cneuro.cu/" rel="noopener" target="_blank">http://www.cneuro.cu/</a></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>XXXII congreso de la Sociedad Argentina de Investigación en Neurociencias, 25 al 27 de septiembre, Mar del Plata, Buenos Aires</strong><br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://www.saneurociencias.org.ar/congreso-san2017/&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNFUaAhmbKAkvotmhAO4X1W3lpWv4Q" href="http://www.saneurociencias.org.ar/congreso-san2017/" rel="noopener" target="_blank">http://www.saneurociencias.org<wbr/>.ar/congreso-san2017/</a></p>
+<p><strong>Sociedad Chilena de Neurociencia , 1-3 de octubre en la ciudad de Castro, Chiloe</strong><br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://www.socneurociencia.cl/&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNEvIJnKOPY14GSqiWxDFy2hRtVRlg" href="../index.html" rel="noopener noreferrer" target="_blank">https://www.socneurociencia.cl/</a></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>1er Congreso de la Sociedad de Neurociencias de Perú. 20 y 21 de octubre 2017, en Lima, Peru</strong><br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://sites.google.com/a/sonep.org/sonep/&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNEQXMOoch7SDfzNrqdobFPc1hZtkQ" href="https://sites.google.com/a/sonep.org/sonep/" rel="noopener" target="_blank">https://sites.google.com/a/son<wbr/>ep.org/sonep/</a></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>Neurociencias en Puerto Rico, Ciudad de Ponce  el 2 de diciembre de 2017 </strong><strong>XI Congreso Nacional COLNE, Colombia 2018 </strong>(el evento se realiza cada 2 años)<br/>
+<a class="m_-7761604943470649489m_7889466276257062225moz-txt-link-freetext" data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://colne.org.co/&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNGXBHPW3OuIEqS68EglFvLV8A7hKQ" href="http://colne.org.co/" rel="noopener" target="_blank">http://colne.org.co/</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnCaptionBlock" style="border-collapse: collapse;" width="100%">
+<tbody class="m_-7761604943470649489m_7889466276257062225mcnCaptionBlockOuter">
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnCaptionBlockInner" style="padding: 9px;" valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnCaptionBottomContent" style="border-collapse: collapse;" width="false">
+<tbody>
+<tr>
+<td align="center" class="m_-7761604943470649489m_7889466276257062225mcnCaptionBottomImageContent" style="padding: 0 9px 9px 9px;" valign="top"><img alt="" class="m_-7761604943470649489m_7889466276257062225mcnImage CToWUd a6T" loading="lazy" src="../img/archivo/2017/4wwu8kmhs5zrdkq3ca1xrfgur-xuq6nu3eamvpd02pvomo0i5f-v8fdfemltppr8eycueapucie4esdgtb-klzhnkg" style="max-width: 2100px; border: 0; height: auto; outline: none; text-decoration: none; vertical-align: bottom;" tabindex="0"/>
+<div class="a6S" dir="ltr" style="opacity: 0.01; left: 641.5px; top: 1794.59px;"></div>
+</td>
+</tr>
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnTextContent" style="padding: 0 9px 0 9px; word-break: break-word; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;" valign="top" width="564">
+<h3 style="display: block; margin: 0; padding: 0; color: #444444; font-family: Helvetica; font-size: 22px; font-style: normal; font-weight: bold; line-height: 150%; letter-spacing: normal; text-align: left;">Argentina: 2da. Escuela Internacional de Neurobiología en Mendoza</h3>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>“From Molecules to Systems: Modern Neurobiology at a Glance” </strong></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>Lugar: IHEM-FCM, UN de Cuyo, Mendoz </strong></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>28 de Agosto al 8 de Septiembre de 2017. </strong></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><strong>Las inscripciones cierran el LUNES 24 de JULIO de 2017 </strong></p>
+<p style="margin: 10px 0; padding: 0; color: #808080; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">Más información: <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://falan-ibrolarc.us6.list-manage.com/track/click?u%3Daf84d3bbfdf35de8d64b1f2e2%26id%3Df24f1fa433%26e%3D661a2aaf7b&amp;source=gmail&amp;ust=1497046095122000&amp;usg=AFQjCNGK-6odj0RJ-g4taqEuc9TMqOII1Q" href="http://falan-ibrolarc.us6.list-manage.com/track/click?u=af84d3bbfdf35de8d64b1f2e2&amp;id=f24f1fa433&amp;e=661a2aaf7b" rel="noopener" style="color: #00add8; font-weight: normal; text-decoration: underline;" target="_blank">https://falan-ibr<wbr/>olarc.org/drupal/es/node/611</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnDividerBlock" style="min-width: 100%; border-collapse: collapse; table-layout: fixed!important;" width="100%">
+<tbody class="m_-7761604943470649489m_7889466276257062225mcnDividerBlockOuter">
+<tr>
+<td class="m_-7761604943470649489m_7889466276257062225mcnDividerBlockInner" style="min-width: 100%; padding: 18px;">
+<table border="0" cellpadding="0" cellspacing="0" class="m_-7761604943470649489m_7889466276257062225mcnDividerContent" style="min-width: 100%; border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 8 de junio de 2017 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2017/06/08/courses-and-latin-american-congress/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

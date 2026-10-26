@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Los desafíos del nuevo Consejo de Conicyt — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Los desafíos del nuevo Consejo de Conicyt</h1>
+<div class="meta"><span>10 de mayo de 2019</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Los desafíos del nuevo Consejo de Conicyt" class="feat-img" src="../img/archivo/2019/neuro-imag-10-05-19-1.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;">Nos encontramos en un momento clave para la ciencia en nuestro país. En agosto de 2018 se promulgó la Ley 21.105 que crea el Ministerio de Ciencia, Tecnología, Conocimiento e Innovación (MinCTCI), lo cual dio al gobierno un año de plazo para dictar los decretos con fuerza de ley que fijarán las plantas y determinarán la fecha de puesta en marcha del nuevo ministerio y de la futura Agencia Nacional de Investigación y Desarrollo, el servicio público continuador de la Comisión Nacional de Investigación Científica y Tecnológica (Conicyt), que estará a cargo de ejecutar las políticas del MinCTCI.</p>
+<p style="text-align: justify;">En este contexto, en diciembre pasado el Presidente de la República designó como primer titular de la nueva cartera a Andrés Couve, sobre cuyos hombros recae la responsabilidad de echar a andar la nueva institucionalidad. Pero, a la espera de ese momento, la actual sigue funcionando. Tal es así que la semana pasada, en una ceremonia en el Palacio de La Moneda, se anunció la renovación completa de los integrantes del Consejo de Conicyt, a quienes corresponderá, bajo la presidencia de Mariane Krause, acompañar la transición de la ya cincuentenaria Comisión a la nueva Agencia.</p>
+<p style="text-align: justify;">Esta Agencia será pieza fundametal en el ordenamiento del sistema de ciencia, tecnología, conocimiento e innovación (CTCI), ya que en ella, además de los programas que hoy opera Conicyt (incluido Fondecyt, actualmente dirigido por dos consejos autónomos), se integrarán la Iniciativa Científica Milenio (ICM), hoy radicada en el Ministerio de Economía, y otros instrumentos de Corfo orientados a la innovación de carácter tecnológico que requiere el sector productivo. Ese ordenamiento, en cualquier caso, es sólo el punto de partida del desafío de la transición.</p>
+<p style="text-align: justify;">Otro aspecto relevante de esta etapa será dotar a la Agencia de una estructura más moderna y eficiente que la actual de Conicyt, que luego de muchos años de crecimiento inorgánico cuenta con 13 programas y 66 concursos anuales. Fondecyt es uno de ellos, pero –como dije– ha tenido una dirección completamente autónoma de Conicyt, lo que a veces ha afectado la operación o abierto encendidos debates sobre la coordinación o coherencia de ciertas políticas. Por otro lado, los instrumentos de la ICM tienen un alto grado de duplicidad en sus objetivos con otros de Conicyt y Fondecyt; y  a ello se suma que la Gerencia de Desarrollo Tecnológico de Corfo realiza concursos para la creación de centros y consorcios tecnológicos, con un alto grado de similitud con los anteriores.</p>
+<p style="text-align: justify;">Tengo confianza en que el nuevo Consejo de Conicyt contará con una mirada amplia de política pública para completar la orgánica institucional de CTCI que tanto hacía falta al país. En mi opinión, junto con ayudar a establecer una estructura administrativa ágil y menos burocrática que la actual para la Agencia, el Consejo es uno de los entes más indicados para asesorar a las nuevas autoridades en el debate y diseño de políticas muy relevantes que deberá definir el ministerio con relativa urgencia.</p>
+<p style="text-align: justify;">Una de ellas dice relación con el desarrollo de centros de investigación, tecnología e innovación que permitan, con mirada sistémica, poner a la CTCI al servicio de las necesidades del país y sus regiones, haciéndose cargo de materias tan relevantes como el desarrollo de la energía solar o el impacto del cambio climático en las diversas actividades sociales y productivas, por nombrar solo algunas. Chile merece y requiere contar con centros científico-tecnológicos con estructuras institucionales sólidas y pensadas en el largo plazo, que justifiquen mayores inversiones del Estado y reúnan de manera virtuosa al sector público, la academia y el sector privado en su constitución, gobernanza y financiamiento.</p>
+<p style="text-align: justify;">Urge también definir una política de capital humano avanzado que no solo permita formar más doctores, sino tambén insertarlos adecuadamente en el sistema, a fin de desarrollar las capacidades científico-tecnológicas que el país requiere desde un punto de vista estratégico. Dado que los recursos públicos son finitos y existen múltiples demandas sobre ellos, se debiera avanzar con más decision en la asignación de becas por áreas de interés prioritario en diversos temas de preocupación para el país, desde los desastres naturales hasta el desarrollo productivo, pasando por desafíos en salud, educación o inclusión social. No es posible que el Estado siga otorgando becas de postgrado solo en áreas disciplinarias del interés de los usuarios.</p>
+<p style="text-align: justify;">En cuanto al futuro ministerio, celebro con entusiasmo algunos adelantos que ha hecho el ministro Couve en cuanto a crear una unidad destinada a la divulgación de la CTCI y a la promoción de una cultura científica y de innovación, es decir, a potenciar y ampliar el rol del programa Explora de Conicyt. Esto, porque mientras la ciudadanía no perciba la importancia que tiene la investigación en sus vidas, difícil será lograr que el país aumente la inversión en este ámbito.</p>
+<h3 style="text-align: justify;">Fuente: <a href="https://www.latercera.com/que-pasa/noticia/los-desafios-del-nuevo-consejo-conicyt/648833/" rel="noopener" target="_blank">www.latercera.com</a></h3>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 10 de mayo de 2019 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2019/05/10/los-desafios-del-nuevo-consejo-de-conicyt/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

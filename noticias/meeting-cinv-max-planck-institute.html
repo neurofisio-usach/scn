@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Meeting CINV-MAX Planck Institute — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Meeting CINV-MAX Planck Institute</h1>
+<div class="meta"><span>4 de noviembre de 2015</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><table border="0" cellpadding="0" cellspacing="0" style="border: 0px none; border-collapse: collapse;" width="600">
+<tbody>
+<tr>
+<td align="center" valign="top"></td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-top-width: 0px; border-bottom-width: 0px; background-color: #ffffff;" width="600">
+<tbody>
+<tr>
+<td valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 9px 18px;" valign="top">
+<table align="right" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; background-color: #ebebeb;" width="100%">
+<tbody>
+<tr>
+<td align="center" style="padding: 18px 18px 0px;" valign="top"><img alt="" class="CToWUd a6T" loading="lazy" src="../img/archivo/2015/c0qmciaz6irw0eu8hfbeljfc0pu7kif4ujoazmvgbie67gisnycgg-0xzcvwdifkpojanp265-df5jp5smamnquqie" style="border: 0px none; outline-style: none; vertical-align: bottom; max-width: 3495px;" tabindex="0"/>
+<div class="a6S" dir="ltr" style="opacity: 0.01; left: 536px; top: 1034px;"></div>
+</td>
+</tr>
+<tr>
+<td style="padding: 9px 18px; font-family: Helvetica; color: #606060; font-size: 15px; line-height: 22.5px; text-align: justify;" valign="top" width="528">
+<h4 style="margin: 0px; padding: 0px; font-size: 16px; line-height: 20px; text-align: center; color: #808080!important;"><span style="font-size: 20px;"><span style="font-family: arial, 'helvetica neue', helvetica, sans-serif;">November 18th, 2015</span></span></h4>
+<div style="text-align: center;"><span style="font-size: 20px;">Naval and Maritime Museum<br/>
+VALPARAISO</span></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 600px; max-width: 600px;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 9px 18px;">
+<table border="0" cellpadding="18" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td style="font-family: Helvetica; color: #4d4545; font-size: 15px; line-height: 22.5px;" valign="top">
+<div style="text-align: justify;">
+<div><span style="color: #2b2b2b; font-family: verdana; font-size: 12px; letter-spacing: 0.5px;">The CINV is proud to announce the Sympossium “</span><strong style="margin: 0px; padding: 0px; color: #2b2b2b; font-size: 12px; letter-spacing: 0.5px; vertical-align: baseline; font-family: verdana!important;">CINV-Max Planck Tandem Group Competition:  The beginning of a long friendship</strong><span style="color: #2b2b2b; font-family: verdana;"><span style="font-size: 12px; letter-spacing: 0.5px;">“ that will put together 10 of the best young Neurobiologists spread around the world in a contest that will decide the two Max Planck Tandem Research Leaders that will be part of CINV and the University of Valparaíso for the next 7 years.  Group leaders will receive funding for salary, equipment, technician and postdoctoral associates.  They will be also allowed to add PhD students of our PhD programs.  We fully agree with Max Perutz statement that: “Creativity in science, as in the arts, cannot be organized.  It arises spontaneously from individual talents. Discoveries cannot be planned; they pop up, like Puck, in unexpected places”.</span></span></div>
+<div style="text-align: center;"><em><span style="text-align: justify;"><strong><span style="color: #2b2b2b; font-family: verdana;"><span style="font-size: 12px; letter-spacing: 0.5px;">Ramón Latorre</span></span></strong><br/>
+<span style="color: #2b2b2b; font-family: verdana;"><span style="font-size: 12px; letter-spacing: 0.5px;">Director </span></span></span></em></div>
+<div style="text-align: center;"><em><span style="text-align: justify;"><span style="color: #2b2b2b; font-family: verdana;"><span style="font-size: 12px; letter-spacing: 0.5px;">Centro<br/>
+Interdisciplinario de Neurociencia de Valparaíso</span></span></span></em></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 18px; min-width: 100%;">
+<table border="0" cellpadding="0" cellspacing="0" style="border-top: 2px solid #3067af; border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-top-width: 0px; border-bottom-width: 0px; background-color: #ffffff;" width="600">
+<tbody>
+<tr>
+<td valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;" width="100%">
+<tbody>
+<tr>
+<td align="center" style="padding: 0px 18px 18px;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="height: 79px; background-color: #2baadf;" width="546">
+<tbody>
+<tr>
+<td align="center" style="padding: 15px; font-family: Arial; font-size: 16px; text-align: center;" valign="middle"><a href="http://cinv.uv.cl/cinv-max-planck-2015/" rel="noopener" style="color: #ffffff; word-wrap: break-word; font-weight: bold; line-height: 16px; text-decoration: none;" target="_blank" title="REGISTRATION HERE">REGISTRATION<br/>
+HERE</a></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 600px; max-width: 600px;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 9px 18px;">
+<table border="0" cellpadding="18" cellspacing="0" style="border-collapse: collapse; min-width: 100%; background-color: #2e4768;" width="100%">
+<tbody>
+<tr>
+<td style="font-family: Helvetica; color: #f2f2f2; font-size: 14px; line-height: 21px; text-align: center;" valign="top">The registration is free and the number of participants is limited.
+<p style="margin: 1em 0px; padding: 0px;">The main selection factor will be the order of registration.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 600px; max-width: 600px;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 9px 18px;">
+<table border="0" cellpadding="18" cellspacing="0" style="border-collapse: collapse; min-width: 100%; background-color: #404040;" width="100%">
+<tbody>
+<tr>
+<td style="font-family: Helvetica; color: #f2f2f2; font-size: 14px; line-height: 21px; text-align: center;" valign="top">Organized by</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-top-width: 0px; border-bottom-width: 0px; background-color: #ffffff;" width="600">
+<tbody>
+<tr>
+<td style="padding-bottom: 9px;" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 9px;" valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 0px 9px; text-align: center;" valign="top"><img align="center" alt="" class="CToWUd a6T" loading="lazy" src="../img/archivo/2015/1kone5dzvutbjp9hqeum1dvhcheoj-2zvo-p3rfzeoq0bjuf8lnlmmvsyuissktnzjgpyxzv-zzvjwne-s1x7lyrps" style="border: 0px none; outline-style: none; vertical-align: bottom; max-width: 972px; padding-bottom: 0px; display: inline!important;" tabindex="0"/>
+<div class="a6S" dir="ltr" style="opacity: 0.01; left: 554px; top: 1953px;"></div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 600px; max-width: 600px;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 9px 18px;">
+<table border="0" cellpadding="18" cellspacing="0" style="border-collapse: collapse; min-width: 100%; background-color: #404040;" width="100%">
+<tbody>
+<tr>
+<td style="font-family: Helvetica; color: #f2f2f2; font-size: 14px; line-height: 17.5px; text-align: center;" valign="top">Supported by</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 9px;" valign="top">
+<table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 0px 9px; text-align: center;" valign="top"><img align="center" alt="" class="CToWUd" loading="lazy" src="../img/archivo/2015/d1dpx74eashg7tv57wgo4zjwajvnu9fy8t-4w9f4rwriqb-7pplgagkjl1sgp1jcungbajz2fqrqvibrxgmzlxakz8" style="border: 0px none; outline-color: -moz-use-text-color; outline-style: none; outline-width: medium; vertical-align: bottom; max-width: 75px; padding-bottom: 0px; display: inline!important;"/></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; min-width: 100%;" width="100%">
+<tbody>
+<tr>
+<td style="padding: 18px; min-width: 100%;"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 4 de noviembre de 2015 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2015/11/04/meeting-cinv-max-planck-institute/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>LATP Applications Close May 13 — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>LATP Applications Close May 13</h1>
+<div class="meta"><span>11 de mayo de 2020</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="LATP Applications Close May 13" class="feat-img" src="../img/archivo/2020/neuro-imag-11-05-20.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="text-align: justify;">The deadline to apply for the Latin American Training Program is next week. Improve your professional skills by <a data-saferedirecturl="https://www.google.com/url?q=https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W8bVH3X2Tf2pWW4mQ2HF1S4gnK0/5/f18dQhb0SbTM8Y9XmFW8kG0ZR50RnyCVqC0rN1h4z8ZW1FSlRK64DbVMV4hbtL8Vm6N7W8hjvy79dtj1hW5Lk2nv9bTNXYW954KlM4P0Yt6W2c512x83lQg2W8h047835_c-sW6V54ZB2Y_zxzW3jhKK_5RV-39W8mjfwC63lffJF8m81QVYxMjW85B7Ht2yJF1WVYT2jk6P4lCXW3xPtL65rC5Q6W3lzN6v4Dk-THN5fvvR4z74JcVYSX-57m_B1RW5c8d-S378fj_W3TD2JW269PxDW8pTgPy7cf7YDW73S5_x7cbMG4W15XWY24CDmF9W4DHdzF656LH_VYtZCS6P35d_W6ZJH3Q96hW7rW3Mdnx94LljFbW5tRJPz2hXNVGW1pFcyh4YbyBMW1JB3wM7y_n0kW5WGK8c49kJ93W6fVLYv1Q68w6W1MMh8v5CN0RnW3HBgsp368RkCW8B-9841Ngx1cW51bKgS6MPzKQW95YH_81PN5ZbW25n9DZ8ygycDW2FWJr83HP-7GM9Xfws7s2GRTWdQ57YVHZ6103&amp;source=gmail&amp;ust=1589312709747000&amp;usg=AFQjCNGUiQ1RiLxwnMA08xgzFlHjZEq2-A" href="https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W8bVH3X2Tf2pWW4mQ2HF1S4gnK0/5/f18dQhb0SbTM8Y9XmFW8kG0ZR50RnyCVqC0rN1h4z8ZW1FSlRK64DbVMV4hbtL8Vm6N7W8hjvy79dtj1hW5Lk2nv9bTNXYW954KlM4P0Yt6W2c512x83lQg2W8h047835_c-sW6V54ZB2Y_zxzW3jhKK_5RV-39W8mjfwC63lffJF8m81QVYxMjW85B7Ht2yJF1WVYT2jk6P4lCXW3xPtL65rC5Q6W3lzN6v4Dk-THN5fvvR4z74JcVYSX-57m_B1RW5c8d-S378fj_W3TD2JW269PxDW8pTgPy7cf7YDW73S5_x7cbMG4W15XWY24CDmF9W4DHdzF656LH_VYtZCS6P35d_W6ZJH3Q96hW7rW3Mdnx94LljFbW5tRJPz2hXNVGW1pFcyh4YbyBMW1JB3wM7y_n0kW5WGK8c49kJ93W6fVLYv1Q68w6W1MMh8v5CN0RnW3HBgsp368RkCW8B-9841Ngx1cW51bKgS6MPzKQW95YH_81PN5ZbW25n9DZ8ygycDW2FWJr83HP-7GM9Xfws7s2GRTWdQ57YVHZ6103" rel="noopener" target="_blank">applying now</a>. Graduate students and postdoctoral fellows who are citizens or permanent residents of a Latin American or Caribbean country and studying in the region may apply.</p>
+<p style="text-align: justify;">All eligible applicants will be invited to become LATP Associates and join an online community of neuroscience faculty and trainees from across the region, featuring:</p>
+<ul style="text-align: justify;">
+<li>Live webinars on professional development and scientific topics.</li>
+<li>Discussions with faculty.</li>
+<li>Networking opportunities.</li>
+</ul>
+<p style="text-align: justify;">Fifteen trainees will be selected as LATP Fellows and invited to attend lectures and gain research experience as a part of a three-week course at the Instituto de Investigaciones Biológicas Clemente Estable (IIBCE) in Montevideo, Uruguay, from November 2 – 20, 2020. The topic of this year’s course is “Molecules, Cells, and Circuits: Understanding the Nervous System Mechanisms.” LATP Fellows will also receive a travel stipend to attend Neuroscience 2021 in Chicago, IL.</p>
+<p style="text-align: justify;"><strong>Applications close Wednesday, May 13 at 5 p.m. EDT.</strong> Visit <a data-saferedirecturl="https://www.google.com/url?q=https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W8z0Zwf1Z9_-cW44rmhH2Gdz3F0/5/f18dQhb0SbTM8Y9XmFW8kG0ZR50RnyCVqC0rN1h4z8ZW1FSlRK64DbVMV4hbtL8Vm6N7W8hjvy79dtj1hW5Lk2nv9bTNXYW954KlM4P0Yt6W2c512x83lQg2W8h047835_c-sW6V54ZB2Y_zxzW3jhKK_5RV-39W8mjfwC63lffJF8m81QVYxMjW85B7Ht2yJF1WVYT2jk6P4lCXW3xPtL65rC5Q6W3lzN6v4Dk-THN5fvvR4z74JcVYSX-57m_B1RW5c8d-S378fj_W3TD2JW269PxDW8pTgPy7cf7YDW73S5_x7cbMG4W15XWY24CDmF9W4DHdzF656LH_VYtZCS6P35d_W6ZJH3Q96hW7rW3Mdnx94LljFbW5tRJPz2hXNVGW1pFcyh4YbyBMW1JB3wM7y_n0kW5WGK8c49kJ93W6fVLYv1Q68w6W1MMh8v5CN0RnW3HBgsp368RkCW8B-9841Ngx1cW51bKgS6MPzKQW95YH_81PN5ZbW25n9DZ8ygycDW2FWJr83HP-7GM9Xfws7s2GRTWdQ57YVHZ6103&amp;source=gmail&amp;ust=1589312709748000&amp;usg=AFQjCNGQfeYRdbSSivoaVKUl--YKm42eRg" href="https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W8z0Zwf1Z9_-cW44rmhH2Gdz3F0/5/f18dQhb0SbTM8Y9XmFW8kG0ZR50RnyCVqC0rN1h4z8ZW1FSlRK64DbVMV4hbtL8Vm6N7W8hjvy79dtj1hW5Lk2nv9bTNXYW954KlM4P0Yt6W2c512x83lQg2W8h047835_c-sW6V54ZB2Y_zxzW3jhKK_5RV-39W8mjfwC63lffJF8m81QVYxMjW85B7Ht2yJF1WVYT2jk6P4lCXW3xPtL65rC5Q6W3lzN6v4Dk-THN5fvvR4z74JcVYSX-57m_B1RW5c8d-S378fj_W3TD2JW269PxDW8pTgPy7cf7YDW73S5_x7cbMG4W15XWY24CDmF9W4DHdzF656LH_VYtZCS6P35d_W6ZJH3Q96hW7rW3Mdnx94LljFbW5tRJPz2hXNVGW1pFcyh4YbyBMW1JB3wM7y_n0kW5WGK8c49kJ93W6fVLYv1Q68w6W1MMh8v5CN0RnW3HBgsp368RkCW8B-9841Ngx1cW51bKgS6MPzKQW95YH_81PN5ZbW25n9DZ8ygycDW2FWJr83HP-7GM9Xfws7s2GRTWdQ57YVHZ6103" rel="noopener" target="_blank">sfn.org/latp</a> to learn more and apply.</p>
+<p style="text-align: justify;"><em>A note from the Society: SfN has been </em><a data-saferedirecturl="https://www.google.com/url?q=https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W97sSFN7PBN8_W3rYL_f4HDHl60/5/f18dQhb0SbTP8Y9XDTW8kG0ZR50RnyCVqC0rN1h4z8ZW1FSlS064DbVMW4NfVNZ9h3lwCW6YGDdM6YTq0RW9gZxNn7sGW5pW9bTNXY954KlMW4P0Yt62c512xW83lQg28h0478W35_c-s6V54ZBW2Y_zxz3jhKK_W5RV-398mjfwCW63lffJ8m81QVTYxMj85B7HtN2yJF1WYT2jkW6P4lCX3xPtL6W5rC5Q63lzN6vW4Dk-TH5fvlP_W8sTw4k3X0g0yN6bp1cMbq5fxW4TKc2l8SrtPFW63gFwH5CJH2YW2zfFDW8yBXHkW6Zrgbp1wrBxFW8RHjBr2nJrVQW8n0yn26QjLlyW6mZ4kM5DzcLGW3zXpdS3zkxg2W4LxnxD2T40V4W5l323x3J-hstW1Jspf7879Q1BW5cpHF29hLqJGW1bBvW33_99M3W23b7dn1NFfl4W8P4wwZ8QH8GlW8rB5ZR5qk3b5W8rSDkK7mt3V-W9dWj4N8TGtnVW29JpPY3-gmz5W7GBXfS9lXBn0N96JZBm4qvpCMtJCL43_BW0f5rnCw211&amp;source=gmail&amp;ust=1589312709748000&amp;usg=AFQjCNFmenHbSKFVK8d6k5ZYZf84FVp9Og" href="https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W97sSFN7PBN8_W3rYL_f4HDHl60/5/f18dQhb0SbTP8Y9XDTW8kG0ZR50RnyCVqC0rN1h4z8ZW1FSlS064DbVMW4NfVNZ9h3lwCW6YGDdM6YTq0RW9gZxNn7sGW5pW9bTNXY954KlMW4P0Yt62c512xW83lQg28h0478W35_c-s6V54ZBW2Y_zxz3jhKK_W5RV-398mjfwCW63lffJ8m81QVTYxMj85B7HtN2yJF1WYT2jkW6P4lCX3xPtL6W5rC5Q63lzN6vW4Dk-TH5fvlP_W8sTw4k3X0g0yN6bp1cMbq5fxW4TKc2l8SrtPFW63gFwH5CJH2YW2zfFDW8yBXHkW6Zrgbp1wrBxFW8RHjBr2nJrVQW8n0yn26QjLlyW6mZ4kM5DzcLGW3zXpdS3zkxg2W4LxnxD2T40V4W5l323x3J-hstW1Jspf7879Q1BW5cpHF29hLqJGW1bBvW33_99M3W23b7dn1NFfl4W8P4wwZ8QH8GlW8rB5ZR5qk3b5W8rSDkK7mt3V-W9dWj4N8TGtnVW29JpPY3-gmz5W7GBXfS9lXBn0N96JZBm4qvpCMtJCL43_BW0f5rnCw211" rel="noopener" target="_blank"><em>closely monitoring the COVID-19 situation</em></a><em> and has made several programmatic updates in light of current events. Please see </em><a data-saferedirecturl="https://www.google.com/url?q=https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W93YXv15dj4zLW3BwWCl7cQpB40/5/f18dQhb0Sjvc8YHsY-W47SdNJ2wqbgQW4VSYGB5k5cx9VRqHn332jCrVW4LHQnP4rHNDnW47Gswn4DdTgFW4Bs6cn4yym9nW2p0tdz5Q4wrnW41HpF147w25ZW6dyl7M3ryMKCW1vv2-w1G83FHW7B0FKJ49G6Q9W30J36349Bd7MW4J0_Dq8LlwgYW5ZpycS57-ZBTW83C5JP6rY-3sW2KQ2YY1GrMNZN3fTVxQ9br42W46v8kx6G2lbzN7NMdQN4cNXyW75WRL395gt5cW31FkfS7sXhtNW5-GRgr8ZlWdvN3vK64CLLx35W4pm4Rj5SXnHnW490_Yr85bzRbW7Vwy6m7tlNCjW6t0F366rLcDJW72k6GF1s1hb7W2G2fky6wyQqlW5xh73g43C5MCW2CJSk19lpXvMW5gSHY56H5W1XN12BlkqVR6H2W4q1LMn4nSQB4W8XkyW12L80BsW4bYxZF8mhg5wW9j04v496TYVLW14SJT5206GNsW8wlW3D9l1f9HW4ymXgW4LMf8hMdSQk91_Q0Kf5yftq911&amp;source=gmail&amp;ust=1589312709748000&amp;usg=AFQjCNGXnHIFOL39O-X9pLN7cnjzWCpjLg" href="https://ic.t.hubspotemail.net/e2t/c/*W64fVKp9gCxgjW4XNFpf1PGjhz0/*W93YXv15dj4zLW3BwWCl7cQpB40/5/f18dQhb0Sjvc8YHsY-W47SdNJ2wqbgQW4VSYGB5k5cx9VRqHn332jCrVW4LHQnP4rHNDnW47Gswn4DdTgFW4Bs6cn4yym9nW2p0tdz5Q4wrnW41HpF147w25ZW6dyl7M3ryMKCW1vv2-w1G83FHW7B0FKJ49G6Q9W30J36349Bd7MW4J0_Dq8LlwgYW5ZpycS57-ZBTW83C5JP6rY-3sW2KQ2YY1GrMNZN3fTVxQ9br42W46v8kx6G2lbzN7NMdQN4cNXyW75WRL395gt5cW31FkfS7sXhtNW5-GRgr8ZlWdvN3vK64CLLx35W4pm4Rj5SXnHnW490_Yr85bzRbW7Vwy6m7tlNCjW6t0F366rLcDJW72k6GF1s1hb7W2G2fky6wyQqlW5xh73g43C5MCW2CJSk19lpXvMW5gSHY56H5W1XN12BlkqVR6H2W4q1LMn4nSQB4W8XkyW12L80BsW4bYxZF8mhg5wW9j04v496TYVLW14SJT5206GNsW8wlW3D9l1f9HW4ymXgW4LMf8hMdSQk91_Q0Kf5yftq911" rel="noopener" target="_blank"><em>SfN.org</em></a><em> for more details.</em></p>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 11 de mayo de 2020 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2020/05/11/latp-applications-close-may-13/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

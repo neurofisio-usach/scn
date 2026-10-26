@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Help us to Promote SfN’s Virtual Conference — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Help us to Promote SfN’s Virtual Conference</h1>
+<div class="meta"><span>14 de diciembre de 2018</span><span class="cat-pill">Destacado</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Help us to Promote SfN’s Virtual Conference" class="feat-img" src="../img/archivo/2018/img-soc-neuro.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p align="center" style="text-align: justify;"><strong>Mitigating Implicit Bias: Tools for the Neuroscientist</strong></p>
+<p align="center" style="text-align: justify;">An SfN Virtual Conference | Jan. 23–24</p>
+<p align="center" style="text-align: justify;"><span class="m_-4588142462937305066gmail-m_7606728671151253494m_419158066844431206m_-6332656170084796586hs-cta-wrapper" id="m_-4588142462937305066gmail-m_7606728671151253494m_419158066844431206m_-6332656170084796586hs-cta-wrapper-0d97fc42-e8cd-4796-91ba-8ac9fc81ddf4"><span class="m_-4588142462937305066gmail-m_7606728671151253494m_419158066844431206m_-6332656170084796586hs-cta-node m_-4588142462937305066gmail-m_7606728671151253494m_419158066844431206m_-6332656170084796586hs-cta-0d97fc42-e8cd-4796-91ba-8ac9fc81ddf4" id="m_-4588142462937305066gmail-m_7606728671151253494m_419158066844431206m_-6332656170084796586hs-cta-0d97fc42-e8cd-4796-91ba-8ac9fc81ddf4"><a data-saferedirecturl="https://www.google.com/url?q=https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W943jF-7sq3-LW5HndQy6KvwwF0/5/f18dQhb0S1W96X_sHCV12kp26Lw9F0N1Hq10SDFlh-W3TPTj52TX3TrW8w8pkX527SdvVJdx-D5pvLRvW88qP8p28mCZWVk1XQH6M_1QbN8v1hmlw-VLlW27l_sj6JytDxW93PYy86qVMdBW3sJ3Z47GKcvDW1J4mfh5wQ4YTW6JGkBq4ZggGfN3yv4xn29-jMN5-n9Z3rVnZ7VDC7YS5YCb9HW3z84wq8TCyr2W8VB6h11G-nShW4MH08Z1S3g6qW2S2wxk1MKhBSW688ynb2QBDp6W1cxFNm1Fnl8dW6rkNJS6XtMLjW657T0F5c9GmCW5YHNDD1_6R1lW3XKd-Q57TCv_W4KYkYm6mCTFqW7fdNvR7tZWlwW6GvM4x4vty2XW7vKDVl1Pyjk8W79vMLj7Sq0hlW979ySC1QkQzsW31jrK165Gp4SW11x0c92XghLwW3lqg971_Mn0_W1d-1mv3_QbnTW1kFlqV3kW6lVW88wk1r46TFqWW4QvDgR274NjPW72HbK_73kpkxW2chHgc26y51qW96GP4C1ClDlQW6Gd1tq6hC_rZW5mRnvR631bYxW1DQsBJ8npCXHW5kH4C46cxJbJW7ZNsDm3ktPPfN313-4k_TDQhW8pWGMH676QqDW6DGxST6zmVRxW3yH_-36rGq15W4YBDyT3GfrJGW4g4sGY2cKMMRW3rVRcz4BXJSlW6JJdJL8Jy923W8_Twfl3BTzsnW4dLPS87Qm8K3W87vzRB8yypc9W6P-hhD6qW6-dW9k1W-V6nb4rlW92--Lf41r5CRN3085-Y7p_PJf8GLk7b03&amp;source=gmail&amp;ust=1544904534960000&amp;usg=AFQjCNGxug_539XNc-yENqR4grAJuDjxxQ" href="https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W943jF-7sq3-LW5HndQy6KvwwF0/5/f18dQhb0S1W96X_sHCV12kp26Lw9F0N1Hq10SDFlh-W3TPTj52TX3TrW8w8pkX527SdvVJdx-D5pvLRvW88qP8p28mCZWVk1XQH6M_1QbN8v1hmlw-VLlW27l_sj6JytDxW93PYy86qVMdBW3sJ3Z47GKcvDW1J4mfh5wQ4YTW6JGkBq4ZggGfN3yv4xn29-jMN5-n9Z3rVnZ7VDC7YS5YCb9HW3z84wq8TCyr2W8VB6h11G-nShW4MH08Z1S3g6qW2S2wxk1MKhBSW688ynb2QBDp6W1cxFNm1Fnl8dW6rkNJS6XtMLjW657T0F5c9GmCW5YHNDD1_6R1lW3XKd-Q57TCv_W4KYkYm6mCTFqW7fdNvR7tZWlwW6GvM4x4vty2XW7vKDVl1Pyjk8W79vMLj7Sq0hlW979ySC1QkQzsW31jrK165Gp4SW11x0c92XghLwW3lqg971_Mn0_W1d-1mv3_QbnTW1kFlqV3kW6lVW88wk1r46TFqWW4QvDgR274NjPW72HbK_73kpkxW2chHgc26y51qW96GP4C1ClDlQW6Gd1tq6hC_rZW5mRnvR631bYxW1DQsBJ8npCXHW5kH4C46cxJbJW7ZNsDm3ktPPfN313-4k_TDQhW8pWGMH676QqDW6DGxST6zmVRxW3yH_-36rGq15W4YBDyT3GfrJGW4g4sGY2cKMMRW3rVRcz4BXJSlW6JJdJL8Jy923W8_Twfl3BTzsnW4dLPS87Qm8K3W87vzRB8yypc9W6P-hhD6qW6-dW9k1W-V6nb4rlW92--Lf41r5CRN3085-Y7p_PJf8GLk7b03" rel="noopener" target="_blank"><img alt="Register Now" class="m_-4588142462937305066gmail-m_7606728671151253494m_419158066844431206m_-6332656170084796586hs-cta-img CToWUd alignnone" id="m_-4588142462937305066gmail-m_7606728671151253494m_419158066844431206m_-6332656170084796586hs-cta-img-0d97fc42-e8cd-4796-91ba-8ac9fc81ddf4" loading="lazy" src="../img/archivo/2018/ndpyz-cnmi0r8ibm8gubh8gvqngthts7pvowymhwwcvoz4-u4nkjcqttzrvvknghzztvr6avt7n6te1hnfkekurqel"/></a></span></span></p>
+<p style="text-align: justify;">Registration is now open for the Society for Neuroscience’s (SfN) two-day virtual conference, <a data-saferedirecturl="https://www.google.com/url?q=https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W7Wkzls3Ws-p5N7zsWjvTq5kS0/5/f18dQhb0S3j46_rD8pW12P53K4MzzCRVFGSRg67FvCGW3pTqfs75p-qJW8j_Qz968ksG2W6q89lw4BScfpW8nQwcJ2rrgr4W6R7zLh7F0WrJW2phWdN8bdNWKW4kJt0d7GM0XSW3pL-tD8WsRY0W74Fdbv8QvJN3W84_c0f9337LtW99bdyy6Sb2HSN2JXLgcj-xRkVVqMgn1jqT97W7qT2lB4S4cNYW5r5pN-199LvMW2wDd2J4S4Rn4N7BpwsrNQPHPVdmCj58Pz3zkW4Q7mW76Bq-yJW1v2FmB5B8S-RW5SN9Wf7F9t-qW4pkCRB1P5fDTVhn8SP2gc_q_W1w8RN21b1-jdN7CPBZqfb-gJW7j71c-2V5mzbW8bsdl34FTBK9W41508n8Mgy9pW7fC-hy50_lpMW7swKSW6bn8G-W4mH5lG1gFybbW68JNsT40t1bLVZddxm5W_3d_VRfD_059l5mmW10jcs16mVDPFW96gJkt8V6CqhW92wJ8Y40m302N63fRSxPsr3qW91VS9r3PBbP6W4716kM5r9zWpW6gdL3n44ZT8xN6SrGpjbxs0mW7SRcm67NQGNpW3PsyQt9h2XsjW7yr4Cq46TKZkW92r69j8ZdDTfW6SZmHb6jGNTQN1sCBnkbHJmM111&amp;source=gmail&amp;ust=1544904534961000&amp;usg=AFQjCNHJOsBDqREtNDmIozxY1WH3W3cSxQ" href="https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W7Wkzls3Ws-p5N7zsWjvTq5kS0/5/f18dQhb0S3j46_rD8pW12P53K4MzzCRVFGSRg67FvCGW3pTqfs75p-qJW8j_Qz968ksG2W6q89lw4BScfpW8nQwcJ2rrgr4W6R7zLh7F0WrJW2phWdN8bdNWKW4kJt0d7GM0XSW3pL-tD8WsRY0W74Fdbv8QvJN3W84_c0f9337LtW99bdyy6Sb2HSN2JXLgcj-xRkVVqMgn1jqT97W7qT2lB4S4cNYW5r5pN-199LvMW2wDd2J4S4Rn4N7BpwsrNQPHPVdmCj58Pz3zkW4Q7mW76Bq-yJW1v2FmB5B8S-RW5SN9Wf7F9t-qW4pkCRB1P5fDTVhn8SP2gc_q_W1w8RN21b1-jdN7CPBZqfb-gJW7j71c-2V5mzbW8bsdl34FTBK9W41508n8Mgy9pW7fC-hy50_lpMW7swKSW6bn8G-W4mH5lG1gFybbW68JNsT40t1bLVZddxm5W_3d_VRfD_059l5mmW10jcs16mVDPFW96gJkt8V6CqhW92wJ8Y40m302N63fRSxPsr3qW91VS9r3PBbP6W4716kM5r9zWpW6gdL3n44ZT8xN6SrGpjbxs0mW7SRcm67NQGNpW3PsyQt9h2XsjW7yr4Cq46TKZkW92r69j8ZdDTfW6SZmHb6jGNTQN1sCBnkbHJmM111" rel="noopener" target="_blank">Mitigating Implicit Bias: Tools for the Neuroscientist</a>, taking place January 23–24.</p>
+<p style="text-align: justify;">From your home or lab, join a diverse panel of 16 speakers to learn how to address unconscious stereotypes — and ultimately increase diversity in the neuroscience field.</p>
+<p style="text-align: justify;">Organizers:</p>
+<ul style="text-align: justify;">
+<li>Ione Fine, University of Washington</li>
+<li>Alicia Izquierdo, UCLA</li>
+<li>Yael Niv, Princeton University</li>
+</ul>
+<p style="text-align: justify;">View the full <a data-saferedirecturl="https://www.google.com/url?q=https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W59mSrK7kwrbSW6853T_6cLbsd0/5/f18dQhb0S65P6_HXFDW12NPg65qxnJpMLFD4dGp-QmVSBt09781ZZPW3kJLLP6hbBMjW4Ct-bZ3wksx8W6WPnWN7lpdtLW1K0HYK5-JjQyW24hxd01tb4mjW5bpMsl4tBV0NW4pfK0L5QG8TGW7Bfs6Y5Rp0GRW7TVjnD7W5kJqW48thGN3v_qXLW7wW7f01vk0pqW1mSqrb41mS8zW1GFb8t1Nz8NJV8-z9L1wbQNKV4DCyb3SWrFGVPTc6-5zypGHW1mXT7-5klhL5W2F8PDR7bQ8QvW1ppf583kDWHGW5lBR0X1zVDhyW8172d95ZVtX6W7qqgmQ1G5p3tW6XnKm97CG07bW1D1p6p5FmrNVVhR83R1KVD6mW1dDb4933n_JXW3zGfd76WCS6vW33wzFY6K0PNfW19XrjF7Ll6yfW27LsMy8BCKw0W8qZbFx436r-kW8XnYsx4x2yqsW6MMz2k9g8lnPW1HQNS_2-g_qHW8tKWwy935mJ1W9hWRh44NZcHlW1vgVFX3KZ9qDW5pnHYJ3-W0yvW5wnpGt6KvpNZW67g6hN7j7d73W2bM32D1dDvfrW8tG9jt2Mk9__W6ZR_SH78xTDDW1zgtxm3wn_pLW8S7LPG7qftG_W18gTYM6WMfRwN6VwWMncNbr0d5fSP803&amp;source=gmail&amp;ust=1544904534961000&amp;usg=AFQjCNHsSApZpNEDyJVS3F4chM7QuwsqXw" href="https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W59mSrK7kwrbSW6853T_6cLbsd0/5/f18dQhb0S65P6_HXFDW12NPg65qxnJpMLFD4dGp-QmVSBt09781ZZPW3kJLLP6hbBMjW4Ct-bZ3wksx8W6WPnWN7lpdtLW1K0HYK5-JjQyW24hxd01tb4mjW5bpMsl4tBV0NW4pfK0L5QG8TGW7Bfs6Y5Rp0GRW7TVjnD7W5kJqW48thGN3v_qXLW7wW7f01vk0pqW1mSqrb41mS8zW1GFb8t1Nz8NJV8-z9L1wbQNKV4DCyb3SWrFGVPTc6-5zypGHW1mXT7-5klhL5W2F8PDR7bQ8QvW1ppf583kDWHGW5lBR0X1zVDhyW8172d95ZVtX6W7qqgmQ1G5p3tW6XnKm97CG07bW1D1p6p5FmrNVVhR83R1KVD6mW1dDb4933n_JXW3zGfd76WCS6vW33wzFY6K0PNfW19XrjF7Ll6yfW27LsMy8BCKw0W8qZbFx436r-kW8XnYsx4x2yqsW6MMz2k9g8lnPW1HQNS_2-g_qHW8tKWwy935mJ1W9hWRh44NZcHlW1vgVFX3KZ9qDW5pnHYJ3-W0yvW5wnpGt6KvpNZW67g6hN7j7d73W2bM32D1dDvfrW8tG9jt2Mk9__W6ZR_SH78xTDDW1zgtxm3wn_pLW8S7LPG7qftG_W18gTYM6WMfRwN6VwWMncNbr0d5fSP803" rel="noopener" target="_blank">agenda</a> for an overview of the timely topics and exciting line-up of speakers — including scientists, lawyers, business and philosophy professors, authors, and NPR podcast hosts!</p>
+<hr/>
+<p style="text-align: justify;">Spread the word to your networks: Forward this email or display <a data-saferedirecturl="https://www.google.com/url?q=https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W8G3CC15dHXpVW6g-yRm6Cyw5M0/5/f18dQhb0Smh_9dsSdHW47SdNJ2wqbgQW5CX8xJ5k56ZrVRqVFc64DbVMW4NfVNZ9gZmC8W1jx0J461kVkFMH-QlxHtXcSW6l1wwl7XLzNxW7t76gm6tysl1W1kq-vk2jG1n4W5__kzL7QQY1GW2jH31Z1tk_rGW6DQVv76ysTJLVFQyq88f6MY4N5pdflN4KQC9W1p-Y3t3Gw9snW2cQbRF7Mzhw4W5qqXh-5mNLNvW7bqTzM7vp5QyW6_r_MP1Z68bVW8hTJV48lwVXYW8hS2967bj1_4VFCG-j5rC5Q6W3l6ccQ8mQMYTW7NM5zG74cGPvW7P1-wW4M9WGxVVQf4X5vDhXCW5vfmM14rPwNnW37-lC21pbcQtVRz4fc5vMTtwMfNdJXVGGWmW96zTfZ66PF2nW2ByJH58nnQXnVbFNVK1s5-V7N36mCfBXvvD9W5qR5x823NwxzN95dXhKQCqBsW1pgMfx1lQ0KgW4XqpdL8GclM4VPNtBv3-DmCxW8csLSq1035ycW5J22NK6cYZl2W5PtGfh6P_SbdW2cyH2G4QyNxmW1KrdLF49j640W7_hQRc65mrDKW8Sxzx-3wkrL8N17D50WZpcmqV9ZLdP5Shr29111&amp;source=gmail&amp;ust=1544904534961000&amp;usg=AFQjCNETKW3TQATVZ3vKgfBMlCwLcBSOWw" href="https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*W8G3CC15dHXpVW6g-yRm6Cyw5M0/5/f18dQhb0Smh_9dsSdHW47SdNJ2wqbgQW5CX8xJ5k56ZrVRqVFc64DbVMW4NfVNZ9gZmC8W1jx0J461kVkFMH-QlxHtXcSW6l1wwl7XLzNxW7t76gm6tysl1W1kq-vk2jG1n4W5__kzL7QQY1GW2jH31Z1tk_rGW6DQVv76ysTJLVFQyq88f6MY4N5pdflN4KQC9W1p-Y3t3Gw9snW2cQbRF7Mzhw4W5qqXh-5mNLNvW7bqTzM7vp5QyW6_r_MP1Z68bVW8hTJV48lwVXYW8hS2967bj1_4VFCG-j5rC5Q6W3l6ccQ8mQMYTW7NM5zG74cGPvW7P1-wW4M9WGxVVQf4X5vDhXCW5vfmM14rPwNnW37-lC21pbcQtVRz4fc5vMTtwMfNdJXVGGWmW96zTfZ66PF2nW2ByJH58nnQXnVbFNVK1s5-V7N36mCfBXvvD9W5qR5x823NwxzN95dXhKQCqBsW1pgMfx1lQ0KgW4XqpdL8GclM4VPNtBv3-DmCxW8csLSq1035ycW5J22NK6cYZl2W5PtGfh6P_SbdW2cyH2G4QyNxmW1KrdLF49j640W7_hQRc65mrDKW8Sxzx-3wkrL8N17D50WZpcmqV9ZLdP5Shr29111" rel="noopener" target="_blank">this printable flyer</a> in your lab or other common area. <strong>Participants are encouraged to host group viewings of the conference with students and colleagues — only one registration is required.</strong></p>
+<hr/>
+<p style="text-align: justify;">Registration is complimentary for <a data-saferedirecturl="https://www.google.com/url?q=https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*VT9FRV3tJnTXN1C_p7FZ1PQp0/5/f18dQhb0Sjv78YsVvtW5TzFbQ5-7DtCW4ZyGjf62HKfVN5C2Z_LK726_W2J1R6F4DypyBW3slxX83srYjbW6ZM9HF30D2M1W2zWX2g3bF7CYW420NZ82YG-V8W6N_gK541_WgKW41yjTP4tYC0sW3LVzdX3CsXK9W4LqyDn3jpqNnW3sm4mC2FCdZRW3SQgn23_CV3gN3V_TcnxjlJDW1YTF-H7TnHDPW5L1yJ85Fxwr5W4c-RQP2zv-M-W806yj370ml3sW3rc4qs5T4Dl0W7DXrXP3p3fDDW8Q278K1jNvSgW1gKs8B93q1BqW93BZRM1zKNbHVTZ9fS1jqmRHW7rSX-M4Kw7jgW1T22fn6pJx5xW8sYbSq5JTS2nW2_VrfS5fJn6LW3w8c082Q3jC4W2rT6404bsLVjN82H9cnSKtwXVcZLWR86kZLjW87SWzj6VS0lNW7xDhT431GHfxW11mDh85S8TjVN7GY_c64NNSdW87cgr_72nC6MVHvbsV5HQwcFW1NwBMn1MVsRjTkj9G1_cj4W103&amp;source=gmail&amp;ust=1544904534961000&amp;usg=AFQjCNFbTWgm9GXe1IRbbUyTcw7QQ4O2mg" href="https://hs-2328961.t.hubspotemail.net/e2t/c/*W7fmwN588p_1qW8rLDgd4pRP4t0/*VT9FRV3tJnTXN1C_p7FZ1PQp0/5/f18dQhb0Sjv78YsVvtW5TzFbQ5-7DtCW4ZyGjf62HKfVN5C2Z_LK726_W2J1R6F4DypyBW3slxX83srYjbW6ZM9HF30D2M1W2zWX2g3bF7CYW420NZ82YG-V8W6N_gK541_WgKW41yjTP4tYC0sW3LVzdX3CsXK9W4LqyDn3jpqNnW3sm4mC2FCdZRW3SQgn23_CV3gN3V_TcnxjlJDW1YTF-H7TnHDPW5L1yJ85Fxwr5W4c-RQP2zv-M-W806yj370ml3sW3rc4qs5T4Dl0W7DXrXP3p3fDDW8Q278K1jNvSgW1gKs8B93q1BqW93BZRM1zKNbHVTZ9fS1jqmRHW7rSX-M4Kw7jgW1T22fn6pJx5xW8sYbSq5JTS2nW2_VrfS5fJn6LW3w8c082Q3jC4W2rT6404bsLVjN82H9cnSKtwXVcZLWR86kZLjW87SWzj6VS0lNW7xDhT431GHfxW11mDh85S8TjVN7GY_c64NNSdW87cgr_72nC6MVHvbsV5HQwcFW1NwBMn1MVsRjTkj9G1_cj4W103" rel="noopener" target="_blank">SfN members</a> or $150 for nonmembers and includes one year of on-demand access to the recording.</p>
+<p style="text-align: justify;">Questions? Contact +1 (202) 962-4000 or <a href="mailto:digitallearning@sfn.org" rel="noopener" target="_blank">digitallearning@sfn.org</a>.</p>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 14 de diciembre de 2018 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2018/12/14/help-us-to-promote-sfns-virtual-conference/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

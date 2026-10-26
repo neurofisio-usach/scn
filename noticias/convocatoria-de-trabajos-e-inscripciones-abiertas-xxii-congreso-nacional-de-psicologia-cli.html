@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Convocatoria de Trabajos e Inscripciones Abiertas | XXII Congreso Nacional de Psicología Clínica “Psicología y Neurociencias Hoy” — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Convocatoria de Trabajos e Inscripciones Abiertas | XXII Congreso Nacional de Psicología Clínica “Psicología y Neurociencias Hoy”</h1>
+<div class="meta"><span>15 de junio de 2016</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p><img alt="banner-psicologia-y-neurociencias" class="aligncenter size-full wp-image-2079 img-reemplazo-logo" data-original-src="https://www.socneurociencia.cl/wp-content/uploads/2016/06/banner-psicologia-y-neurociencias.jpg" loading="lazy" src="../logo_scn.png"/></p>
+<p>La Sociedad Chilena de Psicología Clínica en su preocupación permanente por generar espacios de encuentro profesional y científico, convoca este año a un nuevo congreso para propiciar la difusión y la discusión acerca del estado del arte de la psicología clínica y los últimos avances del campo de las neurociencias y su relación con la psicología.</p>
+<p><strong>CONVOCATORIA DE TRABAJOS</strong> | <strong>Abierta hasta 15 Agosto 2016</strong></p>
+<p>Para someter su trabajo a evaluación favor complete FICHA PARA EL ENVÍO DE TRABAJO  (<a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://www.scpc.cl/wp-content/uploads/2016/04/FICHA-ENVIO-TRABAJO.docx&amp;source=gmail&amp;ust=1466085658670000&amp;usg=AFQjCNGaagVERBSLpAUTuVmsgR03lYeyQg" href="../docs/archivo/2016/ficha-envio-trabajo.docx">DESCARGAR AQUÍ</a>) en la cual se debe entregar un resumen del trabajo a presentar para su selección. Para mayor información sobre el envío de trabajos ingrese <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://www.scpc.cl/2016/04/llamado-presentar-trabajos-xxii-congreso-nacional-psicologia-clinica-psicologia-neurociencias-hoy/&amp;source=gmail&amp;ust=1466085658670000&amp;usg=AFQjCNGZYUiJuFv6R2Jk-reRCFG_2uyl7Q" href="http://www.scpc.cl/2016/04/llamado-presentar-trabajos-xxii-congreso-nacional-psicologia-clinica-psicologia-neurociencias-hoy/" rel="noopener" target="_blank">AQUÍ</a></p>
+<p style="text-align: left;">Consultas dirigirlas al Comité Científico al mail <a href="http://congreso@scpc.cl" rel="noopener" target="_blank">congreso@scpc.cl</a></p>
+<p style="text-align: left;">
+<p style="text-align: left;">
+<p><strong>CONFERENCISTAS</strong></p>
+<p><strong>CONFERENCISTA INTERNACIONAL INVITADO</strong></p>
+<p><strong>Ps. Fernando Torrente Ph.D.</strong></p>
+<p>Doctor en medicina y psicólogo. Director del Laboratorio de Investigaciones Psicopatológicas de la Fundación INECO, docente y destacado investigador por sus aportes a las neurociencias, en la Universidad de Favaloro, Buenos Aires.<br/>
+Como una actividad paralela al Congreso, nuestro invitado internacional, dictará el <strong>Taller Internacional: “Innovaciones en la psicoterapia cognitivo conductual de la depresión. Integrando clínica y neurociencias”. </strong></p>
+<p><strong>CONFERENCISTAS NACIONALES CONFIRMADOS</strong></p>
+<ul>
+<li><strong>Roberto Aristegui.</strong> Psicólogo, Máster y Doctor en filosofía. Supervisor acreditado. Docente titular e investigador de la Facultad de Psicología de la Universidad Adolfo Ibáñez.</li>
+<li><strong>Amanda Céspedes.</strong> Médico y neuropsiquiatra Infanto Juvenil. Presidenta del Instituto de Neurociencias Aplicadas INASMED.</li>
+<li><strong>Diana Rivera</strong>. Doctora en Psicología, Terapeuta familiar y de pareja. Integrante del Instituto Milenio para la Investigación en Depresión y Personalidad.</li>
+<li><strong>Jaime Silva. </strong>Psicólogo, Doctor en Psicobiología, Director del Centro de Apego y Regulación Emocional (CARE) de la Universidad Del Desarrollo.</li>
+<li><strong>Mateo Ferrer.</strong>  Psicólogo y médico psiquiatra. Fundador y Director de la Sociedad de Terapia Cognitiva Posracionalista. Docente de Psicopatología.</li>
+<li><strong>María Inés Pesqueira</strong>. Psicóloga. Directora del Centro de Entrenamiento en Psicoterapia y Couching MIP, especialista en Psicoterapia Breve, Coach Estratégico.</li>
+<li><strong>Susana Ifland</strong>. Psicóloga, psicoterapeuta de adultos y pareja. Obtuvo el  Premio Sergio Yulis 2010. Presidenta de la Sociedad Chilena de Psicología Clínica.</li>
+<li><strong>Augusto Zagmutt.</strong> Psicólogo, especialista en adultos y parejas. Fundador y director de la Sociedad de Terapia Cognitiva Posracionalista.</li>
+</ul>
+<p><strong>INSCRIPCIONES</strong> <strong>| Tarifas PREVENTA 1 Vigente hasta 30 Junio 2016</strong><br/>
+<strong>TARIFAS CONGRESO</strong><br/>
+$ 25.000 Socios Activos SCPC<br/>
+$ 50.000 Otros profesionales<br/>
+$ 22.000 Estudiante de Psicología (pregrado)*<br/>
+$ 15.000 Estudiante de Psicología de Universidad Patrocinante (pregrado)*</p>
+<p><strong>TARIFAS TALLER INTERNACIONAL “Innovaciones en psicoterapia cognitivo conductual de la depresión…  Integrando clínica y neurociencias”</strong><br/>
+GRATUITO Socios Activos SCPC<br/>
+$ 30.000 Otros profesionales</p>
+<p><strong>Para inscribirse debe enviar su ficha de inscripción </strong>(<a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=http://www.scpc.cl/wp-content/uploads/2016/04/FICHA-INSCRIPCI%25C3%2593N_Congreso-2016.docx&amp;source=gmail&amp;ust=1466085658670000&amp;usg=AFQjCNGgsTuey7JxoYM0BOEYse2QVu8oiA" href="../docs/archivo/2016/ficha-inscripcion-congreso-2016.docx">DESCARGAR AQUÍ</a>)<strong> junto con su comprobante de pago al correo electrónico </strong>sociedad@scpc.cl</p>
+<p>*Quienes tengan categoría de “Estudiante de Psicología” o “Estudiante de Psicología Universidad Patrocinante”, deben adjuntar documento que acredite su calidad de estudiante y universidad (matrícula, pase escolar, constancia de su escuela, etc.).</p>
+<p><strong>PROMOCIONES ADICIONALES</strong><br/>
+5 becas para socios SCPC activos. Interesados enviar mail señalando su interés de ser considerado en el sorteo a sociedad@scpc.cl<br/>
+1 beca para miembros de la Sociedad Chilena de Salud Mental**<br/>
+15% de descuento y 2 becas para psicólogos miembros activos del Colegio de Psicólogos de Chile A.G.**<br/>
+** Descuentos no acumulables con tarifa preferencial de socio activo SCPC, ni acumulables con otras promociones.</p>
+<p>20% de descuento en el valor total de inscripción por grupos de 5 asistentes. Promoción rige para inscritos de la misma categoría y período. No aplica a tarifa preferencial de “Estudiante de Psicología de Universidad Patrocinante”.</p>
+<p><strong>FORMAS DE PAGO</strong><br/>
+<strong>Efectivo </strong>| Depósito o transferencia bancaria a nombre de Sociedad Chilena de Psicología Clínica. Cta. Cte. Nº 0430015-7 del Banco Santander. RUT.  Nº 70.779.900-5. Mail sociedad@scpc.cl</p>
+<p><strong>Hasta 3 Cheq</strong><strong>ues </strong>(al día, 30 y 60 días) | Extender documento(s) nominativo y cruzado a nombre de Sociedad Chilena de Psicología Clínica. El último cheque debe estar fechado antes del inicio del congreso.</p>
+<p>Más información en <a href="http://www.scpc.cl/xxii-congreso-nacional-de-psicologia-clinica-2016/" rel="noopener" target="_blank">http://www.scpc.cl/xxii-congreso-nacional-de-psicologia-clinica-2016/</a></p>
+</p></p><p class="nota-archivo"><small>Archivo: publicado originalmente el 15 de junio de 2016 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2016/06/15/convocatoria-de-trabajos-e-inscripciones-abiertas-xxii-congreso-nacional-de-psicologia-clinica-psicologia-y-neurociencias-hoy/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

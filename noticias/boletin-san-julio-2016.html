@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Boletín SAN: Julio 2016 — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Boletín SAN: Julio 2016</h1>
+<div class="meta"><span>27 de julio de 2016</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><h4>En este número:<br/>
+– FALAN 2016<br/>
+– Cursos previos a FALAN 2016<br/>
+– Becas FALAN para socios SAN<br/>
+– Semana del cerebro en Argentina 2016<br/>
+– Cursos<br/>
+– Becas y posiciones ofrecidas<br/>
+– ¿Qué se investiga en la Argentina?</h4>
+<hr/>
+<p><img alt="falan" class="aligncenter wp-image-2184 img-reemplazo-logo" data-original-src="https://www.socneurociencia.cl/wp-content/uploads/2016/07/falan.png" loading="lazy" src="../logo_scn.png"/></p>
+<h3>FALAN 2016</h3>
+<p style="text-align: justify;">Para quienes todavía no se inscribieron, aún tienen tiempo de hacerlo hasta el 1 de octubre aquí.</p>
+<p>El programa puede consultarse <a href="../docs/archivo/2016/cronogramaxdia.pdf" target="_blank">aquí</a>.</p>
+<p style="text-align: justify;"><strong>CURSOS PREVIOS A FALAN 2016</strong></p>
+<p>Se realizarán varios cursos en los días previos a FALAN 2016, que iremos anunciando en la <a href="http://saneurociencias.us12.list-manage.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=fe77d7e197&amp;e=b1307a3436" rel="noopener" target="_blank">página de la SAN</a>. Acá van algunos de ellos.</p>
+<hr/>
+<h3 style="text-align: justify;">CURSO SAN: “The doors of memory: The role of sleep on memory formation and modification”</h3>
+<p style="text-align: justify;"><strong>Organizadores:</strong> Dr. Cecilia Forcato (Argentina) Dr. Felipe Beijamini (Brazil)</p>
+<p style="text-align: justify;"><strong>Venue:</strong> Universidad Nacional de Quilmes (UNQ), Departamento de Ciencia y Tecnología Roque Sáenz Peña 352, (1876) Bernal Buenos Aires Argentina</p>
+<p style="text-align: justify;"><strong>Fecha:</strong> 16 de octubre</p>
+<p>Programa <a href="http://saneurociencias.us12.list-manage1.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=8df5df541c&amp;e=b1307a3436" rel="noopener" target="_blank">aquí</a>.</p>
+<p>La inscripción requiere previa inscripción a FALAN 2016 y se realiza <a href="http://saneurociencias.us12.list-manage.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=a1729f7b4d&amp;e=b1307a3436" rel="noopener" target="_blank">aquí</a>.</p>
+<hr/>
+<h3 style="text-align: justify;">Motorized stereotaxic neurosurgery for chronic electrophysiological recordings in rodents<u></u><u></u></h3>
+<p style="text-align: justify;">Motorized stereotaxic neurosurgery and electrophysiological recordings combined with behavior research is fundamental to understand basic mechanisms and develop news approaches in neuroscience and neuroengineering. This workshop will explore those advanced scientific tools mainly for young students interested in how to use in future projects.<u></u><u></u></p>
+<p style="text-align: justify;">We encorauge young students facing dificulties in how to use use such tools to investigate the nervous system electrophysiology to book early, as places are limited due to the hands on. To apply you need a valid Falan Congress registration and the the participants will be selected accordingly with CV and letter of interest.<u></u><u></u></p>
+<p style="text-align: justify;">Date: Oct 15 2016<u></u><u></u></p>
+<p style="text-align: justify;">Location: Centro Cultural de la Ciencia<u></u><u></u></p>
+<p style="text-align: justify;">Time: 8:00 – 13:00</p>
+<p>Programa <a href="http://saneurociencias.us12.list-manage.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=53b09fd080&amp;e=b1307a3436" rel="noopener" target="_blank">aquí</a>.</p>
+<hr/>
+<h3 style="text-align: justify;"><b>Brain Computer Interface (BCI), Virtual Reality, EyeTraking, VideoSync, EEG analysis and source reconstruction</b><u></u><u></u></h3>
+<p style="text-align: justify;">This workshop will explore how to use physiological signals as command to the computer in a virtual reality. It also shows how we can incorporate data from different devices/variables into a single view and to interpret how our interventions affect the individual from various perspectives. Furthermore, this workshop also targets showing the possible ways of analyzing and compare EEG data.<u></u><u></u></p>
+<p style="text-align: justify;">Students and researchers who have interest in BCI, eye tracker and EEG analysis can benefit from participating in this work shop.<u></u><u></u></p>
+<p style="text-align: justify;">To apply you need a valid Falan Congress registration and the the participants will be selected accordingly with CV and letter of interest.<u></u><u></u></p>
+<p style="text-align: justify;">Date: Oct 16 2016<u></u><u></u></p>
+<p style="text-align: justify;">Location: Centro Cultural de la Ciencia<u></u><u></u></p>
+<p style="text-align: justify;">Time: 8:00 ­ 13:00</p>
+<p>Programa <a href="http://saneurociencias.us12.list-manage.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=e25d197880&amp;e=b1307a3436" rel="noopener" target="_blank">aquí</a>.</p>
+<hr/>
+<p style="text-align: justify;"><strong>BECAS FALAN PARA SOCIOS SAN</strong></p>
+<p style="text-align: justify;">Una buena noticia para los socios que enviaron abstract a FALAN 2016!<br/>
+Se han garantizado fondos suficientes para ofrecer becas a todos los <strong>estudiantes de doctorado y post-docs acreditados(*)</strong> que sean socios SAN con cuotas al día y que presenten un poster como primer autor en el<strong> 2do Congreso FALAN2016</strong>. Las mismas serán equivalentes a:</p>
+<p style="text-align: justify;">1.-Para aquellos que provengan de ciudades ubicadas a más de 100 km de la Ciudad de Buenos Aires: <strong>100%</strong> del valor de la inscripción (Early-bird registration).</p>
+<p style="text-align: justify;">2.-Para aquellos que provengan de la Ciudad de Buenos Aires y de ciudades a menos de 100 km: <strong>50%</strong> del valor de la inscripción (Early-bird registration).</p>
+<p style="text-align: justify;">El cobro de las becas, así como fue en los últimos años, será como reintegro luego del congreso, por transferencia bancaria y se solicitará la presentación de la documentación aval de presencia (firma de formulario de viáticos y copia de pasajes, si aplica) así como los datos bancarios.</p>
+<p style="text-align: justify;">Los que reciban la beca se comprometen a asistir durante todo el congreso (de lunes a jueves).</p>
+<p style="text-align: justify;">Los estudiantes de grado que presenten posters como primer autor y residan en Argentina podrán acceder a las becas aun sin ser socios. Se les podrá solicitar colaboración en alguna tarea menor durante el congreso.</p>
+<p style="text-align: justify;"><strong>A aquellos que no lo hayan realizado, los invitamos a inscribirse y enviar su resumen a través del siguiente formulario <a href="http://saneurociencias.us12.list-manage2.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=70d642fbde&amp;e=b1307a3436" rel="noopener" target="_blank">online</a> hasta el 15 de julio, inclusive.</strong></p>
+<p style="text-align: justify;"><em><strong>(*) Los post-doc deberán enviar una carta de su director a <a href="mailto:saneurociencias@gmail.com" target="_blank">saneurociencias@gmail.com</a>, acreditando esta condición.</strong></em></p>
+<hr/>
+<p style="text-align: justify;"><strong>CURSOS</strong><br/>
+<strong>NEUROCIENCIA DE SISTEMAS</strong></p>
+<p>Dr. Rodrigo Quian Quiroga</p>
+<p style="text-align: justify;">Centre for Systems Neuroscience– University of Leicester, UK (<a href="http://saneurociencias.us12.list-manage.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=107a4ac709&amp;e=b1307a3436" rel="noopener" target="_blank">www.le.ac.uk/csn</a>)</p>
+<p><strong>Programa tentativo</strong><br/>
+Clase 1. Introducción a neurociencia de sistemas<br/>
+Clase 2. Registros extracelulares y Spike sorting.<br/>
+Clase 3. Procesado de información visual.<br/>
+Clase 4. Percepción y memoria.<br/>
+Clase 5. Decodificación – Teoría de la información.<br/>
+Clase 6. Electroencefalografía – Análisis de tiempo-frecuencia y Wavelets.<br/>
+Clase 7. Potenciales evocados – Análisis de ensayo único<br/>
+Clase 8. Dinámica no-lineal – Sincronización<br/>
+Clase 9. Proyectos.</p>
+<p style="text-align: justify;"><strong>Lugar:</strong> la primera clase tendrá lugar en el aula 9, Depto. de Física, Pabellón 1, Ciudad Universitaria, FCEN, UBA.<br/>
+<strong>Horarios:</strong> martes y jueves de 10 a 13 h., comenzando el 2 de agosto.</p>
+<p style="text-align: justify;"><strong>Aprobación</strong>: examen final.</p>
+<p style="text-align: justify;">Se asignará puntaje como materia optativa de doctorado en Física (FCEN, UBA) y está abierto a estudiantes de posgrado en las áreas de Medicina, Biología y Física.</p>
+<hr/>
+<p style="text-align: justify;"><b>Small brains, big ideas</b></p>
+<p>Workshop de neurobiología de invertebrados (principalmente <i>D. melanogaster</i>, <i>C. elegans</i> y <i>A.mellifera</i>) destinado a estudiantes latinoamericanos. 10-19 Noviembre Santiago-Valparaiso, Chile.<br/>
+Mas información en <a href="http://saneurociencias.us12.list-manage.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=d98ff4b9c6&amp;e=b1307a3436" rel="noopener" target="_blank">http://smallbrains.org/</a></p>
+<p style="text-align: justify;"><img alt="unnamed" class="aligncenter size-full wp-image-2185 img-reemplazo-logo" data-original-src="https://www.socneurociencia.cl/wp-content/uploads/2016/07/unnamed.jpg" loading="lazy" src="../logo_scn.png"/></p>
+<hr/>
+<p><strong>BECAS Y POSICIONES OFRECIDAS</strong></p>
+<h2>Búsqueda de postulante para Beca Doctoral del CONICET o Agencia</h2>
+<p style="text-align: justify;">Se busca postulante para realizar el doctorado en el Laboratorio de La Dra Belén Elgoyhen, INGEBI-CONICET (<a href="http://saneurociencias.us12.list-manage1.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=2ac8125795&amp;e=b1307a3436" rel="noopener" target="_blank">http://ingebi-conicet.gov.ar/en/grupos-de-investigacion/laboratorio-de-de-fisiologia-y-genetica-de-audicion/</a>). El postulante se incorporará a un grupo de trabajo que estudia la fisiología auditiva desde varios aspectos: molecular, fisiología sináptica, fisiología auditiva y genética de la audición. El proyecto específico a realizar por el postulante es el estudio del desarrollo del sistema auditivo y su alteración en ratones con mutaciones en genes que se expresan en el oído interno. Para ello utilizará técnicas de electrofisiología, biología molecular e inmunohistoquímica.</p>
+<p style="text-align: justify;"><strong>Requisitos del becario:</strong> Graduado o estudiante recibido antes de 31 de marzo de 2017 de las carreras de Biología, Bioquímica, Biotecnología, Química, Medicina o afines. Promedio mayor a 7, conocimiento de inglés y buena predisposición para el trabajo en equipo. Los interesados deberán enviar CV con promedio académico incluyendo aplazos y las calificaciones obtenidas durante la carrera, junto con breve carta de su motivación de integrarse al grupo de trabajo.</p>
+<p style="text-align: justify;">Contacto: <a href="mailto:abelgoyhen@gmail.com" target="_blank">abelgoyhen@gmail.com</a></p>
+<hr/>
+<p style="text-align: justify;"><b>Se busca un candidato a beca CONICET</b></p>
+<p style="text-align: justify;">Se busca un candidato para realizar el doctorado en Ciencias Biológicas. El proyecto de trabajo se basará en el estudio del rol de las vías de señalización de Wnt: mecanismos celulares y moleculares implicados en respuestas conductuales asociadas   la adicción a cocaína. El candidato/a (farmacéutico, bioquímico, lic. biotecnología, médico, biólogo, recibidos o estudiantes avanzados) se deberá presentar a la <b>convocatoria 2016 de becas doctorales de CONICET por lo que se requiere un promedio superior a 7,50.</b></p>
+<p style="text-align: justify;"><b><u>Lugar de trabajo:</u></b> Laboratorio de Toxicología Experimental, Fac. de Ciencias Bioquímicas y Farmacéuticas, Universidad Nacional de Rosario. Directora: Dra. Alejandra Pacchioni (Inv. Adj. CONICET).</p>
+<p style="text-align: justify;"><b><u>Interesados enviar CV a:</u></b><b> <a href="mailto:pacchioni.am@gmail.com" target="_blank">pacchioni.am@gmail.com</a></b></p>
+<p style="text-align: justify;"><b><u>Trabajo publicado relacionado con el proyecto:</u></b><br/>
+Cuesta, S., Severin, M.J., Batuecas, J., Rosso, S.B., Pacchioni, A.M., 2016. Wnt/beta-catenin pathway in the prefrontal cortex is required for cocaine-induced neuroadaptations. Addict Biol. DOI: 10.1111/adb.12377</p>
+<hr/>
+<p style="text-align: justify;"><b>Posiciones doctorales y postdoctorales ofrecidas en Bélgica</b></p>
+<p style="text-align: justify;">The Takeoka lab studies how animals generate and control motor behavior in health and disease, using a multi-disciplinary approach including detailed motor kinematic assessments, mouse genetics, optogenetic, pharmacogenetic, electrophysiological, and imaging techniques. The lab investigates how different types of sensory feedback circuits control repetitive and complex motor behavior, with a primary focus on somatosensory and visual feedback. Our aims are to understand:<br/>
+• How motor circuits develop to build functional modules at different levels (cortex, brainstem and spinal cord) and how motor learning shapes these circuits.<br/>
+• How the canonical organization of motor circuits changes after traumatic injury and neurological diseases to compensate for and contribute to motor recovery.<br/>
+We are currently looking for one post-doc and one Ph.D. student with a strong drive to succeed, a positive attitude and a background in at least one of the disciplines of Neuroscience (physiology, molecular or engineering). Computational background is a big plus. The candidate should also be a team player with good communication skills. In addition to scientific excellence and integrity, we value mentorship, collaboration, innovation and above all, a strong passion over the subject of motor control. Post-doctoral and PhD applicants are expected to start any time after September 1st 2016, with initial 1 year contract with possibility of extension after positive evaluation.<br/>
+Trainees in the lab will be closely supervised, with a goal to have at least one first-author publication in a highly regarded international journal by the end of the training.</p>
+<p style="text-align: justify;"><b>Starting Date:</b> As early as possible (negotiable).<br/>
+<b>Application Due Date: </b>Applications deadline will continue until the position is filled.<br/>
+<b>Salary:</b> Accordance with KU Leuven and NERF regulations.<br/>
+The Takeoka lab is part of NERF (Neuro-Electronics Research Flanders) a collaborative institute located in Leuven, Belgium, embedded in an excellent neuroscience community (VIB, University of Leuven and imec) among other scientific disciplines.<br/>
+<b>To apply:</b> Please send your CV, a list of three references with emails and phone numbers, a cover letter describing your past and future projects and career goals, as well as what you hope to get out of the Takeoka Lab to <a href="mailto:nerf.admin@nerf.be" target="_blank">nerf.admin@nerf.be</a>.</p>
+<hr/>
+<h2>¿Qué se investiga en la Argentina?</h2>
+<p style="text-align: justify;">Invitamos a todos los socios a compartir sus publicaciones y difundir las distintas líneas de investigación que se realizan en la Argentina.</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><strong>Publicaciones recientes comentadas en la página de la SAN.</strong></span></p>
+<p><strong>Loss of Homeostasis in the Direct Pathway in a Mouse Model of Asymptomatic Parkinson’s Disease.</strong><br/>
+Escande MV, Taravini IR, Zold CL, Belforte JE, Murer MG.<br/>
+J Neurosci. 2016 May 25;36(21):5686-98.<br/>
+Ver comentario en el <a href="http://www.saneurociencias.org.ar/loss-of-homeostasis-in-the-direct-pathway-in-a-mouse-model-of-asymptomatic-parkinsons-disease/" rel="noopener" target="_blank">link</a>.</p>
+<p style="text-align: justify;"><span style="text-decoration: underline;"><strong>Otras publicaciones recientes de nuestros socios.</strong></span></p>
+<p><strong>Isolation and Characterization of Ischemia-Derived Astrocytes (IDAs) with Ability to Transactivate Quiescent Astrocytes.</strong><br/>
+Villarreal A, Rosciszewski G, Murta V, Cadena V, Usach V, Dodes-Traian MM, Setton-Avruj P, Barbeito LH, Ramos AJ.<br/>
+Front Cell Neurosci. 2016 Jun 1;10:139.</p>
+<p><strong>Ligand-mediated Galectin-1 endocytosis prevents intraneural H2O2 production promoting F-actin dynamics reactivation and axonal re-growth.</strong><br/>
+Quintá HR, Wilson C, Blidner AG, González-Billault C, Pasquini LA, Rabinovich GA, Pasquini JM.<br/>
+Exp Neurol. 2016 Jun 11;283(Pt A):165-178.</p>
+<p><strong>Juvenile exposure to a high fat diet promotes behavioral and limbic alterations in the absence of obesity.</strong><br/>
+Vinuesa A, Pomilio C, Menafra M, Bonaventura MM, Garay L, Mercogliano MF, Schillaci R, Lux Lantos V, Brites F, Beauquis J, Saravia F.<br/>
+Psychoneuroendocrinology. 2016 Jun 6;72:22-33.</p>
+<p><strong>Post-translational protein arginylation in the normal nervous system and in neurodegeneration.</strong><br/>
+Galiano MR, Goitea VE, Hallak ME.<br/>
+J Neurochem. 2016 Jun 18.</p>
+<p><strong>The fate of memory: Reconsolidation and the case of Prediction Error.</strong><br/>
+Fernández RS, Boccia MM, Pedreira ME.<br/>
+Neurosci Biobehav Rev. 2016 Jun 7;68:423-441.</p>
+<hr/>
+<p style="text-align: justify;"><b>Acerca del boletín</b></p>
+<p>Enviar información para publicar a <i>Amaicha Depino </i>(<a href="mailto:amaicha.depino@gmail.com" target="_blank">amaicha.depino@gmail.<wbr/>com</a>). La información publicada en el boletín mensual es aprobada por la Comisión Directiva de la SAN.<br/>
+Para asegurar su inclusión en el mes en curso, la información debe ser remitida antes del día 10.</p>
+<hr/>
+<p style="text-align: justify;"><b>Todos los boletines y más información pueden encontrarse en nuestra página <a href="http://saneurociencias.us12.list-manage.com/track/click?u=a211b8095b6c36f925980d3b2&amp;id=66065f3b8d&amp;e=b1307a3436" rel="noopener" target="_blank">http://www.<wbr/>saneurociencias.org.ar</a></b></p>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 27 de julio de 2016 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2016/07/27/boletin-san-julio-2016/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

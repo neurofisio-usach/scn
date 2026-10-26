@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Archivo de noticias — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Archivo</span>
+<h1>Archivo de noticias</h1>
+
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="../noticias.html">Volver a Noticias</a><p>Publicaciones del sitio anterior de la Sociedad Chilena de Neurociencia.</p>
+<h2 id="y2026">2026</h2>
+<ul class="lista-archivo">
+<li><time datetime="2026-07-15">15 de julio de 2026</time> — <a href="postulaciones-abiertas-doctorado-en-ciencias-bmcn-2026-6485.html">Postulaciones Abiertas Doctorado en Ciencias BMCN</a></li>
+<li><time datetime="2026-01-05">5 de enero de 2026</time> — <a href="help-shape-the-future-of-stroke-rehabilitation-and-brain-stimulation.html">Help Shape the Future of Stroke Rehabilitation and Brain Stimulation</a></li>
+</ul>
+<h2 id="y2025">2025</h2>
+<ul class="lista-archivo">
+<li><time datetime="2025-12-30">30 de diciembre de 2025</time> — <a href="translational-neuroscience-school-from-molecular-mechanisms-to-clinical-applications-in-ne.html">Translational Neuroscience School: From Molecular Mechanisms to Clinical Applications in Neurodegenerative Disorder</a></li>
+<li><time datetime="2025-12-22">22 de diciembre de 2025</time> — <a href="oferta-laboral-anid-instalacion-en-la-academia.html">Oferta laboral: ANID Instalación en la Academia</a></li>
+<li><time datetime="2025-12-22">22 de diciembre de 2025</time> — <a href="saludo-navideno-a-nuestros-socios-as.html">Saludo Navideño a nuestros socios/as</a></li>
+<li><time datetime="2025-11-19">19 de noviembre de 2025</time> — <a href="seminario-astrocitos-en-funciones-superiores-del-cerebro.html">Seminario: “Astrocitos en funciones superiores del cerebro”</a></li>
+<li><time datetime="2025-11-11">11 de noviembre de 2025</time> — <a href="llamado-a-concurso-academico-para-los-departamentos-de-biologia-y-fisica-de-la-facultad-de.html">Llamado a Concurso Académico para los Departamentos de Biología y Física de la Facultad de Ciencias de la Universidad de Chile</a></li>
+<li><time datetime="2025-10-30">30 de octubre de 2025</time> — <a href="charla-cientifica-la-obesidad-y-la-neurodegeneracion-estan-a-traves-de-la-neurovasculatura.html">Charla científica: “La obesidad y la neurodegeneración están a través de la neurovasculatura”</a></li>
+<li><time datetime="2025-10-28">28 de octubre de 2025</time> — <a href="visita-destacada-charla-y-oportunidades-de-doctorado-con-el-profesor-ren-dobson.html">Visita Destacada: Charla y Oportunidades de Doctorado con el Profesor Ren Dobson</a></li>
+<li><time datetime="2025-10-27">27 de octubre de 2025</time> — <a href="lanzamiento-copuchat.html">Lanzamiento Copuchat</a></li>
+<li><time datetime="2025-10-23">23 de octubre de 2025</time> — <a href="conversatorio-etica-en-la-neurotecnologia-neuroderechos-brechas-y-desafios.html">Conversatorio: Ética en la Neurotecnología (¿Neuroderechos?): Brechas y desafíos.</a></li>
+<li><time datetime="2025-09-10">10 de septiembre de 2025</time> — <a href="programa-de-doctorado-en-ciencias-medicas-fame-uach.html">Programa de Doctorado en Ciencias Médicas FAME – UACh</a></li>
+<li><time datetime="2025-09-10">10 de septiembre de 2025</time> — <a href="unico-doctorado-en-ciencias-biomedicas-de-la-macrozona-norte-de-chile.html">Único Doctorado en Ciencias Biomédicas de la macrozona norte de Chile</a></li>
+<li><time datetime="2025-07-29">29 de julio de 2025</time> — <a href="iv-congreso-falan.html">IV Congreso FALAN</a></li>
+<li><time datetime="2025-07-23">23 de julio de 2025</time> — <a href="isac-2025-scientific-meeting.html">ISAC 2025 Scientific Meeting</a></li>
+<li><time datetime="2025-07-11">11 de julio de 2025</time> — <a href="5to-simposio-de-jovenes-cientificos-profesor-dr-humberto-maturana-romesin.html">5to Simposio de jóvenes científicos-Profesor Dr. Humberto Maturana Romesín”</a></li>
+<li><time datetime="2025-07-03">3 de julio de 2025</time> — <a href="workshop-light-sheet-image-analysis.html">Workshop “Light-Sheet Image Analysis</a></li>
+<li><time datetime="2025-07-03">3 de julio de 2025</time> — <a href="4to-congreso-latinoamericano-de-toc.html">4to Congreso Latinoamericano de TOC</a></li>
+<li><time datetime="2025-05-30">30 de mayo de 2025</time> — <a href="call-yns-2025.html">Call YNS 2025</a></li>
+<li><time datetime="2025-04-09">9 de abril de 2025</time> — <a href="busqueda-de-postdoc-en-neuroimagenes-psicosis-y-determinantes-sociales.html">Búsqueda de PostDoc en Neuroimágenes, Psicosis y Determinantes Sociales</a></li>
+<li><time datetime="2025-04-07">7 de abril de 2025</time> — <a href="ii-workshop-neurochem.html">II Workshop NeuroCHEM</a></li>
+<li><time datetime="2025-03-11">11 de marzo de 2025</time> — <a href="webinar-falan-colne-marzo-2025-diplomacia-cientifica.html">Webinar FALAN/COLNE Marzo 2025 Diplomacia Científica</a></li>
+<li><time datetime="2025-02-13">13 de febrero de 2025</time> — <a href="q2-summer-school-in-mexico.html">Q2 Summer School in Mexico</a></li>
+<li><time datetime="2025-01-15">15 de enero de 2025</time> — <a href="avances-y-proyecciones-de-la-neurociencia-en-chile-encuentro-entre-la-sociedad-chilena-de.html">Avances y Proyecciones de la Neurociencia en Chile: Encuentro entre la Sociedad Chilena de Neurociencia y autoridades del Ministerio de Ciencia</a></li>
+</ul>
+<h2 id="y2024">2024</h2>
+<ul class="lista-archivo">
+<li><time datetime="2024-10-21">21 de octubre de 2024</time> — <a href="llamado-postdoc-2024.html">LLAMADO POSTDOC 2024</a></li>
+<li><time datetime="2024-08-12">12 de agosto de 2024</time> — <a href="circular-n2-xx-reunion-anual-de-nuestra-sociedad.html">Circular N°2 XX Reunión Anual de nuestra Sociedad</a></li>
+<li><time datetime="2024-06-10">10 de junio de 2024</time> — <a href="call-for-participating-in-the-young-neuroscientists-symposium-3.html">Call for participating in the young Neuroscientists Symposium</a></li>
+<li><time datetime="2024-05-24">24 de mayo de 2024</time> — <a href="postdoctoral-position-at-the-paris-brain-institute-icm-paris-france.html">Postdoctoral Position at the Paris Brain Institute (ICM), Paris, France</a></li>
+<li><time datetime="2024-04-09">9 de abril de 2024</time> — <a href="llamado-a-simposios-y-plenarias-para-la-reunion-anual-2024.html">Llamado a Simposios y Plenarias para la Reunión Anual 2024</a></li>
+<li><time datetime="2024-03-25">25 de marzo de 2024</time> — <a href="primera-circular-xx-reunion-anual-sociedad-chilena-de-neurociencia-2024.html">Primera circular XX Reunión Anual Sociedad Chilena de Neurociencia 2024</a></li>
+<li><time datetime="2024-03-06">6 de marzo de 2024</time> — <a href="programas-de-embo.html">Programas de EMBO</a></li>
+<li><time datetime="2024-01-31">31 de enero de 2024</time> — <a href="ibro-parenthood-grants.html">IBRO Parenthood Grants</a></li>
+<li><time datetime="2024-01-24">24 de enero de 2024</time> — <a href="ibro-collaborative-research-grants-marzo.html">IBRO Collaborative Research Grants-Marzo</a></li>
+</ul>
+<h2 id="y2023">2023</h2>
+<ul class="lista-archivo">
+<li><time datetime="2023-12-21">21 de diciembre de 2023</time> — <a href="les-deseamos-una-muy-feliz-navidad-y-un-prospero-2024.html">Les deseamos una muy Feliz Navidad y un próspero 2024</a></li>
+<li><time datetime="2023-10-24">24 de octubre de 2023</time> — <a href="post-doctorado-disponible-laboratorio-del-dr-joseph-glykys-en-la-universidad-de-iowa-estad.html">Post-doctorado disponible. Laboratorio del Dr. Joseph Glykys en la Universidad de Iowa, Estados Unidos</a></li>
+<li><time datetime="2023-10-12">12 de octubre de 2023</time> — <a href="asamblea-general-ordinaria-de-socios-de-la-sociedad-chilena-de-neurociencia.html">Asamblea General Ordinaria de Socios de la Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2023-08-23">23 de agosto de 2023</time> — <a href="la-universidad-de-valparaiso-ha-abierto-concurso-para-dos-cargos-academicos.html">La Universidad de Valparaíso ha abierto concurso para dos cargos académicos</a></li>
+<li><time datetime="2023-06-29">29 de junio de 2023</time> — <a href="se-extiende-plazo-para-la-postulacion-a-simposios-y-plenarias-para-la-xix-reunion-anual-de.html">Se extiende plazo para la postulación a simposios y plenarias para la XIX Reunión Anual de la Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2023-06-08">8 de junio de 2023</time> — <a href="ibro-needs-your-help-share-our-open-calls-for-nominations.html">IBRO needs your help! Share our open calls for nominations</a></li>
+<li><time datetime="2023-06-08">8 de junio de 2023</time> — <a href="invitation-to-participate-in-the-young-neuroscientists-symposium.html">INVITATION TO PARTICIPATE IN THE YOUNG NEUROSCIENTISTS SYMPOSIUM</a></li>
+<li><time datetime="2023-06-05">5 de junio de 2023</time> — <a href="latin-american-school-molecular-and-cellular-mechanisms-of-sensory-transduction.html">Latin American School: Molecular and cellular mechanisms of sensory transduction</a></li>
+<li><time datetime="2023-05-31">31 de mayo de 2023</time> — <a href="panam-physiological-sciences-2023.html">PANAM Physiological Sciences 2023</a></li>
+<li><time datetime="2023-05-31">31 de mayo de 2023</time> — <a href="ismnd-nextgen-2023.html">ISMND NextGen 2023</a></li>
+<li><time datetime="2023-05-24">24 de mayo de 2023</time> — <a href="llamado-a-concurso-posiciones-postdoctoral-proyecto-anillo-act210053.html">LLAMADO A CONCURSO POSICIONES POSTDOCTORAL PROYECTO ANILLO ACT210053</a></li>
+<li><time datetime="2023-05-12">12 de mayo de 2023</time> — <a href="diplomado-en-neuroanatomia-funcional-humana.html">Diplomado en Neuroanatomía funcional humana</a></li>
+<li><time datetime="2023-05-08">8 de mayo de 2023</time> — <a href="nueva-directiva-2023-2025.html">Nueva directiva 2023-2025</a></li>
+<li><time datetime="2023-04-28">28 de abril de 2023</time> — <a href="postdoctoral-position-to-study-the-cortico-cortical-circuits-for-auditory-vocal-integratio.html">POSTDOCTORAL POSITION TO STUDY THE CORTICO-CORTICAL CIRCUITS FOR AUDITORY VOCAL INTEGRATION</a></li>
+<li><time datetime="2023-04-21">21 de abril de 2023</time> — <a href="lab-position-in-heidelberg.html">Lab position in Heidelberg￼</a></li>
+<li><time datetime="2023-04-14">14 de abril de 2023</time> — <a href="semblanza-dr-christian-bonansco-herrera.html">SEMBLANZA Dr. Christian Bonansco Herrera</a></li>
+<li><time datetime="2023-04-13">13 de abril de 2023</time> — <a href="invitacion-a-seminario-dr-roberto-araya.html">Invitación a seminario Dr. Roberto Araya￼</a></li>
+<li><time datetime="2023-03-28">28 de marzo de 2023</time> — <a href="concurso-academico-fisiologa-depto-biologia-facultad-de-ciencias-u-de-chile.html">Concurso Académico Fisióloga, Depto Biología, Facultad de Ciencias, U de Chile</a></li>
+<li><time datetime="2023-01-16">16 de enero de 2023</time> — <a href="seminario-neurobiologia-de-la-adiccion.html">Seminario Neurobiología de la adicción</a></li>
+<li><time datetime="2023-01-11">11 de enero de 2023</time> — <a href="seminario-sequence-learning-in-brain-inspired-computing-systems.html">Seminario: Sequence learning in brain-inspired computing systems</a></li>
+<li><time datetime="2023-01-11">11 de enero de 2023</time> — <a href="seminario-fine-temporal-spike-coordination-in-cortex-and-model.html">Seminario: Fine temporal spike coordination in cortex and model</a></li>
+<li><time datetime="2023-01-03">3 de enero de 2023</time> — <a href="dr-francisco-bozinovic-kuscevic-1959-2023.html">Dr. Francisco Bozinovic Kuscevic 1959-2023</a></li>
+</ul>
+<h2 id="y2022">2022</h2>
+<ul class="lista-archivo">
+<li><time datetime="2022-11-25">25 de noviembre de 2022</time> — <a href="citacion-a-asamblea-general-ordinaria-de-socios-2.html">Citación a Asamblea General Ordinaria de Socios</a></li>
+<li><time datetime="2022-11-03">3 de noviembre de 2022</time> — <a href="eleccion-del-nuevo-directorio-de-la-sociedad-chilena-de-neurociencia.html">Elección del Nuevo Directorio de la Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2022-10-26">26 de octubre de 2022</time> — <a href="charla-informativa-programa-de-doctorado-en-ciencias-mencion-biofisica-y-biologia-computac.html">Charla informativa programa de Doctorado en Ciencias mención Biofísica y Biología Computacional – Admisión 2023</a></li>
+<li><time datetime="2022-10-26">26 de octubre de 2022</time> — <a href="magister-2023-neurociencias.html">Magister 2023 Neurociencias</a></li>
+<li><time datetime="2022-09-22">22 de septiembre de 2022</time> — <a href="doctorado-en-ciencias-biomedicas-universidad-catolica-del-norte-2023.html">Doctorado en Ciencias Biomédicas, Universidad Católica del Norte 2023</a></li>
+<li><time datetime="2022-09-21">21 de septiembre de 2022</time> — <a href="post-doctoral-fellowship.html">Post-doctoral Fellowship</a></li>
+<li><time datetime="2022-08-18">18 de agosto de 2022</time> — <a href="llamado-a-elecciones-directorio-scn-2023-2025.html">Llamado a elecciones directorio SCN 2023-2025</a></li>
+<li><time datetime="2022-08-03">3 de agosto de 2022</time> — <a href="para-recordar-se-inicia-proceso-de-registro-en-nuestra-reunion-anual-conjunta-2022.html">Para recordar, se inicia proceso de registro en nuestra Reunión Anual conjunta 2022</a></li>
+<li><time datetime="2022-07-28">28 de julio de 2022</time> — <a href="isn-school-on-miniaturized-flourescence-microscopy.html">ISN School on Miniaturized Flourescence Microscopy</a></li>
+<li><time datetime="2022-07-27">27 de julio de 2022</time> — <a href="concurso-posicion-postdoctoral-proyecto-anillo-act210039.html">Concurso posición Postdoctoral Proyecto Anillo ACT210039</a></li>
+<li><time datetime="2022-07-20">20 de julio de 2022</time> — <a href="call-for-participation-young-neuroscientists-symposium.html">CALL FOR PARTICIPATION IN THE YOUNG NEUROSCIENTISTS SYMPOSIUM</a></li>
+<li><time datetime="2022-07-01">1 de julio de 2022</time> — <a href="invitacion-a-curso-practico-small-brains-big-ideas.html">Invitación a curso practico “Small brains, big ideas”</a></li>
+<li><time datetime="2022-04-27">27 de abril de 2022</time> — <a href="matine-de-las-artes-presenta-valentina-descubre-el-cerebro.html">Mátine de las artes presenta: “Valentina Descubre el Cerebro”</a></li>
+<li><time datetime="2022-04-22">22 de abril de 2022</time> — <a href="pew-latin-american-fellows-program-2023-call-for-applications.html">Pew Latin American Fellows program- 2023 call for applications</a></li>
+<li><time datetime="2022-04-08">8 de abril de 2022</time> — <a href="neurocientificos-claman-porque-el-horario-de-invierno-se-quede-para-siempre.html">Neurocientíficos claman porque el horario de invierno se quede para siempre</a></li>
+<li><time datetime="2022-03-17">17 de marzo de 2022</time> — <a href="cargo-asistente-de-laboratorio-y-tesista-fondecyt.html">Cargo Asistente de Laboratorio y Tesista FONDECYT</a></li>
+</ul>
+<h2 id="y2021">2021</h2>
+<ul class="lista-archivo">
+<li><time datetime="2021-12-23">23 de diciembre de 2021</time> — <a href="saludo-final-de-ano-sociedad-chilena-de-neurociencia.html">Saludo final de año Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2021-11-25">25 de noviembre de 2021</time> — <a href="7th-international-brain-research-school-27-june-and-3-july-2022-isparta-turkey.html">7th International Brain Research School, 27 June and 3 July 2022, Isparta, TURKEY</a></li>
+<li><time datetime="2021-11-10">10 de noviembre de 2021</time> — <a href="llamado-a-concurso-posicion-postdoctoral-en-e-health-y-envejecimiento-saludable.html">Llamado a concurso posición postdoctoral en E-HEALTH y envejecimiento saludable</a></li>
+<li><time datetime="2021-11-10">10 de noviembre de 2021</time> — <a href="premios-nobel-de-fisiologia-o-medicina-2021-comprendiendo-los-procesos-moleculares-de-la-t.html">Premios Nobel de Fisiología o Medicina 2021: Comprendiendo los procesos moleculares de la termo-transducción, mecanotransducción y nocicepción.</a></li>
+<li><time datetime="2021-10-19">19 de octubre de 2021</time> — <a href="informativo-para-los-coordinadores-de-simposios.html">Informativo para los coordinadores de Simposios</a></li>
+<li><time datetime="2021-10-15">15 de octubre de 2021</time> — <a href="se-extiende-plazo-de-inscripcion-hasta-el-17-de-octubre-para-la-reunion-anual-2021.html">Se extiende plazo de inscripción hasta el 17 de Octubre para la Reunión Anual 2021</a></li>
+<li><time datetime="2021-10-05">5 de octubre de 2021</time> — <a href="invitacion-a-formar-parte-de-la-asociacion-estudiantil-de-neurociencia-y-neurotecnologia-a.html">Invitación a formar parte de la Asociación Estudiantil de Neurociencia y Neurotecnología (AENN)</a></li>
+<li><time datetime="2021-10-01">1 de octubre de 2021</time> — <a href="circular-2-reunion-anual-sociedad-chilena-de-neurociencia.html">Circular 2 – Reunión anual Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2021-09-13">13 de septiembre de 2021</time> — <a href="se-extiende-plazo-hasta-el-30-de-septiembre-para-postular-yns-call-2021.html">Se extiende plazo hasta el 30 de septiembre para postular YNS-call-2021</a></li>
+<li><time datetime="2021-09-08">8 de septiembre de 2021</time> — <a href="call-for-participation-in-the-young-neuroscientists-symposium-plazo-12-de-septiembre.html">Call for participation in the Young Neuroscientists Symposium – Plazo 12 de septiembre</a></li>
+<li><time datetime="2021-09-02">2 de septiembre de 2021</time> — <a href="oportunidad-de-trabajo-en-brainlat.html">Oportunidad de Trabajo en BrainLat</a></li>
+<li><time datetime="2021-08-23">23 de agosto de 2021</time> — <a href="postdoctoral-research-associate-wanted.html">Postdoctoral Research Associate Wanted</a></li>
+<li><time datetime="2021-08-17">17 de agosto de 2021</time> — <a href="applications-invited-for-ictp-icts-winter-school-on-quantitative-systems-biology-online.html">Applications invited for ICTP-ICTS Winter School on Quantitative Systems Biology (ONLINE)</a></li>
+<li><time datetime="2021-08-17">17 de agosto de 2021</time> — <a href="call-for-participation-in-the-young-neuroscientists-symposium-4.html">Call for participation in the Young Neuroscientists Symposium</a></li>
+<li><time datetime="2021-08-06">6 de agosto de 2021</time> — <a href="cfp-lawcn21-iii-latin-american-workshop-on-computational-neuroscience-deadline-august-16th.html">CfP LAWCN’21 – III Latin-American Workshop on Computational Neuroscience (Deadline: August 16th, 2021)</a></li>
+<li><time datetime="2021-08-05">5 de agosto de 2021</time> — <a href="llamado-a-concurso-posiciones-de-postdoctorado-instituto-latinoamericano-de-salud-cerebral.html">Llamado a concurso posiciones de Postdoctorado – Instituto Latinoamericano de Salud Cerebral</a></li>
+<li><time datetime="2021-08-05">5 de agosto de 2021</time> — <a href="llamado-a-concurso-posiciones-academicas-de-jornada-completa-instituto-latinoamericano-de.html">Llamado a concurso posiciones académicas de jornada completa – Instituto Latinoamericano de Salud Cerebral</a></li>
+<li><time datetime="2021-08-02">2 de agosto de 2021</time> — <a href="se-extiende-plazo-hasta-el-20-de-agosto-envio-de-propuesta-simposio-reunion-anual-virtual.html">Se extiende plazo hasta el 20 de agosto envio de propuesta Simposio Reunion Anual Virtual 2021</a></li>
+<li><time datetime="2021-07-08">8 de julio de 2021</time> — <a href="comunicado-de-la-society-for-neuroscience-sfn.html">Comunicado de la Society for Neuroscience (SfN)</a></li>
+<li><time datetime="2021-07-06">6 de julio de 2021</time> — <a href="circular-1-xvii-reunion-anual-sociedad-chilena-de-neurociencias-2021.html">Llamado propuesta Simposio Reunion Anual Virtual 2021</a></li>
+<li><time datetime="2021-06-08">8 de junio de 2021</time> — <a href="phd-position-at-the-instituto-de-neurociencias-umh-csic.html">PhD position at the Instituto de Neurociencias UMH-CSIC (Spain)</a></li>
+<li><time datetime="2021-06-08">8 de junio de 2021</time> — <a href="2-year-postdoc-position-in-neurobiology-financed-by-the-big-brain-theoryprogram-between-in.html">2-year PostDoc position in neurobiology financed by THE BIG BRAIN THEORYPROGRAM between Institut Pasteur and ICM</a></li>
+<li><time datetime="2021-06-03">3 de junio de 2021</time> — <a href="se-extiende-plazo-hasta-4-de-junio-para-contestar-encuesta.html">Se extiende plazo hasta 4 de junio, para contestar Encuesta</a></li>
+<li><time datetime="2021-05-14">14 de mayo de 2021</time> — <a href="falan-2022.html">FALAN 2022</a></li>
+<li><time datetime="2021-05-12">12 de mayo de 2021</time> — <a href="oferta-laboral-instituto-neurociencia-biomedica-bni.html">Oferta laboral instituto Neurociencia Biomédica (BNI)</a></li>
+<li><time datetime="2021-05-11">11 de mayo de 2021</time> — <a href="homenaje-al-dr-humberto-maturana-romecin.html">Homenaje al Dr. Humberto Maturana Romecin</a></li>
+<li><time datetime="2021-05-08">8 de mayo de 2021</time> — <a href="el-maestro-maturana.html">El Maestro Maturana.</a></li>
+<li><time datetime="2021-05-07">7 de mayo de 2021</time> — <a href="concurso-academico-a-con-grado-de-doctor-a-para-el-departamento-de-biologia-umce.html">Concurso Académico/a con grado de Doctor/a para el Departamento de Biología UMCE</a></li>
+<li><time datetime="2021-05-05">5 de mayo de 2021</time> — <a href="workshop-advanced-topics-in-grant-writing.html">Workshop: Advanced Topics in Grant Writing</a></li>
+<li><time datetime="2021-05-04">4 de mayo de 2021</time> — <a href="iniciativa-sobre-trastornos-obsesivos-compulsivos-toc-hablemos-de-toc.html">Iniciativa sobre Trastornos Obsesivos Compulsivos (TOC) “Hablemos de Toc”</a></li>
+<li><time datetime="2021-04-30">30 de abril de 2021</time> — <a href="llamados-a-concurso-academico-universidad-diego-portales.html">Llamados a concurso académico Universidad Diego Portales</a></li>
+<li><time datetime="2021-04-21">21 de abril de 2021</time> — <a href="pablo-moya-del-centro-interdisciplinario-de-neurociencia-de-u-de-valparaiso-la-pandemia-ha.html">Pablo Moya, del Centro Interdisciplinario de Neurociencia de U. de Valparaíso: “La pandemia ha aumentado síntomas obsesivo-compulsivos que estaban ocultos”</a></li>
+<li><time datetime="2021-04-20">20 de abril de 2021</time> — <a href="como-la-agregacion-enmaranada-de-proteinas-mata-celulas-cerebrales-promoviendo-alzheimer-y.html">Como la agregación enmarañada de proteínas mata células cerebrales, promoviendo Alzheimer y Encefalopatía Crónica</a></li>
+<li><time datetime="2021-04-14">14 de abril de 2021</time> — <a href="vacunas-y-desorden-neurologico-funcional-interacciones-complejas.html">Vacunas y desorden neurológico funcional: interacciones complejas</a></li>
+<li><time datetime="2021-04-09">9 de abril de 2021</time> — <a href="como-homo-sapiens-desarrollo-un-cerebro-mas-grandes-que-otros-simios.html">Como homo sapiens desarrolló un cerebro más grandes que otros simios</a></li>
+<li><time datetime="2021-04-09">9 de abril de 2021</time> — <a href="inincf-membership-opportunity-falan-and-other-ibro-latin-american-members.html">ININCF membership opportunity: FALAN and other IBRO Latin American members</a></li>
+<li><time datetime="2021-04-08">8 de abril de 2021</time> — <a href="vitamina-a-para-celulas-nerviosas.html">Vitamina A para células nerviosas</a></li>
+<li><time datetime="2021-03-31">31 de marzo de 2021</time> — <a href="misterios-de-la-neurociencia-y-dilemas-ambientales-en-el-festival-de-ciencia-puerto-de-ide.html">Misterios de la neurociencia y dilemas ambientales en el Festival de Ciencia Puerto de Ideas Antofagasta</a></li>
+<li><time datetime="2021-03-17">17 de marzo de 2021</time> — <a href="primeros-resultados-farmaco-experimental-contra-el-alzheimer-ralentizo-el-deterioro-cognit.html">Primeros resultados: Fármaco experimental contra el Alzheimer ralentizó el deterioro cognitivo</a></li>
+<li><time datetime="2021-02-22">22 de febrero de 2021</time> — <a href="oportunidades-laborales-centro-interdisciplinario-de-neurociencia-de-valparaiso-universida.html">Oportunidades Laborales. Centro Interdisciplinario de Neurociencia de Valparaíso, Universidad de Valparaíso</a></li>
+<li><time datetime="2021-02-18">18 de febrero de 2021</time> — <a href="nuevo-target-para-inmunoterapia-contra-tumores-cerebrales-malignos.html">Nuevo target para inmunoterapia contra tumores cerebrales malignos</a></li>
+<li><time datetime="2021-02-15">15 de febrero de 2021</time> — <a href="postdoctoral-associate-stanley-center-for-psychiatric-research.html">Postdoctoral Associate – Stanley Center for Psychiatric Research</a></li>
+<li><time datetime="2021-02-04">4 de febrero de 2021</time> — <a href="dr-ramon-latorre-es-reconocido-por-sus-investigaciones.html">Dr. Ramón Latorre es reconocido por sus investigaciones</a></li>
+<li><time datetime="2021-01-21">21 de enero de 2021</time> — <a href="neurociencias-los-ciclos-circadianos-y-el-infarto-cerebral.html">Neurociencias: los ciclos circadianos y el infarto cerebral</a></li>
+<li><time datetime="2021-01-18">18 de enero de 2021</time> — <a href="postdoctoral-fellowship-johns-hopkins-university-center-for-hearing-and-balance.html">Postdoctoral fellowship – Johns Hopkins University Center for Hearing and Balance</a></li>
+<li><time datetime="2021-01-08">8 de enero de 2021</time> — <a href="tremenda-labor-investigadores-chilenos-descubren-como-frenar-el-avance-del-alzheimer.html">Tremenda labor: Investigadores chilenos descubren cómo frenar el avance del Alzheimer</a></li>
+</ul>
+<h2 id="y2020">2020</h2>
+<ul class="lista-archivo">
+<li><time datetime="2020-12-30">30 de diciembre de 2020</time> — <a href="septima-escuela-internacional-de-verano-sobre-envejecimiento.html">Séptima Escuela Internacional de verano sobre envejecimiento</a></li>
+<li><time datetime="2020-12-24">24 de diciembre de 2020</time> — <a href="como-el-consumo-de-grasa-modifica-el-cerebro-y-hace-subir-de-peso.html">Cómo el consumo de grasa modifica el cerebro y hace subir de peso</a></li>
+<li><time datetime="2020-12-24">24 de diciembre de 2020</time> — <a href="un-ano-de-emociones-intensas.html">Un año de emociones intensas</a></li>
+<li><time datetime="2020-12-17">17 de diciembre de 2020</time> — <a href="es-posible-tratar-enfermedades-neurodegenerativas-al-inhibir-una-familia-particular-de-enz.html">Es posible tratar enfermedades neurodegenerativas al inhibir una familia particular de enzimas</a></li>
+<li><time datetime="2020-12-04">4 de diciembre de 2020</time> — <a href="diplomado-neuroanatomia-humana-2021.html">Diplomado Neuroanatomía Humana 2021</a></li>
+<li><time datetime="2020-11-26">26 de noviembre de 2020</time> — <a href="primer-exito-mundial-de-la-biomedicina-chilena-terapia-genica-para-tratar-enfermedades-neu.html">Primer éxito mundial de la biomedicina chilena: terapia génica para tratar enfermedades neurodegenerativas es exportada a Europa</a></li>
+<li><time datetime="2020-11-18">18 de noviembre de 2020</time> — <a href="el-cuerpo-reacciona-al-virus-con-una-inflamacion-incluido-el-cerebro.html">El cuerpo reacciona al virus con una inflamación, incluido el cerebro</a></li>
+<li><time datetime="2020-11-17">17 de noviembre de 2020</time> — <a href="magister-neurociencias-u-chile-postulaciones-2021.html">Magister Neurociencias U Chile: Postulaciones 2021</a></li>
+<li><time datetime="2020-11-11">11 de noviembre de 2020</time> — <a href="estudio-preliminar-sugiere-que-las-infecciones-podrian-ser-la-causa-inicial-del-alzheimer.html">Estudio preliminar sugiere que las infecciones podrían ser la causa inicial del Alzheimer</a></li>
+<li><time datetime="2020-11-06">6 de noviembre de 2020</time> — <a href="doctorado-en-ciencias-mencion-neurociencia.html">Doctorado en Ciencias Mención Neurociencia</a></li>
+<li><time datetime="2020-11-02">2 de noviembre de 2020</time> — <a href="nuevo-plazo-de-recepcion-de-resumenes-congreso-neurociencia-2020.html">Nuevo plazo de recepción de resúmenes Congreso Neurociencia 2020</a></li>
+<li><time datetime="2020-10-27">27 de octubre de 2020</time> — <a href="doctorado-en-ciencias-mencion-biofisica-y-biologia-computacional.html">Doctorado en Ciencias mención Biofísica y Biología Computacional</a></li>
+<li><time datetime="2020-10-23">23 de octubre de 2020</time> — <a href="fagocitosis-asociada-a-autofagia-de-microglias-es-esencial-para-la-recuperacion-de-neuroin.html">Fagocitosis asociada a autofagia de microglías es esencial para la recuperación de neuroinflamación</a></li>
+<li><time datetime="2020-10-23">23 de octubre de 2020</time> — <a href="como-deberian-volver-las-becas-chile.html">¿Cómo deberían volver las Becas Chile?</a></li>
+<li><time datetime="2020-10-09">9 de octubre de 2020</time> — <a href="invitacion-congreso-socneurociencia-2020.html">Invitación Congreso SocNeurociencia 2020</a></li>
+<li><time datetime="2020-10-07">7 de octubre de 2020</time> — <a href="las-ratas-podrian-tener-el-secreto-para-entender-y-curar-el-trastorno-sicopatico.html">Las ratas podrían tener el secreto para entender (y curar) el trastorno sicopático</a></li>
+<li><time datetime="2020-10-02">2 de octubre de 2020</time> — <a href="desarrollan-sistema-para-diagnosticar-demencias-y-alzheimer-basado-en-realidad-virtual.html">Desarrollan sistema para diagnosticar demencias y Alzheimer basado en realidad virtual</a></li>
+<li><time datetime="2020-10-01">1 de octubre de 2020</time> — <a href="academic-position-available-at-the-institute-of-neuroscience-cinv-universidad-de-valparais.html">Academic Position Available at the Institute of Neuroscience – CINV Universidad de Valparaíso – Chile</a></li>
+<li><time datetime="2020-09-25">25 de septiembre de 2020</time> — <a href="investigadores-chinos-analizaron-imagenes-del-cerebro-de-pacientes-covid.html">Investigadores chinos analizaron imágenes del cerebro de pacientes Covid</a></li>
+<li><time datetime="2020-09-14">14 de septiembre de 2020</time> — <a href="call-for-participation-in-the-young-neuroscientists-symposium-3.html">Call for participation in The Young Neuroscientists Symposium</a></li>
+<li><time datetime="2020-08-26">26 de agosto de 2020</time> — <a href="ciclo-internacional-y-nacional-de-seminarios-sobre-epilepsia.html">Ciclo Internacional y Nacional de Seminarios sobre Epilepsia</a></li>
+<li><time datetime="2020-08-19">19 de agosto de 2020</time> — <a href="se-extiende-el-plazo-para-recibir-las-propuestas-de-conferencias-y-simposios-hasta-el-30-d.html">Se extiende el plazo para recibir las propuestas de conferencias y simposios hasta el 30 de Agosto</a></li>
+<li><time datetime="2020-08-14">14 de agosto de 2020</time> — <a href="estudio-muestra-como-hacer-que-celulas-especificas-produzcan-polimeros-portadores-o-bloque.html">Estudio muestra cómo hacer que células específicas produzcan polímeros portadores (o bloqueadores) de electricidad en sus superficies.</a></li>
+<li><time datetime="2020-08-14">14 de agosto de 2020</time> — <a href="diferentes-poblaciones-celulares-en-la-region-de-la-amigdala-ademas-del-hipotalamo-control.html">Diferentes poblaciones celulares en la región de la amígdala, además del hipotálamo, controlan las respuestas sociales</a></li>
+<li><time datetime="2020-08-07">7 de agosto de 2020</time> — <a href="cientificos-chilenos-crean-y-patentan-nueva-e-innovadora-terapia-para-mortal-enfermedad-ne.html">Científicos chilenos crean y patentan nueva e innovadora terapia para mortal enfermedad neurodegenerativa</a></li>
+<li><time datetime="2020-07-27">27 de julio de 2020</time> — <a href="xvi-reunion-anual-sociedad-chilena-de-neurociencias-2020-reunion-en-formato-remoto.html">XVI Reunión Anual Sociedad Chilena de Neurociencia 2020 [Reunión en formato remoto]</a></li>
+<li><time datetime="2020-07-24">24 de julio de 2020</time> — <a href="sinapsis-cerebrales-a-lo-largo-de-la-vida.html">Sinapsis cerebrales a lo largo de la vida</a></li>
+<li><time datetime="2020-07-10">10 de julio de 2020</time> — <a href="prestigioso-organismo-cientifico-internacional-incorpora-por-primera-vez-a-un-chileno-como.html">Prestigioso organismo científico internacional incorpora por primera vez a un chileno como miembro asociado</a></li>
+<li><time datetime="2020-07-09">9 de julio de 2020</time> — <a href="director-del-instituto-de-neurociencia-biomedica-bni-pandemia-empeorara-casos-de-enfermeda.html">Director del Instituto de Neurociencia Biomédica (BNI): “Pandemia empeorará casos de enfermedades cerebrales en adultos mayores”</a></li>
+<li><time datetime="2020-07-07">7 de julio de 2020</time> — <a href="director-dr-christian-gonzalez-ha-sido-electo-miembro-de-embo.html">Director Dr. Christian Gonzalez ha sido electo miembro de EMBO</a></li>
+<li><time datetime="2020-06-19">19 de junio de 2020</time> — <a href="estudio-identifico-el-tipo-especifico-de-celulas-vasculares-y-la-via-molecular-a-traves-de.html">Estudio identificó el tipo específico de células vasculares y la vía molecular a través de la cual la variante APOE4 promueve el Alzheimer</a></li>
+<li><time datetime="2020-06-19">19 de junio de 2020</time> — <a href="cientificos-analizan-como-el-brillo-del-fondo-influye-en-nuestra-percepcion-de-un-objeto.html">Científicos analizan cómo el brillo del fondo influye en nuestra percepción de un objeto.</a></li>
+<li><time datetime="2020-06-09">9 de junio de 2020</time> — <a href="coronavirus-y-el-miedo-a-lo-desconocido-asi-afecta-a-tu-cerebro-el-estres.html">Coronavirus y el miedo a lo desconocido: así afecta a tu cerebro el estrés</a></li>
+<li><time datetime="2020-06-03">3 de junio de 2020</time> — <a href="participe-en-consulta-publica-sobre-la-politica-de-acceso-abierto-de-anid.html">Participe en Consulta Pública sobre la Política de Acceso Abierto de ANID</a></li>
+<li><time datetime="2020-05-29">29 de mayo de 2020</time> — <a href="estudio-revela-como-se-genera-la-memoria-asociativa-temporal.html">Estudio revela como se genera la memoria asociativa temporal</a></li>
+<li><time datetime="2020-05-20">20 de mayo de 2020</time> — <a href="chilena-descubre-funcion-de-proteina-clave-en-comprension-del-cancer.html">Chilena descubre función de proteína clave en comprensión del cáncer</a></li>
+<li><time datetime="2020-05-20">20 de mayo de 2020</time> — <a href="neurociencia-eje-cerebro-intestino-podria-ser-la-clave-para-determinar-origen-de-la-enferm.html">Neurociencia: Eje cerebro-intestino podría ser la clave para determinar origen de la enfermedad de Parkinson</a></li>
+<li><time datetime="2020-05-15">15 de mayo de 2020</time> — <a href="identifican-3-fobias-sociales-que-podrian-aumentar-tras-la-cuarentena.html">Identifican 3 fobias sociales que podrían aumentar tras la cuarentena</a></li>
+<li><time datetime="2020-05-11">11 de mayo de 2020</time> — <a href="latp-applications-close-may-13.html">LATP Applications Close May 13</a></li>
+<li><time datetime="2020-05-07">7 de mayo de 2020</time> — <a href="primera-evidencia-directa-de-que-el-cerebro-replica-nuestras-experiencias-mientras-dormimo.html">Primera evidencia directa de que el cerebro replica nuestras experiencias mientras dormimos</a></li>
+<li><time datetime="2020-05-07">7 de mayo de 2020</time> — <a href="personas-mayores-de-95-anos-presentan-conecciones-neuronales-mas-fuertes.html">Personas mayores de 95 años presentan conecciones neuronales más fuertes</a></li>
+<li><time datetime="2020-05-06">6 de mayo de 2020</time> — <a href="nueva-tecnica-permite-observar-detalladamente-el-cerebro-en-3d.html">Nueva técnica permite observar detalladamente el cerebro en 3D</a></li>
+<li><time datetime="2020-05-05">5 de mayo de 2020</time> — <a href="resiliencia-versus-fragilidad-como-la-edad-es-un-factor-de-riesgo-para-el-coronavirus-pero.html">Resiliencia versus fragilidad: cómo la edad es un factor de riesgo para el coronavirus, pero no igual para todos</a></li>
+<li><time datetime="2020-05-05">5 de mayo de 2020</time> — <a href="cientificos-desarrollan-plataformas-educativas-sobre-covid-19.html">Científicos desarrollan plataformas educativas sobre COVID-19</a></li>
+<li><time datetime="2020-04-30">30 de abril de 2020</time> — <a href="como-una-bacteria-puede-modificar-el-comportamiento-social.html">¿Cómo una bacteria puede modificar el comportamiento social?</a></li>
+<li><time datetime="2020-04-16">16 de abril de 2020</time> — <a href="que-hacer-para-que-nuestro-cerebro-salga-bien-de-esta-crisis.html">Qué hacer para que nuestro cerebro salga bien de esta crisis</a></li>
+<li><time datetime="2020-04-08">8 de abril de 2020</time> — <a href="neurociencia-y-coronavirus-siete-preguntas-para-entender-como-funciona-el-cerebro-durante.html">NEUROCIENCIA Y CORONAVIRUS: Siete preguntas para entender cómo funciona el cerebro durante el encierro</a></li>
+<li><time datetime="2020-04-07">7 de abril de 2020</time> — <a href="biologo-este-cambio-de-hora-nos-acerca-mas-al-huso-horario-que-nos-corresponde.html">Biólogo: Este cambio de hora nos acerca más al huso horario que nos corresponde</a></li>
+<li><time datetime="2020-04-06">6 de abril de 2020</time> — <a href="conoce-el-proyecto-en-casa-que-pasa.html">Salud mental y autocuidado en tiempos de cuarentena. Conoce el Proyecto “En casa, ¿qué pasa?”</a></li>
+<li><time datetime="2020-03-27">27 de marzo de 2020</time> — <a href="sociedades-cientificas-exigen-a-pinera-que-declare-cuarentena-nacional-obligatoria-para-ap.html">Sociedades científicas exigen a Piñera que declare cuarentena nacional obligatoria para aplanar curva de propagación del COVID-19</a></li>
+<li><time datetime="2020-03-18">18 de marzo de 2020</time> — <a href="proteina-asociada-a-stress-relaciona-desordenes-metabolicos-con-alzheimer.html">Proteína asociada a stress relaciona desordenes metabólicos con Alzheimer</a></li>
+<li><time datetime="2020-03-10">10 de marzo de 2020</time> — <a href="ibro-statement-on-the-covid-19-outbreak.html">IBRO Statement on the COVID-19 Outbreak</a></li>
+<li><time datetime="2020-03-06">6 de marzo de 2020</time> — <a href="encuentro-de-mujeres-cientificas-en-el-dia-internacional-de-la-mujer.html">Encuentro de mujeres científicas en el día internacional de la mujer</a></li>
+<li><time datetime="2020-03-06">6 de marzo de 2020</time> — <a href="bilinguismo-como-factor-de-reserva-cognitiva-contra-la-demencia.html">Bilingüismo como factor de reserva cognitiva contra la demencia</a></li>
+<li><time datetime="2020-02-27">27 de febrero de 2020</time> — <a href="investigadores-del-mind-institute-uc-davis-desarrollaron-aplicacion-que-permite-evaluar-co.html">Investigadores del Mind Institute (UC Davis) desarrollaron aplicación que permite evaluar con presición el procesamiento cognitivo</a></li>
+<li><time datetime="2020-02-25">25 de febrero de 2020</time> — <a href="ibro-larc-programs-2020-july-december.html">IBRO-LARC Programs 2020 (July – December)</a></li>
+<li><time datetime="2020-02-21">21 de febrero de 2020</time> — <a href="con-impresion-3d-cientificos-estudiaran-como-la-luz-del-dia-modifica-la-estructura-del-cer.html">Con impresión 3D científicos estudiarán como la luz del día modifica la estructura del cerebro</a></li>
+<li><time datetime="2020-02-14">14 de febrero de 2020</time> — <a href="la-neurociencia-en-la-eleccion-de-un-candidato-presidencial.html">La Neurociencia en la elección de un candidato presidencial</a></li>
+<li><time datetime="2020-02-13">13 de febrero de 2020</time> — <a href="aprendizaje-a-largo-plazo-requiere-de-mayor-mielina.html">Aprendizaje a largo plazo requiere de mayor mielina</a></li>
+<li><time datetime="2020-02-06">6 de febrero de 2020</time> — <a href="chilenas-descubren-molecula-que-podria-combatir-epilepsia-sin-tratamiento.html">Chilenas descubren molécula que podría combatir epilepsia sin tratamiento</a></li>
+<li><time datetime="2020-01-29">29 de enero de 2020</time> — <a href="exposicion-de-ninos-de-1-ano-a-la-contaminacion-atmosferica-esta-asociada-a-cambios-cerebr.html">Exposición de niños de 1 año a la contaminación atmosférica está asociada a cambios cerebrales estructurales a la edad de 12 años</a></li>
+<li><time datetime="2020-01-28">28 de enero de 2020</time> — <a href="modelando-la-red-social-de-neuronas.html">Modelando la red social de neuronas</a></li>
+<li><time datetime="2020-01-27">27 de enero de 2020</time> — <a href="inicio-de-la-agencia-nacional-de-investigacion-y-desarrollo.html">Inicio de la Agencia Nacional de Investigación y Desarrollo</a></li>
+<li><time datetime="2020-01-15">15 de enero de 2020</time> — <a href="doctor-trabaja-en-reprogramacion-celular-contra-vejez-de-chilenos.html">Doctor trabaja en reprogramación celular contra vejez de chilenos</a></li>
+<li><time datetime="2020-01-09">9 de enero de 2020</time> — <a href="conicyt-llega-a-su-fin-ahora-la-investigacion-cientifica-esta-en-manos-de-la-anid.html">Conicyt llega a su fin: ahora la investigación científica está en manos de la Anid</a></li>
+</ul>
+<h2 id="y2019">2019</h2>
+<ul class="lista-archivo">
+<li><time datetime="2019-12-30">30 de diciembre de 2019</time> — <a href="eduardo-guayo-rojas-una-vision-personal.html">Eduardo (Guayo) Rojas, una visión personal</a></li>
+<li><time datetime="2019-12-26">26 de diciembre de 2019</time> — <a href="invitacion-lanzamiento-agencia-nacional-de-investigacion-y-desarrollo.html">Invitación Lanzamiento Agencia Nacional de Investigación y Desarrollo</a></li>
+<li><time datetime="2019-12-23">23 de diciembre de 2019</time> — <a href="la-snc-los-saluda-en-navidad.html">¡La SNC los saluda en Navidad!</a></li>
+<li><time datetime="2019-12-18">18 de diciembre de 2019</time> — <a href="la-memoria-colectiva-influye-en-los-recuerdos-individuales-segun-la-neurociencia.html">La memoria colectiva influye en los recuerdos individuales, según la neurociencia</a></li>
+<li><time datetime="2019-11-29">29 de noviembre de 2019</time> — <a href="neurocientifico-ensena-como-lidiar-con-la-falta-de-certezas.html">Neurocientífico enseña cómo lidiar con la falta de certezas</a></li>
+<li><time datetime="2019-11-12">12 de noviembre de 2019</time> — <a href="postdoctoral-position-ipnp-paris.html">Postdoctoral position IPNP-Paris</a></li>
+<li><time datetime="2019-11-11">11 de noviembre de 2019</time> — <a href="declaracion-publica.html">Declaración Pública de la Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2019-11-04">4 de noviembre de 2019</time> — <a href="trp-channels-and-temperature-sensing-an-update.html">TRP channels and temperature sensing: an update</a></li>
+<li><time datetime="2019-11-04">4 de noviembre de 2019</time> — <a href="en-memoria-de-john-lisman-1944-2017.html">En memoria de John Lisman (1944 – 2017)</a></li>
+<li><time datetime="2019-10-30">30 de octubre de 2019</time> — <a href="como-se-dispersa-el-alzheimer-en-tu-cerebro.html">Cómo se dispersa el Alzheimer en tu cerebro</a></li>
+<li><time datetime="2019-10-18">18 de octubre de 2019</time> — <a href="chilenos-investigan-uso-de-toxina-de-marea-roja-para-combatir-la-epilepsia.html">Chilenos investigan uso de toxina de marea roja para combatir la epilepsia</a></li>
+<li><time datetime="2019-10-17">17 de octubre de 2019</time> — <a href="research-associate-position-available-at-the-laboratory-for-neurodegenerative-disease-rese.html">Research Associate position available at the Laboratory for Neurodegenerative Disease Research Ruđer Bošković Institute – Zagreb</a></li>
+<li><time datetime="2019-10-02">2 de octubre de 2019</time> — <a href="neuropolis-el-nuevo-programa-de-tvn-que-develara-de-forma-entretenida-los-secretos-del-cer.html">“Neurópolis”: El nuevo programa de TVN que develará de forma entretenida los secretos del cerebro</a></li>
+<li><time datetime="2019-09-27">27 de septiembre de 2019</time> — <a href="invitation-to-associate-with-neurology-2020-conference-at-barcelona-spain.html">Invitation to Associate with Neurology 2020 Conference at Barcelona, Spain</a></li>
+<li><time datetime="2019-09-16">16 de septiembre de 2019</time> — <a href="cebima-potenciara-estudios-sobre-patologias-cronicas-y-degenerativas-como-el-alzheimer-alt.html">Cebima potenciará estudios sobre patologías crónicas y degenerativas como el Alzheimer, alteraciones musculares, hipertensión y diabetes</a></li>
+<li><time datetime="2019-09-10">10 de septiembre de 2019</time> — <a href="conexiones-cerebrales-vinculan-el-apetito-y-estado-de-animo-en-respuesta-al-stress.html">Conexiones cerebrales vinculan el apetito y estado de ánimo en respuesta al stress</a></li>
+<li><time datetime="2019-09-02">2 de septiembre de 2019</time> — <a href="ese-misterioso-organo-llamado-cerebro.html">Ese misterioso órgano llamado cerebro</a></li>
+<li><time datetime="2019-08-28">28 de agosto de 2019</time> — <a href="proyecto-de-ley-busca-eliminar-cambio-de-hora-en-chile.html">Proyecto de ley busca eliminar cambio de hora en Chile</a></li>
+<li><time datetime="2019-08-28">28 de agosto de 2019</time> — <a href="cambios-en-los-niveles-proteicos-que-determinan-el-riesgo-de-padecer-alzheimer-han-sido-re.html">Cambios en los niveles proteicos que determinan el riesgo de padecer Alzheimer han sido relacionados con mutaciones al grupo de genes MS4A</a></li>
+<li><time datetime="2019-08-14">14 de agosto de 2019</time> — <a href="el-alzheimer-destruye-neuronas-responsables-de-mantenernos-despiertos.html">El Alzheimer destruye neuronas responsables de mantenernos despiertos</a></li>
+<li><time datetime="2019-08-14">14 de agosto de 2019</time> — <a href="nuevo-plazo-de-recepcion-de-resumenes.html">Nuevo plazo de recepción de resúmenes. XV Reunión Anual Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2019-08-05">5 de agosto de 2019</time> — <a href="eleccion-del-nuevo-directorio-de-la-sociedad-chilena-de-neurociencia-scn.html">Elección del Nuevo Directorio de la Sociedad Chilena de Neurociencia (SCN)</a></li>
+<li><time datetime="2019-08-02">2 de agosto de 2019</time> — <a href="3rd-falan-congress-september-14th-17th-2020-belem-brazil.html">3rd FALAN Congress – September 14th-17th, 2020/BELÉM, BRAZIL</a></li>
+<li><time datetime="2019-08-01">1 de agosto de 2019</time> — <a href="noqueando-al-parkinson-programa-de-neuroboxing-busca-mitigar-efectos-de-la-enfermedad-con.html">Noqueando al Parkinson: programa de Neuroboxing busca mitigar efectos de la enfermedad con deporte</a></li>
+<li><time datetime="2019-07-25">25 de julio de 2019</time> — <a href="cientificos-chilenos-estudian-trastorno-del-sueno-rem-como-antecedente-de-la-enfermedad-de.html">Científicos chilenos estudian trastorno del sueño REM como antecedente de la Enfermedad de Párkinson</a></li>
+<li><time datetime="2019-07-08">8 de julio de 2019</time> — <a href="fallecimiento-pedro-labarca.html">Fallecimiento Pedro Labarca</a></li>
+<li><time datetime="2019-06-21">21 de junio de 2019</time> — <a href="investigadores-identifican-en-ratones-una-asociacion-entre-la-proteina-capon-que-se-une-a.html">Investigadores identifican en ratones una asociación entre la proteína CAPON, que se une a Tau, y la neurodegeneración</a></li>
+<li><time datetime="2019-06-06">6 de junio de 2019</time> — <a href="llamado-simposio-de-jovenes-2019.html">Llamado Simposio de Jóvenes 2019</a></li>
+<li><time datetime="2019-06-06">6 de junio de 2019</time> — <a href="3rd-falan-meeting-september-2020.html">3rd FALAN MEETING September 2020</a></li>
+<li><time datetime="2019-06-06">6 de junio de 2019</time> — <a href="simposio-latinoamericano-ritmos-biologicos-lasc-2019-tercer-anuncio.html">Simposio Latinoamericano Ritmos Biológicos (LASC) 2019: tercer Anuncio</a></li>
+<li><time datetime="2019-05-24">24 de mayo de 2019</time> — <a href="cuenta-publica-minciencia.html">Cuenta Pública Minciencia</a></li>
+<li><time datetime="2019-05-24">24 de mayo de 2019</time> — <a href="programa-internacional-de-entrenamiento-movimientos-ritmicos-de-blomberg-brmt.html">Programa Internacional de Entrenamiento Movimientos Rítmicos de Blomberg (BRMT)</a></li>
+<li><time datetime="2019-05-23">23 de mayo de 2019</time> — <a href="compuestos-de-plantas-del-genero-ambrosia-asteraceae-podrian-proteger-las-celulas-nerviosa.html">Compuestos de plantas del género Ambrosia (Asteraceae) podrían proteger las células nerviosas del Alzheimer</a></li>
+<li><time datetime="2019-05-23">23 de mayo de 2019</time> — <a href="celulas-nerviosas-del-cerdo-revividas-tus-preguntas-respondidas.html">Células nerviosas del cerdo revividas: Tus preguntas respondidas</a></li>
+<li><time datetime="2019-05-15">15 de mayo de 2019</time> — <a href="mariane-krause-no-sacamos-nada-con-ser-top-one-en-el-desarrollo-del-vino-si-tenemos-las-ma.html">Mariane Krause: “No sacamos nada con ser Top One en el desarrollo del vino si tenemos las más altas tasas de depresión”- Diario El Mercurio</a></li>
+<li><time datetime="2019-05-10">10 de mayo de 2019</time> — <a href="los-desafios-del-nuevo-consejo-de-conicyt.html">Los desafíos del nuevo Consejo de Conicyt</a></li>
+<li><time datetime="2019-05-10">10 de mayo de 2019</time> — <a href="por-que-no-nos-podemos-hacer-cosquillas-a-nosotros-mismos-el-neurocientifico-chileno-que-b.html">¿Por qué no nos podemos hacer cosquillas a nosotros mismos? El neurocientífico chileno que busca demostrar que para el cerebro percibir es hacer</a></li>
+<li><time datetime="2019-05-06">6 de mayo de 2019</time> — <a href="cientificos-chilenos-trabajan-en-una-vacuna-de-informacion-contra-enfermedades-infecciosas.html">Científicos chilenos trabajan en una “vacuna de información” contra enfermedades infecciosas</a></li>
+<li><time datetime="2019-05-03">3 de mayo de 2019</time> — <a href="ministerio-de-ciencia-anuncia-a-mariane-krause-como-nueva-presidenta-del-consejo-de-conicy.html">Ministerio de Ciencia anuncia a Mariane Krause como nueva Presidenta del Consejo de Conicyt</a></li>
+<li><time datetime="2019-05-03">3 de mayo de 2019</time> — <a href="extension-plazo-para-presentar-simposios-y-conferencias-plenarias.html">Extension plazo para presentar simposios y conferencias plenarias</a></li>
+<li><time datetime="2019-04-29">29 de abril de 2019</time> — <a href="ministro-de-ciencia-y-el-financiamiento-cientifico-en-chile-la-discusion-sobre-el-038-del.html">Ministro de Ciencia y el financiamiento científico en Chile: “La discusión sobre el 0,38% del PIB me parece obsoleta”</a></li>
+<li><time datetime="2019-04-25">25 de abril de 2019</time> — <a href="beca-de-asistencia-a-eventos-para-estudiantes-de-doctorado-convocatoria-2019.html">Beca de asistencia a eventos para estudiantes de doctorado, Convocatoria 2019</a></li>
+<li><time datetime="2019-04-24">24 de abril de 2019</time> — <a href="concurso-para-postular-a-apoyos-a-eventos-cientificos-organizados-por-miembros-de-la-socie.html">Concurso para postular a apoyos a eventos científicos organizados por miembros de la Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2019-04-12">12 de abril de 2019</time> — <a href="lo-tengo-en-la-punta-de-la-lengua-cientificos-explican-que-pasa-en-el-cerebro.html">“Lo tengo en la punta de la lengua”: científicos explican qué pasa en el cerebro</a></li>
+<li><time datetime="2019-04-11">11 de abril de 2019</time> — <a href="lasc-2019-en-uruguay-el-registro-y-la-presentacion-abstracta-estan-abiertos.html">LASC 2019 in URUGUAY: REGISTRATION &amp; ABSTRACT SUBMISSION ARE NOW OPEN</a></li>
+<li><time datetime="2019-04-08">8 de abril de 2019</time> — <a href="informacion-de-la-society-for-neuroscience-sfn.html">Información de la Society for Neuroscience (SfN)</a></li>
+<li><time datetime="2019-03-29">29 de marzo de 2019</time> — <a href="symposium-small-brains-big-ideas-2.html">Symposium Small brains Big Ideas</a></li>
+<li><time datetime="2019-03-25">25 de marzo de 2019</time> — <a href="latin-american-training-program-application-instructions.html">Latin American Training Program Application Instructions</a></li>
+<li><time datetime="2019-03-22">22 de marzo de 2019</time> — <a href="estudio-revela-que-el-hombre-puede-percibir-el-campo-magnetico.html">Estudio revela que el hombre puede percibir el campo magnético</a></li>
+<li><time datetime="2019-03-21">21 de marzo de 2019</time> — <a href="mesa-redonda-manipulando-el-origen-de-la-vida-humana-en-que-estamos.html">Mesa redonda “Manipulando el origen de la vida humana ¿en qué estamos?”</a></li>
+<li><time datetime="2019-03-21">21 de marzo de 2019</time> — <a href="conferencia-inaugural-del-premio-nobel-dr-tim-hunt-titulada-how-to-win-a-nobel-prize-stumb.html">Conferencia inaugural del premio nobel, Dr. Tim Hunt, titulada “How to Win a Nobel Prize: stumbling on the secrets of cell division”</a></li>
+<li><time datetime="2019-03-18">18 de marzo de 2019</time> — <a href="get-ready-for-the-2019-chapter-video-challenge.html">Get Ready for the 2019 Chapter Video Challenge</a></li>
+<li><time datetime="2019-03-05">5 de marzo de 2019</time> — <a href="invitacion-al-congreso-de-la-sociedad-iberoamericana-de-enfermedades-cerebrovasculares.html">Invitación al Congreso de la Sociedad Iberoamericana de Enfermedades Cerebrovasculares</a></li>
+<li><time datetime="2019-03-04">4 de marzo de 2019</time> — <a href="4id-se-posiciona-como-lider-en-el-desarrollo-de-tecnologias-para-la-ciencia-e-investigacio.html">4ID se posiciona como líder en el desarrollo de tecnologías para la ciencia e investigación</a></li>
+<li><time datetime="2019-02-20">20 de febrero de 2019</time> — <a href="la-musica-provoca-placer-de-la-misma-manera-que-lo-hace-una-recompensa-por-comida-o-dinero.html">La música provoca placer de la misma manera que lo hace una recompensa por comida o dinero</a></li>
+<li><time datetime="2019-02-13">13 de febrero de 2019</time> — <a href="investigacion-establece-que-el-triclosan-en-bajas-concentraciones-provoca-alteracion-neuro.html">Investigación establece que el Triclosán en bajas concentraciones provoca alteración neuronal</a></li>
+<li><time datetime="2019-01-29">29 de enero de 2019</time> — <a href="llamado-a-proponer-conferencias-plenarias-y-simposios-xv-reunion-anual-de-la-sociedad-chil.html">Llamado a proponer conferencias plenarias y simposios. XV Reunión Anual de la Sociedad Chilena de Neurociencias</a></li>
+<li><time datetime="2019-01-28">28 de enero de 2019</time> — <a href="grupo-de-investigacion-aleman-demuestra-que-una-proteina-muscular-puede-ser-util-para-la-r.html">Grupo de investigación alemán demuestra que una proteína muscular puede ser útil para la regeneración de células nerviosas</a></li>
+<li><time datetime="2019-01-07">7 de enero de 2019</time> — <a href="mario-luxoro-a-dos-anos-de-su-fallecimiento.html">Mario Luxoro, a dos años de su fallecimiento</a></li>
+<li><time datetime="2019-01-03">3 de enero de 2019</time> — <a href="profesora-cecilia-hidalgo-es-la-nueva-presidenta-de-la-academia-chilena-de-ciencias.html">Profesora Cecilia Hidalgo es la nueva presidenta de la Academia Chilena de Ciencias</a></li>
+</ul>
+<h2 id="y2018">2018</h2>
+<ul class="lista-archivo">
+<li><time datetime="2018-12-20">20 de diciembre de 2018</time> — <a href="premian-estudios-asociados-al-envejecimiento.html">Premian estudios asociados al envejecimiento</a></li>
+<li><time datetime="2018-12-17">17 de diciembre de 2018</time> — <a href="andres-couve-es-nombrado-como-nuevo-ministro-de-ciencia-tecnologia-conocimiento-e-innovaci.html">Andrés Couve es nombrado como nuevo ministro de Ciencia, Tecnología, Conocimiento e Innovación</a></li>
+<li><time datetime="2018-12-14">14 de diciembre de 2018</time> — <a href="help-us-to-promote-sfns-virtual-conference.html">Help us to Promote SfN’s Virtual Conference</a></li>
+<li><time datetime="2018-11-26">26 de noviembre de 2018</time> — <a href="max-planck-meets-valparaiso.html">Max planck meets Valparaíso</a></li>
+<li><time datetime="2018-11-13">13 de noviembre de 2018</time> — <a href="invitacion-conferencia-el-lenguaje-del-cerebro.html">Invitación conferencia: “El lenguaje del Cerebro”</a></li>
+<li><time datetime="2018-11-13">13 de noviembre de 2018</time> — <a href="seminario-extraordinario-the-role-of-glutamate-receptors-in-constructing-cortical-inhibito.html">Seminario Extraordinario “The role of glutamate receptors in constructing cortical inhibitory circuits in health and disease”</a></li>
+<li><time datetime="2018-11-08">8 de noviembre de 2018</time> — <a href="citacion-a-asamblea-general-ordinaria-de-socios.html">Citación a Asamblea General Ordinaria de Socios</a></li>
+<li><time datetime="2018-10-31">31 de octubre de 2018</time> — <a href="cientificos-del-bni-buscan-construir-un-cyborg-para-combatir-enfermedades-neurodegenerativ.html">Científicos del BNI buscan construir un cyborg para combatir enfermedades neurodegenerativas</a></li>
+<li><time datetime="2018-10-31">31 de octubre de 2018</time> — <a href="ganadoras-del-premio-loreal-chile-unesco-for-women-in-science-2018.html">Ganadoras del Premio L’Oréal Chile – UNESCO “For Women In Science” 2018</a></li>
+<li><time datetime="2018-10-26">26 de octubre de 2018</time> — <a href="estudios-realizados-por-el-bni-apuntan-hacia-la-terapia-genica-para-el-tratamiento-de-enfe.html">Estudios realizados por el BNI apuntan hacia la terapia génica para el tratamiento de enfermedades neurodegenerativas</a></li>
+<li><time datetime="2018-10-12">12 de octubre de 2018</time> — <a href="el-estres-excesivo-durante-la-infancia-disminuye-la-capacidad-de-resiliencia.html">El estrés excesivo durante la infancia disminuye la capacidad de resiliencia</a></li>
+<li><time datetime="2018-08-16">16 de agosto de 2018</time> — <a href="investigadores-de-la-usach-desarrollan-formulacion-para-tratar-crisis-de-epilepsia.html">Investigadores de la USACH desarrollan formulación para tratar crisis de epilepsia</a></li>
+<li><time datetime="2018-08-09">9 de agosto de 2018</time> — <a href="neurocientificos-aseguran-que-el-cambio-de-horario-debiese-adaptarse-al-horario-natural.html">Neurocientíficos aseguran que el cambio de horario debiese adaptarse al horario natural</a></li>
+<li><time datetime="2018-08-03">3 de agosto de 2018</time> — <a href="investigadores-de-neurociencias-colaboraran-con-el-desarrollo-minero.html">Investigadores de Neurociencias colaborarán con el desarrollo minero</a></li>
+<li><time datetime="2018-08-01">1 de agosto de 2018</time> — <a href="concurso-par-explora.html">Concurso PAR Explora</a></li>
+<li><time datetime="2018-07-24">24 de julio de 2018</time> — <a href="reciente-estudio-describe-nueva-funcion-para-la-proteina-ire1.html">Reciente estudio describe nueva función para la proteína IRE1</a></li>
+<li><time datetime="2018-07-23">23 de julio de 2018</time> — <a href="young-neuroscientists-symposium.html">Young Neuroscientists Symposium</a></li>
+<li><time datetime="2018-07-20">20 de julio de 2018</time> — <a href="se-extiende-plazo-recepcion-de-resumenes-r-anual-conjunta-2018.html">Se extiende plazo Recepción de Resúmenes R.anual conjunta 2018</a></li>
+<li><time datetime="2018-07-18">18 de julio de 2018</time> — <a href="recordatorio-20-de-julio-vence-el-plazo-para-envio-de-resumenes-de-la-r-anual-conjunta-201.html">RECORDATORIO: 20 de Julio vence el plazo para envío de resúmenes de la R. Anual Conjunta 2018</a></li>
+<li><time datetime="2018-07-13">13 de julio de 2018</time> — <a href="liquenes-antarticos-como-tratamiento-del-alzheimer.html">Líquenes antárticos como tratamiento del Alzheimer</a></li>
+<li><time datetime="2018-06-29">29 de junio de 2018</time> — <a href="la-estimulacion-de-la-serotonina-aumentaria-la-tasa-de-aprendizaje.html">La estimulación de la Serotonina aumentaría la tasa de aprendizaje</a></li>
+<li><time datetime="2018-06-26">26 de junio de 2018</time> — <a href="call-for-participation-in-the-young-neuroscientists-symposium.html">Call for participation in the Young Neuroscientists Symposium</a></li>
+<li><time datetime="2018-06-21">21 de junio de 2018</time> — <a href="convocatoria-premio-cientifico-joven-2018.html">Convocatoria Premio Científico Joven 2018</a></li>
+<li><time datetime="2018-06-20">20 de junio de 2018</time> — <a href="chocolate-amargo-como-regulador-de-la-salud-mental.html">Chocolate amargo como regulador de la salud mental</a></li>
+<li><time datetime="2018-06-20">20 de junio de 2018</time> — <a href="seminario-del-departamento-de-fisiologia-2.html">Seminario del Departamento de Fisiología</a></li>
+<li><time datetime="2018-06-11">11 de junio de 2018</time> — <a href="conferencia-ciencia-aprendizaje-y-educacion-ejemplos-y-reflexiones-para-una-transferencia.html">Conferencia “Ciencia, aprendizaje y educación: Ejemplos y reflexiones para una transferencia exitosa” / 25 de junio, 8:30 hrs. Auditorio Escuela de Psicología UC</a></li>
+<li><time datetime="2018-06-08">8 de junio de 2018</time> — <a href="postdoctoral-position-2.html">Postdoctoral Position</a></li>
+<li><time datetime="2018-06-06">6 de junio de 2018</time> — <a href="el-alto-consumo-de-sal-perjudicaria-la-funcion-cognitiva.html">El alto consumo de sal perjudicaría la función cognitiva</a></li>
+<li><time datetime="2018-05-31">31 de mayo de 2018</time> — <a href="la-dra-andrea-paula-lima-investiga-tratamiento-para-revertir-el-deterioro-cognitivo-del-al.html">La Dra. Andrea Paula Lima investiga tratamiento para revertir el deterioro cognitivo del Alzheimer.</a></li>
+<li><time datetime="2018-05-29">29 de mayo de 2018</time> — <a href="investigadores-del-centro-interdisciplinario-de-neurociencias-de-valparaiso-investigan-la.html">Investigadores del Centro Interdisciplinario de Neurociencias de Valparaíso investigan la relación de una proteína con la sordera hereditaria.</a></li>
+<li><time datetime="2018-05-29">29 de mayo de 2018</time> — <a href="circular-n-1-mayo-2018-reunion-anual-conjunta.html">CIRCULAR N° 1 – Mayo 2018 – Reunión Anual Conjunta</a></li>
+<li><time datetime="2018-05-25">25 de mayo de 2018</time> — <a href="investigan-el-rol-de-neuropepticos-en-el-proceso-de-depresion-y-stress.html">Investigan el rol de neuropépticos en el proceso de depresión y stress</a></li>
+<li><time datetime="2018-05-18">18 de mayo de 2018</time> — <a href="se-extiende-plazo-hasta-el-1-de-junio-llamado-a-proponer-simposios-y-conferencias-r-anual.html">Se extiende plazo hasta el 1 de junio- llamado a proponer simposios y conferencias R.Anual conjunta</a></li>
+<li><time datetime="2018-05-18">18 de mayo de 2018</time> — <a href="investigadores-de-la-ucla-transfirieron-memoria-entre-caracoles.html">Investigadores de la UCLA transfirieron memoria entre caracoles.</a></li>
+<li><time datetime="2018-05-11">11 de mayo de 2018</time> — <a href="premio-anual-dr-federico-leighton-a-las-mejores-tesis-2018.html">Premio Anual Dr. Federico Leighton a las Mejores Tesis 2018</a></li>
+<li><time datetime="2018-05-10">10 de mayo de 2018</time> — <a href="una-perspectiva-biologica-en-cuanto-al-debate-del-cambio-de-horarios.html">Una perspectiva biológica en cuanto al debate del cambio de horarios</a></li>
+<li><time datetime="2018-05-09">9 de mayo de 2018</time> — <a href="nominate-a-fellow-scientist-for-the-2018-awards.html">Nominate a Fellow Scientist for the 2018 Awards</a></li>
+<li><time datetime="2018-05-07">7 de mayo de 2018</time> — <a href="international-symposium-omics-and-health.html">International Symposium “Omics and Health”</a></li>
+<li><time datetime="2018-04-24">24 de abril de 2018</time> — <a href="llamado-scn-a-proponer-simposios-r-anual-conjunta-2018.html">Llamado SCN a Proponer Simposios R.Anual conjunta 2018</a></li>
+<li><time datetime="2018-04-18">18 de abril de 2018</time> — <a href="concurso-escolar-proyecto-1000-genomas.html">Concurso escolar: proyecto 1000 genomas</a></li>
+<li><time datetime="2018-04-18">18 de abril de 2018</time> — <a href="marcha-por-la-ciencia-y-el-conocimiento.html">Marcha por la ciencia y el conocimiento</a></li>
+<li><time datetime="2018-04-18">18 de abril de 2018</time> — <a href="3rd-protein-biophysics-santiago-de-chile-segunda-tanda-de-registros.html">3rd Protein Biophysics Santiago de Chile – Segunda tanda de Registros</a></li>
+<li><time datetime="2018-04-16">16 de abril de 2018</time> — <a href="oportunidad-de-estudios-de-doctorado-en-mainz-alemania.html">Oportunidad de Estudios de Doctorado en Mainz, Alemania</a></li>
+<li><time datetime="2018-04-13">13 de abril de 2018</time> — <a href="beca-de-asistencia-a-eventos-para-estudiantes-de-doctorado-convocatoria-2018-becas-para-es.html">Beca de Asistencia a Eventos para Estudiantes de Doctorado – Convocatoria 2018 | Becas para Estudios de Postgrado en Chile y en el Extranjero</a></li>
+<li><time datetime="2018-04-09">9 de abril de 2018</time> — <a href="los-investigadores-christian-gonzalez-miguel-allende-y-sergio-lavandero-se-refieren-al-pro.html">Los investigadores Christian González, Miguel Allende y Sergio Lavandero se refieren al proyecto 1000 Genomas, proyecto chileno en donde se busca caracterizar la diversidad genética humana y natural de nuestro país.</a></li>
+<li><time datetime="2018-04-09">9 de abril de 2018</time> — <a href="se-prueba-en-chile-innovadora-terapia-contra-el-parkinson-desarrollada-por-romulo-fuentes.html">Se prueba en Chile innovadora terapia contra el Parkinson, desarrollada por Rómulo Fuentes, investigador de la Facultad de Medicina de la Universidad de Chile.</a></li>
+<li><time datetime="2018-03-29">29 de marzo de 2018</time> — <a href="doctor-otto-dorr-zegers-premio-nacional-de-medicina-2018-la-psiquiatria-ha-sido-muy-maltra.html">Doctor Otto Dörr Zegers, Premio Nacional de Medicina 2018: “La psiquiatría ha sido muy maltratada en los últimos años en Chile”</a></li>
+<li><time datetime="2018-03-27">27 de marzo de 2018</time> — <a href="libro-del-doctor-francisco-aboitiz-busca-responder-el-origen-del-lenguaje-en-el-ser-humano.html">Libro del doctor Francisco Aboitiz busca responder el origen del lenguaje en el ser humano</a></li>
+<li><time datetime="2018-03-23">23 de marzo de 2018</time> — <a href="international-brain-bee-executive-director-position-open.html">International Brain Bee Executive Director position open</a></li>
+<li><time datetime="2018-03-14">14 de marzo de 2018</time> — <a href="a-los-76-anos-muere-stephen-hawking-el-mas-celebre-fisico-desde-einstein.html">A los 76 años muere Stephen Hawking, el más célebre físico desde Einstein</a></li>
+<li><time datetime="2018-03-09">9 de marzo de 2018</time> — <a href="seminario-extraordinario-conversaciones-sobre-neuromedicina.html">Seminario Extraordinario – Conversaciones sobre Neuromedicina</a></li>
+<li><time datetime="2018-03-07">7 de marzo de 2018</time> — <a href="tecnico-de-laboratorio-proyecto-fondecyt.html">Técnico de Laboratorio – Proyecto FONDECYT</a></li>
+<li><time datetime="2018-01-23">23 de enero de 2018</time> — <a href="proyecto-fondo-fortalecimiento-usa1799.html">Proyecto Fondo Fortalecimiento USA1799</a></li>
+<li><time datetime="2018-01-18">18 de enero de 2018</time> — <a href="cinv-postdoctoral-fellowship-program-2018.html">CINV Postdoctoral Fellowship Program 2018</a></li>
+<li><time datetime="2018-01-17">17 de enero de 2018</time> — <a href="postdoctoral-position-in-stress-and-neuropsychiatric-disorders.html">Postdoctoral Position in Stress and Neuropsychiatric Disorders</a></li>
+<li><time datetime="2018-01-15">15 de enero de 2018</time> — <a href="open-applications-postdoctoral-bridge-fellowship-bni.html">Open applications – Postdoctoral Bridge Fellowship BNI</a></li>
+<li><time datetime="2018-01-05">5 de enero de 2018</time> — <a href="lanzamiento-libro-a-brain-for-speech-dr-francisco-aboitiz.html">Lanzamiento Libro “A Brain for Speech” Dr. Francisco Aboitiz</a></li>
+<li><time datetime="2018-01-02">2 de enero de 2018</time> — <a href="invitacion-al-simposio-de-actualizaciones-en-psiquiatria-y-neurologia.html">Invitación al Simposio de Actualizaciones en Psiquiatría y Neurología</a></li>
+<li><time datetime="2018-01-02">2 de enero de 2018</time> — <a href="ricardo-miledi-1927-2017.html">Ricardo Miledi (1927-2017)</a></li>
+</ul>
+<h2 id="y2017">2017</h2>
+<ul class="lista-archivo">
+<li><time datetime="2017-12-06">6 de diciembre de 2017</time> — <a href="oferta-de-cargo-postdoc-valparaiso-proyesto-anillo-act1403.html">Oferta de Cargo POSTDOC VALPARAISO – Proyesto Anillo ACT1403</a></li>
+<li><time datetime="2017-11-30">30 de noviembre de 2017</time> — <a href="u-mayor-abre-postulaciones-para-prestigioso-doctorado-en-neurobiologia.html">U. Mayor abre postulaciones para prestigioso doctorado en Neurobiología</a></li>
+<li><time datetime="2017-11-13">13 de noviembre de 2017</time> — <a href="latin-american-training-program-deadline-extended-to-december-5-5-p-m-est.html">Latin American Training Program Deadline Extended to December 5, 5 P.M. EST</a></li>
+<li><time datetime="2017-11-08">8 de noviembre de 2017</time> — <a href="informacion-para-socios-de-sociedad-chilena-de-neurociencia.html">Informacion para socios de Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2017-11-07">7 de noviembre de 2017</time> — <a href="perturbateurs-endocriniens-regardez-le-film-demain-tous-cretins-en-exclusivite.html">Perturbateurs endocriniens : regardez le film « Demain, tous crétins ? » en exclusivité</a></li>
+<li><time datetime="2017-11-06">6 de noviembre de 2017</time> — <a href="charla-plenaria-antonio-roque.html">Charla Plenaria Antonio Roque</a></li>
+<li><time datetime="2017-11-06">6 de noviembre de 2017</time> — <a href="invitacion-a-seminario-dbcm-viernes-13-de-enero-2017.html">INVITACION A Seminario DBCM – viernes 13 de enero 2017</a></li>
+<li><time datetime="2017-10-02">2 de octubre de 2017</time> — <a href="se-abre-periodo-de-postulacion-de-doctorado-en-neurociencia-de-la-universidad-de-valparais.html">Se abre periodo de postulacion de Doctorado en Neurociencia de la Universidad de Valparaíso</a></li>
+<li><time datetime="2017-09-21">21 de septiembre de 2017</time> — <a href="informativo-para-los-coordinadores-de-simposios-r-anual-2017.html">Informativo para los coordinadores de Simposios R.Anual 2017</a></li>
+<li><time datetime="2017-09-15">15 de septiembre de 2017</time> — <a href="xiv-latin-american-symposium-on-chronobiology-2017-14-18-de-noviembre-en-valparaiso.html">XIV Latin American Symposium on Chronobiology 2017, 14-18 de noviembre en Valparaiso</a></li>
+<li><time datetime="2017-09-15">15 de septiembre de 2017</time> — <a href="doctorado-en-ciencias-mencion-biologia-molecular-celular-y-neurociencias-2.html">Doctorado en Ciencias mención Biología Molecular, Celular y Neurociencias</a></li>
+<li><time datetime="2017-09-11">11 de septiembre de 2017</time> — <a href="asistente-de-investigacion-para-unidad-de-microscopia.html">Asistente de Investigación para Unidad de Microscopía</a></li>
+<li><time datetime="2017-08-28">28 de agosto de 2017</time> — <a href="admision-2018-doctorado-en-neurociencia.html">Admisión 2018 Doctorado En Neurociencia</a></li>
+<li><time datetime="2017-08-24">24 de agosto de 2017</time> — <a href="seminario-del-departamento-de-fisiologia.html">Seminario del Departamento de Fisiología</a></li>
+<li><time datetime="2017-08-18">18 de agosto de 2017</time> — <a href="reservs-de-alojamiento-y-medio-de-transporte-a-castro-2017.html">Reservas de alojamiento y medio de transporte a Castro 2017</a></li>
+<li><time datetime="2017-08-14">14 de agosto de 2017</time> — <a href="premio-tesis-de-doctorado-academia-chilena-de-ciencias-2017.html">Premio Tesis de Doctorado Academia Chilena de Ciencias 2017</a></li>
+<li><time datetime="2017-08-10">10 de agosto de 2017</time> — <a href="pew-latin-american-fellows-call-for-2018-applications.html">Pew Latin American Fellows- Call For 2018 Applications</a></li>
+<li><time datetime="2017-08-09">9 de agosto de 2017</time> — <a href="se-extiende-plazo-simposio-jovenes-neurocientificos-sociedad-chilena-de-neurociencias.html">SE EXTIENDE PLAZO Simposio jóvenes neurocientíficos, sociedad chilena de neurociencias</a></li>
+<li><time datetime="2017-08-07">7 de agosto de 2017</time> — <a href="new-call-and-date-young-investigator-symposium-201718.html">New call and date: Young Investigator Symposium 2017/18</a></li>
+<li><time datetime="2017-08-01">1 de agosto de 2017</time> — <a href="curso-ibro-larc-evolution-of-brain-and-mind-que-tendra-lugar-en-el-iibce-montevideo-urugua.html">Curso IBRO LARC “Evolution of Brain and Mind” que tendrá lugar en el IIBCE (Montevideo, Uruguay)</a></li>
+<li><time datetime="2017-07-31">31 de julio de 2017</time> — <a href="bits-9th-annual-world-congress-of-neurotalk-2018.html">BIT’s 9th Annual World Congress of Neurotalk-2018</a></li>
+<li><time datetime="2017-07-27">27 de julio de 2017</time> — <a href="4th-isn-latin-american-school-of-advanced-neurochemistry.html">4th ISN Latin American School of Advanced Neurochemistry</a></li>
+<li><time datetime="2017-07-25">25 de julio de 2017</time> — <a href="1st-south-american-glia-meeting.html">1st South American Glia Meeting</a></li>
+<li><time datetime="2017-07-05">5 de julio de 2017</time> — <a href="invitacion-curso-ansiedad-estres-y-memoria-13-y-14-de-julio.html">Invitación Curso: Ansiedad, Estrés y Memoria 13 y 14 de Julio</a></li>
+<li><time datetime="2017-07-04">4 de julio de 2017</time> — <a href="fallecio-el-destacado-cientifico-dr-fernando-orrego-vicuna.html">Falleció el destacado científico Dr. Fernando Orrego Vicuña</a></li>
+<li><time datetime="2017-06-23">23 de junio de 2017</time> — <a href="new-call-falan-young-investigator-symposium-falan-yi-20172018.html">New call: FALAN YOUNG INVESTIGATOR SYMPOSIUM (FALAN-YI). 2017/2018</a></li>
+<li><time datetime="2017-06-16">16 de junio de 2017</time> — <a href="diploma-clinica-en-psicosis-y-esquizofrenicas-y-afines.html">Diploma Clínica en Psicosis y Esquizofrénicas y afines</a></li>
+<li><time datetime="2017-06-12">12 de junio de 2017</time> — <a href="call-for-participating-in-the-young-neuroscientists-symposium-2.html">Call for participating in the Young Neuroscientists Symposium</a></li>
+<li><time datetime="2017-06-08">8 de junio de 2017</time> — <a href="courses-and-latin-american-congress.html">Courses and Latin American Congress</a></li>
+<li><time datetime="2017-06-06">6 de junio de 2017</time> — <a href="call-for-participating-in-the-young-neuroscientists-symposium.html">Call for participating in the young neuroscientists symposium</a></li>
+<li><time datetime="2017-06-05">5 de junio de 2017</time> — <a href="participa-en-concurso-proyectos-explora-para-la-divulgacion-y-valoracion-de-la-ciencia-y-t.html">Participa en Concurso Proyectos Explora para la divulgación y valoración de la ciencia y tecnología 2017-2018</a></li>
+<li><time datetime="2017-06-01">1 de junio de 2017</time> — <a href="llamado-a-concurso-en-neurociencia-cognitiva.html">Llamado a concurso en Neurociencia Cognitiva</a></li>
+<li><time datetime="2017-05-26">26 de mayo de 2017</time> — <a href="premio-anual-dr-federico-leighton-2017.html">Premio Anual Dr. Federico Leighton 2017</a></li>
+<li><time datetime="2017-05-22">22 de mayo de 2017</time> — <a href="beca-de-asistencia-a-eventos-para-estudiantes-de-doctorado-convocatoria-2017.html">Beca de Asistencia a Eventos para Estudiantes de Doctorado – Convocatoria 2017</a></li>
+<li><time datetime="2017-05-15">15 de mayo de 2017</time> — <a href="comienzan-nominaciones-para-el-premio-de-tecnologia-del-milenio-2018.html">Comienzan nominaciones para el Premio de Tecnología del Milenio 2018</a></li>
+<li><time datetime="2017-05-15">15 de mayo de 2017</time> — <a href="doctoras-chilenas-combaten-mal-que-mata-neuronas-de-los-ninos.html">Doctoras chilenas combaten mal que mata neuronas de los niños</a></li>
+<li><time datetime="2017-04-06">6 de abril de 2017</time> — <a href="international-brain-research-organization-11th-ibro-kemali-prize-call-for-nominations.html">International Brain Research Organization​ ​11th IBRO Kemali Prize: Call for Nominations</a></li>
+<li><time datetime="2017-03-31">31 de marzo de 2017</time> — <a href="se-abren-las-postulaciones-al-premio-loreal-chile-unesco-for-women-in-science-2017.html">Se abren las postulaciones al Premio L´Oréal Chile – UNESCO For Women in Science 2017</a></li>
+<li><time datetime="2017-03-17">17 de marzo de 2017</time> — <a href="extension-plazo-para-proponer-simposios-y-plenarias.html">Extension plazo para proponer simposios y plenarias</a></li>
+<li><time datetime="2017-03-14">14 de marzo de 2017</time> — <a href="postdoctoral-position-anillo-de-investigacion-en-ciencia-act1403.html">Postdoctoral position Anillo de Investigacion en Ciencia ACT1403</a></li>
+<li><time datetime="2017-03-07">7 de marzo de 2017</time> — <a href="workshop-de-simulacion-molecular-estudio-estructural-y-termodinamico-de-macromoleculas.html">Workshop de Simulación Molecular “Estudio Estructural y Termodinámico de Macromoléculas”</a></li>
+<li><time datetime="2017-03-06">6 de marzo de 2017</time> — <a href="2nd-protein-biophysics-at-the-end-of-the-world.html">2nd Protein Biophysics At The End Of The World</a></li>
+<li><time datetime="2017-02-28">28 de febrero de 2017</time> — <a href="seminars-in-neurosciences-porto-alegre-brazil-20-21-march-2017.html">Seminars in Neurosciences, Porto Alegre, Brazil – 20-21 March 2017</a></li>
+<li><time datetime="2017-01-27">27 de enero de 2017</time> — <a href="emerging-concepts-in-ion-channel-biophysics-october-10-13-2017-mexico-city-mexico.html">Emerging Concepts in Ion Channel Biophysics October 10 – 13, 2017 Mexico City, Mexico</a></li>
+<li><time datetime="2017-01-27">27 de enero de 2017</time> — <a href="special-support-for-a-neuroscience-society-annual-meeting.html">Special Support for a Neuroscience Society Annual Meeting</a></li>
+<li><time datetime="2017-01-23">23 de enero de 2017</time> — <a href="llamado-a-proponer-conferencias-plenarias-y-simposios-xiii-reunion-anual-de-la-sociedad-ch.html">Llamado a proponer conferencias plenarias y simposios. XIII Reunión Anual de la Sociedad Chilena de Neurociencias</a></li>
+<li><time datetime="2017-01-19">19 de enero de 2017</time> — <a href="discover-and-achieve-you-full-creative-potential-as-postdoc-at-bni.html">Discover and achieve you full creative potential as postdoc at BNI</a></li>
+<li><time datetime="2017-01-18">18 de enero de 2017</time> — <a href="carta-adios-al-dr-mario-luxoro-el-mercurio.html">Carta “Adios al Dr. Mario Luxoro” El Mercurio</a></li>
+<li><time datetime="2017-01-13">13 de enero de 2017</time> — <a href="learn-how-sfn-serves-its-members-travel-to-japan.html">Learn How SfN Serves its Members, Travel to Japan</a></li>
+<li><time datetime="2017-01-06">6 de enero de 2017</time> — <a href="ciencia-en-conicyt-sir-phillip-campbell-editor-revista-nature.html">Ciencia en CONICYT: Sir Phillip Campbell, editor Revista Nature</a></li>
+<li><time datetime="2017-01-05">5 de enero de 2017</time> — <a href="doctorado-en-neurociencia-summer-course.html">Doctorado en Neurociencia Summer Course</a></li>
+</ul>
+<h2 id="y2016">2016</h2>
+<ul class="lista-archivo">
+<li><time datetime="2016-12-27">27 de diciembre de 2016</time> — <a href="in-memoriam-dr-mario-luxoro-mariani-q-e-p-d.html">IN MEMORIAM: DR. MARIO LUXORO MARIANI (Q.E.P.D.)</a></li>
+<li><time datetime="2016-12-20">20 de diciembre de 2016</time> — <a href="congreso-del-futuro-crece-a-11-regiones-e-impulsa-el-debate-sobre-la-ciencia-que-viene.html">Congreso del Futuro crece a 11 regiones e impulsa el debate sobre la ciencia que viene</a></li>
+<li><time datetime="2016-12-20">20 de diciembre de 2016</time> — <a href="post-doc-opportunity-in-grill-lab.html">Post-Doc Opportunity in Grill Lab</a></li>
+<li><time datetime="2016-12-19">19 de diciembre de 2016</time> — <a href="invitacion-seminario-indicadores-cientificos.html">Invitación Seminario Indicadores Científicos</a></li>
+<li><time datetime="2016-12-14">14 de diciembre de 2016</time> — <a href="invitation-symposium-cortical-networks-15th-of-dec.html">Invitation Symposium Cortical Networks 15th of Dec</a></li>
+<li><time datetime="2016-12-08">8 de diciembre de 2016</time> — <a href="two-postdoctoral-positions.html">Two postdoctoral positions</a></li>
+<li><time datetime="2016-12-07">7 de diciembre de 2016</time> — <a href="workshop-enero-2017.html">Workshop Enero 2017</a></li>
+<li><time datetime="2016-12-01">1 de diciembre de 2016</time> — <a href="newsletter-nexos-chile-usa-noviembre-2016.html">Newsletter Nexos Chile-USA: Noviembre 2016</a></li>
+<li><time datetime="2016-12-01">1 de diciembre de 2016</time> — <a href="comunicado-1-cambio-directorio-sociedad.html">COMUNICADO 1, CAMBIO DIRECTORIO SOCIEDAD</a></li>
+<li><time datetime="2016-12-01">1 de diciembre de 2016</time> — <a href="open-calls-ibro-larc-latin-american-training-program.html">Open calls IBRO LARC – Latin American Training Program – The deadline is November 30, 2016.</a></li>
+<li><time datetime="2016-12-01">1 de diciembre de 2016</time> — <a href="1er-workshor-cientifico-clinico-en-gerociencia-gero.html">1er. WORKSHOR CIENTÍFICO CLÍNICO EN GEROCIENCIA GERO</a></li>
+<li><time datetime="2016-11-23">23 de noviembre de 2016</time> — <a href="anticipan-rechazo-al-bajo-presupuesto-de-ciencia-tecnologia-e-innovacion-como-senal-al-gob.html">Anticipan rechazo “al bajo presupuesto de Ciencia, Tecnología e Innovación” como señal al gobierno</a></li>
+<li><time datetime="2016-11-23">23 de noviembre de 2016</time> — <a href="cinv-postdoctoral-fellowship-program-2017.html">CINV Postdoctoral Fellowship Program 2017</a></li>
+<li><time datetime="2016-11-16">16 de noviembre de 2016</time> — <a href="concurso-fisiologia.html">Concurso Fisiología</a></li>
+<li><time datetime="2016-11-16">16 de noviembre de 2016</time> — <a href="simposio-cerebro-en-la-ciudad-polucion-y-su-efecto-en-el-sistema-nervioso-central.html">Simposio: Cerebro en la ciudad – Polución y su efecto en el Sistema Nervioso Central</a></li>
+<li><time datetime="2016-11-16">16 de noviembre de 2016</time> — <a href="two-positions-funded-by-international-grants-are-available-for-a-2-to-3-year-period-starti.html">Two positions funded by international grants are available for a 2 to 3 year period. Starting date: March 2017 or upon agreement.</a></li>
+<li><time datetime="2016-11-08">8 de noviembre de 2016</time> — <a href="small-brains-big-ideas.html">Small Brains Big Ideas</a></li>
+<li><time datetime="2016-11-08">8 de noviembre de 2016</time> — <a href="latin-american-training-program-2.html">Latin American Training Program</a></li>
+<li><time datetime="2016-11-03">3 de noviembre de 2016</time> — <a href="latin-american-training-program-2017-call-for-applications-opens-october-31.html">Latin American Training Program 2017 Call for Applications Opens October 31</a></li>
+<li><time datetime="2016-10-28">28 de octubre de 2016</time> — <a href="simposio-historia-de-la-neurociencia-los-albores-de-la-neurociencia-espanola.html">SIMPOSIO HISTORIA DE LA NEUROCIENCIA: los albores de la neurociencia española</a></li>
+<li><time datetime="2016-10-28">28 de octubre de 2016</time> — <a href="workshop-on-proteomics-from-fundamentals-to-applications.html">WORKSHOP ON PROTEOMICS FROM FUNDAMENTALS TO APPLICATIONS</a></li>
+<li><time datetime="2016-10-13">13 de octubre de 2016</time> — <a href="open-day-doctorado-de-neurociencia.html">OPEN DAY doctorado de neurociencia</a></li>
+<li><time datetime="2016-10-13">13 de octubre de 2016</time> — <a href="simposio-en-honor-a-profesor-fernando-torrealba-martes-25-de-octubre-de-2016.html">Simposio en honor a Profesor Fernando Torrealba: Martes 25 de Octubre de 2016</a></li>
+<li><time datetime="2016-09-28">28 de septiembre de 2016</time> — <a href="satellite-events-courses-and-symposia.html">Satellite Events: Courses and Symposia</a></li>
+<li><time datetime="2016-09-26">26 de septiembre de 2016</time> — <a href="last-vacancies-for-workshop-satellite-course-oct-16.html">Last vacancies for workshop – Satellite Course Oct 16</a></li>
+<li><time datetime="2016-09-26">26 de septiembre de 2016</time> — <a href="fecha-limite-de-registro-1-de-octubre-2016.html">2nd FALAN Congress October 17-20, 2016 – Fecha límite de registro 1 de Octubre 2016</a></li>
+<li><time datetime="2016-09-20">20 de septiembre de 2016</time> — <a href="citacion-a-asamblea-general-ordinaria-de-socios-18-octubre-2016-buenos-aires.html">Citación a Asamblea General Ordinaria de Socios, 18-octubre 2016 – Buenos Aires</a></li>
+<li><time datetime="2016-09-13">13 de septiembre de 2016</time> — <a href="falan-ayuda-de-viaje-para-estudiantes.html">Falan, ayuda de viaje para estudiantes</a></li>
+<li><time datetime="2016-09-13">13 de septiembre de 2016</time> — <a href="doctorado-en-biociencias-moleculares-de-la-universidad-andres-bello.html">Doctorado en Biociencias Moleculares de la Universidad Andrés Bello</a></li>
+<li><time datetime="2016-09-08">8 de septiembre de 2016</time> — <a href="programa-de-doctorado-en-ciencias-biomedicas-proceso-de-admision-2017.html">Programa de Doctorado en Ciencias Biomédicas – Proceso de Admisión 2017</a></li>
+<li><time datetime="2016-09-08">8 de septiembre de 2016</time> — <a href="doctorado-en-ciencias-mencion-biologia-celular-y-molecular.html">Doctorado en Ciencias mención Biología Celular y Molecular</a></li>
+<li><time datetime="2016-08-31">31 de agosto de 2016</time> — <a href="seminario-extraordinario-departamento-biologia-doctorado-neurociencia.html">SEMINARIO EXTRAORDINARIO DEPARTAMENTO BIOLOGÍA DOCTORADO NEUROCIENCIA</a></li>
+<li><time datetime="2016-08-31">31 de agosto de 2016</time> — <a href="awarded-travel-grant-ibro-falan.html">Awarded Travel Grant IBRO-FALAN</a></li>
+<li><time datetime="2016-08-26">26 de agosto de 2016</time> — <a href="postdoctoral-position.html">Postdoctoral Position</a></li>
+<li><time datetime="2016-08-25">25 de agosto de 2016</time> — <a href="travel-grants-blackrock.html">Travel Grants Blackrock</a></li>
+<li><time datetime="2016-08-25">25 de agosto de 2016</time> — <a href="invitacion-seminario-de-sincronia-y-coordinacion-interpersonal-22-y-23-de-septiembre.html">Invitación Seminario de Sincronía y Coordinación Interpersonal, 22 y 23 de Septiembre</a></li>
+<li><time datetime="2016-08-17">17 de agosto de 2016</time> — <a href="seminario-iibm-uc-jose-n-onuchic-a-transferable-model-for-chromatin-folding.html">Seminario IIBM-UC José N. Onuchic: “A Transferable Model for Chromatin Folding”</a></li>
+<li><time datetime="2016-08-17">17 de agosto de 2016</time> — <a href="simposio-internacional-de-neuroinmunologia.html">Simposio Internacional de NeuroInmunología</a></li>
+<li><time datetime="2016-08-16">16 de agosto de 2016</time> — <a href="international-brain-research-organization-latin-america-regional-comittee-ibro-larc-2.html">International Brain Research Organization Latin America Regional Comittee (IBRO-LARC)</a></li>
+<li><time datetime="2016-08-11">11 de agosto de 2016</time> — <a href="congreso-falan-2016-plazo-para-envio-de-resumenes-1-de-julio.html">Congreso FALAN 2016 – Plazo para envío de resúmenes 1 de julio</a></li>
+<li><time datetime="2016-08-10">10 de agosto de 2016</time> — <a href="seminario-extraordinario-departamento-biologia-usach.html">Seminario Extraordinario departamento Biología, USACH</a></li>
+<li><time datetime="2016-08-10">10 de agosto de 2016</time> — <a href="171-estudiantes-de-doctorado-podran-participar-de-eventos-en-chile-y-el-extranjero.html">171 ESTUDIANTES DE DOCTORADO PODRÁN PARTICIPAR DE EVENTOS EN CHILE Y EL EXTRANJERO</a></li>
+<li><time datetime="2016-07-27">27 de julio de 2016</time> — <a href="boletin-san-julio-2016.html">Boletín SAN: Julio 2016</a></li>
+<li><time datetime="2016-07-19">19 de julio de 2016</time> — <a href="international-symposium-8-th-august-2016.html">International Symposium 8 th August 2016</a></li>
+<li><time datetime="2016-07-14">14 de julio de 2016</time> — <a href="travel-grants-ibro-falan-is-now-open.html">Travel Grants IBRO-FALAN is Now Open</a></li>
+<li><time datetime="2016-07-11">11 de julio de 2016</time> — <a href="premio-sociedad-de-biologia-de-chile-grupo-bios-al-cientifico-joven-mas-destacado.html">PREMIO “Sociedad de Biología de Chile-Grupo Bios al científico joven más destacado”</a></li>
+<li><time datetime="2016-07-04">4 de julio de 2016</time> — <a href="postdoctoral-research-positions-on-biomedical-neuroscience-2.html">Postdoctoral Research Positions on Biomedical Neuroscience</a></li>
+<li><time datetime="2016-07-01">1 de julio de 2016</time> — <a href="elecciones-nuevo-directorio-sociedad-chilena-de-neurociencia.html">Elecciones nuevo directorio Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2016-06-29">29 de junio de 2016</time> — <a href="instituto-max-planck-de-rosario-argentina-ofrece-posiciones-para-jefes-de-grupo-y-becas-do.html">Instituto Max Planck de Rosario, Argentina, ofrece posiciones para Jefes de Grupo y Becas Doctorales</a></li>
+<li><time datetime="2016-06-28">28 de junio de 2016</time> — <a href="concurso-contratacion-de-un-academico.html">Concurso Contratación de un Académico para la Facultad de Química y Biología Universidad de Santiago de Chile Académico Jornada Completa, para realizar DOCENCIA E INVESTIGACIÓN EN EL ÁREA DE ENZIMOLOGÍA</a></li>
+<li><time datetime="2016-06-22">22 de junio de 2016</time> — <a href="small-brains-big-ideas-biomedical-insights-from-invertebrates-practical-course-november-10.html">Small Brains, Big Ideas: Biomedical Insights from Invertebrates Practical course November 10-19 2016 Santiago, Las Cruces &amp; Valparaíso (Chile)</a></li>
+<li><time datetime="2016-06-21">21 de junio de 2016</time> — <a href="ceremonia-de-homenaje-al-dr-humberto-maturana-romesin.html">Ceremonia de homenaje al Dr. Humberto Maturana Romesín</a></li>
+<li><time datetime="2016-06-21">21 de junio de 2016</time> — <a href="sensible-fallecimiento-del-prominente-cientifico-venezolano-dr-reinaldo-dipolo.html">Sensible fallecimiento del prominente científico venezolano Dr. Reinaldo DiPolo,</a></li>
+<li><time datetime="2016-06-21">21 de junio de 2016</time> — <a href="neurotalk-2017-which-will-be-held-in-barcelona-during-may-22-24-2017.html">NeuroTalk-2017 which will be held in Barcelona during May 22-24, 2017.</a></li>
+<li><time datetime="2016-06-21">21 de junio de 2016</time> — <a href="registration-open-summer-school-medical-bionics-for-hearing-aug-27-sep-3-2016-split-croati.html">Registration Open: Summer School – Medical Bionics for Hearing, Aug 27-Sep 3, 2016, Split, Croatia</a></li>
+<li><time datetime="2016-06-21">21 de junio de 2016</time> — <a href="premio-a-la-investigacion-cientifica-se-enfoca-en-neurociencia-y-salud-mental-el-mercurio.html">Premio a la investigación científica se enfoca en neurociencia y salud mental – El Mercurio</a></li>
+<li><time datetime="2016-06-15">15 de junio de 2016</time> — <a href="convocatoria-de-trabajos-e-inscripciones-abiertas-xxii-congreso-nacional-de-psicologia-cli.html">Convocatoria de Trabajos e Inscripciones Abiertas | XXII Congreso Nacional de Psicología Clínica “Psicología y Neurociencias Hoy”</a></li>
+<li><time datetime="2016-06-15">15 de junio de 2016</time> — <a href="congreso-falan-2016.html">Congreso FALAN 2016</a></li>
+<li><time datetime="2016-06-10">10 de junio de 2016</time> — <a href="porque-se-requiere-mayor-presupuesto-para-fondecyt.html">¿Porqué se requiere mayor presupuesto para FONDECYT?</a></li>
+<li><time datetime="2016-06-09">9 de junio de 2016</time> — <a href="iv-congreso-solcema-chile-2016-celulas-madre-nueva-era-de-la-medicina.html">IV Congreso Solcema – Chile 2016. Células Madre: Nueva era de la medicina</a></li>
+<li><time datetime="2016-06-07">7 de junio de 2016</time> — <a href="brain-and-mind-research-in-the-asia-pacific-symposium-2016-centre-for-brain-research-auckl.html">Brain and Mind Research in the Asia-Pacific Symposium 2016 – Centre for Brain Research, Auckland, New Zealand</a></li>
+<li><time datetime="2016-06-06">6 de junio de 2016</time> — <a href="taller-conflictos-y-propuestas-para-la-investigacion-en-chile-16-junio.html">Taller: Conflictos y propuestas para la investigación en Chile, 16 junio</a></li>
+<li><time datetime="2016-06-01">1 de junio de 2016</time> — <a href="ibroibe-unesco-science-of-learning-fellowships.html">IBRO/IBE-Unesco Science of Learning Fellowships</a></li>
+<li><time datetime="2016-05-30">30 de mayo de 2016</time> — <a href="postulacion-a-beca-de-asistencia-a-eventos-para-estudiantes-de-doctorado.html">Postulación a beca de asistencia a eventos para estudiantes de doctorado</a></li>
+<li><time datetime="2016-05-23">23 de mayo de 2016</time> — <a href="diploma-e-learning-clinica-en-psicosis-esquizofrenicas-y-afines.html">Diploma E-Learning Clínica en Psicosis Esquizofrénicas y Afines</a></li>
+<li><time datetime="2016-05-19">19 de mayo de 2016</time> — <a href="premio-anual-dr-federico-leighton-a-las-mejores-tesis-2016.html">Premio anual Dr. Federico Leighton a las mejores tesis 2016</a></li>
+<li><time datetime="2016-04-06">6 de abril de 2016</time> — <a href="postulaciones-abiertas-desde-el-18-de-abril-al-17-de-junio-al-premio-loreal-chile-unesco-f.html">Postulaciones abiertas desde el 18 de abril al 17 de junio al Premio L´Oréal Chile – UNESCO For Women in Science 2016</a></li>
+<li><time datetime="2016-04-04">4 de abril de 2016</time> — <a href="2nd-falan-congress-october-17-20-2016-golden-center-buenos-aires-argentina.html">2nd FALAN Congress October 17-20, 2016 – Golden Center, Buenos Aires, Argentina</a></li>
+<li><time datetime="2016-04-01">1 de abril de 2016</time> — <a href="concurso-academico-la-facultad-de-ciencias-de-la-universidad-de-chile.html">Concurso Académico la Facultad de Ciencias, de la Universidad de Chile</a></li>
+<li><time datetime="2016-03-22">22 de marzo de 2016</time> — <a href="invitacion-a-red-cientifica-para-promover-la-neurociencia-en-america-latina.html">Invitación a red científica para promover la neurociencia en América Latina</a></li>
+<li><time datetime="2016-03-22">22 de marzo de 2016</time> — <a href="young-investigators-symposia-at-the-2nd-falan-congress-2.html">Young Investigators Symposia at the 2nd FALAN Congress</a></li>
+<li><time datetime="2016-03-17">17 de marzo de 2016</time> — <a href="the-living-brain.html">The Living Brain</a></li>
+<li><time datetime="2016-03-10">10 de marzo de 2016</time> — <a href="workshop-actualizations-in-membrane-trafficking-in-health-and-disease.html">Workshop “Actualizations in membrane trafficking in health and disease”</a></li>
+<li><time datetime="2016-03-09">9 de marzo de 2016</time> — <a href="young-investigators-symposia-at-the-2nd-falan-congress.html">Young Investigators Symposia at the 2nd FALAN Congress</a></li>
+<li><time datetime="2016-02-29">29 de febrero de 2016</time> — <a href="postdoctoral-positions.html">Postdoctoral Positions</a></li>
+<li><time datetime="2016-02-29">29 de febrero de 2016</time> — <a href="meeting-internacional-abril-2016.html">Meeting internacional abril 2016</a></li>
+<li><time datetime="2016-02-02">2 de febrero de 2016</time> — <a href="abiertas-las-postulaciones-a-ibro-larc-hasta-el-31-de-marzo.html">Abiertas las postulaciones a IBRO LARC, hasta el 31 de Marzo.</a></li>
+<li><time datetime="2016-01-29">29 de enero de 2016</time> — <a href="simposios-protein-biophysics-6-al-8-de-abril-u-de-chile.html">Simposio Protein Biophysics at the End of the World – 6 al 8 de Abril – Universidad de Chile</a></li>
+<li><time datetime="2016-01-15">15 de enero de 2016</time> — <a href="postdoctoral-research-positions-on-biomedical-neuroscience.html">Postdoctoral Research Positions on Biomedical Neuroscience</a></li>
+</ul>
+<h2 id="y2015">2015</h2>
+<ul class="lista-archivo">
+<li><time datetime="2015-12-09">9 de diciembre de 2015</time> — <a href="the-cajal-advanced-neuroscience-training-programme-2016.html">The CAJAL Advanced Neuroscience Training Programme 2016</a></li>
+<li><time datetime="2015-12-09">9 de diciembre de 2015</time> — <a href="nueva-maestria-internacional-en-neurociencias-2016-upch.html">NUEVA Maestria Internacional en Neurociencias 2016 UPCH</a></li>
+<li><time datetime="2015-12-09">9 de diciembre de 2015</time> — <a href="call-for-free-registrations.html">Call for Free Registrations</a></li>
+<li><time datetime="2015-11-20">20 de noviembre de 2015</time> — <a href="congreso-cincuentenario-10-premios-nobel-de-ciencias-y-medallas-fields-visitan-la-facultad.html">Congreso Cincuentenario – 10 Premios Nobel de Ciencias y Medallas Fields visitan la facultad</a></li>
+<li><time datetime="2015-11-11">11 de noviembre de 2015</time> — <a href="bni-proximas-charlas-conversaciones-sobre-neuromedicina-noviembre-2015.html">BNI Próximas charlas Conversaciones sobre Neuromedicina – Noviembre 2015</a></li>
+<li><time datetime="2015-11-10">10 de noviembre de 2015</time> — <a href="invitacion-a-toda-la-comunidad-cientifica.html">Invitación a toda la comunidad Científica</a></li>
+<li><time datetime="2015-11-09">9 de noviembre de 2015</time> — <a href="recordatorio-from-neurons-and-networks-to-behavior-10-11-no.html">RECORDATORIO “From Neurons and Networks to Behavior”, 10-11 No</a></li>
+<li><time datetime="2015-11-09">9 de noviembre de 2015</time> — <a href="iii-escuela-latinoamericana-de-neuroetologia.html">III Escuela Latinoamericana de Neuroetología</a></li>
+<li><time datetime="2015-11-04">4 de noviembre de 2015</time> — <a href="meeting-cinv-max-planck-institute.html">Meeting CINV-MAX Planck Institute</a></li>
+<li><time datetime="2015-11-02">2 de noviembre de 2015</time> — <a href="llamado-a-presentacion-de-propuestas-de-cursos-falan2016.html">Llamado a presentación de Propuestas de Cursos FALAN2016</a></li>
+<li><time datetime="2015-10-28">28 de octubre de 2015</time> — <a href="international-phd-program-announcement-spring-selection-2016.html">International PhD Program – Announcement Spring Selection 2016</a></li>
+<li><time datetime="2015-10-21">21 de octubre de 2015</time> — <a href="2nd-falan-congress.html">2nd FALAN Congress</a></li>
+<li><time datetime="2015-10-21">21 de octubre de 2015</time> — <a href="open-day-doctorado-neurociencia-usach.html">OPEN DAY Doctorado Neurociencia USACH</a></li>
+<li><time datetime="2015-10-20">20 de octubre de 2015</time> — <a href="ceremonia-de-homenaje-al-dr-mario-luxoro-mariani.html">Ceremonia de homenaje al Dr. Mario Luxoro Mariani</a></li>
+<li><time datetime="2015-10-19">19 de octubre de 2015</time> — <a href="from-neurons-and-networks-to-behavior-workshop-and-conference.html">From Neurons and Networks to Behavior – Workshop and Conference</a></li>
+<li><time datetime="2015-10-13">13 de octubre de 2015</time> — <a href="quieres-ser-parte-de-un-laboratorio-interdisciplinario-de-neurociencia-esta-es-su-oportuni.html">¿Quieres ser parte de un laboratorio interdisciplinario de Neurociencia? Esta es su oportunidad.</a></li>
+<li><time datetime="2015-10-05">5 de octubre de 2015</time> — <a href="conversaciones-sobre-neuromedicina-the-functional-organization-of-axon-in-health-and-disea.html">Conversaciones sobre Neuromedicina: “The functional organization of axon in health and disease”</a></li>
+<li><time datetime="2015-10-05">5 de octubre de 2015</time> — <a href="iii-chilean-congress-of-cell-therapy-and-regenerative-medicine-2.html">III Chilean Congress of Cell Therapy and Regenerative Medicine</a></li>
+<li><time datetime="2015-10-02">2 de octubre de 2015</time> — <a href="grass-fellowships-in-neuroscience-2.html">Grass Fellowships in Neuroscience</a></li>
+<li><time datetime="2015-10-02">2 de octubre de 2015</time> — <a href="reunion-nexos-chile-usa.html">Reunión Nexos Chile-USA</a></li>
+<li><time datetime="2015-10-02">2 de octubre de 2015</time> — <a href="doctorado-en-ciencia-mencion-neurociencia-acreditado-2011-2017.html">Doctorado en Ciencia Mención Neurociencia – Acreditado 2011-2017</a></li>
+<li><time datetime="2015-09-22">22 de septiembre de 2015</time> — <a href="doctorado-en-ciencias-mencion-biologia-molecular-celular-y-neurociencias.html">Doctorado en Ciencias Mención Biología Molecular Celular y Neurociencias</a></li>
+<li><time datetime="2015-09-21">21 de septiembre de 2015</time> — <a href="seminario-animal-models-of-chronic-pain-comorbidities.html">Seminario: “Animal Models of Chronic Pain Comorbidities”</a></li>
+<li><time datetime="2015-09-14">14 de septiembre de 2015</time> — <a href="spring-symposium-in-trp-channels-september-28-29-2015.html">Spring Symposium in TRP Channels, September 28-29, 2015</a></li>
+<li><time datetime="2015-09-11">11 de septiembre de 2015</time> — <a href="enp-chilean-internships-2016.html">ENP-CHILEAN INTERNSHIPS 2016</a></li>
+<li><time datetime="2015-09-11">11 de septiembre de 2015</time> — <a href="admision-2016-doctorado-en-ciencias-biomedicas.html">Admisión 2016 Doctorado en Ciencias Biomédicas</a></li>
+<li><time datetime="2015-09-03">3 de septiembre de 2015</time> — <a href="presentacion-de-falan-2016.html">Presentación de FALAN 2016</a></li>
+<li><time datetime="2015-08-25">25 de agosto de 2015</time> — <a href="i-jornada-de-capacitacion-en-tematica-de-drogas-y-alcohol.html">I Jornada de Capacitación en Temática de Drogas y Alcohol</a></li>
+<li><time datetime="2015-08-21">21 de agosto de 2015</time> — <a href="postulaciones-abiertas-becas-puente-fellowships-november-2015.html">POSTULACIONES ABIERTAS-BECAS PUENTE-Fellowships-November 2015</a></li>
+<li><time datetime="2015-08-01">1 de agosto de 2015</time> — <a href="max-planck-international-neuroscience-symposium-synapses-and-circuits-september-3-4-2015-b.html">Max Planck International Neuroscience Symposium Synapses and Circuits, September 3-4, 2015, Buenos Aires, Argentina</a></li>
+<li><time datetime="2015-07-29">29 de julio de 2015</time> — <a href="iii-chilean-congress-of-cell-therapy-and-regenerative-medicine.html">III Chilean Congress of Cell Therapy and Regenerative Medicine</a></li>
+<li><time datetime="2015-07-21">21 de julio de 2015</time> — <a href="charlas-dr-honoris-causa.html">Charlas Dr. Honoris Causa</a></li>
+<li><time datetime="2015-07-15">15 de julio de 2015</time> — <a href="xxii-congress-international-society-for-neuroethology-march-30-april-3-radisson-montevideo.html">XXII Congress.- International Society for Neuroethology March 30 – APRIL 3. Radisson Montevideo Victoria Plaza Hotel</a></li>
+<li><time datetime="2015-07-10">10 de julio de 2015</time> — <a href="seminario-del-profesor-erick-de-vries-del-departamento-de-medicina-nuclear-y-molecular-de.html">Invitación seminario del profesor Erick De Vries del Departamento de Medicina Nuclear y Molecular de la Universidad de Groningen, Holanda.</a></li>
+<li><time datetime="2015-07-03">3 de julio de 2015</time> — <a href="principal-investigator-pi-with-the-title-of-max-planck-tandem-group-leader-mptgl-valparais.html">Principal Investigator (PI), with the Title of Max Planck Tandem Group Leader (MPTGL) : Valparaiso, Chile</a></li>
+<li><time datetime="2015-07-01">1 de julio de 2015</time> — <a href="informacion-xxx-reunion-anual-schcf.html">Información – XI Reunión Anual SCN</a></li>
+<li><time datetime="2015-06-12">12 de junio de 2015</time> — <a href="neurocientifico-habla-del-cambio-de-horario.html">Neurocientifico habla del cambio de horario</a></li>
+<li><time datetime="2015-06-12">12 de junio de 2015</time> — <a href="the-trainee-professional-development-award-deadline-has-been-extended-to-tuesday-june-15-a.html">The Trainee Professional Development Award deadline has been extended to Tuesday, June 15 at 12:00 pm eastern time.</a></li>
+<li><time datetime="2015-06-12">12 de junio de 2015</time> — <a href="beca-asistencia-a-eventos-y-cursos-cortos-para-estudiantes-de-doctorado-convocatoria-2015.html">Beca asistencia a eventos y cursos cortos para estudiantes de Doctorado – Convocatoria 2015</a></li>
+<li><time datetime="2015-06-12">12 de junio de 2015</time> — <a href="publiciten-vuestra-actividades-en-el-stand-de-falan-en-rio.html">Publiciten vuestra actividades en el stand de FALAN en Rio</a></li>
+<li><time datetime="2015-06-05">5 de junio de 2015</time> — <a href="trainee-professional-development-awards-para-asistir-a-sfn.html">Trainee Professional Development Awards para asistir a SfN</a></li>
+<li><time datetime="2015-06-05">5 de junio de 2015</time> — <a href="nota-aclaratoria-doctorado-en-neurociencia-usach.html">Nota aclaratoria Doctorado en Neurociencia USACH</a></li>
+<li><time datetime="2015-05-12">12 de mayo de 2015</time> — <a href="alojamientos-recomendados.html">ALOJAMIENTOS RECOMENDADOS</a></li>
+<li><time datetime="2015-05-12">12 de mayo de 2015</time> — <a href="costos-de-inscripcion-de-personas-y-de-resumenes-cientificos.html">Costos de inscripción de personas y de resúmenes científicos</a></li>
+<li><time datetime="2015-05-06">6 de mayo de 2015</time> — <a href="ictp-saifr-school-on-complex-networks-and-applications-to-neuroscience.html">ICTP-SAIFR School on Complex Networks and Applications to Neuroscience</a></li>
+<li><time datetime="2015-04-28">28 de abril de 2015</time> — <a href="call-for-participating-in-the-symposium-of-young-neuroscientists-2.html">Call For Participating In The Symposium Of Young Neuroscientists</a></li>
+<li><time datetime="2015-04-22">22 de abril de 2015</time> — <a href="se-abren-las-postulaciones-al-premio-loreal-chile-unesco-for-women-in-science-2015.html">Se abren las postulaciones al Premio L’Oreal Chile – UNESCO for Women in Science 2015</a></li>
+<li><time datetime="2015-04-13">13 de abril de 2015</time> — <a href="beca-puente-para-puesto-de-investigador-postdoctoral.html">Beca puente para puesto de investigador PostDoctoral</a></li>
+<li><time datetime="2015-04-13">13 de abril de 2015</time> — <a href="nexos-chile-usa-te-invita-a-participar-en-el-programa-brainexchange.html">¡Nexos Chile-USA te invita a participar en el programa braiNEXchange!</a></li>
+<li><time datetime="2015-04-06">6 de abril de 2015</time> — <a href="conversaciones-sobre-neuromedicina-facultad-de-medicina-universidad-de-chile-1300-hrs.html">Conversaciones sobre Neuromedicina.- Facultad de Medicina Universidad de Chile – 13:00 hrs</a></li>
+<li><time datetime="2015-03-30">30 de marzo de 2015</time> — <a href="invitacion-membresia-de-la-society-for-social-neuroscience.html">Invitación: membresía de la Society for Social Neuroscience</a></li>
+<li><time datetime="2015-03-27">27 de marzo de 2015</time> — <a href="latin-american-training-program.html">Latin American Training Program</a></li>
+<li><time datetime="2015-03-23">23 de marzo de 2015</time> — <a href="andean-school-of-neuroethology-may-10th-24th-2015-peru.html">Andean School of Neuroethology._ May 10th-24th, 2015. Perú</a></li>
+<li><time datetime="2015-03-19">19 de marzo de 2015</time> — <a href="deadline-extended-behaviour-and-neural-systems-cajal-advanced-neuroscience-training-progra.html">(DEADLINE EXTENDED) Behaviour and Neural Systems – CAJAL Advanced Neuroscience Training Programme (12 July – 1 August 2015 – Lisbon, Portugal)</a></li>
+<li><time datetime="2015-03-18">18 de marzo de 2015</time> — <a href="call-for-participating-in-the-symposium-of-young-neuroscientists.html">CALL FOR PARTICIPATING IN THE SYMPOSIUM OF YOUNG NEUROSCIENTISTS</a></li>
+<li><time datetime="2015-03-17">17 de marzo de 2015</time> — <a href="xii-congressb-icn-2016-uruguay.html">XII Congressb ICN 2016 Uruguay</a></li>
+<li><time datetime="2015-03-17">17 de marzo de 2015</time> — <a href="falan-satellite-courses-in-ibro-9th-world-congress-july-7-11-2015-rio-de-janeiro-brazil.html">FALAN satellite courses in IBRO 9th World Congress July 7-11, 2015, Rio de Janeiro, Brazil</a></li>
+<li><time datetime="2015-03-16">16 de marzo de 2015</time> — <a href="ultimo-llamado-a-proponer-simposios-y-conferencias-2.html">Último llamado a proponer Simposios y Conferencias</a></li>
+<li><time datetime="2015-03-13">13 de marzo de 2015</time> — <a href="workshop-internacional-programa-raices-mincyt.html">Workshop Internacional Programa Raíces (MINCyT)</a></li>
+<li><time datetime="2015-03-11">11 de marzo de 2015</time> — <a href="la-matematica-como-herramienta-para-entender-la-biologia-la-biologia-como-fuente-de-proble.html">“La matemática como herramienta para entender la biología / la biología como fuente de problemas matemáticos”</a></li>
+<li><time datetime="2015-03-10">10 de marzo de 2015</time> — <a href="coimbra-group-scholarship-programme-for-young-professors-and-researchers-from-latin-americ.html">Coimbra Group Scholarship Programme for Young Professors and Researchers from Latin American Universities 2015</a></li>
+<li><time datetime="2015-03-09">9 de marzo de 2015</time> — <a href="2nd-workshop-on-protein-crystallization-and-crystallography.html">2nd Workshop on Protein Crystallization and Crystallography</a></li>
+<li><time datetime="2015-03-05">5 de marzo de 2015</time> — <a href="international-workshop-recent-advances-in-als-from-discovery-to-therapies-march-17th-2015.html">International Workshop “Recent Advances in ALS” from discovery to therapies, March 17th, 2015</a></li>
+<li><time datetime="2015-03-02">2 de marzo de 2015</time> — <a href="herramientas-de-analisis-espectral-en-eeg-seminario-workshop.html">Herramientas de ANALISIS ESPECTRAL EN EEG.- Seminario + Workshop</a></li>
+<li><time datetime="2015-03-02">2 de marzo de 2015</time> — <a href="support-for-south-american-researchers.html">Support for South American researchers</a></li>
+<li><time datetime="2015-02-04">4 de febrero de 2015</time> — <a href="the-9th-canadian-ibro-school-is-taking-place-may-13-23-2015-in-vancouver-british-columbia.html">The 9th Canadian IBRO School is taking place May 13 – 23, 2015 in Vancouver, British Columbia, Canada.</a></li>
+<li><time datetime="2015-01-30">30 de enero de 2015</time> — <a href="ultimo-llamado-a-proponer-simposios-y-conferencias.html">Último llamado a proponer Simposios y Conferencias</a></li>
+<li><time datetime="2015-01-13">13 de enero de 2015</time> — <a href="llamado-a-proponer-simposios-y-conferencias.html">Llamado a Proponer Simposios y Conferencias</a></li>
+<li><time datetime="2015-01-09">9 de enero de 2015</time> — <a href="charla-spatio-temporal-dynamics-of-the-sensory-processing-dysfunction-in-schizophrenia.html">Charla: “Spatio-temporal dynamics of the sensory processing dysfunction in Schizophrenia” – Dra. Antigona Martinez</a></li>
+<li><time datetime="2015-01-09">9 de enero de 2015</time> — <a href="courses-at-friday-harbor-labs.html">Courses at Friday Harbor Labs</a></li>
+<li><time datetime="2015-01-09">9 de enero de 2015</time> — <a href="conferencia-magistral-the-memory-function-of-sleep-jan-born.html">Conferencia Magistral – “The memory function of sleep” – Jan Born</a></li>
+</ul>
+<h2 id="y2014">2014</h2>
+<ul class="lista-archivo">
+<li><time datetime="2014-12-24">24 de diciembre de 2014</time> — <a href="embo-workshop-march-2015.html">EMBO WORKSHOP MARCH 2015</a></li>
+<li><time datetime="2014-12-19">19 de diciembre de 2014</time> — <a href="post-doctoral-position-centro-de-investigaciones-biomedicas-universidad-andres-bello.html">Post-Doctoral position Centro de Investigaciones Biomédicas, Universidad Andrés Bello</a></li>
+<li><time datetime="2014-12-16">16 de diciembre de 2014</time> — <a href="post-doc-position-at-university-of-sao-paulo-brazil.html">Post-Doc Position at University of São Paulo-Brazil</a></li>
+<li><time datetime="2014-12-16">16 de diciembre de 2014</time> — <a href="vancouver-9th-ibro-canadian-school-of-neuroscience-the-topic-is-development-and-disease.html">Vancouver: 9th IBRO Canadian School of Neuroscience. The topic is “Development and Disease”</a></li>
+<li><time datetime="2014-11-10">10 de noviembre de 2014</time> — <a href="pontificia-universidad-catolica-de-chile-facultad-de-medicina-facultad-de-ciencias-sociale.html">Pontificia Universidad Católica de Chile Facultad de Medicina-Facultad de Ciencias Sociales</a></li>
+<li><time datetime="2014-11-05">5 de noviembre de 2014</time> — <a href="the-international-max-planck-research-school-for-molecular-and-cellular-life-sciences.html">International PhD Program – Announcement Spring Selection 2015</a></li>
+<li><time datetime="2014-10-30">30 de octubre de 2014</time> — <a href="terapia-celular-permite-que-paraplegico-vuelva-a-caminar.html">Terapia celular permite que parapléjico vuelva a caminar</a></li>
+<li><time datetime="2014-10-28">28 de octubre de 2014</time> — <a href="homenaje-al-profesor-luis-robles.html">Homenaje al Profesor Luis Robles</a></li>
+<li><time datetime="2014-10-16">16 de octubre de 2014</time> — <a href="grass-fellowships-in-neuroscience.html">GRASS FELLOWSHIPS IN NEUROSCIENCE</a></li>
+<li><time datetime="2014-10-08">8 de octubre de 2014</time> — <a href="symposium-small-brains-big-ideas.html">Symposium “Small Brains, Big ideas”</a></li>
+<li><time datetime="2014-10-07">7 de octubre de 2014</time> — <a href="post-doc-position-available.html">Post-doc position available</a></li>
+<li><time datetime="2014-10-03">3 de octubre de 2014</time> — <a href="career-tools-for-students-and-postdocs-from-sfn.html">Career Tools for Students and Postdocs from SfN</a></li>
+<li><time datetime="2014-09-22">22 de septiembre de 2014</time> — <a href="news-falanapplications-open-for-latin-america-regional-funding-short-stays-and-travel-gran.html">News FALAN:Applications open for Latin America Regional Funding: Short Stays and Travel Grants</a></li>
+<li><time datetime="2014-09-22">22 de septiembre de 2014</time> — <a href="workshop-new-views-on-brain-synapse-functions-the-extracellular-matrix.html">Workshop: “New views on brain synapse functions: THE EXTRACELLULAR MATRIX”</a></li>
+<li><time datetime="2014-09-16">16 de septiembre de 2014</time> — <a href="premiosociedad-de-biologia-de-chile-grupo-biosal-cientifico-joven-mas-destacado.html">PREMIO,”SOCIEDAD DE BIOLOGÍA DE CHILE-GRUPO BIOS,AL CIENTÍFICO JOVEN MÁS DESTACADO”</a></li>
+<li><time datetime="2014-09-16">16 de septiembre de 2014</time> — <a href="news-falan3rd-latin-american-school-of-advanced-neurochemistry-uruguay.html">News FALAN:3rd Latin American School of Advanced Neurochemistry, Uruguay</a></li>
+<li><time datetime="2014-09-16">16 de septiembre de 2014</time> — <a href="cajal-advanced-neuroscience-training-programme.html">CAJAL Advanced Neuroscience Training Programme</a></li>
+<li><time datetime="2014-09-15">15 de septiembre de 2014</time> — <a href="convocatoria-a-cursos-pre-congreso-para-el-9vo-congreso-mundial-ibro-2015.html">Convocatoria a cursos pre-congreso para el 9vo Congreso Mundial IBRO 2015</a></li>
+<li><time datetime="2014-09-11">11 de septiembre de 2014</time> — <a href="doctorado-neurociencia-usach-2015.html">Doctorado Neurociencia USACH 2015</a></li>
+<li><time datetime="2014-09-11">11 de septiembre de 2014</time> — <a href="doctorado-en-ciencias-biomedicas.html">Doctorado en Ciencias Biomédicas – Admisión 2015</a></li>
+<li><time datetime="2014-09-11">11 de septiembre de 2014</time> — <a href="se-abre-periodo-de-postulaciones-a-programa-de-doctorado-en-neurociencias-universidad-de-v-2014-1070.html">Se abre período de postulaciones a Programa de Doctorado en Neurociencias, Universidad de Valparaíso</a></li>
+<li><time datetime="2014-09-01">1 de septiembre de 2014</time> — <a href="postulaciones-abiertas-programa-de-doctorado-en-biologia-molecular-celular-y-neurociencias.html">Postulaciones abiertas – Programa de Doctorado en Biología Molecular, Celular y Neurociencias</a></li>
+<li><time datetime="2014-08-28">28 de agosto de 2014</time> — <a href="apertura-de-postulaciones-al-programa-de-doctorado-en-ciencias-con-mencion-en-biologia-cel.html">Apertura de postulaciones al Programa de Doctorado en Ciencias con mención en Biología Celular y Molecular de la Universidad Austral de Chile</a></li>
+<li><time datetime="2014-08-20">20 de agosto de 2014</time> — <a href="charla-atencion-y-emocion-durante-la-percepcion-social-estudios-de-comportamiento-y-neuroi.html">Charla: “Atención y emoción durante la percepción social: Estudios de comportamiento y neuroimagen”</a></li>
+<li><time datetime="2014-08-19">19 de agosto de 2014</time> — <a href="oportunidad-para-estudiantes-de-pregrado-estadias-de-entrenamiento-de-francia.html">OPORTUNIDAD PARA ESTUDIANTES DE PREGRADO: ESTADÍAS DE ENTRENAMIENTO DE FRANCIA</a></li>
+<li><time datetime="2014-08-18">18 de agosto de 2014</time> — <a href="news-falan-primer-congreso-latino-americano-sobre-celulas-madre-y-terapia-celular.html">News FALAN: Primer CONGRESO LATINO AMERICANO SOBRE CÉLULAS MADRE Y TERAPIA CELULAR</a></li>
+<li><time datetime="2014-08-11">11 de agosto de 2014</time> — <a href="cinv-postdoctoral-fellowship-program-2015.html">CINV Postdoctoral Fellowship Program 2015</a></li>
+<li><time datetime="2014-08-05">5 de agosto de 2014</time> — <a href="abstract-submission-instructions.html">Abstract submission instructions</a></li>
+<li><time datetime="2014-08-04">4 de agosto de 2014</time> — <a href="instituto-milenio-presento-sus-ultimas-investigaciones.html">Instituto Milenio presentó sus últimas investigaciones</a></li>
+<li><time datetime="2014-07-25">25 de julio de 2014</time> — <a href="news-falancurso-neurociencia-preguntas-claves-y-enfoques-metodologicos-argentina.html">News FALAN: Curso Neurociencia, preguntas claves y enfoques metodológicos, Argentina</a></li>
+<li><time datetime="2014-07-23">23 de julio de 2014</time> — <a href="actividad-small-brain-big-ideas.html">Actividad: “Small Brain, Big Ideas”</a></li>
+<li><time datetime="2014-07-23">23 de julio de 2014</time> — <a href="conversaciones-sobre-neuromedicina.html">Actividad: “Conversaciones sobre neuromedicina”</a></li>
+<li><time datetime="2014-07-23">23 de julio de 2014</time> — <a href="actividad-encuentro-de-integracion-basico-clinica.html">Actividad: “Encuentro de Integración Básico-clínica”</a></li>
+<li><time datetime="2014-07-21">21 de julio de 2014</time> — <a href="extension-plazo-simposio-jovenes-neurocientificos.html">Extensión plazo simposio jóvenes neurocientíficos</a></li>
+<li><time datetime="2014-07-21">21 de julio de 2014</time> — <a href="nuevo-plazo-simposio-jovenes-neurocientificos-2.html">Nuevo plazo simposio jóvenes neurocientíficos</a></li>
+<li><time datetime="2014-07-09">9 de julio de 2014</time> — <a href="becas-para-participar-en-el-programacurso-puentes-entre-las-neurociencias-y-la-neurologia.html">BECAS PARA PARTICIPAR EN EL PROGRAMA/CURSO “PUENTES ENTRE LAS NEUROCIENCIAS Y LA NEUROLOGIA”</a></li>
+<li><time datetime="2014-06-10">10 de junio de 2014</time> — <a href="conicyt-invita-a-postular-a-estudiantes-de-doctorado-a-concurso-becas-de-asistencia-a-even.html">CONICYT invita a postular a estudiantes de doctorado a Concurso Becas de Asistencia a Eventos y Cursos Cortos</a></li>
+<li><time datetime="2014-06-02">2 de junio de 2014</time> — <a href="registration-abstract-submission.html">Registration &amp; Abstract submission</a></li>
+<li><time datetime="2014-05-28">28 de mayo de 2014</time> — <a href="llamado-a-incorporarse-como-socio-a-la-sociedad-chilena-de-neurociencia.html">Llamado a incorporarse como socio a la Sociedad Chilena de Neurociencia.</a></li>
+<li><time datetime="2014-05-26">26 de mayo de 2014</time> — <a href="estimados-miembros-del-chapter-chileno-de-la-sfn.html">Estimados miembros del Chapter Chileno de la SFN</a></li>
+<li><time datetime="2014-05-26">26 de mayo de 2014</time> — <a href="plazo-extendido-llamado-a-concurso-simposio-de-jovenes-neurocientificos-2014.html">LLAMADO SIMPOSIO JOVENES NEUROCIENTFICOS CONGRESO SCN 2014-1 AGO</a></li>
+<li><time datetime="2014-05-19">19 de mayo de 2014</time> — <a href="comunicado-santiago-15-de-mayo-2014-2.html">Inscripcion 2014</a></li>
+<li><time datetime="2014-04-29">29 de abril de 2014</time> — <a href="miembros-de-la-red-nexos-chile-usa.html">Miembros de la red Nexos Chile-USA</a></li>
+<li><time datetime="2014-04-29">29 de abril de 2014</time> — <a href="seminario-patient-derived-stem-cells-as-models-of-human-brain-diseases.html">Seminario ” Patient-derived stem cells as models of human brain diseases “.</a></li>
+<li><time datetime="2014-04-25">25 de abril de 2014</time> — <a href="se-abren-en-chile-las-postulaciones-al-premio-loreal-chile-unesco-for-women-in-science-201.html">Se abren en Chile las postulaciones al Premio L’Oréal Chile-UNESCO For Women in Science 2014</a></li>
+<li><time datetime="2014-04-04">4 de abril de 2014</time> — <a href="seminario-inaugural-2014-de-investigacion-y-doctorado.html">“SEMINARIO INAUGURAL 2014 DE INVESTIGACIÓN y DOCTORADO”</a></li>
+<li><time datetime="2014-04-02">2 de abril de 2014</time> — <a href="1-post-doctoral-position.html">1 Post-Doctoral Position</a></li>
+<li><time datetime="2014-04-02">2 de abril de 2014</time> — <a href="llamado-a-concurso-simposio-de-jovenes-neurocientificos.html">LLAMADO A CONCURSO SIMPOSIO DE JÓVENES NEUROCIENTÍFICOS</a></li>
+<li><time datetime="2014-04-01">1 de abril de 2014</time> — <a href="beca-postdoctoral.html">BECA POSTDOCTORAL</a></li>
+<li><time datetime="2014-04-01">1 de abril de 2014</time> — <a href="llamado-a-concurso-contratacion-de-academicos-con-grado-de-doctor-y-postdoctorados-see-mor.html">Llamado a Concurso: Contratación de Académicos con Grado de Doctor y Postdoctorados</a></li>
+<li><time datetime="2014-03-26">26 de marzo de 2014</time> — <a href="lanzamiento-del-programa-de-capacitacion-latinoamericano-latp.html">Announcing the Latin American Training Program</a></li>
+<li><time datetime="2014-03-26">26 de marzo de 2014</time> — <a href="fellowships-to-attend-the-cajal-winter-conferences.html">Fellowships to attend the Cajal Winter Conferences</a></li>
+<li><time datetime="2014-03-13">13 de marzo de 2014</time> — <a href="llamado-a-concurso-para-llenar-un-cargo-de-profesor-asistente.html">Llamado a concurso para llenar UN Cargo DE PROFESOR ASISTENTE</a></li>
+<li><time datetime="2014-02-28">28 de febrero de 2014</time> — <a href="mas-noticias-en-httpswww-facebook-comsociedadchileneurociencia.html">Mas noticias en:</a></li>
+<li><time datetime="2014-02-26">26 de febrero de 2014</time> — <a href="workshop-synaptic-basis-of-cognitive-dysfunction.html">Workshop: Synaptic basis of Cognitive Dysfunction</a></li>
+<li><time datetime="2014-02-24">24 de febrero de 2014</time> — <a href="announcing-the-2014-mq-fellows-programme.html">Announcing the 2014 MQ Fellows Programme</a></li>
+<li><time datetime="2014-01-27">27 de enero de 2014</time> — <a href="x-reunion-anual-de-la-sociedad-chilena-de-neurociencias-2-al-4-de-octubre-de-2014-hotel-vi.html">X Reunion Anual de la Sociedad Chilena de Neurociencia 2014</a></li>
+<li><time datetime="2014-01-23">23 de enero de 2014</time> — <a href="applications-open-for-the-8th-canadian-ibro-school-of-neuroscience.html">Applications Open for the 8th Canadian IBRO School of Neuroscience</a></li>
+<li><time datetime="2014-01-16">16 de enero de 2014</time> — <a href="neuroscience-meeting-in-europe-the-fens-forum.html">Neuroscience Meeting in Europe, the FENS Forum</a></li>
+<li><time datetime="2014-01-08">8 de enero de 2014</time> — <a href="call-for-proposals-for-symposia-deadline-extended-to-january-31-2014.html">Call for Proposals for Symposia / Deadline extended to January 31, 2014</a></li>
+<li><time datetime="2014-01-04">4 de enero de 2014</time> — <a href="applications-open-for-the-ibroaprc-travel-grants-2014-july-december.html">Applications open for the IBRO/APRC Travel Grants 2014 (July-December)</a></li>
+<li><time datetime="2014-01-04">4 de enero de 2014</time> — <a href="brain-research-through-advancing-innovative-neurotechnologies-brain-initiative.html">Brain Research through Advancing Innovative Neurotechnologies (BRAIN) Initiative</a></li>
+</ul>
+<h2 id="y2013">2013</h2>
+<ul class="lista-archivo">
+<li><time datetime="2013-12-17">17 de diciembre de 2013</time> — <a href="seminario-departamental-inhibicion-no-canonica-en-el-bulbo-olfatorio.html">Seminario Departamental: Inhibición no canónica en el bulbo olfatorio</a></li>
+<li><time datetime="2013-12-13">13 de diciembre de 2013</time> — <a href="cnn-chile-transmite-programa-vidaconciencia-donde-aparece-nucleo-milenio-de-estres-y-adicc.html">CNN Chile transmite programa “Vida con ciencia”, donde aparece Núcleo Milenio de Estrés y Adicción (NEDA)</a></li>
+<li><time datetime="2013-11-08">8 de noviembre de 2013</time> — <a href="call-for-proposals-for-symposia.html">Call for Proposals for Symposia</a></li>
+<li><time datetime="2013-11-05">5 de noviembre de 2013</time> — <a href="a-letter-from-the-president.html">A Letter From The President</a></li>
+<li><time datetime="2013-10-30">30 de octubre de 2013</time> — <a href="applications-open-for-larc-schools-and-short-courses.html">Applications Open for LARC Schools and Short Courses</a></li>
+<li><time datetime="2013-10-16">16 de octubre de 2013</time> — <a href="se-abre-periodo-de-postulaciones-a-programa-de-doctorado-en-neurociencias-universidad-de-v.html">Se abre periodo de postulaciones a Programa de Doctorado en Neurociencia, Universidad de Valparaíso, Valparaíso</a></li>
+<li><time datetime="2013-09-23">23 de septiembre de 2013</time> — <a href="doctorado-en-neurociencia.html">Doctorado en Neurociencia</a></li>
+<li><time datetime="2013-09-16">16 de septiembre de 2013</time> — <a href="instructions-for-posters.html">INSTRUCTIONS FOR POSTERS</a></li>
+<li><time datetime="2013-09-02">2 de septiembre de 2013</time> — <a href="resultado-elecciones-directorio-schn.html">Resultado Elecciones Directorio SChN</a></li>
+<li><time datetime="2013-08-14">14 de agosto de 2013</time> — <a href="doctorado-en-cienciasmencion-biologia-molecular-celular-y-neurociencias.html">DOCTORADO EN CIENCIAS,MENCIÓN: BIOLOGÍA MOLECULAR, CELULAR Y NEUROCIENCIAS</a></li>
+<li><time datetime="2013-08-14">14 de agosto de 2013</time> — <a href="v-latin-american-school-on-computational-neuroscience-brazil.html">V Latin American School on Computational Neuroscience, Brazil.</a></li>
+<li><time datetime="2013-08-13">13 de agosto de 2013</time> — <a href="registration-fees.html">Registration Fees</a></li>
+<li><time datetime="2013-07-29">29 de julio de 2013</time> — <a href="razones-para-divulgar-materias-cientificas-a-la-sociedad.html">Razones para divulgar materias científicas a la sociedad</a></li>
+<li><time datetime="2013-07-29">29 de julio de 2013</time> — <a href="vi-jornada-internacional-sobre-aprendizaje-educacion-y-neurociencias.html">VI Jornada Internacional sobre Aprendizaje, Educación y Neurociencias</a></li>
+<li><time datetime="2013-07-24">24 de julio de 2013</time> — <a href="elecciones-nuevo-directorio-nuevo-plazo-de-candidaturas.html">Elecciones nuevo Directorio, nuevo plazo de candidaturas</a></li>
+<li><time datetime="2013-07-22">22 de julio de 2013</time> — <a href="accommodations.html">IX Annual meeting accommodations</a></li>
+<li><time datetime="2013-07-19">19 de julio de 2013</time> — <a href="registration-abstract-submission-2013-244.html">Registration &amp; Abstract submission</a></li>
+<li><time datetime="2013-07-18">18 de julio de 2013</time> — <a href="2nd-communicationjune-2013.html">2nd communication/June 2013</a></li>
+<li><time datetime="2013-07-18">18 de julio de 2013</time> — <a href="ix-annual-meeting-program.html">IX Annual meeting PROGRAM</a></li>
+<li><time datetime="2013-07-10">10 de julio de 2013</time> — <a href="evaluacion-de-los-programas-fondecyt-piafondap-y-fondef.html">EVALUACIÓN DE LOS PROGRAMAS FONDECYT, PIA/FONDAP Y FONDEF</a></li>
+<li><time datetime="2013-07-10">10 de julio de 2013</time> — <a href="envio-resumenes-a-la-reunion-anual-2013-estudiantes-doctorado.html">ENVIO RESUMENES A LA REUNION ANUAL 2013-ESTUDIANTES DOCTORADO</a></li>
+<li><time datetime="2013-06-12">12 de junio de 2013</time> — <a href="proceso-de-eleccion-del-nuevo-directorio-de-la-sociedad-chilena-de-neurociencia.html">Proceso de elección del nuevo directorio de la Sociedad Chilena de Neurociencia</a></li>
+<li><time datetime="2013-06-12">12 de junio de 2013</time> — <a href="programa-de-doctorado-en-neurociencias-puc.html">Programa de Doctorado en Neurociencias PUC</a></li>
+<li><time datetime="2013-05-23">23 de mayo de 2013</time> — <a href="comunicado-1marzo-2013.html">Comunicado 1/Marzo 2013</a></li>
+<li><time datetime="2013-04-17">17 de abril de 2013</time> — <a href="primer-congreso-2005.html">Primer Congreso 2005</a></li>
+<li><time datetime="2013-04-17">17 de abril de 2013</time> — <a href="segundo-congreso-2006.html">Segundo Congreso 2006</a></li>
+<li><time datetime="2013-04-17">17 de abril de 2013</time> — <a href="tercer-congreso-2007.html">Tercer Congreso 2007</a></li>
+<li><time datetime="2013-04-17">17 de abril de 2013</time> — <a href="cuarto-congreso-2008.html">Cuarto Congreso 2008</a></li>
+<li><time datetime="2013-04-17">17 de abril de 2013</time> — <a href="quinto-congreso-2009.html">Quinto Congreso 2009</a></li>
+<li><time datetime="2013-04-17">17 de abril de 2013</time> — <a href="sexto-congreso-2010.html">Sexto Congreso 2010</a></li>
+<li><time datetime="2013-04-17">17 de abril de 2013</time> — <a href="cerebros-transparentes-una-nueva-y-impresionante-tecnologia.html">Cerebros transparentes: una nueva y impresionante tecnología.</a></li>
+</ul>
+<h2>Otras páginas del sitio anterior</h2>
+<ul class="lista-archivo">
+<li><a href="../archivo/ano-del-cerebro-2.html">Año del Cerebro</a></li>
+<li><a href="../archivo/congreso-2019.html">Congreso 2019</a></li>
+<li><a href="../archivo/congreso-2023.html">Congreso 2023</a></li>
+<li><a href="../archivo/congreso-2024.html">Congreso 2024</a></li>
+<li><a href="../archivo/congresos-anteriores.html">CONGRESOS ANTERIORES</a></li>
+<li><a href="../archivo/formulario.html">Formulario</a></li>
+<li><a href="../archivo/formulario-patrocinio-2.html">Formulario Patrocinio</a></li>
+<li><a href="../archivo/premio-a-la-trayectoria-en-neurociencia.html">Premio a la Trayectoria en Neurociencia</a></li>
+<li><a href="../archivo/programa.html">Programa</a></li>
+<li><a href="../archivo/congreso-2018.html">XIV Reunión Anual Sociedad Chilena de Neurociencia 2018</a></li>
+</ul></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

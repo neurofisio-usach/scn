@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Nominate a Fellow Scientist for the 2018 Awards — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Nominate a Fellow Scientist for the 2018 Awards</h1>
+<div class="meta"><span>9 de mayo de 2018</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p style="font-weight: 400; text-align: justify;"><strong>Deadlines Approaching for 2018 Awards</strong></p>
+<p style="font-weight: 400; text-align: justify;">Each year, the Society for Neuroscience (SfN) recognizes some of the best research and achievements by neuroscientists with more than $500,000 in prizes and other compensation, spread across more than 20 awards. These awards are given to neuroscientists at all career stages, honoring those with contributions in diverse areas, including:</p>
+<ul style="font-weight: 400; text-align: justify;">
+<li><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W8kNGq13jmbHpW6F09Xf5RBcxH0/5/f18dQhb0S1Wb2RMFfcVMvN7L2qzQl1N3cY_P4DVGw8W2Q773q1w_zqvW6Cxfzx30Z16MVl9W7_3LDdLLW4mLWms6Hs0kYMqdNjY8QfKFW3w9dKn8xd-R9W6_65gh2qLqGrW5KJsHp99KvbGW5CsgRx8hV78gW8hq3Y14Y7N-sW6K0MRF8p2nhPW2LP6Fl3pGfpwW7g053V3CNL9lW1g7HpJ7DrBgNW3zsr7b6hMBW8N64l1QFG4RctW3qLFN11RZ11YMgR5j8G7blcW4Fw0-91JlP5wMXb7R8VDhmhN2nl90h4hDyXW3jmxn03NH3fhW8WsXvH1KtmF4W8lFVqq5KC2t_W1Qjkzm6cQMZ6Vl9WBX2SpBZYN2GbGDJtdwl0W73p1TW1SfkJlW4W9_Kl5Y1N4FW1zrvqZ7nzHgqW8xfVHF32BnzlW8K_mht8yNrRlW8744Gn276xTSW9kgdLt9fQ5HdW88SyYF99smB_W48BN0C4Nkbr5VfHyRg4CP1G5N6XMN-WZS_d-W6_KGGp1rXFz2W2pKyZN46S2B3W7R64b24P3cK5W7VrxB08gB60VW20cgtj7QF2SDW5Qs7Hw2kQcKDW1PlZcV64yM1LW60mQY93KfPfjW7s0NSS3vyyGkW6Vj5FV6Vpg6jW8L7cX_1VJPR7W4Gypb_7-Hc9sW362Knq4Gfml4f92R1D603&amp;source=gmail&amp;ust=1525967513350000&amp;usg=AFQjCNHZYJK1U-GWbty-qMLCewQTmnpyww" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W8kNGq13jmbHpW6F09Xf5RBcxH0/5/f18dQhb0S1Wb2RMFfcVMvN7L2qzQl1N3cY_P4DVGw8W2Q773q1w_zqvW6Cxfzx30Z16MVl9W7_3LDdLLW4mLWms6Hs0kYMqdNjY8QfKFW3w9dKn8xd-R9W6_65gh2qLqGrW5KJsHp99KvbGW5CsgRx8hV78gW8hq3Y14Y7N-sW6K0MRF8p2nhPW2LP6Fl3pGfpwW7g053V3CNL9lW1g7HpJ7DrBgNW3zsr7b6hMBW8N64l1QFG4RctW3qLFN11RZ11YMgR5j8G7blcW4Fw0-91JlP5wMXb7R8VDhmhN2nl90h4hDyXW3jmxn03NH3fhW8WsXvH1KtmF4W8lFVqq5KC2t_W1Qjkzm6cQMZ6Vl9WBX2SpBZYN2GbGDJtdwl0W73p1TW1SfkJlW4W9_Kl5Y1N4FW1zrvqZ7nzHgqW8xfVHF32BnzlW8K_mht8yNrRlW8744Gn276xTSW9kgdLt9fQ5HdW88SyYF99smB_W48BN0C4Nkbr5VfHyRg4CP1G5N6XMN-WZS_d-W6_KGGp1rXFz2W2pKyZN46S2B3W7R64b24P3cK5W7VrxB08gB60VW20cgtj7QF2SDW5Qs7Hw2kQcKDW1PlZcV64yM1LW60mQY93KfPfjW7s0NSS3vyyGkW6Vj5FV6Vpg6jW8L7cX_1VJPR7W4Gypb_7-Hc9sW362Knq4Gfml4f92R1D603" rel="noopener" target="_blank">Promotion and Mentoring of Women in Neuroscience</a></li>
+<li><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W4Kdcq51bfk_VW9gSHp-711lx40/5/f18dQhb0Smh_9dK6MMW47SdNJ2wqbgQW5D0f7w6Pslv5VRqVFJ64DbVMV4hbtL8Vm6N7W8hjvy79dth-XW7jwNjq5qP0vsW6V5bmJ7JQd0HW6VSbJX19Q5HpN30_7NN_WhBGW5sJbG75y3YmkW5nP0pz5jPpklW18n6pm5G1dZjW8CTDG45Kv59hW5Sf-tq8gG8PTW5rcb_T3z6HV8W10w9Qv3lGWyZW5PyB4Z5gRstHW8T-QCd7QQDbjV34H371Gn7k7W1Mh2qt1zTjsxN8X4znDQq_STW6gtjGt55fLvpW5gg3YX625bx1W6Gj8TS6bVy-5W25PPk-6Pkt_VW62_rW_5YFJKDN96dt2W6MCf1W4CXDGS7zLMPqW7g4d_b7GLjPjW2KH_rD1fp-R3W78_YSq25_dp2W7Qznr8789sZDW83JvRh6wTzr9W1Cr8pK1lr3CmW1X4-8f89JHVFW6sNctl7sYr4fW2cQrtc1FpKHSW7j_LM991HYrrW8ZS2wl6GtCWFW8NY6YP7p8WLBN7vW2x59zM7DW3Swq4p74wGdJW4M11334H_8ksW2MhJmm24TtgNW677LSF24LPQ5W36456V4J35S4W2N6LNh6_9CN8W2SSQmL5HsN91W9bPjZc66v7SxW5lVmty6gbxd6M4ZDML2LMBkV1QwrV8t5nyb103&amp;source=gmail&amp;ust=1525967513350000&amp;usg=AFQjCNG7te-US4aFR7pBtX2TZuVvU1cfKw" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W4Kdcq51bfk_VW9gSHp-711lx40/5/f18dQhb0Smh_9dK6MMW47SdNJ2wqbgQW5D0f7w6Pslv5VRqVFJ64DbVMV4hbtL8Vm6N7W8hjvy79dth-XW7jwNjq5qP0vsW6V5bmJ7JQd0HW6VSbJX19Q5HpN30_7NN_WhBGW5sJbG75y3YmkW5nP0pz5jPpklW18n6pm5G1dZjW8CTDG45Kv59hW5Sf-tq8gG8PTW5rcb_T3z6HV8W10w9Qv3lGWyZW5PyB4Z5gRstHW8T-QCd7QQDbjV34H371Gn7k7W1Mh2qt1zTjsxN8X4znDQq_STW6gtjGt55fLvpW5gg3YX625bx1W6Gj8TS6bVy-5W25PPk-6Pkt_VW62_rW_5YFJKDN96dt2W6MCf1W4CXDGS7zLMPqW7g4d_b7GLjPjW2KH_rD1fp-R3W78_YSq25_dp2W7Qznr8789sZDW83JvRh6wTzr9W1Cr8pK1lr3CmW1X4-8f89JHVFW6sNctl7sYr4fW2cQrtc1FpKHSW7j_LM991HYrrW8ZS2wl6GtCWFW8NY6YP7p8WLBN7vW2x59zM7DW3Swq4p74wGdJW4M11334H_8ksW2MhJmm24TtgNW677LSF24LPQ5W36456V4J35S4W2N6LNh6_9CN8W2SSQmL5HsN91W9bPjZc66v7SxW5lVmty6gbxd6M4ZDML2LMBkV1QwrV8t5nyb103" rel="noopener" target="_blank">Science Education and Outreach</a></li>
+<li><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W81-7c-7SGjzjV9xfc04473hQ0/5/f18dQhb0S2C62WJLfBVM_4Jn63VsLCW5XNhMp1fgHxHW2Q772d32cSlWW7XKyDk2JmpN4W5JH-gl3N1PVyW44j6HB7gknKQN8grhvJbmYC9W8NJrDm60W-PwW6JXWGK1c9LjLW5HPgjL7zbsfJW1C5zsF7nxBqKW8yBzrT84Y8BnW81xr5f45ZTKXW30BtZM5Nz6krVsmf7h5kQxQrVzDNnH3RxW8KVGJlCB6BfsP4VC-nlC12g3H4W3X77TD1Jx8vyW291GWn7bj63yW7-9CLq8kQs9zVbLNb62Rp4SVW8JY9M01Nh5JPW1gTjLh45ghZdW7944Mv5NK6K4VjblKq3x2KCsW5Yhwxh8Ms1DSW2v-wl36kF8pxN5cH7k3yLQ5qW7ZCZpC19qx-9W6mvQC57pRZGyW7cNwGt925LZqW4wVd7P12QxLtW8BxtrQ4x8wvdVyB6LK5d4ks1W1k1pxh6RmzkqW4GyMzn5QL7KYW14yrMP6f6FKYW8lknqV1tWQJ2W8BK39h4XRSVdW3VnD2v77vg5tW8F_Kj697ky_NW31v6LR4k6bb7N6Z44fh-TQGyW8vmCFw2RxYtGW1p65sK3hlw-dW68cW363N1wX5W59bj8Q99bCMtW5QSpCk766-m_W5Srxhf9hFKW2W972W4343Ym68N6K8Z1rZhPFrf7-QXHg11&amp;source=gmail&amp;ust=1525967513350000&amp;usg=AFQjCNEFvtmCmMiDYN8qTibuFxxb0SVJBA" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W81-7c-7SGjzjV9xfc04473hQ0/5/f18dQhb0S2C62WJLfBVM_4Jn63VsLCW5XNhMp1fgHxHW2Q772d32cSlWW7XKyDk2JmpN4W5JH-gl3N1PVyW44j6HB7gknKQN8grhvJbmYC9W8NJrDm60W-PwW6JXWGK1c9LjLW5HPgjL7zbsfJW1C5zsF7nxBqKW8yBzrT84Y8BnW81xr5f45ZTKXW30BtZM5Nz6krVsmf7h5kQxQrVzDNnH3RxW8KVGJlCB6BfsP4VC-nlC12g3H4W3X77TD1Jx8vyW291GWn7bj63yW7-9CLq8kQs9zVbLNb62Rp4SVW8JY9M01Nh5JPW1gTjLh45ghZdW7944Mv5NK6K4VjblKq3x2KCsW5Yhwxh8Ms1DSW2v-wl36kF8pxN5cH7k3yLQ5qW7ZCZpC19qx-9W6mvQC57pRZGyW7cNwGt925LZqW4wVd7P12QxLtW8BxtrQ4x8wvdVyB6LK5d4ks1W1k1pxh6RmzkqW4GyMzn5QL7KYW14yrMP6f6FKYW8lknqV1tWQJ2W8BK39h4XRSVdW3VnD2v77vg5tW8F_Kj697ky_NW31v6LR4k6bb7N6Z44fh-TQGyW8vmCFw2RxYtGW1p65sK3hlw-dW68cW363N1wX5W59bj8Q99bCMtW5QSpCk766-m_W5Srxhf9hFKW2W972W4343Ym68N6K8Z1rZhPFrf7-QXHg11" rel="noopener" target="_blank">Outstanding Research and Career</a></li>
+<li><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W24SLZz46s343W2dy24367-LFc0/5/f18dQhb0SmhX9dK6MMW47SdNJ2wqbgQW5D0f7w6Pslv5VRqVCr64DbVMV4hbtL8Vm6N7W8hjvy79dth-XW7jwNjq5qP0vsW6V5bmJ7JQd0HW6VSbJX19Q5HpN30_7NN_WhBGW5sJbG792Slp7W1rfS-M22Nsz-W3d6zgd2jGs1vW22VXYr68-B-1W1Dd8PZ19zsY3W2vlVQs4Bs6cnW4yym9n2p0tdzW5Q4xRt3VNPqpW2YJmCK5j5-L-W1bYJxz3WlSsWW9h3KcX4MqTR9W1blcVR1VJX_FW1Z66-w8hTJV4W8lwVXY8hS296N7bj1_4FCG-jW5rC5Q63l6ccQW8mQMWv5TqqKqW6pNslp7cvxVfN8q5qBxVQf4XW5vDhXC97QmSGW4rXzCH5vg2fFVh4y812B33h9W4tMYHP93T2nbW4tH6jX5FWC0qW8n_4P36PZPYBW5s1cyq5x_4ZxW1q7b_t62LHLLW6R_57063mkNGW1qhwKg5wHnW6W2T1SGs7y1hs_W1nrsYl6Z-ZXNW49kJ936fVZ9kW1Q68w61MMh8vW7Z1bc31mjbN8W1sLgQM5qjSDvW8r4j9V8rSDkKW7mt3V-1FM9H9W7yRJT766qT1RW4ytTH06TYJFBW77lbVw927QjsW7G038H3wPByYN3wqsp2jKKQT111&amp;source=gmail&amp;ust=1525967513350000&amp;usg=AFQjCNF1ILTJt3yFtjedeNCjAbb5AiH8tA" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W24SLZz46s343W2dy24367-LFc0/5/f18dQhb0SmhX9dK6MMW47SdNJ2wqbgQW5D0f7w6Pslv5VRqVCr64DbVMV4hbtL8Vm6N7W8hjvy79dth-XW7jwNjq5qP0vsW6V5bmJ7JQd0HW6VSbJX19Q5HpN30_7NN_WhBGW5sJbG792Slp7W1rfS-M22Nsz-W3d6zgd2jGs1vW22VXYr68-B-1W1Dd8PZ19zsY3W2vlVQs4Bs6cnW4yym9n2p0tdzW5Q4xRt3VNPqpW2YJmCK5j5-L-W1bYJxz3WlSsWW9h3KcX4MqTR9W1blcVR1VJX_FW1Z66-w8hTJV4W8lwVXY8hS296N7bj1_4FCG-jW5rC5Q63l6ccQW8mQMWv5TqqKqW6pNslp7cvxVfN8q5qBxVQf4XW5vDhXC97QmSGW4rXzCH5vg2fFVh4y812B33h9W4tMYHP93T2nbW4tH6jX5FWC0qW8n_4P36PZPYBW5s1cyq5x_4ZxW1q7b_t62LHLLW6R_57063mkNGW1qhwKg5wHnW6W2T1SGs7y1hs_W1nrsYl6Z-ZXNW49kJ936fVZ9kW1Q68w61MMh8vW7Z1bc31mjbN8W1sLgQM5qjSDvW8r4j9V8rSDkKW7mt3V-1FM9H9W7yRJT766qT1RW4ytTH06TYJFBW77lbVw927QjsW7G038H3wPByYN3wqsp2jKKQT111" rel="noopener" target="_blank">Professional Development</a></li>
+</ul>
+<p style="font-weight: 400; text-align: justify;">Many of these awards include monetary prizes, a plaque, plus complimentary registration, travel, and lodging for Neuroscience 2018. So take note of the <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*N7R_4dGM7lJ_W43TtRN8vdZr-0/5/f18dQhb0S1W92nRNKtVWp4cm2x9S33VR29w34TtbjLV_Jj__1kD0xyV-0RRz39n3MBN5BLCJMxSfqNW8Gd0tp5PcwZXW7bYb5F7PWZ0kVVjFC28Zd0QyN2sgTSgpfS3LW4x93YC6-vmBDW78lcTk8s9M8MW4G1HnJ6lGrKSW5QlG4F7w21zdW6w-Xcm5w68PHW2MkjPt5BpKQ_TF9FH5n03yxVdw8c66ZWMGYW1xCXhg3-njGKW3yBFhK74VDjSLljYnBZ3F8W1_h8Ct4mgr-ZMCDgPbKF4F_VZ5jwY6wWSS_W50mzR81kzYLKW49MjS62y5WxvN5xsjg1QkCTDW1VQM3T5c5zxyVCKb7d6rnVh9W7sc0RR5SDhXwW6dhsBy4Z9MlLW47v7y11PWpm8W7Wfbb18ylFjvVqh7V93rM63JW6JLKzh86rHJ_W6S5MCZ2pSb9QW1x0Rm64n75LwW9gQyFq41VPjRW7w-bJC7yNwTFVtmV_B6P9lrtW3RGTR434pVRGW5h9s_V6hg52_W3DPT0s3ng7WbW6FhKZ88gVK6sW6wggj42qvsHyVT783016McMrW1Wnz_C70R8ZyW98b6fk8gs6jJW2jhP6J8yGJbLW5kCjvX5yzm-hW2Xgd456hHzg1W4-733V5QLhx40&amp;source=gmail&amp;ust=1525967513350000&amp;usg=AFQjCNH6NkKin2rcJDbefpEtbbeXi3oTBw" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*N7R_4dGM7lJ_W43TtRN8vdZr-0/5/f18dQhb0S1W92nRNKtVWp4cm2x9S33VR29w34TtbjLV_Jj__1kD0xyV-0RRz39n3MBN5BLCJMxSfqNW8Gd0tp5PcwZXW7bYb5F7PWZ0kVVjFC28Zd0QyN2sgTSgpfS3LW4x93YC6-vmBDW78lcTk8s9M8MW4G1HnJ6lGrKSW5QlG4F7w21zdW6w-Xcm5w68PHW2MkjPt5BpKQ_TF9FH5n03yxVdw8c66ZWMGYW1xCXhg3-njGKW3yBFhK74VDjSLljYnBZ3F8W1_h8Ct4mgr-ZMCDgPbKF4F_VZ5jwY6wWSS_W50mzR81kzYLKW49MjS62y5WxvN5xsjg1QkCTDW1VQM3T5c5zxyVCKb7d6rnVh9W7sc0RR5SDhXwW6dhsBy4Z9MlLW47v7y11PWpm8W7Wfbb18ylFjvVqh7V93rM63JW6JLKzh86rHJ_W6S5MCZ2pSb9QW1x0Rm64n75LwW9gQyFq41VPjRW7w-bJC7yNwTFVtmV_B6P9lrtW3RGTR434pVRGW5h9s_V6hg52_W3DPT0s3ng7WbW6FhKZ88gVK6sW6wggj42qvsHyVT783016McMrW1Wnz_C70R8ZyW98b6fk8gs6jJW2jhP6J8yGJbLW5kCjvX5yzm-hW2Xgd456hHzg1W4-733V5QLhx40" rel="noopener" target="_blank">nomination deadlines</a> and nominate a colleague today.</p>
+<p style="font-weight: 400; text-align: justify;">Visit Neuronline to learn more about SfN’s 2017 award recipients, including:</p>
+<ul style="font-weight: 400; text-align: justify;">
+<li><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*N3-nzqFjZzP0VcHWND7s4Pzl0/5/f18dQhb0S1W988B4FSW12NsFN2nhl91VGPY722FlDHVW81rDMR8h1G4tW55wVz28f2Cs6W6SW0kp4dNtr7W8kSCZk910MrgW3y2PT62YkvQzW3w2DYC5g5SRPW96Yt5P7CXyYRW6yyBjV23JTvyW4DTV-D4zz72pW3Bg57M2GFSw5W6n17-H7V56q8W1mJSrp6HJ3W4W730d8C37XckdW1T3gBB1wG1QzVNNPz08TM7fcN3wVfvZr5_vzW4RVy1K1jxS8DW4TlzQf5ryT4VVMc02z1ktkWtW7pjy4v5_S9RCW86w9NM3_bVHlW5BrQQ_1VLYNSW74s7Tr4NrDZfW3G6G7f3fHYKcW1xGBs-3c4HC_N2cwPSWWLDlTMH2_ZbJ8JB6W32b1lm1yWxg6N7NjB06LC8hSV1mdyf1LxJBwV4yTCx8RKjcsV97zGR5HfZlcN7Xj0Hj3N4-jW2-hH2l9dP48XW2pM2518K3SB3W581kLV8KX81WVGrTJt6JZpP1W21R_Jj1rVYTJW6LTCH96k1fGLW92-lVM4j6QbjW27KKdS4HrwZxW6r9sCr6GWP-cVvtQQq96XRrqV_qJY33Mq9KkW1tYsLL2yZT7PW8wgGrk4HmPChW5QKTRj3802CqW9h4B9Q8p3x0tW7nfG6r88ZMyXW3FXz052r0XS_W1rY6mB6G5T5l0&amp;source=gmail&amp;ust=1525967513351000&amp;usg=AFQjCNFiu-7KAlSQbxXPnxgFPaSprrvGWQ" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*N3-nzqFjZzP0VcHWND7s4Pzl0/5/f18dQhb0S1W988B4FSW12NsFN2nhl91VGPY722FlDHVW81rDMR8h1G4tW55wVz28f2Cs6W6SW0kp4dNtr7W8kSCZk910MrgW3y2PT62YkvQzW3w2DYC5g5SRPW96Yt5P7CXyYRW6yyBjV23JTvyW4DTV-D4zz72pW3Bg57M2GFSw5W6n17-H7V56q8W1mJSrp6HJ3W4W730d8C37XckdW1T3gBB1wG1QzVNNPz08TM7fcN3wVfvZr5_vzW4RVy1K1jxS8DW4TlzQf5ryT4VVMc02z1ktkWtW7pjy4v5_S9RCW86w9NM3_bVHlW5BrQQ_1VLYNSW74s7Tr4NrDZfW3G6G7f3fHYKcW1xGBs-3c4HC_N2cwPSWWLDlTMH2_ZbJ8JB6W32b1lm1yWxg6N7NjB06LC8hSV1mdyf1LxJBwV4yTCx8RKjcsV97zGR5HfZlcN7Xj0Hj3N4-jW2-hH2l9dP48XW2pM2518K3SB3W581kLV8KX81WVGrTJt6JZpP1W21R_Jj1rVYTJW6LTCH96k1fGLW92-lVM4j6QbjW27KKdS4HrwZxW6r9sCr6GWP-cVvtQQq96XRrqV_qJY33Mq9KkW1tYsLL2yZT7PW8wgGrk4HmPChW5QKTRj3802CqW9h4B9Q8p3x0tW7nfG6r88ZMyXW3FXz052r0XS_W1rY6mB6G5T5l0" rel="noopener" target="_blank">Katrin Franke, PhD</a> – recipient of the Nemko Prize in Cellular or Molecular Neuroscience, recognizing a young neuroscientist’s outstanding PhD thesis advancing understanding of molecular, genetic, or cellular mechanisms underlying higher brain function and cognition</li>
+<li><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W3kB8vj4mtZrpW7R5bxC98FKk80/5/f18dQhb0S1W92WK2bdVWVQP55VSl7GW3cYTxP4-J4VxW3MSlG76Jg83bW817MgF6hy6HhW6xPvBv5H2VynW2HlbQk6lznpvMglzCg9PxntW2XCtXK6WS-g8N6zKN2xjPL5HW16qwMp95NBHlW59HfHG6VXjjXW2hMybg27GRTyW7x0gNs8Wdft_N4jk9FmjkDJ2Vbnv5Y3y_kn0VxNhdW4VXzltMndl9YyDTPBN6bb1zP6bYBTW1ytCxn5Z6Fl0W6LQ23N2xqXH4MxHXfF5vGFzW1-Nhwk60C-wcW4KgRTK8C2DJ3W341fQN24P3G7W79vckL33xpYTW4WpWlT7B_jcVW1P-VpP5xPbN2W3bjxrw7wKgBMW3SkJHQ3vldMmW1fz94F1p04DqW8rk91F3JB72rV5H5bg9cqP6SW2Vn5Zz4FrWRyV7V8Bg90dd7tW4VxFGd5-zD64W8HG3V53QwkJpW7YySJ08v96D_W5TkCBt8D2mrCW6Jb9P14R2-cMN82jTV_TP116N2Syz9JB_VMyW5l_tqr5-_4frVjdygJ7xcCyJVLstcy7HjxzkW3Cpfkw6B6m4FN7ymjSylmj6zW3zmfXj59tSSkW76CxZF94mW7JW8M2SYV4CwLPYW9h7Xff6SFxTwW4xWvk099dgPLW2XxKVM3b_k8tW6L1K1N159sNT111&amp;source=gmail&amp;ust=1525967513351000&amp;usg=AFQjCNGdGruiSvLBLgY38KUqio1YPJoI3A" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W3kB8vj4mtZrpW7R5bxC98FKk80/5/f18dQhb0S1W92WK2bdVWVQP55VSl7GW3cYTxP4-J4VxW3MSlG76Jg83bW817MgF6hy6HhW6xPvBv5H2VynW2HlbQk6lznpvMglzCg9PxntW2XCtXK6WS-g8N6zKN2xjPL5HW16qwMp95NBHlW59HfHG6VXjjXW2hMybg27GRTyW7x0gNs8Wdft_N4jk9FmjkDJ2Vbnv5Y3y_kn0VxNhdW4VXzltMndl9YyDTPBN6bb1zP6bYBTW1ytCxn5Z6Fl0W6LQ23N2xqXH4MxHXfF5vGFzW1-Nhwk60C-wcW4KgRTK8C2DJ3W341fQN24P3G7W79vckL33xpYTW4WpWlT7B_jcVW1P-VpP5xPbN2W3bjxrw7wKgBMW3SkJHQ3vldMmW1fz94F1p04DqW8rk91F3JB72rV5H5bg9cqP6SW2Vn5Zz4FrWRyV7V8Bg90dd7tW4VxFGd5-zD64W8HG3V53QwkJpW7YySJ08v96D_W5TkCBt8D2mrCW6Jb9P14R2-cMN82jTV_TP116N2Syz9JB_VMyW5l_tqr5-_4frVjdygJ7xcCyJVLstcy7HjxzkW3Cpfkw6B6m4FN7ymjSylmj6zW3zmfXj59tSSkW76CxZF94mW7JW8M2SYV4CwLPYW9h7Xff6SFxTwW4xWvk099dgPLW2XxKVM3b_k8tW6L1K1N159sNT111" rel="noopener" target="_blank">Randy J. Nelson, PhD</a> – recipient of the Award for Education in Neuroscience, given to individuals who have made outstanding contributions to neuroscience education and training</li>
+<li><a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W29C6Qt3b6L44W4t7BVy6r-TBm0/5/f18dQhb0S3_Z2RMZb8VMvPdf63JdKfN19dyTR8tr9_W3HVVQm65JBJ6W7FvfhV7XSfJDW3MHvR35lhHnRW5Jyk1n7GxcYNW5XsSf05V27ygW1MBDmb4gHKyNW1NKyl068y5NLW5LKpz-93gHR1W9hRms6982X2kW4Gl1-L6LgZl_W3sY9Ry88jc1QW54Q11H3xJ3SrW49LSLl21yxxdW3vg9XV1tVgLrW463ZDM6wh0R8W3HDmqR6mGLw_VnGYkx2rhXzMW5rHzJY2pGsLlW30CRTB5Yh5SGN6dCRmYfdGp7VDJj8l5gYq6WW7nnBfK3QY416W6Ld7vs3Tc3KfW668RxB8VMDSTW1q2wc65xfYycW1tZBr83Chyt7W39Dp3d2sgq4tW4q3YY42ThqDXW49_dh2870h6ZW4Y6Mb08Rjy4CW8pGp7h720KYnW4DBT3S1gm7L_W8mkFmd1YXhsYW730dXC7_pjSsW89rz9p2GqDMGW85vDSk1jQxGqW3r5Sp578fWCmW118vjZ1bZbs1W6kLx1T7HP18RW6HyBmR4wGpl_W4BpQ3X27-XjKW3vV4L23Lvs9kVTKLD93PYlR_W8cGwLQ1cWj-8W7sSR0g3Bq8_MW7QCH7f656-vXW9kDky_4bRdCyW8W8Fl76zy1b6W4CzLP95ZwcrfW80hgWT5S7q8dN391gYY5rNSJf6c23YM03&amp;source=gmail&amp;ust=1525967513351000&amp;usg=AFQjCNFexlyfHIXRx9CpQXamviM8i87NiA" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W29C6Qt3b6L44W4t7BVy6r-TBm0/5/f18dQhb0S3_Z2RMZb8VMvPdf63JdKfN19dyTR8tr9_W3HVVQm65JBJ6W7FvfhV7XSfJDW3MHvR35lhHnRW5Jyk1n7GxcYNW5XsSf05V27ygW1MBDmb4gHKyNW1NKyl068y5NLW5LKpz-93gHR1W9hRms6982X2kW4Gl1-L6LgZl_W3sY9Ry88jc1QW54Q11H3xJ3SrW49LSLl21yxxdW3vg9XV1tVgLrW463ZDM6wh0R8W3HDmqR6mGLw_VnGYkx2rhXzMW5rHzJY2pGsLlW30CRTB5Yh5SGN6dCRmYfdGp7VDJj8l5gYq6WW7nnBfK3QY416W6Ld7vs3Tc3KfW668RxB8VMDSTW1q2wc65xfYycW1tZBr83Chyt7W39Dp3d2sgq4tW4q3YY42ThqDXW49_dh2870h6ZW4Y6Mb08Rjy4CW8pGp7h720KYnW4DBT3S1gm7L_W8mkFmd1YXhsYW730dXC7_pjSsW89rz9p2GqDMGW85vDSk1jQxGqW3r5Sp578fWCmW118vjZ1bZbs1W6kLx1T7HP18RW6HyBmR4wGpl_W4BpQ3X27-XjKW3vV4L23Lvs9kVTKLD93PYlR_W8cGwLQ1cWj-8W7sSR0g3Bq8_MW7QCH7f656-vXW9kDky_4bRdCyW8W8Fl76zy1b6W4CzLP95ZwcrfW80hgWT5S7q8dN391gYY5rNSJf6c23YM03" rel="noopener" target="_blank">Garret Stuber, PhD</a> and <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*N142Mx4Y04mPW6vRbCT1TT9XZ0/5/f18dQhb0S1W92RMFdXW12hB0k5VRw8sN1C_tsK8-jPrW59pQ5Q53mpkcW40Tmzx401Mv9W4T08D94mSBZ6W3-Vqz14vBr5dVLYsMC3ZJYBFV86-Q97NWlGSW5gb2Y64MYFK0W93Q77t969dD6W6cPQs36kYkNpW125Js27ss3HmW6mMLL96tZnrWW73KdK41wRskmW7MZxVN2r0JjHW1YTmJz4n0vxjW5G7tmF1ZbsWJW7mjQLw4ClWldVKCrrS5PmVphW5LQ6Ch8-dqtbW5bDs1z1ddFHJN3Szcmsl2zDdW4F9vYb1bj_nRW3LKXPQ5hyrV8W7MXPvC4XyB9mW4RHfMC7mr5G4W7sWSvy8_L9slW2FGcsD7YX_4TW2zfMxl1YB9v1W48RPHn4QvyW2N71CJM6k73QPW67K4Q28DWpJTW2HGnt34GhmHLW68ZmCW85tR6vW1l520081Q9YgW92CJLZ8kCJd_W7FZlzl188hgxW2GdlG52JnRjfW4m2k8F8Sm7g6N7HXQcJR5ycfW5HgF4c8Hr7dmW6YhgGv1WkrlfW3RBmlz6Jf_JCW7z--LD2VrRbqW91ZYg525ln4CVmlqJw27tRVlW4J07DM7yVzv7W5pQ2PF8GTC8TW9m48j563vB41W8MBj115fDrz_W6YTyJB7wG1hfW7ydTkZ1x68B0f3LkMx811&amp;source=gmail&amp;ust=1525967513351000&amp;usg=AFQjCNESJXRbjbk4mY6iDdzNyHVgIS4wPg" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*N142Mx4Y04mPW6vRbCT1TT9XZ0/5/f18dQhb0S1W92RMFdXW12hB0k5VRw8sN1C_tsK8-jPrW59pQ5Q53mpkcW40Tmzx401Mv9W4T08D94mSBZ6W3-Vqz14vBr5dVLYsMC3ZJYBFV86-Q97NWlGSW5gb2Y64MYFK0W93Q77t969dD6W6cPQs36kYkNpW125Js27ss3HmW6mMLL96tZnrWW73KdK41wRskmW7MZxVN2r0JjHW1YTmJz4n0vxjW5G7tmF1ZbsWJW7mjQLw4ClWldVKCrrS5PmVphW5LQ6Ch8-dqtbW5bDs1z1ddFHJN3Szcmsl2zDdW4F9vYb1bj_nRW3LKXPQ5hyrV8W7MXPvC4XyB9mW4RHfMC7mr5G4W7sWSvy8_L9slW2FGcsD7YX_4TW2zfMxl1YB9v1W48RPHn4QvyW2N71CJM6k73QPW67K4Q28DWpJTW2HGnt34GhmHLW68ZmCW85tR6vW1l520081Q9YgW92CJLZ8kCJd_W7FZlzl188hgxW2GdlG52JnRjfW4m2k8F8Sm7g6N7HXQcJR5ycfW5HgF4c8Hr7dmW6YhgGv1WkrlfW3RBmlz6Jf_JCW7z--LD2VrRbqW91ZYg525ln4CVmlqJw27tRVlW4J07DM7yVzv7W5pQ2PF8GTC8TW9m48j563vB41W8MBj115fDrz_W6YTyJB7wG1hfW7ydTkZ1x68B0f3LkMx811" rel="noopener" target="_blank">Karen D. Ersche, PhD</a> – co-recipients of the Jacob P. Waletzky Award for young scientists whose independent research has led to significant conceptual and empirical contributions to the understanding of drug addiction</li>
+</ul>
+<p style="font-weight: 400; text-align: justify;">SfN Council Increases Funding for Trainee Professional Development Awards</p>
+<p style="font-weight: 400; text-align: justify;">We’re excited to announce that SfN’s Council has <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W3FL4nW82yT-dW5WmrzD4SYstB0/5/f18dQhb0S83f9cLqgSW499srF5VQHv_W5kxtj56Pj1hMW4R4Hg257mvC2W1BQYgz8Tm-CPW6BDDNP5YybVYW7P8Kgk7b9mLBW8mnpB66W4F5RN9fzg50zVgQZW2ysmjN6QxDf7W6bwHsD7dDP-TN4WznvbdVrPJVbb14P61SSZmW7mG7sD51vX4yW6J38Ht2ybP3hW96dL7n2z8SMVW4JRjWv3gqV0lN2p5tgzlVdcpW5y8x135x2vwhW5tNpH01mPJ-rW4rzh2Q548GrJW5lKvt_5420y5MJVPYMVDLWgW32p-C34cMfVrW3Kqlz72K_KCMVpsgLg5_N0_wW5K_zXK3lj2tvW3blhRk6hcgJmW5rQ8LW5jP5ldW8g7PzK33YHFJW3pkhxF3RY4n1W6ff3-N3M3tTYW3jKWWb5Sv_7DW8KfTfb8dHx3-W10s8ts3nHT8TW8rFkds5B3kWBN5t9NBH_-RxmN5zmKDFXPh2yN66H2k8_dNmdN8GclM4PNtBvW42zsCW8csLSqW1035GL5r8K84W5D5CnZ8zkplHW5kh7Bd5y7vbHW19rc8k7pYq7SW5qsXrM9drQqpW1vP0Dr8kKGGJW2jqkTD6CT_GVW6yKF7B2pglVTN6vc-Z6_LQbVf5j5Ftv04&amp;source=gmail&amp;ust=1525967513351000&amp;usg=AFQjCNGBy7GLT08ZRB1zgnJuTgOM0RHJKQ" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W3FL4nW82yT-dW5WmrzD4SYstB0/5/f18dQhb0S83f9cLqgSW499srF5VQHv_W5kxtj56Pj1hMW4R4Hg257mvC2W1BQYgz8Tm-CPW6BDDNP5YybVYW7P8Kgk7b9mLBW8mnpB66W4F5RN9fzg50zVgQZW2ysmjN6QxDf7W6bwHsD7dDP-TN4WznvbdVrPJVbb14P61SSZmW7mG7sD51vX4yW6J38Ht2ybP3hW96dL7n2z8SMVW4JRjWv3gqV0lN2p5tgzlVdcpW5y8x135x2vwhW5tNpH01mPJ-rW4rzh2Q548GrJW5lKvt_5420y5MJVPYMVDLWgW32p-C34cMfVrW3Kqlz72K_KCMVpsgLg5_N0_wW5K_zXK3lj2tvW3blhRk6hcgJmW5rQ8LW5jP5ldW8g7PzK33YHFJW3pkhxF3RY4n1W6ff3-N3M3tTYW3jKWWb5Sv_7DW8KfTfb8dHx3-W10s8ts3nHT8TW8rFkds5B3kWBN5t9NBH_-RxmN5zmKDFXPh2yN66H2k8_dNmdN8GclM4PNtBvW42zsCW8csLSqW1035GL5r8K84W5D5CnZ8zkplHW5kh7Bd5y7vbHW19rc8k7pYq7SW5qsXrM9drQqpW1vP0Dr8kKGGJW2jqkTD6CT_GVW6yKF7B2pglVTN6vc-Z6_LQbVf5j5Ftv04" rel="noopener" target="_blank">increased funding for the Trainee Professional Development Awards</a> (TPDA), which provide young scientists the chance to attend Neuroscience 2018 to present abstracts, as well as network with peers and leading neuroscientists. <a data-saferedirecturl="https://www.google.com/url?hl=es&amp;q=https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W4Q0QwD81k44mW2p_cc_91MvDH0/5/f18dQhb0SbTP9dK6MMW47SdNJ2wqbgQW5D0f7w6Pslv5VRqHmJ4cs4yQW4LHQnP4rHNDnW47Gswn4DdTgFW3FgCWD2LngZsW3sy46V3SWD0lW3sX4h_5gsvgWN1wvP93t-4kqW2KmxT829xS51W5nP0pz5jPpklW17PtDJ5vGzmvW5D5P7b8c5j0TW5F_tJ65J0XR6Vq4xjV5_WkTQW1L7Vlr2L1cF3W6-gPgc2gNHF3W19wZTJ7C4tz8W6DrRFW68SCnJW7jDrRL5h13-9W58Qw469j5wSrW2mL0j-5gsP8gVLvn8b56BHjSW96zRPS6bT6L3W8RRjRD5CkCbgVHZ5KN5D8zFFW5m3ZGG96dt2WW555kWt2gvtCXW3NnV4F1nJpwvW26pdfj35yfwdW2xr2-k5zS2J8W1qgsYc61N5WbW4sWPvq4YRml0W2wk-0F4w-15sW4ZF2QQ5rPTpmN9brZpm8znGpW4-hpHY5v1685N5B9Xx74n_3VW8xK0Cq6cqn3HN86bRqPFgLDRW2JKtC16Pc4bPW5brc741VtdWZW2kL82S22TNxnV9Mb7L452_XwW1pNWCB8qZm9vW1pNPVd61p2ZpVj8tbN480YYsW97JFWz6wxDWmW4mbg1T3V7BTZW9m15Qp2P5j47W3N7Vb12-zyFjw1NsfDKlYQd_-XBG02&amp;source=gmail&amp;ust=1525967513351000&amp;usg=AFQjCNFnd0an9PXWSG8KjNj-80rwF1eFNA" href="https://hs-2328961.t.hubspotemail.net/e1t/c/*W9bbhTn96DB-cW5hYmYq6-bBJG0/*W4Q0QwD81k44mW2p_cc_91MvDH0/5/f18dQhb0SbTP9dK6MMW47SdNJ2wqbgQW5D0f7w6Pslv5VRqHmJ4cs4yQW4LHQnP4rHNDnW47Gswn4DdTgFW3FgCWD2LngZsW3sy46V3SWD0lW3sX4h_5gsvgWN1wvP93t-4kqW2KmxT829xS51W5nP0pz5jPpklW17PtDJ5vGzmvW5D5P7b8c5j0TW5F_tJ65J0XR6Vq4xjV5_WkTQW1L7Vlr2L1cF3W6-gPgc2gNHF3W19wZTJ7C4tz8W6DrRFW68SCnJW7jDrRL5h13-9W58Qw469j5wSrW2mL0j-5gsP8gVLvn8b56BHjSW96zRPS6bT6L3W8RRjRD5CkCbgVHZ5KN5D8zFFW5m3ZGG96dt2WW555kWt2gvtCXW3NnV4F1nJpwvW26pdfj35yfwdW2xr2-k5zS2J8W1qgsYc61N5WbW4sWPvq4YRml0W2wk-0F4w-15sW4ZF2QQ5rPTpmN9brZpm8znGpW4-hpHY5v1685N5B9Xx74n_3VW8xK0Cq6cqn3HN86bRqPFgLDRW2JKtC16Pc4bPW5brc741VtdWZW2kL82S22TNxnV9Mb7L452_XwW1pNWCB8qZm9vW1pNPVd61p2ZpVj8tbN480YYsW97JFWz6wxDWmW4mbg1T3V7BTZW9m15Qp2P5j47W3N7Vb12-zyFjw1NsfDKlYQd_-XBG02" rel="noopener" target="_blank">Applications are now open!</a></p>
+<p style="font-weight: 400; text-align: justify;"><strong>Questions? </strong>Contact us directly using the information below.</p>
+<p style="font-weight: 400; text-align: justify;"><strong>Awards:</strong> <a href="mailto:awards@sfn.org">awards@sfn.org</a> or +1 (202) 962-4000<br/>
+<strong>Membership or Login Assistance:</strong> <a href="mailto:membership@sfn.org">membership@sfn.org</a> or +1 (202) 962-4911<br/>
+<strong>Neuroscience 2018:</strong> <a href="mailto:program@sfn.org">program@sfn.org</a> or +1 (202) 962-4000</p>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 9 de mayo de 2018 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2018/05/09/nominate-a-fellow-scientist-for-the-2018-awards/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

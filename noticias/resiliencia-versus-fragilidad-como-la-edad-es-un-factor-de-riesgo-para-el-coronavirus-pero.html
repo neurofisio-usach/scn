@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Resiliencia versus fragilidad: cómo la edad es un factor de riesgo para el coronavirus, pero no igual para todos — Sociedad Chilena de Neurociencia</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="../index.html"><img alt="SCN" src="../logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="../index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="../index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="../index.html#asociarse">Asociarse</a></li>
+<li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+<ul class="nav-drop">
+<li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a class="active" href="../noticias.html">Noticias</a></li>
+<li><a href="../index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="../index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="art-header">
+<div class="wrap">
+<span class="label">Noticias · Archivo</span>
+<h1>Resiliencia versus fragilidad: cómo la edad es un factor de riesgo para el coronavirus, pero no igual para todos</h1>
+<div class="meta"><span>5 de mayo de 2020</span><span class="cat-pill">Home</span><span class="cat-pill">Noticias</span></div>
+</div>
+</div>
+<img alt="Resiliencia versus fragilidad: cómo la edad es un factor de riesgo para el coronavirus, pero no igual para todos" class="feat-img" src="../img/archivo/2020/neuro-imag-05-05-20.jpg"/>
+<div class="art-body"><a class="back-btn" href="archivo.html">Volver al archivo</a><p class="paragraph" style="text-align: justify;">Desde fines del año pasado el mundo se enfrenta a la <a href="https://www.latercera.com/que-pasa/noticia/oms-declara-pandemia-al-coronavirus/2F2VP5KFDRG3RJA3DD6BCGC46U/" rel="noopener" target="_blank">pandemia </a>del <a href="https://www.latercera.com/que-pasa/noticia/el-rebrote-un-fenomeno-que-asusta-japon-corea-del-sur-y-singapur-aumentan-inesperadamente-casos-de-covid-19/BVGWOIQRXVCCTNZLKLMVSPGKCI/" rel="noopener" target="_blank">Covid-19</a>, causada por el <a href="https://www.latercera.com/que-pasa/noticia/mers-y-sars-las-pandemias-que-alertaron-lo-que-venia/FUGOJDVFTNH2BGWI4QXHFL3JCA/" rel="noopener" target="_blank">coronavirus Sars-CoV2.</a> A la fecha, <a href="https://www.latercera.com/que-pasa/noticia/pandemia-de-coronavirus-alcanza-2-millones-de-contagios-en-todo-el-mundo-hay-127-mil-muertos/DSAV7MHIONA45A7SDBDYSVMS7Y/" rel="noopener" target="_blank">más de dos millones de personas se han infectado y el número de muertes en el mundo es cercano a las 130.000.</a></p>
+<p class="paragraph" style="text-align: justify;">En nuestro país, <b>los primeros casos se reportaron a inicios de marzo</b> y ya tenemos <a href="https://www.latercera.com/que-pasa/noticia/el-mapa-en-tiempo-real-de-la-expansion-del-coronavirus-en-chile/JGBW7PPZRVBLTOSK4JQZQP2UZQ/" rel="noopener" target="_blank">sobre los 7.000 infectados y casi 100 muertes</a>. La tasa de crecimiento de la infección es del 18%. Y si bien está por debajo del 23-25% que muestran algunos de los países más severamente afectados por la enfermedad como España e Italia, sigue siendo una cifra preocupante.</p>
+<p class="paragraph" style="text-align: justify;"><b>De acuerdo a lo observado durante la evolución de esta pandemia</b>, la población que está en mayor riesgo de morir por Covid-19 son los adultos mayores y aquellas personas que presentan enfermedades crónicas.</p>
+<p class="paragraph" style="text-align: justify;">Es por lo tanto relevante hacernos la pregunta:<b> ¿Qué hace a estos grupos ser los más vulnerables frente al Covid-19? </b>La respuesta parece evidente: El aumento en la expectativa de vida en el planeta, y por extensión en nuestro país, no siempre va de la mano con un aumento en la expectativa de vida sana. <b>Es por esto que la edad es un factor de riesgo, pero no todas las personas comparten un mismo riesgo aún teniendo la misma edad. </b>Dicho de otra forma, no es la edad cronológica el parámetro que más información nos puede entregar para evaluar la susceptibilidad de un sujeto frente al Covid-19.</p>
+<p class="paragraph" style="text-align: justify;">Desafortunadamente, <b>tampoco tenemos a la fecha buenos marcadores biológicos que determinen cuán distinta es la edad cronológica de la edad biológica en los individuos.</b> Y aunque hay prometedores avances basados en la medición de modificaciones epigenéticas para establecer fehacientemente este correlato, al día de hoy no son fácilmente aplicables a gran escala por su complejidad técnica y costos; y por lo tanto su utilización ha sido restringida solamente a laboratorios de investigación.</p>
+<p class="paragraph" style="text-align: justify;"><b>Uno de los factores que contribuye a que las personas mayores sean más susceptibles al Covid-19</b>, es que durante el envejecimiento el sistema inmune pierde su capacidad de responder adecuadamente frente a estímulos nocivos como infecciones bacterianas y virales. Sin embargo, este declive funcional no es homogéneo en la población. Y así como hay quienes envejecen vigorosos y sanos, otros desarrollan múltiples patologías -la mayoría de ellas asociadas al envejecimiento- que minan su capacidad vital y los vuelven frágiles.</p>
+<p class="paragraph" style="text-align: justify;">Desde aproximadamente una década en el sistema público de salud se realiza el <b>Examen de Medicina Preventiva del Adulto Mayor (Empam)</b>, un examen que aborda diferentes aspectos que dan cuenta de la funcionalidad de cada persona mayor de 65 años. <b>Este examen contiene mucha información relevante que de estar obtenida con los mismos estándares de calidad y analizada de forma pertinente permitiría cruzar esos datos con escalas internacionales de fragilidad.</b></p>
+<p class="paragraph" style="text-align: justify;">La fragilidad es un síndrome que da cuenta de la pérdida de funcionalidad que afecta en la medida que se envejece. <b>Lo contrario a la fragilidad es la resiliencia</b>. Y la resiliencia se define como la capacidad de un organismo de resistir un estímulo nocivo para su funcionamiento. Dicho en simple,<b> la fragilidad y la resiliencia determinan, por ejemplo, que la recuperación a una cirugía no sea exactamente igual a los 20 años que a los 70 años.</b> Lo mismo para la recuperación de una fractura, entre otras condiciones médicas.</p>
+<p class="paragraph" style="text-align: justify;">Hasta el día de hoy no tenemos análisis retrospectivos que informen respecto de la cobertura real en la aplicación del Empam, ni respecto de la calidad de datos colectados, <b>ni menos un análisis que estos datos podrían entregar prospectivamente.</b></p>
+<p class="paragraph" style="text-align: justify;">Los conceptos de fragilidad y resiliencia son una expresión clínica de la <b>biología del envejecimiento,</b> que como vimos antes no puede ser determinada con una prueba de laboratorio. Por lo tanto, <b>en el contexto actual de la pandemia identificar aquellos adultos mayores frágiles puede contribuir significativamente a canalizar recursos en aquellas personas que tienen un mayor riesgo </b>de desarrollar los aspectos más severos asociados al Covid-19. Por ello la <a href="http://www.socgeriatria.cl/" rel="noopener" target="_blank">Sociedad Chilena de Geriatría</a> ha establecido un protocolo abreviado para identificar la fragilidad en las urgencias de los hospitales durante la pandemia.</p>
+<p class="paragraph" style="text-align: justify;">En el largo plazo, un país como el nuestro que tiene recursos limitados, debiese tomar la decisión de tener mediciones permanentes de la fragilidad de nuestra población con exactamente los mismos estándares de calidad, y con un seguimiento periódico del índice de fragilidad. <b>Adicionalmente, debemos seguir perseverando en investigar desde múltiples disciplinas como envejecen los chilenos. </b>De esta forma con un análisis detallado, sistemático y pertinente de los datos se podrán canalizar recursos de forma más eficiente y hacer una diferencia en las condiciones de vida de una parte de la población que requiere de toda nuestra atención.</p>
+<p class="paragraph" style="text-align: justify;"><i><b>*Director Centro de Gerociencias, Salud Mental y Metabolismo </b></i><a href="http://www.medicina.uchile.cl/investigacion/institutos-y-centros/centro-de-gerociencia-salud-mental-y-metabolismo" rel="noopener" target="_blank"><i><b>(Gero)</b></i></a></p>
+<h3>Fuente: <a href="https://www.latercera.com/opinion/noticia/resiliencia-versus-fragilidad-como-la-edad-es-un-factor-de-riesgo-para-el-coronavirus-pero-no-igual-para-todos/5376UGPV65FXXK4V35HOCW5KEY/" rel="noopener" target="_blank">www.latercera.com</a></h3>
+<p class="nota-archivo"><small>Archivo: publicado originalmente el 5 de mayo de 2020 en el sitio anterior de la Sociedad (<code>https://socneurociencia.cl/2020/05/05/resiliencia-versus-fragilidad-como-la-edad-es-un-factor-de-riesgo-para-el-coronavirus-pero-no-igual-para-todos/</code>).</small></p></div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="../index.html">Inicio</a>
+<a href="../noticias.html">Noticias</a>
+<a href="../congresos-anteriores.html">Congresos</a>
+<a href="../index.html#asociarse">Membresía</a>
+<a href="../index.html#contacto">Contacto</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+</body>
+</html>

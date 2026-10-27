@@ -146,6 +146,14 @@ a{color:inherit}
 @media(max-width:640px){
   .form-grid { grid-template-columns:1fr }
 }
+
+/* CTA hacia formulario.html (patch_asociarse_form.py) */
+.inc-cta{margin:1.25rem 0 .5rem}
+.inc-cta p{margin:0 0 1rem;line-height:1.6}
+.inc-cta p a{color:inherit;text-decoration:underline}
+.inc-cta-btn{display:inline-block;padding:.75rem 1.4rem;border-radius:6px;
+  background:#14a39b;color:#fff;font-weight:600;text-decoration:none}
+.inc-cta-btn:hover,.inc-cta-btn:focus{background:#0f857e;color:#fff}
 </style>
 </head>
 <body>
@@ -243,125 +251,10 @@ a{color:inherit}
     </div>
 
     <!-- ── FORMULARIO DE INCORPORACIÓN ────────────────── -->
-    <form class="inc-form"
-          id="form-incorporacion"
-          action="https://formsubmit.co/sociedadchilenaneurociencia@gmail.com"
-          method="POST"
-          enctype="multipart/form-data">
-
-      <!-- FormSubmit config -->
-      <input type="hidden" name="_subject" value="[SCN] Solicitud de incorporación">
-      <input type="hidden" name="_next"    value="https://neurofisio-usach.github.io/scn/gracias.html">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-
-      <!-- 1. DATOS PERSONALES -->
-      <div class="form-sec">
-        <p class="form-sec-title">Datos personales</p>
-        <div class="form-grid" style="margin-bottom:.85rem">
-          <label class="f-label">
-            Nombre completo <span class="req">*</span>
-            <input class="f-input" type="text" name="nombre" required placeholder="Nombre y apellidos">
-          </label>
-          <label class="f-label">
-            Correo electrónico <span class="req">*</span>
-            <input class="f-input" type="email" name="correo" required placeholder="correo@institucion.cl">
-          </label>
-        </div>
-        <div class="form-grid" style="margin-bottom:.85rem">
-          <label class="f-label">
-            Afiliación institucional <span class="req">*</span>
-            <input class="f-input" type="text" name="afiliacion" required placeholder="Universidad / Centro de investigación">
-          </label>
-          <label class="f-label">
-            Teléfono de contacto
-            <input class="f-input" type="tel" name="telefono" placeholder="+56 9 XXXX XXXX">
-          </label>
-        </div>
-        <div class="form-grid" style="margin-bottom:.85rem">
-          <label class="f-label">
-            Dirección postal
-            <input class="f-input" type="text" name="direccion" placeholder="Dirección, ciudad, región">
-          </label>
-          <label class="f-label">
-            Calidad solicitada <span class="req">*</span>
-            <select class="f-select f-input" name="calidad" id="sel-calidad" required onchange="toggleStudent(this.value)">
-              <option value="" disabled selected>Selecciona…</option>
-              <option value="Socio Regular">Socio Regular</option>
-              <option value="Socio Estudiante">Socio Estudiante</option>
-            </select>
-          </label>
-        </div>
-        <!-- Campos adicionales para estudiantes -->
-        <div id="student-fields">
-          <div class="form-grid">
-            <label class="f-label">
-              Programa de postgrado <span class="req">*</span>
-              <select class="f-select f-input" name="programa_postgrado">
-                <option value="" disabled selected>Selecciona…</option>
-                <option>Magíster</option>
-                <option>Doctorado</option>
-              </select>
-            </label>
-            <label class="f-label">
-              Año de ingreso al programa <span class="req">*</span>
-              <input class="f-input" type="number" name="anio_ingreso" placeholder="AAAA" min="2000" max="2030">
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. SOCIOS PATROCINADORES -->
-      <div class="form-sec">
-        <p class="form-sec-title">Socios titulares patrocinadores</p>
-        <p style="font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:1rem">Debe contar con el respaldo de dos socios regulares activos de la SCN.</p>
-        <div class="form-grid" style="margin-bottom:.85rem">
-          <label class="f-label">
-            Socio titular 1 <span class="req">*</span>
-            <input class="f-input" type="text" name="socio_titular_1" required placeholder="Nombre completo">
-          </label>
-          <label class="f-label">
-            Correo socio titular 1 <span class="req">*</span>
-            <input class="f-input" type="email" name="correo_socio_1" required placeholder="correo@institucion.cl">
-          </label>
-        </div>
-        <div class="form-grid">
-          <label class="f-label">
-            Socio titular 2 <span class="req">*</span>
-            <input class="f-input" type="text" name="socio_titular_2" required placeholder="Nombre completo">
-          </label>
-          <label class="f-label">
-            Correo socio titular 2 <span class="req">*</span>
-            <input class="f-input" type="email" name="correo_socio_2" required placeholder="correo@institucion.cl">
-          </label>
-        </div>
-      </div>
-
-      <!-- 3. DOCUMENTOS ADJUNTOS -->
-      <div class="form-sec">
-        <p class="form-sec-title">Documentos adjuntos (PDF, máx. 10 MB c/u)</p>
-        <p style="font-size:.75rem;color:#e05c2a;margin-bottom:1rem">Formatos aceptados: PDF, DOC, DOCX</p>
-        <div class="form-col">
-          <div class="f-file-wrap">
-            <label class="f-label">Curriculum Vitae (inglés o español) <span class="req">*</span></label>
-            <input class="f-file" type="file" name="curriculum_vitae" accept=".pdf,.doc,.docx" required>
-            <span class="f-file-note">CV en formato libre · máx. 10 MB</span>
-          </div>
-          <div class="f-file-wrap">
-            <label class="f-label">Carta de intención <span class="req">*</span></label>
-            <input class="f-file" type="file" name="carta_intencion" accept=".pdf,.doc,.docx" required>
-            <span class="f-file-note">Carta manifestando su interés en participar en la SCN · máx. 10 MB</span>
-          </div>
-          <div class="f-file-wrap" id="cert-field" style="display:none">
-            <label class="f-label">Certificado de alumno regular <span class="req">*</span></label>
-            <input class="f-file" type="file" name="certificado_alumno" accept=".pdf,.doc,.docx">
-            <span class="f-file-note">Solo requerido para socios estudiantes · máx. 10 MB</span>
-          </div>
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-primary btn-submit">Enviar solicitud</button>
-    </form>
+    <div class="inc-cta">
+      <p>Completa la postulación en línea. Después de enviarla, envía tus documentos en PDF (CV, carta de intención y, si eres estudiante, certificado de alumno regular) a <a href="mailto:sociedadchilenaneurociencia@gmail.com">sociedadchilenaneurociencia@gmail.com</a>.</p>
+      <a class="inc-cta-btn" href="formulario.html">Ir al formulario de postulación &rarr;</a>
+    </div>
 
     <!-- Alternativa por correo -->
     <div class="alt-email-box">

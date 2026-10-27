@@ -219,6 +219,11 @@ a{color:inherit}
   .congreso-card{flex-direction:column;gap:1rem}
   .quien-objectives{grid-template-columns:1fr}
 }
+
+/* Contacto: mensajes de estado (patch_contacto_form.py) */
+.contact-form .form-status{margin:.6rem 0 0;font-size:.95rem;min-height:1.2em}
+.contact-form .form-status.ok{color:#1b6e3a}
+.contact-form .form-status.err{color:#a12622}
 </style>
 </head>
 <body>
@@ -560,14 +565,17 @@ a{color:inherit}
       <h2 class="sh-title">Contacto</h2>
       <p class="sh-body">¿Tienes preguntas sobre membresía, eventos o actividades de la SCN? Envíanos un mensaje.</p>
     </div>
-    <form class="contact-form" onsubmit="handleForm(event)">
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xoeedyze" method="POST">
+      <input type="hidden" name="_subject" value="Mensaje de contacto — sitio web SCN">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
       <div class="form-row">
-        <input type="text" placeholder="Tu nombre (requerido)" required>
-        <input type="email" placeholder="Tu correo (requerido)" required>
+        <input type="text" name="nombre" placeholder="Tu nombre (requerido)" aria-label="Tu nombre" autocomplete="name" required>
+        <input type="email" name="email" placeholder="Tu correo (requerido)" aria-label="Tu correo" autocomplete="email" required>
       </div>
-      <input type="text" placeholder="Asunto">
-      <textarea placeholder="Tu mensaje" rows="6"></textarea>
+      <input type="text" name="asunto" placeholder="Asunto" aria-label="Asunto">
+      <textarea name="mensaje" placeholder="Tu mensaje (requerido)" aria-label="Tu mensaje" rows="6" required></textarea>
       <div><button type="submit" class="btn btn-primary">Enviar mensaje</button></div>
+      <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
@@ -619,10 +627,38 @@ function togglePrev(){
   b.classList.toggle('open');
   t.classList.toggle('open');
 }
-function handleForm(e){
-  e.preventDefault();
-  alert('Mensaje enviado. Esta funcionalidad se activará en la versión final del sitio.');
-}
+(function(){
+  const f=document.getElementById('contact-form');
+  if(!f) return;
+  const st=document.getElementById('contact-status');
+  const btn=f.querySelector('button[type="submit"]');
+  const BASE='Mensaje de contacto — sitio web SCN';
+  f.addEventListener('submit',async function(e){
+    e.preventDefault();
+    const a=f.elements['asunto'].value.trim();
+    f.elements['_subject'].value=a?BASE+': '+a:BASE;
+    const label=btn.textContent;
+    btn.disabled=true; btn.textContent='Enviando…';
+    st.className='form-status'; st.textContent='';
+    try{
+      const r=await fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}});
+      if(!r.ok){
+        let msg='';
+        try{const d=await r.json(); if(d.errors) msg=d.errors.map(x=>x.message).join(' ');}catch(_){}
+        throw new Error(msg);
+      }
+      f.reset();
+      st.classList.add('ok');
+      st.textContent='¡Gracias! Tu mensaje fue enviado. Te responderemos a la brevedad.';
+    }catch(err){
+      st.classList.add('err');
+      st.textContent='No se pudo enviar el mensaje'+(err.message?' ('+err.message+')':'')+
+        '. Inténtalo nuevamente o escríbenos a sociedadchilenaneurociencia@gmail.com.';
+    }finally{
+      btn.disabled=false; btn.textContent=label;
+    }
+  });
+})();
 </script>
 </body>
 </html>

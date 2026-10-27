@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Postulación a socio — Sociedad Chilena de Neurociencia</title>
+<meta name="description" content="Formulario de postulación para ser socio de la Sociedad Chilena de Neurociencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;
+      --muted:#627286;--border:#e2e8f0;
+      --f-serif:'DM Serif Display',Georgia,serif;
+      --max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);text-decoration:none;font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto}
+/* Header */
+.cong-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.cong-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.cong-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.6rem);font-weight:400;line-height:1.15;max-width:800px}
+.cong-header .meta{margin-top:.6rem;font-size:.88rem;color:rgba(255,255,255,.55)}
+.feat-img{width:100%;max-height:480px;object-fit:cover}
+/* Content */
+.cong-body{max-width:820px;margin:2.5rem auto;padding:0 var(--pad)}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);text-decoration:none;margin-bottom:2rem}
+.back-btn::before{content:'←'}
+.cong-body p{line-height:1.85;margin-bottom:1rem;font-size:1.02rem}
+.cong-body h2,.cong-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.cong-body h2{font-size:1.6rem}.cong-body h3{font-size:1.25rem}
+.cong-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.cong-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.cong-body ul,.cong-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.cong-body strong{font-weight:600;color:#1a202c}
+.cong-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0}
+/* Section divider */
+.section-sep{border:none;border-top:2px solid var(--teal);margin:3rem 0;max-width:120px}
+.sub-source{font-size:.75rem;color:var(--muted);font-style:italic;margin-bottom:1.5rem}
+/* Documents box */
+.docs-box{background:var(--offwhite);border:1px solid var(--border);border-radius:8px;padding:1.5rem 1.75rem;margin:2.5rem 0}
+.docs-box h3{font-family:var(--f-serif);font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:1rem}
+.doc-item{display:flex;align-items:center;gap:.75rem;padding:.65rem 0;border-bottom:1px solid var(--border)}
+.doc-item:last-child{border-bottom:none}
+.doc-icon{width:36px;height:36px;background:var(--navy);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.05em}
+.doc-info{flex:1}
+.doc-name{font-size:.9rem;font-weight:500;color:var(--navy)}
+.doc-ext{font-size:.75rem;color:var(--muted);margin-top:.1rem}
+.doc-btn{padding:.35rem .85rem;background:var(--teal);color:#fff;border-radius:4px;font-size:.8rem;font-weight:600;text-decoration:none;white-space:nowrap}
+/* Archive grid */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .lbl{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s;text-decoration:none;color:inherit}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img .yr{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.card-tag{display:inline-block;font-size:.68rem;font-weight:600;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem;background:#ede9fe;color:#5b21b6}
+.card-title{font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem}
+.card-meta{font-size:.82rem;color:var(--muted);flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+
+/* Formulario de postulación */
+.form-intro{background:var(--offwhite);border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:2rem;font-size:.95rem;line-height:1.7}
+.form-intro p{margin-bottom:.5rem!important;font-size:.95rem!important}
+.form-intro p:last-child{margin-bottom:0!important}
+.scn-form fieldset{border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem 1.5rem;margin-bottom:1.5rem}
+.scn-form legend{font-family:var(--f-serif);font-size:1.15rem;color:var(--navy);padding:0 .5rem}
+.fld{display:flex;flex-direction:column;gap:.35rem;margin-top:1rem}
+.fld label,.radio-group>span{font-size:.88rem;font-weight:500;color:var(--navy)}
+.req{color:#c0392b;margin-left:.15rem}
+.fld input{font:inherit;font-size:.95rem;padding:.6rem .75rem;border:1px solid #cbd5e0;border-radius:5px;background:#fff;color:#2d3748;width:100%}
+.fld input:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+.fld input[aria-invalid="true"]{border-color:#c0392b}
+.fld .hint{font-size:.78rem;color:var(--muted)}
+.fld .err{font-size:.8rem;color:#c0392b;min-height:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 1.25rem}
+.radio-group{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+.radio-opts{display:flex;gap:1.5rem;flex-wrap:wrap}
+.radio-opts label{display:flex;align-items:center;gap:.45rem;font-size:.95rem;cursor:pointer}
+.radio-opts input{accent-color:var(--teal);width:1.05rem;height:1.05rem}
+.solo-estudiante[hidden]{display:none}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.form-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.btn-enviar{font:inherit;font-weight:600;font-size:.95rem;padding:.75rem 1.75rem;background:var(--teal);color:#fff;border:none;border-radius:5px;cursor:pointer}
+.btn-enviar:hover{filter:brightness(1.08)}
+.btn-enviar:disabled{opacity:.6;cursor:wait}
+.form-msg{border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;line-height:1.7}
+.form-msg[hidden]{display:none}
+.form-msg.ok{background:#e6f7f2;border:1px solid #9fdcc8;color:#14532d}
+.form-msg.error{background:#fdecea;border:1px solid #f5b7b1;color:#7b241c}
+.form-msg h3{margin:0 0 .5rem!important;font-size:1.2rem!important;color:inherit!important}
+.form-msg p{margin-bottom:.5rem!important}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><img src="logo_scn.png" alt="SCN"></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li class="nav-has-drop"><a href="index.html#sociedad">Quiénes somos</a>
+      <ul class="nav-drop"><li><a href="index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+    <li><a href="index.html#directorio">Directorio</a></li>
+    <li class="nav-has-drop"><a href="index.html#asociarse">Socios</a>
+      <ul class="nav-drop">
+        <li><a href="index.html#asociarse">Asociarse</a></li>
+        <li><a href="https://socneurociencia.cl/acceso-memberships/" target="_blank">Acceso Memberships</a></li>
+        <li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+      </ul></li>
+    <li class="nav-has-drop"><a href="congresos-anteriores.html">Congresos</a>
+      <ul class="nav-drop">
+        <li><a href="index.html#congreso-2025">Congreso 2025</a></li>
+        <li><a href="congresos-anteriores.html">Congresos Anteriores</a></li>
+      </ul></li>
+    <li><a href="noticias.html">Noticias</a></li>
+    <li><a href="index.html#contacto">Contacto</a></li>
+    <li class="nav-hl"><a href="index.html">Año del Cerebro</a></li>
+    <li class="nav-cta"><a href="#">Donaciones</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">☰</button>
+</div></nav>
+
+<div class="cong-header">
+  <div class="wrap">
+    <span class="cong-label">Socios · Asociarse</span>
+    <h1>Postulación a socio</h1>
+    <p class="meta">Sí, quiero ser miembro de la Sociedad Chilena de Neurociencia</p>
+  </div>
+</div>
+<div class="cong-body">
+  <a href="index.html#asociarse" class="back-btn">Volver a Asociarse</a>
+
+  <div class="form-intro">
+    <p>Completa este formulario para postular como socio de la Sociedad Chilena de Neurociencia. Tu postulación debe estar respaldada por <strong>dos Socios Titulares</strong>.</p>
+    <p><strong>Documentos:</strong> después de enviar el formulario, envía en PDF (máximo 10 MB cada uno) tu <strong>Curriculum Vitae</strong> (formato libre, inglés o español), tu <strong>carta de intención</strong> y, si postulas como estudiante, tu <strong>certificado de alumno regular</strong> del año en curso, al correo <a href="mailto:sociedadchilenaneurociencia@gmail.com">sociedadchilenaneurociencia@gmail.com</a>.</p>
+  </div>
+
+  <div class="form-msg ok" id="form-ok" hidden role="status" tabindex="-1">
+    <h3>¡Gracias! Recibimos tu postulación</h3>
+    <p>Para completarla, envía tus documentos en PDF (CV, carta de intención y, si eres estudiante, certificado de alumno regular) a <a id="mail-docs" href="mailto:sociedadchilenaneurociencia@gmail.com">sociedadchilenaneurociencia@gmail.com</a>, indicando tu nombre en el asunto.</p>
+  </div>
+  <div class="form-msg error" id="form-error" hidden role="alert"></div>
+
+  <form class="scn-form" id="form-socio" action="https://formspree.io/f/xoeedyze" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Postulación a socio — sitio web SCN">
+    <div class="hp" aria-hidden="true"><label>No llenar este campo <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+
+    <fieldset>
+      <legend>Calidad de miembro</legend>
+      <div class="radio-group" role="radiogroup" aria-labelledby="lbl-tipo">
+        <span id="lbl-tipo">Postulo como<span class="req">*</span></span>
+        <div class="radio-opts">
+          <label><input type="radio" name="calidad_de_miembro" value="Regular" required> Regular</label>
+          <label><input type="radio" name="calidad_de_miembro" value="Estudiante"> Estudiante</label>
+        </div>
+        <span class="err" data-err="calidad_de_miembro"></span>
+      </div>
+      <div class="solo-estudiante grid2" id="bloque-estudiante" hidden>
+        <div class="fld">
+          <label for="programa">Programa de Magíster o Doctorado que está realizando<span class="req">*</span></label>
+          <input id="programa" name="programa" type="text">
+          <span class="err" data-err="programa"></span>
+        </div>
+        <div class="fld">
+          <label for="ano_ingreso">Año de ingreso al programa<span class="req">*</span></label>
+          <input id="ano_ingreso" name="ano_ingreso" type="number" min="1990" max="2100" inputmode="numeric">
+          <span class="err" data-err="ano_ingreso"></span>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Datos personales</legend>
+      <div class="fld">
+        <label for="nombre">Nombre completo<span class="req">*</span></label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+        <span class="err" data-err="nombre"></span>
+      </div>
+      <div class="grid2">
+        <div class="fld">
+          <label for="rut">RUT<span class="req">*</span></label>
+          <input id="rut" name="rut" type="text" placeholder="12.345.678-9" required>
+          <span class="hint">Si no tienes RUT, indica tu pasaporte.</span>
+          <span class="err" data-err="rut"></span>
+        </div>
+        <div class="fld">
+          <label for="email">Correo electrónico<span class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <span class="err" data-err="email"></span>
+        </div>
+      </div>
+      <div class="fld">
+        <label for="afiliacion">Afiliación (institución, departamento)<span class="req">*</span></label>
+        <input id="afiliacion" name="afiliacion" type="text" autocomplete="organization" required>
+        <span class="err" data-err="afiliacion"></span>
+      </div>
+      <div class="grid2">
+        <div class="fld">
+          <label for="direccion">Dirección postal</label>
+          <input id="direccion" name="direccion_postal" type="text" autocomplete="street-address">
+        </div>
+        <div class="fld">
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" name="telefono" type="tel" autocomplete="tel">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Socios Titulares que respaldan la postulación</legend>
+      <div class="grid2">
+        <div class="fld">
+          <label for="socio1">Socio Titular 1<span class="req">*</span></label>
+          <input id="socio1" name="socio_titular_1" type="text" required>
+          <span class="err" data-err="socio_titular_1"></span>
+        </div>
+        <div class="fld">
+          <label for="socio1_email">Correo del Socio Titular 1<span class="req">*</span></label>
+          <input id="socio1_email" name="socio_titular_1_correo" type="email" required>
+          <span class="err" data-err="socio_titular_1_correo"></span>
+        </div>
+        <div class="fld">
+          <label for="socio2">Socio Titular 2<span class="req">*</span></label>
+          <input id="socio2" name="socio_titular_2" type="text" required>
+          <span class="err" data-err="socio_titular_2"></span>
+        </div>
+        <div class="fld">
+          <label for="socio2_email">Correo del Socio Titular 2<span class="req">*</span></label>
+          <input id="socio2_email" name="socio_titular_2_correo" type="email" required>
+          <span class="err" data-err="socio_titular_2_correo"></span>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-enviar" id="btn-enviar">Enviar postulación</button>
+      <span class="hint" style="font-size:.82rem;color:var(--muted)"><span class="req">*</span> campos obligatorios</span>
+    </div>
+  </form>
+</div>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+  <div class="footer-links">
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="congresos-anteriores.html">Congresos</a>
+    <a href="index.html#asociarse">Membresía</a>
+  </div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+<script>
+(function(){
+  var form=document.getElementById('form-socio');
+  if(!form)return;
+  var ok=document.getElementById('form-ok'),err=document.getElementById('form-error'),
+      btn=document.getElementById('btn-enviar'),est=document.getElementById('bloque-estudiante');
+  var estFields=est.querySelectorAll('input');
+
+  function toggleEst(){
+    var sel=form.querySelector('input[name="calidad_de_miembro"]:checked');
+    var on=sel&&sel.value==='Estudiante';
+    est.hidden=!on;
+    estFields.forEach(function(i){i.required=on;i.disabled=!on;});
+  }
+  form.querySelectorAll('input[name="calidad_de_miembro"]').forEach(function(r){r.addEventListener('change',toggleEst);});
+  toggleEst();
+
+  // RUT chileno: dígito verificador (módulo 11). Si no parece RUT (p.ej. pasaporte), no se valida.
+  function rutOk(v){
+    var s=v.replace(/[.\s]/g,'').toUpperCase();
+    var m=s.match(/^(\d{6,8})-?([\dK])$/);
+    if(!m)return null;
+    var sum=0,mul=2;
+    for(var i=m[1].length-1;i>=0;i--){sum+=parseInt(m[1][i],10)*mul;mul=mul===7?2:mul+1;}
+    var dv=11-(sum%11);dv=dv===11?'0':dv===10?'K':String(dv);
+    return dv===m[2];
+  }
+
+  function setErr(name,msg){
+    var span=form.querySelector('[data-err="'+name+'"]');
+    if(span)span.textContent=msg||'';
+    form.querySelectorAll('[name="'+name+'"]').forEach(function(i){
+      if(msg)i.setAttribute('aria-invalid','true');else i.removeAttribute('aria-invalid');
+    });
+  }
+
+  function validate(){
+    var first=null,okAll=true;
+    form.querySelectorAll('[data-err]').forEach(function(s){setErr(s.getAttribute('data-err'),'');});
+    form.querySelectorAll('input[required]:not(:disabled)').forEach(function(i){
+      var msg='';
+      if(i.type==='radio'){
+        if(!form.querySelector('input[name="'+i.name+'"]:checked'))msg='Selecciona una opción.';
+      }else if(!i.value.trim()){
+        msg='Este campo es obligatorio.';
+      }else if(i.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(i.value.trim())){
+        msg='Ingresa un correo válido.';
+      }else if(i.name==='rut'&&rutOk(i.value)===false){
+        msg='El RUT no es válido (revisa el dígito verificador).';
+      }else if(i.name==='ano_ingreso'&&!/^\d{4}$/.test(i.value.trim())){
+        msg='Ingresa un año de cuatro dígitos.';
+      }
+      if(msg){setErr(i.name,msg);okAll=false;if(!first)first=i;}
+    });
+    if(first)first.focus();
+    return okAll;
+  }
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    err.hidden=true;
+    if(!validate())return;
+    btn.disabled=true;btn.textContent='Enviando…';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {ok:r.ok,d:d};});})
+      .then(function(res){
+        if(res.ok){
+          var nom=(form.nombre.value||'').trim();
+          var a=document.getElementById('mail-docs');
+          if(a)a.href=a.href.split('?')[0]+'?subject='+encodeURIComponent('Documentos postulación — '+nom);
+          form.hidden=true;ok.hidden=false;ok.focus();
+          ok.scrollIntoView({behavior:'smooth',block:'start'});
+        }else{
+          var msgs=(res.d.errors||[]).map(function(x){return x.message;}).join(' ');
+          throw new Error(msgs||'El servidor rechazó el envío.');
+        }
+      })
+      .catch(function(ex){
+        err.innerHTML='<p><strong>No pudimos enviar tu postulación.</strong> '+
+          (ex&&ex.message?ex.message.replace(/</g,'&lt;'):'')+
+          '</p><p>Revisa tu conexión e inténtalo de nuevo. Si el problema persiste, escríbenos a '+
+          '<a href="mailto:sociedadchilenaneurociencia@gmail.com">sociedadchilenaneurociencia@gmail.com</a>.</p>';
+        err.hidden=false;err.scrollIntoView({behavior:'smooth',block:'center'});
+      })
+      .finally(function(){btn.disabled=false;btn.textContent='Enviar postulación';});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Acceso Memberships — Sociedad Chilena de Neurociencia</title>
+<meta content="Formulario de postulación para ser socio de la Sociedad Chilena de Neurociencia." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;
+      --muted:#627286;--border:#e2e8f0;
+      --f-serif:'DM Serif Display',Georgia,serif;
+      --max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);text-decoration:none;font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78);text-decoration:none}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto}
+/* Header */
+.cong-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.cong-label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.cong-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.6rem);font-weight:400;line-height:1.15;max-width:800px}
+.cong-header .meta{margin-top:.6rem;font-size:.88rem;color:rgba(255,255,255,.55)}
+.feat-img{width:100%;max-height:480px;object-fit:cover}
+/* Content */
+.cong-body{max-width:820px;margin:2.5rem auto;padding:0 var(--pad)}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);text-decoration:none;margin-bottom:2rem}
+.back-btn::before{content:'←'}
+.cong-body p{line-height:1.85;margin-bottom:1rem;font-size:1.02rem}
+.cong-body h2,.cong-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.cong-body h2{font-size:1.6rem}.cong-body h3{font-size:1.25rem}
+.cong-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.cong-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.cong-body ul,.cong-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.cong-body strong{font-weight:600;color:#1a202c}
+.cong-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0}
+/* Section divider */
+.section-sep{border:none;border-top:2px solid var(--teal);margin:3rem 0;max-width:120px}
+.sub-source{font-size:.75rem;color:var(--muted);font-style:italic;margin-bottom:1.5rem}
+/* Documents box */
+.docs-box{background:var(--offwhite);border:1px solid var(--border);border-radius:8px;padding:1.5rem 1.75rem;margin:2.5rem 0}
+.docs-box h3{font-family:var(--f-serif);font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:1rem}
+.doc-item{display:flex;align-items:center;gap:.75rem;padding:.65rem 0;border-bottom:1px solid var(--border)}
+.doc-item:last-child{border-bottom:none}
+.doc-icon{width:36px;height:36px;background:var(--navy);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.05em}
+.doc-info{flex:1}
+.doc-name{font-size:.9rem;font-weight:500;color:var(--navy)}
+.doc-ext{font-size:.75rem;color:var(--muted);margin-top:.1rem}
+.doc-btn{padding:.35rem .85rem;background:var(--teal);color:#fff;border-radius:4px;font-size:.8rem;font-weight:600;text-decoration:none;white-space:nowrap}
+/* Archive grid */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .lbl{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s;text-decoration:none;color:inherit}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img .yr{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.card-tag{display:inline-block;font-size:.68rem;font-weight:600;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem;background:#ede9fe;color:#5b21b6}
+.card-title{font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem}
+.card-meta{font-size:.82rem;color:var(--muted);flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+
+/* Formulario de postulación */
+.form-intro{background:var(--offwhite);border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:2rem;font-size:.95rem;line-height:1.7}
+.form-intro p{margin-bottom:.5rem!important;font-size:.95rem!important}
+.form-intro p:last-child{margin-bottom:0!important}
+.scn-form fieldset{border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem 1.5rem;margin-bottom:1.5rem}
+.scn-form legend{font-family:var(--f-serif);font-size:1.15rem;color:var(--navy);padding:0 .5rem}
+.fld{display:flex;flex-direction:column;gap:.35rem;margin-top:1rem}
+.fld label,.radio-group>span{font-size:.88rem;font-weight:500;color:var(--navy)}
+.req{color:#c0392b;margin-left:.15rem}
+.fld input{font:inherit;font-size:.95rem;padding:.6rem .75rem;border:1px solid #cbd5e0;border-radius:5px;background:#fff;color:#2d3748;width:100%}
+.fld input:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:var(--teal)}
+.fld input[aria-invalid="true"]{border-color:#c0392b}
+.fld .hint{font-size:.78rem;color:var(--muted)}
+.fld .err{font-size:.8rem;color:#c0392b;min-height:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 1.25rem}
+.radio-group{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+.radio-opts{display:flex;gap:1.5rem;flex-wrap:wrap}
+.radio-opts label{display:flex;align-items:center;gap:.45rem;font-size:.95rem;cursor:pointer}
+.radio-opts input{accent-color:var(--teal);width:1.05rem;height:1.05rem}
+.solo-estudiante[hidden]{display:none}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.form-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.btn-enviar{font:inherit;font-weight:600;font-size:.95rem;padding:.75rem 1.75rem;background:var(--teal);color:#fff;border:none;border-radius:5px;cursor:pointer}
+.btn-enviar:hover{filter:brightness(1.08)}
+.btn-enviar:disabled{opacity:.6;cursor:wait}
+.form-msg{border-radius:8px;padding:1.25rem 1.5rem;margin:1.5rem 0;line-height:1.7}
+.form-msg[hidden]{display:none}
+.form-msg.ok{background:#e6f7f2;border:1px solid #9fdcc8;color:#14532d}
+.form-msg.error{background:#fdecea;border:1px solid #f5b7b1;color:#7b241c}
+.form-msg h3{margin:0 0 .5rem!important;font-size:1.2rem!important;color:inherit!important}
+.form-msg p{margin-bottom:.5rem!important}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+</style>
+<style>
+/* acceso-memberships.html (build_memberships_page.py) */
+.mem-access{max-width:500px;margin:0 auto;text-align:center}
+.mem-access .mem-banner{display:block;border-radius:8px;overflow:hidden;
+  box-shadow:0 4px 18px rgba(0,0,0,.12);transition:transform .15s}
+.mem-access .mem-banner:hover,.mem-access .mem-banner:focus{transform:translateY(-2px)}
+.mem-access .mem-banner img{display:block;width:100%;height:auto}
+.mem-access .mem-btn{display:inline-block;margin:1.4rem 0 .4rem;padding:.8rem 1.6rem;
+  border-radius:6px;background:#14a39b;color:#fff;font-weight:600;text-decoration:none}
+.mem-access .mem-btn:hover,.mem-access .mem-btn:focus{background:#0f857e;color:#fff}
+.mem-access .mem-note{font-size:.92rem;line-height:1.6;opacity:.85;margin-top:1rem}
+</style></head>
+<body>
+<nav class="nav"><div class="nav-inner">
+<a class="nav-logo" href="index.html"><img alt="SCN" src="logo_scn.png"/></a>
+<ul class="nav-links" id="nav-links">
+<li><a href="index.html">Inicio</a></li>
+<li class="nav-has-drop"><a href="index.html#sociedad">Quiénes somos</a>
+<ul class="nav-drop"><li><a href="index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+<li><a href="index.html#directorio">Directorio</a></li>
+<li class="nav-has-drop"><a href="index.html#asociarse">Socios</a>
+<ul class="nav-drop">
+<li><a href="index.html#asociarse">Asociarse</a></li>
+<li><a href="acceso-memberships.html" target="_blank">Acceso Memberships</a></li>
+<li><a href="https://socneurociencia.cl/socios/" target="_blank">Lista de Socios</a></li>
+</ul></li>
+<li class="nav-has-drop"><a href="congresos-anteriores.html">Congresos</a>
+<ul class="nav-drop">
+<li><a href="index.html#congreso-2025">Congreso 2025</a></li>
+<li><a href="congresos-anteriores.html">Congresos Anteriores</a></li>
+</ul></li>
+<li><a href="noticias.html">Noticias</a></li>
+<li><a href="index.html#contacto">Contacto</a></li>
+<li class="nav-hl"><a href="index.html">Año del Cerebro</a></li>
+<li class="nav-cta"><a href="#">Donaciones</a></li>
+</ul>
+<button aria-label="Menú" class="nav-burger" id="burger">☰</button>
+</div></nav>
+<div class="cong-header">
+<div class="wrap">
+<span class="cong-label">Socios · Cuotas</span>
+<h1>Acceso Memberships</h1>
+<p class="meta">Pague sus cuotas societarias en línea y actualice su información personal y académica</p>
+</div>
+</div>
+<div class="cong-body">
+<div class="mem-access">
+<a class="mem-banner" href="https://memberships.4id.cl/scn" rel="noopener" target="_blank">
+<img alt="Pague sus cuotas societarias en línea a través de Memberships. También podrá actualizar su información personal y académica. Ingrese aquí. Pago con Webpay Plus." height="500" src="banner-cuotas.png" width="500"/>
+</a>
+<a class="mem-btn" href="https://memberships.4id.cl/scn" rel="noopener" target="_blank">Ingresar a Memberships ↗</a>
+<p class="mem-note">El pago se realiza en la plataforma externa Memberships, con Webpay Plus (Transbank).
+  Si tienes dudas sobre tus cuotas, escríbenos a <a href="mailto:sociedadchilenaneurociencia@gmail.com">sociedadchilenaneurociencia@gmail.com</a>.</p>
+</div>
+</div>
+<footer class="footer"><div class="footer-inner">
+<div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+<div class="footer-links">
+<a href="index.html">Inicio</a>
+<a href="noticias.html">Noticias</a>
+<a href="congresos-anteriores.html">Congresos</a>
+<a href="index.html#asociarse">Membresía</a>
+</div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+
+</body>
+</html>

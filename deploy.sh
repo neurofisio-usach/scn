@@ -56,5 +56,5 @@ git push origin main
 
 echo ""
 echo "───────────────────────────────────────────────"
-echo "✓  Publicado en: https://neurofisio-usach.cl/scn/"
+echo "✓  Publicado en: https://scn.neurofisio-usach.cl/"
 echo "───────────────────────────────────────────────"

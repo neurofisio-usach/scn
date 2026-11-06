@@ -21,6 +21,7 @@ if ! python3 -m pagefind --version &>/dev/null; then
   exit 1
 fi
 python3 scripts/marcar_pagefind.py
+python3 scripts/agregar_buscador_nav.py
 rm -rf pagefind
 python3 -m pagefind --site . --glob "noticias/*.html" --silent
 echo "✓  Índice de búsqueda actualizado ($(find pagefind/fragment -type f | wc -l | tr -d ' ') noticias)."

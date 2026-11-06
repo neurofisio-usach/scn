@@ -13,6 +13,18 @@ fi
 
 cd "$(git rev-parse --show-toplevel)"
 
+# ── Buscador: marcar noticias y regenerar índice Pagefind ─
+# (antes de revisar cambios, para que el índice nuevo se suba)
+if ! python3 -m pagefind --version &>/dev/null; then
+  echo "❌  Pagefind no está instalado. Instálalo una vez con:"
+  echo "    pip install 'pagefind[extended]'"
+  exit 1
+fi
+python3 scripts/marcar_pagefind.py
+rm -rf pagefind
+python3 -m pagefind --site . --glob "noticias/*.html" --silent
+echo "✓  Índice de búsqueda actualizado ($(find pagefind/fragment -type f | wc -l | tr -d ' ') noticias)."
+
 # ── Revisar si hay cambios ────────────────────────────────
 if git diff --quiet && git diff --cached --quiet \
    && [ -z "$(git ls-files --others --exclude-standard)" ]; then
@@ -56,5 +68,5 @@ git push origin main
 
 echo ""
 echo "───────────────────────────────────────────────"
-echo "✓  Publicado en: https://scn.neurofisio-usach.cl/"
+echo "✓  Publicado en: https://socneurociencia.cl/"
 echo "───────────────────────────────────────────────"

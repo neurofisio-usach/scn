@@ -107,7 +107,24 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
 .sb-logos a:hover{opacity:1}
 .sb-logos a.logo-dark{background:var(--navy)}
 .sb-logos img{max-height:42px;max-width:100%;width:auto;object-fit:contain}
+/* ── Buscador (Pagefind) ── */
+#buscador{margin:0 0 2rem;--pagefind-ui-scale:.82;--pagefind-ui-primary:var(--navy);--pagefind-ui-text:#2d3748;--pagefind-ui-background:#fff;--pagefind-ui-border:var(--border);--pagefind-ui-tag:var(--offwhite);--pagefind-ui-border-width:1px;--pagefind-ui-border-radius:8px;--pagefind-ui-font:'Inter',system-ui,sans-serif}
+#buscador .pagefind-ui__search-input{font-weight:400}
+#buscador .pagefind-ui__search-input:focus{outline:2px solid var(--teal);outline-offset:-1px}
+#buscador .pagefind-ui__search-input::placeholder{color:var(--muted);opacity:1}
+#buscador .pagefind-ui__message{font-size:.85rem;color:var(--muted);font-weight:500;padding-top:1.25rem}
+#buscador .pagefind-ui__result{padding:1.1rem 0}
+#buscador .pagefind-ui__result-link{color:var(--navy)}
+#buscador .pagefind-ui__result-link:hover{color:var(--teal)}
+#buscador .pagefind-ui__result-excerpt{line-height:1.6;color:#4a5568}
+#buscador mark{background:rgba(13,159,160,.16);color:inherit;padding:0 .1em;border-radius:2px}
+#buscador .pagefind-ui__result-tags{display:none}
+#buscador .res-fecha{display:block;font-size:.8rem;color:var(--muted);margin:.15rem 0 .35rem;font-weight:500}
+#buscador .pagefind-ui__button{border-color:var(--teal);color:var(--teal);font-weight:600}
+#buscador .pagefind-ui__button:hover{background:var(--teal);color:#fff}
+body.buscando .card-grid,body.buscando .archivo-cta{display:none}
 </style>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
 </head>
 <body>
 <nav class="nav"><div class="nav-inner">
@@ -142,7 +159,8 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
     <p>27 publicaciones</p>
   </div>
 </div>
-<div class="content-wrap"><main style="min-width:0"><div class="card-grid" style="padding-top:0">
+<div class="content-wrap"><main style="min-width:0"><div id="buscador" class="buscador" role="search"></div>
+<div class="card-grid" style="padding-top:0">
     <a href="noticias/cerebro-obra-de-teatro-parque-cultural-de-valparaiso.html" class="card">
       <div class="card-img"><img src="img/cerebro-obra-teatro-valparaiso.png" alt="" loading="lazy"></div>
       <div class="card-body">
@@ -464,6 +482,37 @@ aside.sidebar{display:flex;flex-direction:column;gap:1.75rem}
   if(b&&n)b.addEventListener('click',function(){
     var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
   });
+})();
+</script>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+/* Buscador de noticias — índice generado por Pagefind en deploy.sh */
+(function(){
+  var caja=document.getElementById('buscador');
+  if(!caja||typeof PagefindUI==='undefined')return;
+  var ui=new PagefindUI({
+    element:'#buscador',
+    showImages:false,
+    showSubResults:false,
+    excerptLength:28,
+    translations:{placeholder:'Buscar en todas las noticias (2013–2026)'},
+    processResult:function(r){
+      if(r.meta&&r.meta.fecha){r.excerpt='<span class="res-fecha">'+r.meta.fecha+'</span>'+r.excerpt;}
+      return r;
+    }
+  });
+  function estado(){
+    var i=caja.querySelector('input');
+    var q=i?i.value.trim():'';
+    document.body.classList.toggle('buscando',q.length>0);
+    var url=new URL(location.href);
+    if(q)url.searchParams.set('q',q);else url.searchParams.delete('q');
+    history.replaceState(null,'',url);
+  }
+  caja.addEventListener('input',estado);
+  caja.addEventListener('click',function(){setTimeout(estado,0);});
+  var q=new URLSearchParams(location.search).get('q');
+  if(q){ui.triggerSearch(q);document.body.classList.add('buscando');}
 })();
 </script>
 </body>

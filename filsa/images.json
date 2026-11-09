@@ -1,0 +1,24 @@
+{
+  "titulo": "Libros de divulgación",
+  "imagenes": [
+    { "archivo": "01 - Cronicas de la mente.png", "titulo": "Crónicas de la mente" },
+    { "archivo": "02 - El espejo y la mente.png", "titulo": "El espejo y la mente" },
+    { "archivo": "03 - Cerebro cotidiano.png", "titulo": "Cerebro cotidiano" },
+    { "archivo": "04 - RealMente.png", "titulo": "RealMente" },
+    { "archivo": "05 - Neurociencia y educacion.png", "titulo": "Neurociencia y educación" },
+    { "archivo": "06 - Glosario de neurociencia.png", "titulo": "Glosario de neurociencia" },
+    { "archivo": "07 - Las neuronas aplauden.png", "titulo": "Las neuronas aplauden" },
+    { "archivo": "08 - Neuroetica para todas y todos.png", "titulo": "Neuroética para todas y todos" },
+    { "archivo": "09 - Mi primer libro del cerebro.png", "titulo": "Mi primer libro del cerebro" },
+    { "archivo": "10 - Las neuronas aplauden.png", "titulo": "Las neuronas aplauden" },
+    { "archivo": "11 - DeMente 1 y DeMente 2.png", "titulo": "DeMente 1 y DeMente 2" },
+    { "archivo": "12 - Neurodivergencias.png", "titulo": "Neurodivergencias" },
+    { "archivo": "13 - Por que tenemos el cerebro en la cabeza.png", "titulo": "¿Por qué tenemos el cerebro en la cabeza?" },
+    { "archivo": "14 - Cerebro nutricion y neuroplasticidad.png", "titulo": "Cerebro, nutrición y neuroplasticidad" },
+    { "archivo": "15 - Olfato y gusto.png", "titulo": "Olfato y gusto" },
+    { "archivo": "16 - Neurociencia para la psicologia.png", "titulo": "Neurociencia para la psicología" },
+    { "archivo": "17 - Atencion y conciencia.png", "titulo": "Atención y conciencia" },
+    { "archivo": "18 - Cerebro curioso.png", "titulo": "Cerebro curioso" },
+    { "archivo": "19 - El impacto de los cuentos.png", "titulo": "El impacto de los cuentos" }
+  ]
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La SCN participa en la 45ª Feria Internacional del Libro de Santiago (FILSA 2026) — Sociedad Chilena de Neurociencia</title>
+<meta name="description" content="La Sociedad Chilena de Neurociencia presenta 19 actividades de divulgación en FILSA 2026, del 13 al 22 de noviembre en el Centro Cultural Estación Mapocho.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;font-size:16px;color:#2d3748;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+:root{--navy:#0c1e3f;--navymd:#162e58;--teal:#0d9fa0;--offwhite:#f4f7fb;--muted:#627286;--border:#e2e8f0;--f-serif:'DM Serif Display',Georgia,serif;--max-w:1100px;--pad:clamp(1rem,4vw,1.5rem)}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad)}
+/* Nav */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.07)}
+.nav-inner{display:flex;align-items:center;height:60px;max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);gap:1.5rem}
+.nav-logo img{height:36px;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:.15rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:block;padding:.3rem .7rem;color:rgba(255,255,255,.78);font-size:.82rem;font-weight:500;white-space:nowrap;border-radius:3px;transition:background .15s,color .15s}
+.nav-links>li>a:hover,.nav-links>li>a.active{color:#fff;background:rgba(255,255,255,.1)}
+.nav-has-drop>a::after{content:'▾';font-size:.65rem;margin-left:.2rem;opacity:.6}
+.nav-drop{display:none;position:absolute;top:calc(100% + 1px);left:0;background:var(--navymd);border-top:2px solid var(--teal);min-width:200px;list-style:none;padding:.4rem 0;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.nav-has-drop:hover .nav-drop{display:block}
+.nav-drop a{display:block;padding:.5rem 1rem;font-size:.82rem;color:rgba(255,255,255,.78)}
+.nav-drop a:hover{background:rgba(255,255,255,.08);color:#fff}
+.nav-cta>a{background:var(--teal)!important;color:#fff!important;border-radius:4px;font-weight:600!important}
+.nav-hl>a{background:rgba(100,0,180,.7)!important;color:#fff!important;border-radius:4px}
+.nav-burger{display:none;background:none;border:none;cursor:pointer;color:#fff;font-size:1.4rem;margin-left:auto;line-height:1}
+/* Page hero */
+.page-hero{background:var(--navy);color:#fff;padding:2.5rem 0}
+.page-hero .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.4rem}
+.page-hero h1{font-family:var(--f-serif);font-size:2.4rem;font-weight:400;color:#fff}
+.page-hero p{margin-top:.6rem;font-size:1rem;color:rgba(255,255,255,.65);max-width:540px;line-height:1.6}
+/* Card grid */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;padding:2.5rem 0 4rem}
+.card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .15s}
+.card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);transform:translateY(-2px)}
+.card-img{height:200px;overflow:hidden;background:var(--navy);position:relative;flex-shrink:0}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-img.no-img{display:flex;align-items:center;justify-content:center}
+.card-img.no-img .year-bg{font-family:var(--f-serif);font-size:4rem;color:rgba(255,255,255,.15)}
+.card-body{padding:1rem 1.1rem 1.1rem;flex:1;display:flex;flex-direction:column}
+.badge{display:inline-block;font-size:.68rem;font-weight:600;letter-spacing:.04em;padding:.18rem .55rem;border-radius:3px;margin-bottom:.5rem}
+.b-oport{background:#dbeafe;color:#1d4ed8}.b-divul{background:#d1fae5;color:#065f46}
+.b-congr{background:#ede9fe;color:#5b21b6}.b-insti{background:#fef3c7;color:#92400e}
+.b-dest {background:#fce7f3;color:#9d174d}.b-becas{background:#dcfce7;color:#14532d}
+.b-even {background:#fff7ed;color:#9a3412}.b-gen  {background:#f1f5f9;color:#475569}
+.card-title{display:block;font-size:1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:.3rem;transition:color .15s}
+.card-title:hover{color:var(--teal)}
+.card-date{font-size:.78rem;color:var(--muted);margin-bottom:.4rem}
+.card-excerpt{font-size:.875rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:.75rem}
+.card-more{font-size:.82rem;font-weight:600;color:var(--teal)}
+.card-more::after{content:' →'}
+/* Article page */
+.art-header{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.art-header .label{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.5rem}
+.art-header h1{font-family:var(--f-serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:400;line-height:1.15;max-width:800px}
+.art-header .meta{margin-top:.75rem;font-size:.85rem;color:rgba(255,255,255,.55);display:flex;gap:.75rem;flex-wrap:wrap;align-items:center}
+.art-header .cat-pill{background:rgba(255,255,255,.1);padding:.18rem .6rem;border-radius:3px;font-size:.75rem}
+.feat-img{width:100%;max-height:500px;object-fit:cover}
+.art-body{max-width:780px;margin:2.5rem auto 4rem;padding:0 var(--pad)}
+.art-body p{line-height:1.85;margin-bottom:1.1rem;font-size:1.02rem}
+.art-body h2,.art-body h3{font-family:var(--f-serif);color:var(--navy);margin:2rem 0 .7rem;font-weight:400}
+.art-body h2{font-size:1.6rem}.art-body h3{font-size:1.25rem}
+.art-body img{max-width:100%;border-radius:6px;margin:1.25rem 0}
+.art-body a{color:var(--teal);text-decoration:underline;text-underline-offset:3px}
+.art-body ul,.art-body ol{margin:.5rem 0 1rem 1.5rem;line-height:1.75}
+.art-body blockquote{border-left:3px solid var(--teal);margin:1.5rem 0;padding:.75rem 1.25rem;background:var(--offwhite);border-radius:0 4px 4px 0;font-style:italic}
+.art-body strong{font-weight:600;color:#1a202c}
+.back-btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.88rem;font-weight:500;color:var(--teal);margin-bottom:2rem}
+.back-btn::before{content:'←'}
+/* Footer */
+.footer{background:#08121f;color:rgba(255,255,255,.42);padding:2rem 0;font-size:.82rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;padding:0 var(--pad);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;align-items:center}
+.footer-brand{font-family:var(--f-serif);color:rgba(255,255,255,.7);font-size:.95rem}
+.footer-links a{color:rgba(255,255,255,.4);margin-right:1.5rem;transition:color .15s}
+.footer-links a:hover{color:rgba(255,255,255,.85)}
+@media(max-width:700px){
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--navy);flex-direction:column;padding:1rem;border-top:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .nav-has-drop .nav-drop{position:static;box-shadow:none;border:none;background:transparent;padding-left:1rem}
+  .nav-burger{display:block}
+  .card-grid{grid-template-columns:1fr}
+}
+/* Event details & program */
+.ev-box{background:var(--offwhite);border:1px solid var(--border);border-radius:8px;padding:1.1rem 1.4rem;margin:1.5rem 0}
+.ev-box dl{display:grid;grid-template-columns:max-content 1fr;gap:.45rem 1.25rem;font-size:.97rem;line-height:1.5}
+.ev-box dt{font-weight:600;color:var(--navy)}
+.ev-btn{display:inline-block;background:var(--teal);color:#fff!important;text-decoration:none!important;font-weight:600;padding:.65rem 1.3rem;border-radius:6px;margin:.25rem .5rem .75rem 0}
+.ev-btn.alt{background:var(--navy)}
+.prog-wrap{overflow-x:auto;margin:1rem 0 1.75rem}
+.prog{width:100%;border-collapse:collapse;font-size:.93rem;line-height:1.45}
+.prog th{text-align:left;background:var(--navy);color:#fff;font-weight:600;padding:.6rem .8rem}
+.prog td{padding:.65rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
+.prog td:first-child{white-space:nowrap;font-weight:600;color:var(--navy)}
+.prog tr.pause td{background:var(--offwhite);color:#555;font-style:italic}
+.prog .aff{display:block;font-size:.8rem;color:#6b7280;margin-top:.15rem}
+.prog em{color:#1a202c}
+.poster{display:block;margin:1.5rem auto;max-width:520px!important;box-shadow:0 4px 18px rgba(0,0,0,.12)}
+@media(max-width:600px){.ev-box dl{grid-template-columns:1fr;gap:.1rem}.ev-box dd{margin-bottom:.5rem}}
+.poster.top{margin:0 auto 1.75rem}
+.prog tr.day td{background:var(--offwhite);color:var(--navy);font-weight:600;padding-top:.8rem;border-bottom:2px solid var(--teal)}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="../index.html" class="nav-logo"><img src="../logo_scn.png" alt="SCN"></a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../index.html">Inicio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#sociedad">Quiénes somos</a>
+      <ul class="nav-drop"><li><a href="../index.html#sociedad">Premio a la Trayectoria</a></li></ul></li>
+    <li><a href="../index.html#directorio">Directorio</a></li>
+    <li class="nav-has-drop"><a href="../index.html#asociarse">Socios</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#asociarse">Asociarse</a></li>
+        <li><a href="../acceso-memberships.html" target="_blank">Acceso Memberships</a></li>
+      </ul></li>
+    <li class="nav-has-drop"><a href="../index.html#congresos">Congresos</a>
+      <ul class="nav-drop">
+        <li><a href="../index.html#congreso-2025">Congreso 2025</a></li>
+        <li><a href="../congresos-anteriores.html">Congresos Anteriores</a></li>
+      </ul></li>
+    <li><a href="../noticias.html" class="active">Noticias</a></li>
+    <li><a href="../index.html#contacto">Contacto</a></li>
+    <li class="nav-hl"><a href="https://añodelcerebro.minciencia.gob.cl/" target="_blank" rel="noopener">Año del Cerebro</a></li>
+    <li class="nav-cta"><a href="#">Donaciones</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">☰</button>
+</div></nav>
+
+<div class="art-header" data-pagefind-body>
+  <div class="wrap">
+    <span class="label" data-pagefind-ignore>Divulgación · Noticias</span>
+    <h1 data-pagefind-meta="fecha:10 de noviembre de 2026" data-pagefind-sort="date:2026-11-10">La SCN participa en la 45ª Feria Internacional del Libro de Santiago (FILSA 2026)</h1>
+    <div class="meta" data-pagefind-ignore><span>Noviembre 10, 2026</span><span class="cat-pill">Destacado</span><span class="cat-pill">Divulgación</span></div>
+  </div>
+</div>
+<div class="art-body" data-pagefind-body>
+  <a data-pagefind-ignore href="../noticias.html" class="back-btn">Volver a Noticias</a>
+
+<a href="../img/filsa-2026-programa-scn.jpg" target="_blank" rel="noopener"><img class="poster top" src="../img/filsa-2026-programa-scn.jpg" alt="Programa de la Sociedad Chilena de Neurociencia en FILSA 2026, del 13 al 22 de noviembre en el Centro Cultural Estación Mapocho"></a>
+
+<p>La Sociedad Chilena de Neurociencia (<strong>SCN</strong>) se complace en anunciar su participación en la <strong>45ª Feria Internacional del Libro de Santiago (FILSA 2026)</strong>, organizada por la Cámara Chilena del Libro, que se realizará <strong>del 13 al 22 de noviembre</strong> en el Centro Cultural Estación Mapocho.</p>
+
+<p>Durante los diez días de la feria, la SCN ofrecerá un programa de <strong>19 actividades</strong> orientadas a acercar la neurociencia al público general: una charla magistral, presentaciones de libros, talleres y conversatorios a cargo de investigadoras, investigadores y divulgadores de nuestra comunidad.</p>
+
+<p>Agradecemos a todas las personas que presentaron propuestas para esta convocatoria. Las restricciones de tiempo y calendario de la programación hicieron necesario seleccionar solo algunas de ellas, y valoramos profundamente el interés y el compromiso demostrados con la divulgación de la neurociencia.</p>
+
+<div class="ev-box"><dl>
+  <dt>Fechas</dt><dd>Viernes 13 al domingo 22 de noviembre de 2026</dd>
+  <dt>Lugar</dt><dd>Centro Cultural Estación Mapocho, Santiago</dd>
+  <dt>Sala</dt><dd>Sala Transiberiano (primer piso), salvo indicación. Los talleres <em>Las neuronas aplauden</em> y el conversatorio del jueves 19 se realizan en el Escenario Plaza Feria</dd>
+  <dt>Actividades</dt><dd>1 charla magistral, 1 charla, 11 presentaciones de libros, 2 talleres y 4 conversatorios</dd>
+</dl></div>
+
+<a class="ev-btn" href="../img/filsa-2026-programa-scn.jpg" target="_blank" rel="noopener">Ver programa en alta resolución</a>
+
+<h2>Programa de actividades</h2>
+
+<div class="prog-wrap"><table class="prog">
+  <thead><tr><th>Hora</th><th>Actividad</th></tr></thead>
+  <tbody>
+    <tr class="day"><td colspan="2">Viernes 13 de noviembre</td></tr>
+    <tr><td>15:00</td><td>Presentación del libro <em>Crónicas de la mente: vivencias reales contadas desde la biología</em><span class="aff">Georgina María Renard y Francisca Cornejo Castillo</span></td></tr>
+    <tr><td>17:00</td><td>Charla magistral <em>El espejo y la mente: humanos y máquinas que piensan</em><span class="aff">Eugenio Rodríguez</span></td></tr>
+
+    <tr class="day"><td colspan="2">Sábado 14 de noviembre</td></tr>
+    <tr><td>11:30</td><td>Presentación del libro <em>Cerebro cotidiano</em><span class="aff">Andrea Slachevsky y Paulina Urrutia</span></td></tr>
+    <tr><td>15:00</td><td>Presentación del libro <em>RealMente ¿cuánto sabes del cerebro?</em><span class="aff">Vania Figueroa, Karen Castillo y Carolina Oliva</span></td></tr>
+
+    <tr class="day"><td colspan="2">Domingo 15 de noviembre</td></tr>
+    <tr><td>12:00</td><td>Charla <em>Neurociencias y Educación: conectando saberes, desafiando creencias</em><span class="aff">Paulo Barraza y Hugolino González García</span></td></tr>
+    <tr><td>15:00</td><td>Presentación del libro <em>Glosario de neurociencia</em><span class="aff">Angelina Palacios, Angélica Escobar, Isaac García y Álvaro Monsalve</span></td></tr>
+
+    <tr class="day"><td colspan="2">Lunes 16 de noviembre</td></tr>
+    <tr><td>11:30</td><td>Taller <em>Las neuronas aplauden</em><span class="aff">Carlos Rozas y Angélica Arriaza · Escenario Plaza Feria</span></td></tr>
+    <tr><td>15:00</td><td>Presentación del libro <em>Neuroética para todas y todos: 21 conceptos clave</em><span class="aff">Antonella Osses y Macarena Gárate</span></td></tr>
+
+    <tr class="day"><td colspan="2">Martes 17 de noviembre</td></tr>
+    <tr><td>12:00</td><td>Presentación del libro <em>Mi primer libro del cerebro: un día en la vida de Clementina</em><span class="aff">Alexia Núñez Parra</span></td></tr>
+
+    <tr class="day"><td colspan="2">Miércoles 18 de noviembre</td></tr>
+    <tr><td>11:30</td><td>Taller <em>Las neuronas aplauden</em><span class="aff">Carlos Rozas y Angélica Arriaza · Escenario Plaza Feria</span></td></tr>
+    <tr><td>12:00</td><td>Presentación del libro <em>DeMente 1 y DeMente 2</em><span class="aff">Jesús Olivares (editor)</span></td></tr>
+    <tr><td>16:00</td><td>Conversatorio <em>Neurodivergencias: del síntoma al circuito</em><span class="aff">Patricio Rojas y Javier Núñez</span></td></tr>
+
+    <tr class="day"><td colspan="2">Jueves 19 de noviembre</td></tr>
+    <tr><td>16:00</td><td>Presentación del libro <em>¿Por qué tenemos el cerebro en la cabeza?</em><span class="aff">Pedro Maldonado Arbogast</span></td></tr>
+    <tr><td>17:00</td><td>Conversatorio <em>Cerebro, nutrición y neuroplasticidad: claves para la salud mental</em><span class="aff">Sebastián Loyola y Pablo Billeke · Escenario Plaza Feria</span></td></tr>
+
+    <tr class="day"><td colspan="2">Viernes 20 de noviembre</td></tr>
+    <tr><td>11:30</td><td>Presentación del libro <em>Olfato y gusto. Biología, sabores y sinsabores</em><span class="aff">Alexia Núñez Parra</span></td></tr>
+    <tr><td>15:00</td><td>Presentación del libro <em>Neurociencia para la psicología y otras áreas. Una introducción</em><span class="aff">Marc Leander Zeise</span></td></tr>
+    <tr><td>16:00</td><td>Conversatorio <em>Atención y conciencia</em><span class="aff">Tomás Ossandón y Vicente Medel</span></td></tr>
+
+    <tr class="day"><td colspan="2">Sábado 21 de noviembre</td></tr>
+    <tr><td>15:00</td><td>Presentación del libro <em>Cerebro curioso. Una guía para entender nuestras ganas de aprender</em><span class="aff">Evelyn Cordero Roldán</span></td></tr>
+
+    <tr class="day"><td colspan="2">Domingo 22 de noviembre</td></tr>
+    <tr><td>15:00</td><td>Conversatorio <em>El impacto de los cuentos en el cerebro infantil</em><span class="aff">Elena Ariztía e Inés Correa</span></td></tr>
+  </tbody>
+</table></div>
+
+<p>Todas las actividades se realizan en la Sala Transiberiano (primer piso), salvo aquellas indicadas en el Escenario Plaza Feria.</p>
+
+<p>Invitamos a nuestras socias y socios, a la comunidad científica y al público general a ser parte de este espacio de encuentro entre la neurociencia y la cultura del libro. Los esperamos en la Estación Mapocho entre el 13 y el 22 de noviembre.</p>
+</div>
+<footer class="footer"><div class="footer-inner">
+  <div class="footer-brand">Sociedad Chilena de Neurociencia</div>
+  <div class="footer-links">
+    <a href="../index.html">Inicio</a>
+    <a href="../noticias.html">Noticias</a>
+    <a href="../congresos-anteriores.html">Congresos</a>
+    <a href="../index.html#asociarse">Membresía</a>
+    <a href="../index.html#contacto">Contacto</a>
+  </div>
+</div></footer>
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav-links');
+  if(b&&n)b.addEventListener('click',function(){
+    var o=n.classList.toggle('open');b.textContent=o?'✕':'☰';
+  });
+})();
+</script>
+<script src="/js/buscador-nav.js" defer></script>
+<script src="/js/donaciones.js" defer></script>
+</body>
+</html>
